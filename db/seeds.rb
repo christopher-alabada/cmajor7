@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 blues = Genre.new(name: 'Blues')
 blues.save!
 electronic = Genre.new(name: 'Electronic')
@@ -47,3 +48,7 @@ latino = Genre.new(name: 'Latino')
 latino.save!
 ska = Genre.new(name: 'Ska')
 ska.save!
+
+song = Song.new(title: 'Yesterday', artist: 'Beatles')
+song = Song.new(title: 'Namb', artist: 'Linkin Park')
+song = Song.new(title: 'Shape of You', artist: 'Ed Sheeran')
