@@ -1,0 +1,2 @@
+class BandMember < ApplicationRecord
+end

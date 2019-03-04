@@ -1,0 +1,2 @@
+class EquipmentCategory < ApplicationRecord
+end

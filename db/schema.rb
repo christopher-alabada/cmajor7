@@ -10,10 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_04_063433) do
+ActiveRecord::Schema.define(version: 2019_03_04_070906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "band_members", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bands", force: :cascade do |t|
+    t.string "band_name"
+    t.string "banner_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "equipment", force: :cascade do |t|
+    t.string "model"
+    t.string "brand"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "equipment_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "musician_genres", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "musicians", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +60,30 @@ ActiveRecord::Schema.define(version: 2019_03_04_063433) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "fullname"
+    t.date "date_of_birth"
+    t.string "location"
+    t.string "years_experience"
+    t.string "tag_line"
+    t.text "descrption"
+    t.string "user_photo"
+    t.string "banner_photo"
     t.index ["email"], name: "index_musicians_on_email", unique: true
     t.index ["reset_password_token"], name: "index_musicians_on_reset_password_token", unique: true
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "title"
+    t.string "artist"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
