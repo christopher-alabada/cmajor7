@@ -49,6 +49,9 @@ latino.save!
 ska = Genre.new(name: 'Ska')
 ska.save!
 
-song = Song.new(title: 'Yesterday', artist: 'Beatles')
-song = Song.new(title: 'Namb', artist: 'Linkin Park')
+song = Song.new(title: 'Yesterday', artist: 'The Beatles')
+song = Song.new(title: 'Numb', artist: 'Linkin Park')
 song = Song.new(title: 'Shape of You', artist: 'Ed Sheeran')
+song = Song.new(title: 'Feel Good Inc.', artist: 'Gorillaz')
+song = Song.new(title: 'Through the Fire and Flames', artist: 'Dragon Force')
+song = Song.new(title: 'Yellow Submarine', artist: 'The Beatles')
