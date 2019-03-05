@@ -17,7 +17,7 @@
               <%= link_to musician_path(musician) do %>
                 <%= cl_image_tag(musician.user_photo, class: 'musician-image') %>
                 <div class='card-description'>
-                  <%= musician.fullname %>
+                  <%= musician.nickname %>
                     <div class="card-location">
                       <p>location <%= musician.location %></p>
                     </div>
