@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_031113) do
+ActiveRecord::Schema.define(version: 2019_03_05_045710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,10 @@ ActiveRecord::Schema.define(version: 2019_03_05_031113) do
   create_table "band_members", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "band_id"
+    t.bigint "musician_id"
+    t.index ["band_id"], name: "index_band_members_on_band_id"
+    t.index ["musician_id"], name: "index_band_members_on_musician_id"
   end
 
   create_table "bands", force: :cascade do |t|
@@ -86,9 +90,11 @@ ActiveRecord::Schema.define(version: 2019_03_05_031113) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "from_id"
+    t.integer "to_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -98,6 +104,8 @@ ActiveRecord::Schema.define(version: 2019_03_05_031113) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "band_members", "bands"
+  add_foreign_key "band_members", "musicians"
   add_foreign_key "equipment", "equipment_categories"
   add_foreign_key "equipment_inventories", "equipment"
   add_foreign_key "equipment_inventories", "musicians"
