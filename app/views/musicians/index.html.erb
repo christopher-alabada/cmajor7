@@ -1,12 +1,12 @@
 
 <div class="flex-grow-3 d-flex" style="display:flex; justify-content: left;">
-      <%= form_tag musicians_path, method: :get, class: "text-left", style: 'padding: 10px' do %>
+      <%= form_tag musicians_path, method: :get, class: "text-left", style: 'padding-left: 50px' do %>
         <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: "Music instrument or Location" %>
         <%= submit_tag "Search", class: "btn btn-danger", style: "margin: 43px;padding: 5px 25px 5px; margin-left: 10px;" %>
       <% end %>
 </div>
 
-
+<div class="card-container">
   <h3 id="explore">Explore all musicians</h3>
   <div class="musician-container">
     <div class="row">
@@ -29,3 +29,4 @@
       <% end %>
     </div>
   </div>
+</div>
