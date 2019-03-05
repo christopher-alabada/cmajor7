@@ -61,13 +61,13 @@ song = Song.new(title: 'Just the two of us', artist: 'Grover Washington')
 song = Song.new(title: 'Autumn leaves', artist: 'Bill Evans')
 
 
-musician = Musician.new(fullname: 'Kumi T', email: 'kumit@example.com', password: 'pass_kumi', username: 'kumit', date_of_birth: DateTime.new(1990, 3, 2), location: 'Osaka', years_experience: '3 years', tag_line: 'Hello', descrption: 'Hi guys, I hope we can have a great time!')
+musician = Musician.new(fullname: 'Kumi T', email: 'kumit@example.com', password: 'pass_kumi', nickname: 'kumit', date_of_birth: DateTime.new(1990, 3, 2), location: 'Osaka', years_experience: '3 years', tag_line: 'Hello', description: 'Hi guys, I hope we can have a great time!')
 musician.save!
 musician.user_photo = 'https://www.designskilz.com/random-users/images/imageF31.jpg'
 musician.banner_photo = 'https://images.unsplash.com/photo-1462813277085-db5366eb347b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'
 
 musicians = Musician.new(
-  username: 'Vic',
+  nickname: 'Vic',
   fullname: 'Victor Wooten',
   email: 'victorwooten@example.com',
   password: 'pass_victor',
@@ -82,7 +82,7 @@ musicians = Musician.new(
 musicians.save!
 
 musicians = Musician.new(
-  username: 'Vic',
+  nickname: 'Vic',
   fullname: 'Victor Wooten',
   email: 'victorwooten@example.com',
   password: 'pass_victor',
@@ -97,7 +97,7 @@ musicians = Musician.new(
 musicians.save!
 
 musicians = Musician.new(
-  username: 'Vic',
+  nickname: 'Vic',
   fullname: 'Victor Wooten',
   email: 'yukimori@example.com',
   password: 'pass_yuki',

@@ -4,10 +4,43 @@
   background-size: cover !important;
   background-position: center;
   color: white;
-  position: relative;
+  // position: relative;
+}
+.profile-container {
+  color: #5d5d5a;
+}
+
+.profile-container h1 {
+  color: #33313b;
 }
 
 .show-banner {
   height: 400px;
   background-position: center;
+}
+
+.card-contents {
+  background-color: white;
+  box-shadow: 1px 1px;
+  min-width: 200px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // position: relative;
+}
+
+.show-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.connect {
+  width: 180px;
+  // position: absolute;
+  bottom: 10px;
+}
+.want-to {
+  font-size: 15px;
+  color: #929aab;
 }

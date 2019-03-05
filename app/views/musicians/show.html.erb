@@ -5,32 +5,36 @@
 
 <div class="container">
   <div class="show-container">
-    <div class="profile-container">
-      <h1><%= @band.band_name %></h1>
-      <!-- <p><%#= @musician.description %></p> -->
-      <h4>Location: <%#= @musician.location %></h4>
+    <div class="profile-container text-left">
+      <div><h1>About Me</h1></div>
+      <div><p><%= @musician.tag_line %></p></div>
+      <div><p><%= @musician.description %></p></div>
+      <div><h5>Location: <%= @musician.location %></h5></div>
     </div>
 
     <div class="card-wrapper">
       <div class="banner-content">
-        <h3 class="musician-name"><%= @musician.nickname %></h3>
+        <h3 class="musician-name"><%#= @musician.nickname %></h3>
         <div class="card-description">
           <div class="card-contents">
-            <p><%= @musician.tag_line %></p>
-
+            <div><h4 class='text-center'><%= @musician.nickname.capitalize %></h4>
+              <p class='want-to'>want to play with <%= @musician.nickname %>?</p>
+              <input type="checkbox" style="display: none;" id="connect">
+                <div class="popup" style="display: none;">
+                    <<!-- div class="col-md-6">
+                    </div> -->
+                </div>
+                <div id="connect">
+                  <p class="btn btn-primary connect">Connect</p>
+                </div>
+            </div>
           </div>
-
-        <input type="checkbox" style="display: none;" id="bookbtn">
-          <div class="popup" style="display: none;">
-                <div class="col-md-6">
-              </div>
-          </div>
+          <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
         </div>
-        <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
       </div>
     </div>
-  </div>
 
+  </div>
 </div>
 </body>
 
