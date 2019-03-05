@@ -102,15 +102,18 @@ puts "Added Just the two of us, Grover Washington song."
 song = Song.new(title: 'Autumn leaves', artist: 'Bill Evans')
 song.save!
 puts "Added Autumn leaves, Bill Evans song."
+puts "Done seeding songs."
+
+puts
 
 
 musician = Musician.new(
+  nickname: 'Kumi',
   fullname: 'Kumi T',
   email: 'kumit@example.com',
   password: 'pass_kumi',
-  username: 'kumit',
   date_of_birth: DateTime.new(1990, 3, 2), location: 'Osaka',
-  years_experience: '3 years',
+  years_experience: 3,
   tag_line: 'Hello',
   descrption: 'Hi guys, I hope we can have a great time!')
 musician.save!
@@ -132,155 +135,107 @@ musician = Musician.new(
   )
 musician.save!
 
-musician = Musician.new(
-  username: 'Vic',
-  fullname: 'Victor Wooten',
-  email: 'victorwooten@example.com',
-  password: 'pass_victor',
-  date_of_birth: DateTime.new(1964, 9, 11),
-  location: 'Aoyama',
-  years_experience: 6,
-  tag_line: 'Music as a language',
-  description: 'An American bass guitarist, record producer, educator, and recipient of five Grammy Awards.[2] He has been the bassist for Béla Fleck and the Flecktones since the groups formation in 1988 and a member of the band SMV with two other bassists, Stanley Clarke and Marcus Miller.[1][3] Since 2017 he has played bass for the metal band Nitro.',
-  user_photo: 'https://en.wikipedia.org/wiki/File:Victor_Wooten.jpg',
-  banner_photo: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fres-3.cloudinary.com%2Fdostuff-media%2Fimage%2Fupload%2F%2Fc_fill%2Cg_faces%2Cf_auto%2Cw_800%2Fv1485794800%2Fevent-poster-7363238.jpg&imgrefurl=https%3A%2F%2Fdo512.com%2Fevents%2F2017%2F4%2F1%2Fthe-victor-wooten-trio-ft-dennis-chambers-bob-franceschini-w-henry-the-invisibles&docid=tgpGJfkJ6DTgEM&tbnid=LMglwZtq9kxlLM%3A&vet=12ahUKEwiQupDN8OngAhUqCqYKHcSRCH84yAEQMyhAMEB6BAgBEEI..i&w=800&h=301&bih=766&biw=1440&q=victor%20wooten&ved=2ahUKEwiQupDN8OngAhUqCqYKHcSRCH84yAEQMyhAMEB6BAgBEEI&iact=mrc&uact=8',
-  )
-musician.save!
-
-musician = Musician.new(
-  username: 'Vic',
-  fullname: 'Victor Wooten',
-  email: 'yukimori@example.com',
-  password: 'pass_yuki',
-  date_of_birth: DateTime.new(1964, 9, 11),
-  location: 'Shinjuku',
-  years_experience: 6,
-  tag_line: 'Music as a language',
-  description: 'An American bass guitarist, record producer, educator, and recipient of five Grammy Awards.[2] He has been the bassist for Béla Fleck and the Flecktones since the groups formation in 1988 and a member of the band SMV with two other bassists, Stanley Clarke and Marcus Miller.[1][3] Since 2017 he has played bass for the metal band Nitro.',
-  user_photo: 'https://en.wikipedia.org/wiki/File:Victor_Wooten.jpg',
-  banner_photo: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fres-3.cloudinary.com%2Fdostuff-media%2Fimage%2Fupload%2F%2Fc_fill%2Cg_faces%2Cf_auto%2Cw_800%2Fv1485794800%2Fevent-poster-7363238.jpg&imgrefurl=https%3A%2F%2Fdo512.com%2Fevents%2F2017%2F4%2F1%2Fthe-victor-wooten-trio-ft-dennis-chambers-bob-franceschini-w-henry-the-invisibles&docid=tgpGJfkJ6DTgEM&tbnid=LMglwZtq9kxlLM%3A&vet=12ahUKEwiQupDN8OngAhUqCqYKHcSRCH84yAEQMyhAMEB6BAgBEEI..i&w=800&h=301&bih=766&biw=1440&q=victor%20wooten&ved=2ahUKEwiQupDN8OngAhUqCqYKHcSRCH84yAEQMyhAMEB6BAgBEEI&iact=mrc&uact=8',
-  )
-musician.save!
-
-Equipment_category.new(
-  name: 'Brass'
-  )
-equipment_category.save!
-Equipment_category.new(
-  name: 'String'
-  )
-equipment_category.save!
-Equipment_category.new(
-  name: 'Woodwind'
-  )
-equipment_category.save!
-Equipment_category.new(
-  name: 'Percussion'
-  )
-equipment_category.save!
-Equipment_category.new(
-  name: 'Keyboards'
-  )
-equipment_category.save!
-Equipment_category.new(
-  name: 'Voice'
-  )
-equipment_category.save!
-Equipment_category.new(
-  name: 'Live_equipment'
-  )
-equipment_category.save!
 
 
-Equipment.new(
-  type: 'Trombones'
-  )
+
+
+
+puts
+
+puts "Seeding equipment categories.."
+brass = EquipmentCategory.new(name: 'brass')
+brass.save!
+puts "Added Brass EquipmentCategory."
+string = EquipmentCategory.new(name: 'string')
+string.save!
+puts "Added String EquipmentCategory."
+woodwind = EquipmentCategory.new(name: 'woodwind')
+woodwind.save!
+puts "Added Woodwind EquipmentCategory."
+percussion = EquipmentCategory.new(name: 'percussion')
+percussion.save!
+puts "Added Percussion EquipmentCategory."
+keyboards = EquipmentCategory.new(name: 'keyboards')
+keyboards.save!
+puts "Added Keyboards EquipmentCategory."
+voice = EquipmentCategory.new(name: 'voice')
+voice.save!
+puts "Added Voice EquipmentCategory."
+live = EquipmentCategory.new(name: 'live')
+live.save!
+puts "Added live EquipmentCategory."
+puts "Done seeding EquipmentCategory"
+
+puts
+
+puts "Seeding equipments.."
+Equipment.new(type: 'trombones', equipment_category: brass)
 equipment.save!
-Equipment.new(
-  type: 'Trumpet'
-  )
+puts "Added Trombones equipment."
+Equipment.new(type: 'trumpet', equipment_category: brass)
 equipment.save!
-Equipment.new(
-  type: 'French Horn'
-  )
+puts "Added Trumpet equipment."
+Equipment.new(type: 'french Horn', equipment_category: brass)
 equipment.save!
-Equipment.new(
-  type: 'Acoustic guitar'
-  )
+puts "Added French Horn equipment."
+Equipment.new(type: 'acoustic guitar', equipment_category: string)
 equipment.save!
-Equipment.new(
-  type: 'Electric guitar'
-  )
+puts "Added Acoustic guitar equipment."
+Equipment.new(type: 'electric guitar', equipment_category: string)
 equipment.save!
-Equipment.new(
-  type: 'Upright'
-  )
+puts "Added Electric guitar equipment."
+Equipment.new(type: 'upright', equipment_category: string)
 equipment.save!
-Equipment.new(
-  type: 'Electric Bass'
-  )
+puts "Added Upright equipment."
+Equipment.new(type: 'electric Bass', equipment_category: string)
 equipment.save!
-Equipment.new(
-  type: 'Cello'
-  )
+puts "Added Electric Bass equipment."
+Equipment.new(type: 'cello', equipment_category: string)
 equipment.save!
-Equipment.new(
-  type: 'Viola'
-  )
+puts "Added Cello equipment."
+Equipment.new(type: 'viola', equipment_category: string)
 equipment.save!
-Equipment.new(
-  type: 'Violin'
-  )
+puts "Added Viola equipment."
+Equipment.new(type: 'violin', equipment_category: string)
 equipment.save!
-Equipment.new(
-  type: 'Flute'
-  )
+puts "Added Violin equipment."
+Equipment.new(type: 'flute', equipment_category: woodwind)
 equipment.save!
-Equipment.new(
-  type: 'Clarinet'
-  )
+puts "Added Flute equipment."
+Equipment.new(type: 'clarinet', equipment_category: woodwind)
 equipment.save!
-Equipment.new(
-  type: 'Oboe'
-  )
+puts "Added Clarinet equipment."
+Equipment.new(type: 'oboe', equipment_category: woodwind)
 equipment.save!
-Equipment.new(
-  type: 'Bassoon'
-  )
+puts "Added Oboe equipment."
+Equipment.new(type: 'bassoon', equipment_category: woodwind)
 equipment.save!
-Equipment.new(
-  type: 'Saxophones'
-  )
+puts "Added Bassoon equipment."
+Equipment.new(type: 'saxophones', equipment_category: woodwind)
 equipment.save!
-Equipment.new(
-  type: 'Drums'
-  )
+puts "Added Saxophones equipment."
+Equipment.new(type: 'drums', equipment_category: percussion)
 equipment.save!
-Equipment.new(
-  type: 'Cajon'
-  )
+puts "Added Drums equipment."
+Equipment.new(type: 'cajon', equipment_category: percussion)
 equipment.save!
-Equipment.new(
-  type: 'Piano'
-  )
+puts "Added Cajon equipment."
+Equipment.new(type: 'piano', equipment_category: keyboards)
 equipment.save!
-Equipment.new(
-  type: 'Electric Piano'
-  )
+puts "Added Piano equipment."
+Equipment.new(type: 'electric Piano', equipment_category: keyboards)
 equipment.save!
-Equipment.new(
-  type: 'Vocals'
-  )
+puts "Added Piano equipment."
+Equipment.new(type: 'vocals', equipment_category: voice)
 equipment.save!
-Equipment.new(
-  type: 'Guitar amp'
-  )
+puts "Added Vocals equipment."
+Equipment.new(type: 'guitar amp', equipment_category: live)
 equipment.save!
-Equipment.new(
-  type: 'Bass amp'
-  )
+puts "Added Guitar amp equipment."
+Equipment.new(type: 'bass amp', equipment_category: live)
 equipment.save!
-Equipment.new(
-  type: 'Mic'
-  )
+puts "Added Bass amp equipment."
+Equipment.new(type: 'mic', equipment_category: live)
 equipment.save!
+puts "Added Mic equipment."
+puts "Done seeding equipment"
