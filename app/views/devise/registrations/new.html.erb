@@ -7,9 +7,18 @@
         <%= f.error_notification %>
 
         <div class="form-inputs">
-          <%= f.input :fullname,
-                      required: true,
-                      autofocus: true %>
+          <div class="sl-form-names">
+            <div class="sl-form-input" id="sl-fullname">
+              <%= f.input :fullname,
+                          required: true,
+                          autofocus: true %>
+            </div>
+            <div class="sl-form-input">
+              <%= f.input :nickname,
+                          required: true,
+                          autofocus: true %>
+            </div>
+          </div>
           <%= f.input :email,
                       required: true,
                       autofocus: true,
