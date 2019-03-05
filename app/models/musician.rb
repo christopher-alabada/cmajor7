@@ -7,5 +7,6 @@ class Musician < ApplicationRecord
   has_many :from_requests, :class_name => 'Request', :foreign_key => 'from_id'
   has_many :to_requests, :class_name => 'Request', :foreign_key => 'to_id'
 
-  validates_uniqueness_of :from_id, :scope => [:to_id]
+  mount_uploader :user_photo, PhotoUploader
+  mount_uploader :banner_photo, PhotoUploader
 end
