@@ -1,15 +1,37 @@
-<h1>Musicians#show</h1>
-
-
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(@musician.banner_photo);">
-  <div class="card-category"><%= @musician.username %></div>
-  <div class="card-description">
-    <h2><%=  @musician.tag_line %></h2>
-    <p><%= @musician.description %></p>
-  </div>
-  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
-  <a class="card-link" href="#" ></a>
+<!-- change the banner later -->
+<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80') %>');">
 </div>
 
 
-<p>About me</p>
+<div class="container">
+  <div class="show-container">
+    <div class="profile-container">
+      <h1><%= @band.band_name %></h1>
+      <!-- <p><%#= @musician.description %></p> -->
+      <h4>Location: <%#= @musician.location %></h4>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="banner-content">
+        <h3 class="musician-name"><%= @musician.nickname %></h3>
+        <div class="card-description">
+          <div class="card-contents">
+            <p><%= @musician.tag_line %></p>
+
+          </div>
+
+        <input type="checkbox" style="display: none;" id="bookbtn">
+          <div class="popup" style="display: none;">
+                <div class="col-md-6">
+              </div>
+          </div>
+        </div>
+        <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+
+
