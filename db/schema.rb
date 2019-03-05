@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2019_03_05_031113) do
+ActiveRecord::Schema.define(version: 2019_03_05_035319) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,11 +80,11 @@ ActiveRecord::Schema.define(version: 2019_03_05_031113) do
     t.string "fullname"
     t.date "date_of_birth"
     t.string "location"
-    t.string "years_experience"
     t.string "tag_line"
     t.string "user_photo"
     t.string "banner_photo"
     t.text "description"
+    t.integer "years_experience"
     t.index ["email"], name: "index_musicians_on_email", unique: true
     t.index ["reset_password_token"], name: "index_musicians_on_reset_password_token", unique: true
   end
