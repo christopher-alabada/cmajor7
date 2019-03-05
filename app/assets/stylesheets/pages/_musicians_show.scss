@@ -1,4 +1,4 @@
-.card {
+.show-banner {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
@@ -6,8 +6,60 @@
   color: white;
   position: relative;
 }
+.card-category {
+  color: white;
+  position: absolute;
+  left: 50px;
+  top: 30px;
+  font-weight: lighter;
+  opacity: 0.9;
+}
+
+.profile-container {
+  color: #5d5d5a;
+}
+
+.profile-container h1 {
+  color: #33313b;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+.profile-container h5 {
+  color: #4a4a48;
+}
 
 .show-banner {
   height: 400px;
   background-position: center;
+}
+
+.card-contents {
+  background-color: white;
+  box-shadow: 1px 1px;
+  min-width: 200px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.show-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.connect {
+  width: 180px;
+  bottom: 10px;
+}
+.want-to {
+  font-size: 15px;
+  color: #929aab;
+}
+
+.view {
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 10px;
+  color: blue;
 }

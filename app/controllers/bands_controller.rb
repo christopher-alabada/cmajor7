@@ -5,12 +5,12 @@ class BandsController < ApplicationController
   end
 
   def show
-    @musician = Musician.find(params[:id])
+    @musician = Musician.find(params[:musician_id])
     @band = Band.find(params[:band_id])
   end
 
   def new
-    @musician = Musician.find(params[:musician])
+    @musician = Musician.find(params[:musician_id])
     @band = Band.new
     authorize @band
   end
