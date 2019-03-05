@@ -1,5 +1,12 @@
 <!-- change the banner later -->
 <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80') %>');">
+  <div class="card-category">
+    <h3><%= @musician.nickname.capitalize %></h3>
+    <h2><%= @musician.tag_line %></h2>
+  <!-- </div>
+  <div class="card-description"> -->
+    <p><%#= @musician.equipment %></p>
+  </div>
 </div>
 
 
@@ -7,7 +14,7 @@
   <div class="show-container">
     <div class="profile-container text-left">
       <div><h1>About Me</h1></div>
-      <div><p><%= @musician.tag_line %></p></div>
+      <!-- <div><p><%#= @musician.tag_line %></p></div> -->
       <div><p><%= @musician.description %></p></div>
       <div><h5>Location: <%= @musician.location %></h5></div>
     </div>
@@ -21,13 +28,33 @@
               <p class='want-to'>want to play with <%= @musician.nickname %>?</p>
               <input type="checkbox" style="display: none;" id="connect">
                 <div class="popup" style="display: none;">
-                    <<!-- div class="col-md-6">
-                    </div> -->
+                  <div class="col-md-6">
+                    <%= simple_form_for [@musician], url: musician_path(@musician) do |f|  %>
+                    <%#= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+                    <%#= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+                      <p class='submit'><%= f.button :submit, "Connect", class: "button" %></p>
+                    <% end %>
+              </div>
                 </div>
                 <div id="connect">
                   <p class="btn btn-primary connect">Connect</p>
                 </div>
+                <%#= link_to band_path(@band) do %>
+                <p class="view text-right">View all the bands <%= @musician.nickname %> is in </p>
+                <%# end %>
             </div>
+            <script>
+              $(document).ready(function() {
+                $("#connect").change(function(){
+                  if(this.checked){
+                    $(".popup")[0].style.display = "block";
+                    $(".card-contents")[0].style.display = "none";
+                  } else {
+                    $(".popup")[0].style.display = "none";
+                  }
+                })
+              });
+            </script>
           </div>
           <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
         </div>
