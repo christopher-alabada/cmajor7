@@ -1,2 +1,15 @@
 <h1>Musicians#show</h1>
-<p>Find me in app/views/musicians/show.html.erb</p>
+
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(@musician.banner_photo);">
+  <div class="card-category"><%= @musician.username %></div>
+  <div class="card-description">
+    <h2><%=  @musician.tag_line %></h2>
+    <p><%= @musician.description %></p>
+  </div>
+  <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+  <a class="card-link" href="#" ></a>
+</div>
+
+
+<p>About me</p>
