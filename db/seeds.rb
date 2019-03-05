@@ -52,3 +52,22 @@ ska.save!
 song = Song.new(title: 'Yesterday', artist: 'Beatles')
 song = Song.new(title: 'Namb', artist: 'Linkin Park')
 song = Song.new(title: 'Shape of You', artist: 'Ed Sheeran')
+song = Song.new(title: 'Papa Was a Rolling Stone', artist: 'Marcus Miller')
+song = Song.new(title: 'Just the two of us', artist: 'Grover Washington')
+song = Song.new(title: 'Autumn leaves', artist: 'Bill Evans')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
