@@ -50,6 +50,13 @@ ska = Genre.new(name: 'Ska')
 ska.save!
 
 
+musician = Musician.new(fullname: 'Kumi T', email: 'kumit@example.com', password: 'pass_kumi',
+  username: 'kumit', date_of_birth: DateTime.new(1990, 3, 2), location: 'Osaka', years_experience: '3 years', tag_line: 'Hello', descrption: 'Hi guys, I hope we can have a great time!', user_photo:  )
+musician.save!
+musician.user_photo_url = 'https://www.designskilz.com/random-users/images/imageF31.jpg'
+musician.banner_photo_url = 'https://images.unsplash.com/photo-1462813277085-db5366eb347b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'
+
+
 song = Song.new(title: 'Yesterday', artist: 'The Beatles')
 song = Song.new(title: 'Numb', artist: 'Linkin Park')
 song = Song.new(title: 'Shape of You', artist: 'Ed Sheeran')
