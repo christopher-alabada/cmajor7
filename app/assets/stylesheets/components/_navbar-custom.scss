@@ -1,0 +1,73 @@
+/* navbar */
+.navbar-logo {
+  background: white;
+  box-shadow: 0px 0px 1px 0px rgba(7, 0, 0, 1);
+  transition: all 0.3s ease;
+  height: 70px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.logo {
+  height: 50px;
+}
+/* Logo */
+.navbar-brand {
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.navbar-brand h4 {
+  margin-left: 10px
+}
+/* Right section */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #000000;
+}
+/* Basic navbar item */
+.navbar-item {
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+/* Navbar link */
+.navbar-link {
+  color: #FFFFFF;
+  font-size: 14px;
+  // text-shadow: 0.5px 0.5px 0.5px #000000;
+}
+
+.navbar-link:hover {
+  color: #da552f;
+  text-decoration: none;
+}
+
+.view-all-chefs {
+  font-size: 16px;
+  color: #4d4dff;
+  font-family: "Open Sans";
+  font-weight: lighter;
+  padding-right: 14px;
+  margin-bottom: 140px;
+  float: right;
+}
+
+.logo-h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-h1 h1 {
+  padding: 20px 13px 25px;
+  font-family: "Montserrat";
+  font-size: 33px;
+  color: #000000;
+  font-weight: lighter;
+}
