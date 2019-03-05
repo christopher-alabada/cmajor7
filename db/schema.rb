@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_032112) do
+ActiveRecord::Schema.define(version: 2019_03_05_054339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,10 @@ ActiveRecord::Schema.define(version: 2019_03_05_032112) do
   create_table "musician_genres", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "genre_id"
+    t.bigint "musician_id"
+    t.index ["genre_id"], name: "index_musician_genres_on_genre_id"
+    t.index ["musician_id"], name: "index_musician_genres_on_musician_id"
   end
 
   create_table "musicians", force: :cascade do |t|
@@ -80,19 +84,21 @@ ActiveRecord::Schema.define(version: 2019_03_05_032112) do
     t.string "fullname"
     t.date "date_of_birth"
     t.string "location"
-    t.string "years_experience"
     t.string "tag_line"
     t.string "user_photo"
     t.string "banner_photo"
     t.text "description"
+    t.integer "years_experience"
     t.index ["email"], name: "index_musicians_on_email", unique: true
     t.index ["reset_password_token"], name: "index_musicians_on_reset_password_token", unique: true
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "pending"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "from_id"
+    t.integer "to_id"
   end
 
   create_table "songs", force: :cascade do |t|
@@ -100,6 +106,8 @@ ActiveRecord::Schema.define(version: 2019_03_05_032112) do
     t.string "artist"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "genre_id"
+    t.index ["genre_id"], name: "index_songs_on_genre_id"
   end
 
   add_foreign_key "band_members", "bands"
@@ -107,4 +115,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_032112) do
   add_foreign_key "equipment", "equipment_categories"
   add_foreign_key "equipment_inventories", "equipment"
   add_foreign_key "equipment_inventories", "musicians"
+  add_foreign_key "musician_genres", "genres"
+  add_foreign_key "musician_genres", "musicians"
+  add_foreign_key "songs", "genres"
 end
