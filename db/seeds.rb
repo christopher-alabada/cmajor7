@@ -49,9 +49,23 @@ latino.save!
 ska = Genre.new(name: 'Ska')
 ska.save!
 
-song = Song.new(title: 'Yesterday', artist: 'Beatles')
+
+song = Song.new(title: 'Yesterday', artist: 'The Beatles')
 song = Song.new(title: 'Numb', artist: 'Linkin Park')
 song = Song.new(title: 'Shape of You', artist: 'Ed Sheeran')
+song = Song.new(title: 'Feel Good Inc.', artist: 'Gorillaz')
+song = Song.new(title: 'Through the Fire and Flames', artist: 'Dragon Force')
+song = Song.new(title: 'Yellow Submarine', artist: 'The Beatles')
+song = Song.new(title: 'Papa Was a Rolling Stone', artist: 'Marcus Miller')
+song = Song.new(title: 'Just the two of us', artist: 'Grover Washington')
+song = Song.new(title: 'Autumn leaves', artist: 'Bill Evans')
+
+
+musician = Musician.new(fullname: 'Kumi T', email: 'kumit@example.com', password: 'pass_kumi',
+  username: 'kumit', date_of_birth: DateTime.new(1990, 3, 2), location: 'Osaka', years_experience: '3 years', tag_line: 'Hello', descrption: 'Hi guys, I hope we can have a great time!', user_photo:  )
+musician.save!
+musician.user_photo_url = 'https://www.designskilz.com/random-users/images/imageF31.jpg'
+musician.banner_photo_url = 'https://images.unsplash.com/photo-1462813277085-db5366eb347b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'
 
 musicians = Musician.new(
   username: 'Vic',
@@ -220,8 +234,3 @@ Equipment.new(
   type: 'Mic'
   )
 equipment.save!
-
-
-
-
-
