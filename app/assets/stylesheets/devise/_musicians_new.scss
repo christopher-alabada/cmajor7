@@ -1,0 +1,30 @@
+.sl-page-wrapper {
+}
+
+.sl-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.sl-form {
+  margin: 40px;
+  padding: 20px;
+  background-color: white;
+  width: 500px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.sl-form h2 {
+  text-align: center;
+}
+
+.sl-form-names {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#sl-fullname {
+  margin-right: 15px;
+}
