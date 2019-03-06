@@ -15,6 +15,7 @@
   </div>
 
   <div class="navbar-right">
+<<<<<<< HEAD
     <ul style="list-style: none; display: flex;">
       <%= link_to musicians_path do %>
       <li style="padding: 30px;margin-top: 20px;">Musicians</li>
@@ -26,6 +27,22 @@
       <li style="padding: 30px;margin-top: 20px;">Login</li>
       <% end %>
     </ul>
+=======
+  <% if user_signed_in? %>
+      <div style="color: white ">Hello, <%= current_user.email %> </div>
+      <div class="navbar-wagon-item">
+          <%= link_to "Band", bands_path %>
+          <%= link_to "Musicians", musicians_path %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </div>
+    <% else %>
+    <div class="navbar-wagon-item">
+      <%= link_to "Musicians", musicians_path %>
+      <%= link_to "Log in", new_user_session_path, class: "navbar-item navbar-link" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "navbar-item navbar-link" %>
+    </div>
+<% end %>
+>>>>>>> de09ca3246f3ee58e626f59ca65e4211488b636e
   </div>
 </div>
 </div>
