@@ -11,4 +11,11 @@ class User < ApplicationRecord
 
   mount_uploader :user_photo, PhotoUploader
   mount_uploader :banner_photo, PhotoUploader
+
+  include PgSearch
+  pg_search_scope :search_by_location_and_syllabus,
+    against: [ :location, :syllabus ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
