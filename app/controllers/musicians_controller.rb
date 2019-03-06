@@ -10,9 +10,18 @@ class MusiciansController < ApplicationController
     @musician = Musician.find(params[:id])
   end
 
-  def new
+  def edit
+    @musician = Musician.find(params[:id])
   end
 
-  def create
+  def update
+    @musician = Restaurant.find(params[:id])
+    @musician.update(params[musician_params])
+  end
+
+  private
+
+  def musician_params
+    params.require(:user).permit(:email)
   end
 end
