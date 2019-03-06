@@ -217,7 +217,7 @@ puts "Done seeding equipment"
 puts
 
 puts "Seeding musicians.."
-musician = Musician.new(location: 'shibuya', years_experience: 6, email: 'bruce.black@example.com', nickname: 'bruce', password: 'pass_bruce', date_of_birth: Date.new(1995,3,7), fullname: 'bruce black')
+musician = User.new(location: 'shibuya', years_experience: 6, email: 'bruce.black@example.com', nickname: 'bruce', password: 'pass_bruce', date_of_birth: Date.new(1995,3,7), fullname: 'bruce black')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageM10.jpg'
 musician.remote_banner_photo_url = 'https://images.unsplash.com/photo-1462813277085-db5366eb347b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80'
 # musician.user_photo = 'image/upload/v1551796998/rdcpgemeihk1aij7rkwo.jpg'
@@ -239,7 +239,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: folk)
 music_genres.save!
 puts "Added musician: bruce, bruce.black@example.com, pass_bruce"
 
-musician = Musician.new(location: 'harajuku', years_experience: 8, email: 'jared.johnston@example.com', nickname: 'jared', password: 'pass_jared', date_of_birth: Date.new(2000,12,11), fullname: 'jared johnston')
+musician = User.new(location: 'harajuku', years_experience: 8, email: 'jared.johnston@example.com', nickname: 'jared', password: 'pass_jared', date_of_birth: Date.new(2000,12,11), fullname: 'jared johnston')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageM11.jpg'
 musician.remote_banner_photo_url = 'https://images.pexels.com/photos/164951/pexels-photo-164951.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 # musician.user_photo = 'image/upload/v1551797002/q2fu4ahpld8tiy8kukzp.jpg'
@@ -261,7 +261,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: rock)
 music_genres.save!
 puts "Added musician: jared, jared.johnston@example.com, pass_jared"
 
-musician = Musician.new(location: 'shinjuku', years_experience: 5, email: 'brandon.kennedy@example.com', nickname: 'brandon', password: 'pass_brandon', date_of_birth: Date.new(1987,9,7), fullname: 'brandon kennedy')
+musician = User.new(location: 'shinjuku', years_experience: 5, email: 'brandon.kennedy@example.com', nickname: 'brandon', password: 'pass_brandon', date_of_birth: Date.new(1987,9,7), fullname: 'brandon kennedy')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageM12.jpg'
 musician.remote_banner_photo_url = 'http://www.bishlinebanjos.com/wp/wp-content/uploads/2019/02/DSC_0178.jpg'
 #musician.user_photo = 'image/upload/v1551797005/uqebfkzuzqujfx7oxmdb.jpg'
@@ -285,7 +285,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: rock)
 music_genres.save!
 puts "Added musician: brandon, brandon.kennedy@example.com, pass_brandon"
 
-musician = Musician.new(location: 'shibuya', years_experience: 4, email: 'mitchell.clark@example.com', nickname: 'mitchell', password: 'pass_mitchell', date_of_birth: Date.new(1997,10,12), fullname: 'mitchell clark')
+musician = User.new(location: 'shibuya', years_experience: 4, email: 'mitchell.clark@example.com', nickname: 'mitchell', password: 'pass_mitchell', date_of_birth: Date.new(1997,10,12), fullname: 'mitchell clark')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageM13.jpg'
 musician.remote_banner_photo_url = 'https://images.pexels.com/photos/995301/pexels-photo-995301.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 # musician.user_photo = 'image/upload/v1551797009/b4l6qeu1zmvhrceay4yu.jpg'
@@ -307,7 +307,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: rock)
 music_genres.save!
 puts "Added musician: mitchell, mitchell.clark@example.com, pass_mitchell"
 
-musician = Musician.new(location: 'harajuku', years_experience: 4, email: 'elaine.mcdonalid@example.com', nickname: 'elaine', password: 'pass_elaine', date_of_birth: Date.new(1990,1,24), fullname: 'elaine mcdonalid')
+musician = User.new(location: 'harajuku', years_experience: 4, email: 'elaine.mcdonalid@example.com', nickname: 'elaine', password: 'pass_elaine', date_of_birth: Date.new(1990,1,24), fullname: 'elaine mcdonalid')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageF11.jpg'
 musician.remote_banner_photo_url = 'https://i.ytimg.com/vi/lk-31oNWjCY/maxresdefault.jpg'
 # musician.user_photo = 'image/upload/v1551797013/bcj3wbqfxorbqfsrn5gw.jpg'
@@ -331,7 +331,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: rock)
 music_genres.save!
 puts "Added musician: elaine, elaine.mcdonalid@example.com, pass_elaine"
 
-musician = Musician.new(location: 'meguro', years_experience: 25, email: 'clara.gibson@example.com', nickname: 'clara', password: 'pass_clara', date_of_birth: Date.new(1985,3,1), fullname: 'clara gibson')
+musician = User.new(location: 'meguro', years_experience: 25, email: 'clara.gibson@example.com', nickname: 'clara', password: 'pass_clara', date_of_birth: Date.new(1985,3,1), fullname: 'clara gibson')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageF12.jpg'
 musician.remote_banner_photo_url = 'https://images.pexels.com/photos/459797/pexels-photo-459797.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 # musician.user_photo = 'image/upload/v1551797016/wbaj5vqlo5lbyixtlhvh.jpg'
@@ -355,7 +355,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: country)
 music_genres.save!
 puts "Added musician: clara, clara.gibson@example.com, pass_clara"
 
-musician = Musician.new(location: 'harajuku', years_experience: 4, email: 'timothy.marshall@example.com', nickname: 'timothy', password: 'pass_timothy', date_of_birth: Date.new(1983,8,4), fullname: 'timothy marshall')
+musician = User.new(location: 'harajuku', years_experience: 4, email: 'timothy.marshall@example.com', nickname: 'timothy', password: 'pass_timothy', date_of_birth: Date.new(1983,8,4), fullname: 'timothy marshall')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageM14.jpg'
 musician.remote_banner_photo_url = 'https://res.cloudinary.com/ctopher02/image/upload/c_scale,w_1200/v1551792327/derek-truninger-41776-unsplash.jpg'
 # musician.user_photo = 'image/upload/v1551797020/a78c5mpqjdm4ddtknds0.jpg'
@@ -375,7 +375,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: rock)
 music_genres.save!
 puts "Added musician: timothy, timothy.marshall@example.com, pass_timothy"
 
-musician = Musician.new(location: 'shibuya', years_experience: 8, email: 'andre.white@example.com', nickname: 'andre', password: 'pass_andre', date_of_birth: Date.new(1987,9,5), fullname: 'andre white')
+musician = User.new(location: 'shibuya', years_experience: 8, email: 'andre.white@example.com', nickname: 'andre', password: 'pass_andre', date_of_birth: Date.new(1987,9,5), fullname: 'andre white')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageM15.jpg'
 musician.remote_banner_photo_url = 'https://images.pexels.com/photos/1327430/pexels-photo-1327430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 # musician.user_photo = 'image/upload/v1551797023/kmeh2mzrggdfxvwn383p.jpg'
@@ -391,7 +391,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: blues)
 music_genres.save!
 puts "Added musician: andre, andre.white@example.com, pass_andre"
 
-musician = Musician.new(location: 'shinjuku', years_experience: 19, email: 'erin.bennett@example.com', nickname: 'erin', password: 'pass_erin', date_of_birth: Date.new(1997,2,12), fullname: 'erin bennett')
+musician = User.new(location: 'shinjuku', years_experience: 19, email: 'erin.bennett@example.com', nickname: 'erin', password: 'pass_erin', date_of_birth: Date.new(1997,2,12), fullname: 'erin bennett')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageF3.jpg'
 musician.remote_banner_photo_url = 'http://media.liveauctiongroup.net/i/31735/27403562_2.jpg?v=8D4B38EC9356450'
 # musician.user_photo = 'image/upload/v1551797026/bs3x8js9dvtrifigypg6.jpg'
@@ -411,7 +411,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: indie)
 music_genres.save!
 puts "Added musician: erin, erin.bennett@example.com, pass_erin"
 
-musician = Musician.new(location: 'harajuku', years_experience: 3, email: 'dolores.wade@example.com', nickname: 'dolores', password: 'pass_dolores', date_of_birth: Date.new(1998,8,9), fullname: 'dolores wade')
+musician = User.new(location: 'harajuku', years_experience: 3, email: 'dolores.wade@example.com', nickname: 'dolores', password: 'pass_dolores', date_of_birth: Date.new(1998,8,9), fullname: 'dolores wade')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageF14.jpg'
 musician.remote_banner_photo_url = 'https://images.pexels.com/photos/1539788/pexels-photo-1539788.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 # musician.user_photo = 'image/upload/v1551797030/cgozuca8is24myhey1gt.jpg'
@@ -431,7 +431,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: classic_rock)
 music_genres.save!
 puts "Added musician: dolores, dolores.wade@example.com, pass_dolores"
 
-musician = Musician.new(location: 'roppongi', years_experience: 8, email: 'terrance.fernandez@example.com', nickname: 'terrance', password: 'pass_terrance', date_of_birth: Date.new(1999,3,6), fullname: 'terrance fernandez')
+musician = User.new(location: 'roppongi', years_experience: 8, email: 'terrance.fernandez@example.com', nickname: 'terrance', password: 'pass_terrance', date_of_birth: Date.new(1999,3,6), fullname: 'terrance fernandez')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageM16.jpg'
 musician.remote_banner_photo_url = 'https://res.cloudinary.com/ctopher02/image/upload/c_scale,w_2400/v1551793513/adi-goldstein-688835-unsplash.jpg'
 # musician.user_photo = 'image/upload/v1551797033/ilaaqhmnomxt2ja8y2vh.jpg'
@@ -449,7 +449,7 @@ music_genres = MusicianGenre.new(musician: musician, genre: electronic)
 music_genres.save!
 puts "Added musician: terrance, terrance.fernandez@example.com, pass_terrance"
 
-musician = Musician.new(location: 'shibuya', years_experience: 3, email: 'neil.graves@example.com', nickname: 'neil', password: 'pass_neil', date_of_birth: Date.new(1980,8,30), fullname: 'neil graves')
+musician = User.new(location: 'shibuya', years_experience: 3, email: 'neil.graves@example.com', nickname: 'neil', password: 'pass_neil', date_of_birth: Date.new(1980,8,30), fullname: 'neil graves')
 musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageM17.jpg'
 musician.remote_banner_photo_url = 'https://images.pexels.com/photos/35679/instruments-music-drums-guitar.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 # musician.user_photo = 'image/upload/v1551797037/rnplbe3mjikst0ezonk3.jpg'
