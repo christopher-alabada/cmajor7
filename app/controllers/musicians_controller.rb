@@ -7,7 +7,7 @@ class MusiciansController < ApplicationController
       query = params[:query].downcase
       locations = policy_scope(User).where('lower(location) = ?', query.downcase)
       instrument = User.joins(:equipments).where("equipment_type ILIKE ?", "%#{params[:query.downcase]}%")
-      @musicians = locations + instrument
+      @musicians = (locations + instrument).uniq
     else
       @musicians = policy_scope(User)
     end
