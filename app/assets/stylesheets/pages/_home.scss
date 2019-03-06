@@ -5,11 +5,15 @@ body {
 }
 
 .header {
-  font-family: 'montserrat';
+  font-style: bold;
   color: #121212;
   font-size: 35px;
   text-align: center;
-  margin: 0;
+  margin-right: 350px;
+  margin-left: 350px;
+  margin-bottom: 80px;
+  padding-bottom: 5px;
+  border-bottom: 6px solid #9745AF
 }
 
 .landing-banner {
