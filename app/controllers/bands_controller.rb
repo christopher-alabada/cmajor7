@@ -3,7 +3,8 @@ class BandsController < ApplicationController
   skip_after_action :verify_authorized, only: :show
 
   def show
-    # @band = Band.find(params[:id])
+    @band = Band.find(params[:id])
+    raise
     # authorize @band
   end
 end
