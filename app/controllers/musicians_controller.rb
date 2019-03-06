@@ -1,17 +1,17 @@
 class MusiciansController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:index, :show]
-  # skip_after_action :verify_authorized, only: :show
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_after_action :verify_authorized, only: :show
 
   def index
-    @musicians = Musician.all
+    @musicians = policy_scope(User)
   end
 
   def show
-    @musician = Musician.find(params[:id])
+    @musician = User.find(params[:id])
   end
 
   def edit
-    @musician = Musician.find(params[:id])
+    @musician = User.find(params[:id])
   end
 
   def update

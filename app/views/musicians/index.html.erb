@@ -16,10 +16,14 @@
             <div class="musician-card">
               <%= link_to musician_path(musician) do %>
                 <%= cl_image_tag(musician.user_photo, class: 'musician-image') %>
+                <div class="form-inline musician-equipment">
+                  <% musician.equipments.each do |e| %>
+                    <%= e.equipment_type.capitalize %>,
+                  <% end %>
+                </div>
                 <p class="nickname"><%= musician.nickname.capitalize! %></p>
                 <p class="tag-line"><%= musician.tag_line %></p>
                 <p class="location">Location :  <%= musician.location.capitalize! %></p>
-                <% raise %>
               <% end %>
             </div>
           </div>
