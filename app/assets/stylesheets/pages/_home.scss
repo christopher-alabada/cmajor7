@@ -5,7 +5,6 @@ body {
 }
 
 .header {
-  // font-family: 'montserrat';
   color: #121212;
   font-size: 35px;
   text-align: center;
@@ -40,6 +39,25 @@ body {
 .landing-search-bar {
   display: flex;
   justify-content: center;
+}
+
+.band-body h1 {
+  font-family: 'montserrat';
+  font-size: 32px;
+  color: #FFFFFF;
+}
+
+.band-body h2 {
+  font-family: 'source sans pro';
+  font-size: 18px;
+  color: #FFFFFF;
+  width: 550px;
+}
+
+.band-body p {
+  font-family: 'source sans pro';
+  font-size: 16px;
+  color: #FFFFFF;
 }
 
 .down-arrow-icon {
@@ -86,7 +104,7 @@ body {
 .landing-footer {
   background-color: #121212;
   color: white;
-  height:60px;
+  height: 60px;
   padding: 20px;
   height: 200px;
 }

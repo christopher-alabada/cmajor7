@@ -3,7 +3,14 @@ class MusiciansController < ApplicationController
   skip_after_action :verify_authorized, only: :show
 
   def index
-    @musicians = policy_scope(User)
+    if params[:query].present?
+      query = params[:query].downcase
+      locations = policy_scope(User).where('lower(location) = ?', query.downcase)
+      instrument = User.joins(:equipments).where("equipment_type ILIKE ?", "%#{params[:query.downcase]}%")
+      @musicians = (locations + instrument).uniq
+    else
+      @musicians = policy_scope(User)
+    end
   end
 
   def show
