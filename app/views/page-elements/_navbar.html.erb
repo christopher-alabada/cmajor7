@@ -16,15 +16,27 @@
 
   <div class="navbar-right">
     <ul style="list-style: none; display: flex;">
+
+    <% if user_signed_in? %>
+      <li style="padding: 30px;margin-top: 20px;color: white"><%= current_user.email %></li>
       <%= link_to musicians_path do %>
       <li style="padding: 30px;margin-top: 20px;">Musicians</li>
       <% end %>
-      <%= link_to new_musician_registration_path do %>
+      <%= link_to destroy_user_session_path, method: 'delete' do %>
+      <li style="padding: 30px;margin-top: 20px;">Logout</li>
+      <% end %>
+    <% else %>
+      <%= link_to musicians_path do %>
+      <li style="padding: 30px;margin-top: 20px;">Musicians</li>
+      <% end %>
+      <%= link_to new_user_registration_path do %>
       <li style="padding: 30px;margin-top: 20px;">Join us</li>
       <% end %>
-      <%= link_to new_musician_session_path do %>
+      <%= link_to new_user_session_path do %>
       <li style="padding: 30px;margin-top: 20px;">Login</li>
       <% end %>
+    <% end %>
+
     </ul>
   </div>
 </div>
