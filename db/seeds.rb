@@ -225,17 +225,17 @@ musician.remote_banner_photo_url = 'https://images.unsplash.com/photo-1462813277
 musician.tag_line = "Are you a Deadhead?"
 musician.description = "Big fan of Grateful Dead and Pink Floyd. Also love bluegrass. Let's jam!"
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: acoustic_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: classic_rock)
+music_genres = MusicianGenre.new(user: musician, genre: classic_rock)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: rock)
+music_genres = MusicianGenre.new(user: musician, genre: rock)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: bluegrass)
+music_genres = MusicianGenre.new(user: musician, genre: bluegrass)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: folk)
+music_genres = MusicianGenre.new(user: musician, genre: folk)
 music_genres.save!
 puts "Added musician: bruce, bruce.black@example.com, pass_bruce"
 
@@ -247,17 +247,17 @@ musician.remote_banner_photo_url = 'https://images.pexels.com/photos/164951/pexe
 musician.tag_line = "I've got the keys you were looking for."
 musician.description = "Hey there! Classical trained pianist, but I play mostly indie pop and indie rock. I know a lot of rock songs of the 90's so I'm down for that too."
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_piano)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_piano)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: keyboards)
+inventory = EquipmentInventory.new(user: musician, equipment: keyboards)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: piano)
+inventory = EquipmentInventory.new(user: musician, equipment: piano)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: pop)
+music_genres = MusicianGenre.new(user: musician, genre: pop)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: indie)
+music_genres = MusicianGenre.new(user: musician, genre: indie)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: rock)
+music_genres = MusicianGenre.new(user: musician, genre: rock)
 music_genres.save!
 puts "Added musician: jared, jared.johnston@example.com, pass_jared"
 
@@ -269,19 +269,19 @@ musician.remote_banner_photo_url = 'http://www.bishlinebanjos.com/wp/wp-content/
 musician.tag_line = "Learned to play in the Appalachian Mountains"
 musician.description = "I lived in a cabin in the Appalachian Mountains and immersed myself with Carolina Bluegrass. Hopefully you can play some bluegrass, but if not, no worries. I'm pretty versatile."
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: banjo)
+inventory = EquipmentInventory.new(user: musician, equipment: banjo)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: acoustic_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: bluegrass)
+music_genres = MusicianGenre.new(user: musician, genre: bluegrass)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: folk)
+music_genres = MusicianGenre.new(user: musician, genre: folk)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: indie)
+music_genres = MusicianGenre.new(user: musician, genre: indie)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: rock)
+music_genres = MusicianGenre.new(user: musician, genre: rock)
 music_genres.save!
 puts "Added musician: brandon, brandon.kennedy@example.com, pass_brandon"
 
@@ -293,17 +293,17 @@ musician.remote_banner_photo_url = 'https://images.pexels.com/photos/995301/pexe
 musician.tag_line = "Need some bluesy or jazzy beats?"
 musician.description = "Been playing drums for 4 years and I love it. I play mostly blues and some jazz. Wanna jam?"
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: drums)
+inventory = EquipmentInventory.new(user: musician, equipment: drums)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: cajon)
+inventory = EquipmentInventory.new(user: musician, equipment: cajon)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: acoustic_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: blues)
+music_genres = MusicianGenre.new(user: musician, genre: blues)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: jazz)
+music_genres = MusicianGenre.new(user: musician, genre: jazz)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: rock)
+music_genres = MusicianGenre.new(user: musician, genre: rock)
 music_genres.save!
 puts "Added musician: mitchell, mitchell.clark@example.com, pass_mitchell"
 
@@ -315,19 +315,19 @@ musician.remote_banner_photo_url = 'https://i.ytimg.com/vi/lk-31oNWjCY/maxresdef
 musician.tag_line = "Singer who just moved to Tokyo"
 musician.description = "I'm a jazz trained vocalist who loves Peggy Lee. I mostly sing pop/indie/rock songs though. I can also play the guitar. Thanks for visiting my profile."
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: vocals)
+inventory = EquipmentInventory.new(user: musician, equipment: vocals)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: acoustic_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: pop)
+music_genres = MusicianGenre.new(user: musician, genre: pop)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: indie)
+music_genres = MusicianGenre.new(user: musician, genre: indie)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: jazz)
+music_genres = MusicianGenre.new(user: musician, genre: jazz)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: rock)
+music_genres = MusicianGenre.new(user: musician, genre: rock)
 music_genres.save!
 puts "Added musician: elaine, elaine.mcdonalid@example.com, pass_elaine"
 
@@ -339,19 +339,19 @@ musician.remote_banner_photo_url = 'https://images.pexels.com/photos/459797/pexe
 musician.tag_line = "Folksy Singer/Songwriter"
 musician.description = "Love me some folk music. Grew up in Vermont and been playing guitar since I was a kid. Some influences: Simon & Garfunkel, and The Avett Brothers."
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: vocals)
+inventory = EquipmentInventory.new(user: musician, equipment: vocals)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: acoustic_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: keyboards)
+inventory = EquipmentInventory.new(user: musician, equipment: keyboards)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: folk)
+music_genres = MusicianGenre.new(user: musician, genre: folk)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: indie)
+music_genres = MusicianGenre.new(user: musician, genre: indie)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: rock)
+music_genres = MusicianGenre.new(user: musician, genre: rock)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: country)
+music_genres = MusicianGenre.new(user: musician, genre: country)
 music_genres.save!
 puts "Added musician: clara, clara.gibson@example.com, pass_clara"
 
@@ -363,15 +363,15 @@ musician.remote_banner_photo_url = 'https://res.cloudinary.com/ctopher02/image/u
 musician.tag_line = "Bass! How low can you go?!"
 musician.description = "I bring the grooves. Play mostly funk. Can also play some hip hop grooves."
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_bass)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: upright)
+inventory = EquipmentInventory.new(user: musician, equipment: upright)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: funk)
+music_genres = MusicianGenre.new(user: musician, genre: funk)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: hip_hop)
+music_genres = MusicianGenre.new(user: musician, genre: hip_hop)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: rock)
+music_genres = MusicianGenre.new(user: musician, genre: rock)
 music_genres.save!
 puts "Added musician: timothy, timothy.marshall@example.com, pass_timothy"
 
@@ -383,11 +383,11 @@ musician.remote_banner_photo_url = 'https://images.pexels.com/photos/1327430/pex
 musician.tag_line = "Jazz drummer here"
 musician.description = "I play mostly jazz and some blues. Let's jam."
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: drums)
+inventory = EquipmentInventory.new(user: musician, equipment: drums)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: jazz)
+music_genres = MusicianGenre.new(user: musician, genre: jazz)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: blues)
+music_genres = MusicianGenre.new(user: musician, genre: blues)
 music_genres.save!
 puts "Added musician: andre, andre.white@example.com, pass_andre"
 
@@ -399,15 +399,15 @@ musician.remote_banner_photo_url = 'http://media.liveauctiongroup.net/i/31735/27
 musician.tag_line = "You tip it on the side, \"chello\", you've got a bass."
 musician.description = "I play the Chello and aspire to play for the Tokyo Symphony Orchestra. I also like indie pop and indie rock. So let's get together."
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: cello)
+inventory = EquipmentInventory.new(user: musician, equipment: cello)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: upright)
+inventory = EquipmentInventory.new(user: musician, equipment: upright)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_bass)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: classical)
+music_genres = MusicianGenre.new(user: musician, genre: classical)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: indie)
+music_genres = MusicianGenre.new(user: musician, genre: indie)
 music_genres.save!
 puts "Added musician: erin, erin.bennett@example.com, pass_erin"
 
@@ -419,15 +419,15 @@ musician.remote_banner_photo_url = 'https://images.pexels.com/photos/1539788/pex
 musician.tag_line = "Classic Rock vocalist and guitarist."
 musician.description = "Joan Jett and Stevie Nicks are my influences. I sing and play guitar. I can't wait to play."
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: vocals)
+inventory = EquipmentInventory.new(user: musician, equipment: vocals)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: acoustic_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: rock)
+music_genres = MusicianGenre.new(user: musician, genre: rock)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: classic_rock)
+music_genres = MusicianGenre.new(user: musician, genre: classic_rock)
 music_genres.save!
 puts "Added musician: dolores, dolores.wade@example.com, pass_dolores"
 
@@ -439,13 +439,13 @@ musician.remote_banner_photo_url = 'https://res.cloudinary.com/ctopher02/image/u
 musician.tag_line = "Poppy electronic keyboardist."
 musician.description = "I like airy poppy electronic chill music. I've made a bunch of tracks and want to play with other people."
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: keyboards)
+inventory = EquipmentInventory.new(user: musician, equipment: keyboards)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_bass)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: indie)
+music_genres = MusicianGenre.new(user: musician, genre: indie)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: electronic)
+music_genres = MusicianGenre.new(user: musician, genre: electronic)
 music_genres.save!
 puts "Added musician: terrance, terrance.fernandez@example.com, pass_terrance"
 
@@ -457,15 +457,15 @@ musician.remote_banner_photo_url = 'https://images.pexels.com/photos/35679/instr
 musician.tag_line = "I play drums, guitar, and bass."
 musician.description = "I can play drums, guitar, and bass. Play mostly classic rock and 90's rock. Let's rock together!"
 musician.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: drums)
+inventory = EquipmentInventory.new(user: musician, equipment: drums)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_guitar)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
 inventory.save!
-inventory = EquipmentInventory.new(musician: musician, equipment: electric_bass)
+inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
 inventory.save!
-music_genres = MusicianGenre.new(musician: musician, genre: rock)
+music_genres = MusicianGenre.new(user: musician, genre: rock)
 music_genres.save!
-music_genres = MusicianGenre.new(musician: musician, genre: classic_rock)
+music_genres = MusicianGenre.new(user: musician, genre: classic_rock)
 music_genres.save!
 puts "Added musician: neil, neil.graves@example.com, pass_neil"
 puts "Done seeding musicians"
