@@ -74,8 +74,9 @@ body {
 
 .landing-white-section {
   color: black;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: white;
 }
 
 .landing-white-contents {
@@ -87,8 +88,15 @@ body {
   justify-content: space-around;
 }
 
-.landing-musicians {
+.explore-musician-title {
   background-color: #F8F8F8;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-musicians {
   padding-top: 50px;
   padding-bottom: 50px;
 }
