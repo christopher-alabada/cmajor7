@@ -15,18 +15,18 @@
   </div>
 
   <div class="navbar-right">
-    <% if musician_signed_in? %>
-      <div style="color: white ">Hello, <%= current_musician.email %> </div>
+  <% if user_signed_in? %>
+      <div style="color: white ">Hello, <%= current_user.email %> </div>
       <div class="navbar-wagon-item">
-          <%= link_to "Band", musicians_path %>
+          <%= link_to "Band", bands_path %>
           <%= link_to "Musicians", musicians_path %>
-          <%= link_to "Log out", destroy_musician_session_path, method: :delete %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </div>
     <% else %>
     <div class="navbar-wagon-item">
       <%= link_to "Musicians", musicians_path %>
-      <%= link_to "Log in", new_musician_session_path, class: "navbar-item navbar-link" %>
-      <%= link_to "Sign up", new_musician_registration_path, class: "navbar-item navbar-link" %>
+      <%= link_to "Log in", new_user_session_path, class: "navbar-item navbar-link" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "navbar-item navbar-link" %>
     </div>
 <% end %>
   </div>
