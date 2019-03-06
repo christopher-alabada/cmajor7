@@ -17,6 +17,7 @@
               <%= link_to musician_path(musician) do %>
                 <%= cl_image_tag(musician.user_photo, class: 'musician-image') %>
 
+                <div class="musician-description-shadow">
                 <div class="musician-card-description">
                 <p class="nickname"><%= musician.nickname.capitalize! %></p>
                 <div class="form-inline musician-equipment">
@@ -31,6 +32,7 @@
                 <p class="tag-line"><%= musician.tag_line %></p>
                 <p class="location">Location :  <%= musician.location.capitalize! %></p>
 
+              </div>
               </div>
 
               <% end %>

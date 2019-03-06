@@ -65,32 +65,54 @@
   </div>
 </div>
 
-<div style="justify-content: space-between;align-items: center;align-content: center;display: flex;margin: 0px 55px;font-size: 13px;text-align: center; position: relative; bottom: 10px;">
+</div>
 
-
-
-  </div>
-
+<div class="explore-musician-title">
+  <h3 id="explore" style="font-size: 40px">Explore musicians.</h3>
 </div>
 
 <div class="landing-musicians">
 
-<h1 style="color: #121212;font-family: 'Montserrat'; font-size: 32px; margin-left: 110px; margin-top: 0;">Explore Musicians</h1>
+  <div class="card-container">
 
-<div class="landing-cards">
-<div class="card-trip" style=" width: 250px">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos" >
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
+    <div class="musician-container">
+      <div class="row">
+        <% @musicians[0..5].each do |musician| %>
+          <div class="col-xs-12 col-md-4">
+            <div class="musician-index">
+              <div class="musician-card">
+                <%= link_to musician_path(musician) do %>
+                  <%= cl_image_tag(musician.user_photo, class: 'musician-image') %>
+
+                  <div class="musician-description-shadow">
+                  <div class="musician-card-description">
+                  <p class="nickname"><%= musician.nickname.capitalize! %></p>
+                  <div class="form-inline musician-equipment">
+                    <%
+                      instruments = []
+                      musician.equipments.each do |e|
+                        instruments << e.equipment_type.capitalize
+                      end
+                    %>
+                    <%= instruments.join(" | ") %>
+                  </div>
+                  <p class="tag-line"><%= musician.tag_line %></p>
+                  <p class="location">Location :  <%= musician.location.capitalize! %></p>
+
+                </div>
+                </div>
+
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to musicians_path do %>
+  <h3 id="explore">And more....</h3>
+  <% end %>
     </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
-
   </div>
-</div>
-</div>
 </div>
 
 <div class="landing-footer">
