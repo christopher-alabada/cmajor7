@@ -1,14 +1,15 @@
 // Specific CSS for your home-page
 
 body {
-  background-color: #121212;
+  background-color: white;
 }
 
 .header {
   font-family: 'montserrat';
-  color: white;
+  color: #121212;
   font-size: 35px;
   text-align: center;
+  margin: 0;
 }
 
 .landing-banner {
@@ -23,7 +24,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
 }
 
 .lading-banner-container {
@@ -39,3 +39,41 @@ body {
   display: flex;
   justify-content: center;
 }
+
+.down-arrow-icon {
+  display: flex;
+  justify-content: center;
+  background-color: #121212;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.fa-chevron-down {
+  color: white;
+}
+
+.landing-white-section {
+  color: black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.landing-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.landing-musicians {
+  background-color: #F8F8F8;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.landing-footer {
+  background-color: #121212;
+  color: white;
+  height:60px;
+  padding: 20px;
+  height: 200px;
+}
+
