@@ -11,19 +11,28 @@
   <div class="musician-container">
     <div class="row">
       <% @musicians.each do |musician| %>
-        <div class="col-xs-12 col-sm-3">
+        <div class="col-xs-12 col-md-4">
           <div class="musician-index">
             <div class="musician-card">
               <%= link_to musician_path(musician) do %>
                 <%= cl_image_tag(musician.user_photo, class: 'musician-image') %>
-                <div class="form-inline musician-equipment">
-                  <% musician.equipments.each do |e| %>
-                    <%= e.equipment_type.capitalize %>,
-                  <% end %>
-                </div>
+
+                <div class="musician-card-description">
                 <p class="nickname"><%= musician.nickname.capitalize! %></p>
+                <div class="form-inline musician-equipment">
+                  <%
+                    instruments = []
+                    musician.equipments.each do |e|
+                      instruments << e.equipment_type.capitalize
+                    end
+                  %>
+                  <%= instruments.join(" | ") %>
+                </div>
                 <p class="tag-line"><%= musician.tag_line %></p>
                 <p class="location">Location :  <%= musician.location.capitalize! %></p>
+
+              </div>
+
               <% end %>
             </div>
           </div>

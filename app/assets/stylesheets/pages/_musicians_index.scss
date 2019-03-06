@@ -1,12 +1,13 @@
 .card-container {
-  padding-left: 30px;
+  padding-right: 80px;
+  padding-left: 80px;
 }
 
 .musician-index {
   min-width: 300px;
   background-color: white;
   min-height: 360px;
-  box-shadow: 1px 1px 0px 0px;
+  // box-shadow: 1px 1px 0px 0px;
   margin: 20px;
   // position: relative;
 }
@@ -18,31 +19,39 @@
 
 .musician-image {
   width: 100%;
-  height: 250px;
+  height: 230px;
   object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.musician-card-description {
+  padding-top: 15px;
+  min-height: 120px;
 }
 
 .nickname {
-  padding-left: 20px;
-  // padding-top: 8px;
   color: black;
-  opacity: 0.8;
-  text-shadow: 0.5px 1px #aaaaaa;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  margin:0;
 }
+
 .nickname a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }
 
 .tag-line {
-  padding-left: 20px;
-  padding-right: 15px;
   color: black;
-  opacity: 0.4;
+  opacity: 0.6;
   font-size: 13px;
-  letter-spacing: 0.3px;
-  position: absolute;
-  // line-height: 0.9;
-  bottom: 15px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  padding-top: 5px;
+  margin: 0;
 }
 .tag-line a:hover, a:visited, a:link, a:active {
   text-decoration: none;
@@ -50,28 +59,33 @@
 
 .location {
   // text-shadow: 0.2px 0.2px #7d7d7d;
-  padding-left: 20px;
   color: black;
-  opacity: 0.7;
+  opacity: 0.4;
   font-size: 12px;
   // letter-spacing: 0.2px;
   // padding-bottom: 10px;
-  position: absolute;
-  bottom: 0px;
+  // position: absolute;
+  // bottom: 0px;
   // right: 5px;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding-top: 3px;
 }
+
+
 .location a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }
 
 .musician-equipment {
-  font-size: 10px;
-  padding-left: 20px;
+  font-size: 14px;
   // position: absolute;
   // bottom: 0px;
-  margin-top: 5px;
   color: black;
-  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  opacity: 0.8;
 }
 
 .search-field {
