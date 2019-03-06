@@ -1,12 +1,8 @@
-<!-- change the banner later -->
-<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80') %>');">
+<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@musician.banner_photo) %>');">
   <div class="card-category">
     <h3><%= @musician.nickname.capitalize %></h3>
-    <h2><%= @musician.tag_line %></h2>
-  <!-- </div>
-  <div class="card-description"> -->
+    <h4><%= @musician.tag_line %></h4>
     <p><%= @musician.equipments %></p>
-    <% raise %>
   </div>
 </div>
 
