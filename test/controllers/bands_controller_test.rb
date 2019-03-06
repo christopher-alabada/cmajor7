@@ -1,4 +1,4 @@
-require 'test_helper'
+cprequire 'test_helper'
 
 class BandsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
