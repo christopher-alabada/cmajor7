@@ -1,4 +1,4 @@
-<div class="navbar-logo">
+<div class="navbar-logo" style="background-color: #121212">
   <!-- Logo -->
 
   <div class="logo-h1">
@@ -9,36 +9,27 @@
     </div>
     <%= link_to root_path do %>
     <h1 class="logo-h1 h1" style="margin-bottom: 22px">
-      <%= image_tag 'cmaj7black.PNG', height: 50, width: 90 %>
+      <%= image_tag 'cmaj7.png', height: 50, width: 90 %>
     </h1>
     <% end %>
   </div>
 
   <div class="navbar-right">
-    <ul style="list-style: none; display: flex;">
-
-    <% if user_signed_in? %>
-      <li style="padding: 30px;margin-top: 20px;color: white"><%= current_user.email %></li>
-      <%= link_to musicians_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Musicians</li>
-      <% end %>
-      <%= link_to destroy_user_session_path, method: 'delete' do %>
-      <li style="padding: 30px;margin-top: 20px;">Logout</li>
-      <% end %>
+  <% if user_signed_in? %>
+      <div style="color: white ">Hello, <%= current_user.email %> </div>
+      <div class="navbar-wagon-item">
+          <%= link_to "Band", users_path %>
+          <%= link_to "Musicians", users_path %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      </div>
     <% else %>
-      <%= link_to musicians_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Musicians</li>
-      <% end %>
-      <%= link_to new_user_registration_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Join us</li>
-      <% end %>
-      <%= link_to new_user_session_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Login</li>
-      <% end %>
-    <% end %>
-
-    </ul>
+    <div class="navbar-wagon-item">
+      <%= link_to "Musicians", users_path %>
+      <%= link_to "Log in", new_user_session_path, class: "navbar-item navbar-link" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "navbar-item navbar-link" %>
+    </div>
+<% end %>
   </div>
 </div>
-</div>
-</div>
+
+

@@ -1,61 +1,86 @@
-<div class="banner" style="background: #FC466B;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-">
+<div class="landing-page">
+
+<div class="landing-banner">
+
   <div class="container">
+    <div class="lading-banner-container">
 
-    <div class="word" style = "text-align: center;">
+      <div class="lading-banner-word">
+        <h1 style="font-size: 200px; font-weight: bold;">Let's Play.</h1>
+      </div>
 
-    <div class="h1" style="display: flex; justify-content: center; ">
-      <h1 style="font-size: 200px;">Let's Play.</h1>
+      <div class="flex-grow-3 d-flex">
+        <div class="landing-search-bar">
+          <%= form_tag musicians_path, method: :get, class: "text-left", style: 'padding-left: 50px' do %>
+            <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: "Music instrument or Location" %>
+            <%= submit_tag "Search", class: "btn btn-danger", style: "margin: 43px;padding: 5px 25px 5px; margin-left: 10px;" %>
+          <% end %>
+        </div>
+      </div>
+
     </div>
-    <h2 style="color: white">Cmaj7</h2>
-    <h2>SEARCH BAR HERE</h2>
   </div>
 
-  </div>
 </div>
 
-<br>
+<div class="down-arrow-icon"><i class="fas fa-chevron-down fa-3x"></i></div>
 
-<h1 class="header">A social network for musicians, by musicians.</h1>
+<div class="landing-white-section">
 
-<br> <!-- NO BUENO!! -->
-<br>
-<br>
-<br>
+
+<h1 class="header" style="margin-bottom: 80px;">A social network for musicians, by musicians.</h1>
 
 <div style="justify-content: space-between;align-items: center;align-content: center;display: flex;margin: 0px 185px;position: relative;">
-  <img src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551840372/search-3-512.png" alt='search' style="height: 68px; width: 68px;">
 
-  <img src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551840607/add-user-512.png" alt='connect' style="height: 68px; width: 68px;">
 
-  <img src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551840669/dj-512.png" alt='perform' style="height: 68px; width: 68px;">
+
+
 </div>
 
 <div style="justify-content: space-between;align-items: center;align-content: center;display: flex;margin: 0px 191px;">
-  <h2 style="font-size: 24px; font-weight: bold; font-family: 'open sans'; position: relative; bottom: 15px; color: #FFFFFF">Search</h2>
-  <h2 style="font-size: 24px; font-weight: bold; font-family: 'open sans'; position: relative;right: 12px; bottom: 15px; color: #FFFFFF">Connect</h2>
-  <h2 style="font-size: 24px; font-weight: bold; font-family: 'open sans'; position: relative; bottom: 15px; color: #FFFFFF">Jam!</h2>
+
+
+  <div class="landing-white-contents">
+    <div class="scj-icons">
+     <i class="fas fa-search fa-3x"></i>
+    </div>
+    <h2 style="font-size: 24px; font-weight: bold; font-family: 'open sans'; position: relative; bottom: 15px">Search</h2>
+    <p style="width: 180px">Search for musicians seeking others to jam and perform with.</p>
+  </div>
+
+  <div class="landing-white-contents">
+    <div class="scj-icons">
+     <i class="fas fa-user-friends fa-3x"></i>
+    </div>
+    <h2 style="font-size: 24px; font-weight: bold; font-family: 'open sans'; position: relative; bottom: 15px">Connect</h2>
+    <p style="width: 180px">Connect and form a band over your shared passion of music.</p>
+  </div>
+
+  <div class="landing-white-contents">
+    <div class="scj-icons">
+     <i class="fas fa-music fa-3x"></i>
+    </div>
+    <h2 style="font-size: 24px; font-weight: bold; font-family: 'open sans'; position: relative; bottom: 15px">Jam!</h2>
+     <p style="width: 180px">Meet up, jam, or perform at a select venue.</p>
+  </div>
 </div>
 
 <div style="justify-content: space-between;align-items: center;align-content: center;display: flex;margin: 0px 55px;font-size: 13px;text-align: center; position: relative; bottom: 10px;">
-  <p style="width: 180px;position: relative;left: 85px; color: #FFFFFF">Search for musicians seeking others to jam and perform with.</p>
-  <p style="position: relative;left: 4px;width: 180px;text-align: center; color: #FFFFFF">Connect and form a band over your shared passion of music.</p>
-  <p style="position: relative;right: 70px;bottom: 10px;width: 180px; color: #FFFFFF">Meet up, jam, or perform at a select venue.</p>
+
+
+
   </div>
 
-<br>
-<br>
-<br>
-<br>
+</div>
 
+<div class="landing-musicians">
 
-<h1 style="color: #FFFFFF;font-family: 'Montserrat';font-weight: lighter;font-size: 32px;position:relative; left: 105px;">Explore Musicians</h1>
+<h1 style="color: #121212;font-family: 'Montserrat'; font-size: 32px; margin-left: 110px; margin-top: 0;">Explore Musicians</h1>
 
-<div class="card-trip" style=" width: 250px;position: relative;left: 105px;top: 15px;">
+<div class="landing-cards">
+<div class="card-trip" style=" width: 250px">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
+  <div class="card-trip-infos" >
     <div>
       <h2>Title here</h2>
       <p>Short description here!</p>
@@ -65,16 +90,12 @@ background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, F
 
   </div>
 </div>
+</div>
+</div>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
+<div class="landing-footer">
+  footer here
+</div>
 
 
 
