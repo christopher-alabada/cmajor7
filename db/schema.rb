@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_06_051835) do
+ActiveRecord::Schema.define(version: 2019_03_06_053841) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,11 +132,11 @@ ActiveRecord::Schema.define(version: 2019_03_06_051835) do
   end
 
   add_foreign_key "band_members", "bands"
-  add_foreign_key "band_members", "musicians", column: "user_id"
+  add_foreign_key "band_members", "users"
   add_foreign_key "equipment", "equipment_categories"
   add_foreign_key "equipment_inventories", "equipment"
-  add_foreign_key "equipment_inventories", "musicians", column: "user_id"
+  add_foreign_key "equipment_inventories", "users"
   add_foreign_key "musician_genres", "genres"
-  add_foreign_key "musician_genres", "musicians", column: "user_id"
+  add_foreign_key "musician_genres", "users"
   add_foreign_key "songs", "genres"
 end
