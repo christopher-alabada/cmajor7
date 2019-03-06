@@ -3,7 +3,6 @@
   background-position: center;
   padding: 200px 0;
   height: 82vh;
-  box-shadow: 0px 0.5px 3.5px 0px grey;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,4 +21,32 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-band {
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+  height: 55vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-band h1 {
+  font-family: "montserrat";
+  font-size: 32px;
+  color: #FFFFFF;
+}
+
+.banner-band h2 {
+  font-family: "open sans";
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+.banner-band p {
+  font-family: "source sans pro";
+  font-size: 16px;
+  color: #FFFFFF;
 }
