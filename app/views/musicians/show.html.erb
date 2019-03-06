@@ -1,8 +1,12 @@
 <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@musician.banner_photo) %>');">
   <div class="card-category">
     <h3><%= @musician.nickname.capitalize %></h3>
-    <h4><%= @musician.tag_line %></h4>
-    <p><%= @musician.equipments %></p>
+      <h4><%= @musician.tag_line %></h4>
+    <div class="banner-musician-description">
+      <% @musician.equipments.each do |e| %>
+        <p><%= e.equipment_type.capitalize %></p>
+      <% end %>
+    </div>
   </div>
 </div>
 
@@ -21,24 +25,26 @@
         <h3 class="musician-name"><%#= @musician.nickname %></h3>
         <div class="card-description">
           <div class="card-contents">
-            <div><h4 class='text-center'><%= @musician.nickname.capitalize %></h4>
-              <p class='want-to'>want to play with <%= @musician.nickname %>?</p>
-              <input type="checkbox" style="display: none;" id="connect">
+            <div>
+              <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
+              <h4 class='text-center'><%= @musician.nickname.capitalize %></h4>
+              <p class='want-to text-center'>want to play with <%= @musician.nickname %>?</p>
+             <!--  <input type="checkbox" style="display: none;" id="connect">
                 <div class="popup" style="display: none;">
                   <div class="col-md-6">
-                    <%= simple_form_for [@musician], url: musician_path(@musician) do |f|  %>
-                    <%= f.input :to_requests, as: :string %>
+                    <%#= simple_form_for [@musician], url: musician_path(@musician) do |f|  %>
+                    <%#= f.input :to_requests, as: :string %>
                     <%#= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-                      <p class='submit'><%= f.button :submit, "Connect", class: "button" %></p>
-                    <% end %>
-              </div>
-                </div>
+                      <p class='submit'><%#= f.button :submit, "Connect", class: "button" %></p>
+                    <%# end %>
+                  </div>
+                </div> -->
                 <div id="connect">
-                  <p class="btn btn-primary connect">Connect</p>
+                  <p class="btn btn-primary connect align-center">Connect</p>
                 </div>
-                <%#= link_to band_path(@band) do %>
-                <p class="view text-right">View all the bands <%= @musician.nickname %> is in </p>
-                <%# end %>
+                <%= link_to band_path(@musician) do %>
+                <p class="view text-center">View all the bands <%= @musician.nickname %> is in </p>
+                <% end %>
             </div>
             <script>
               $(document).ready(function() {
@@ -53,13 +59,11 @@
               });
             </script>
           </div>
-          <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
         </div>
       </div>
     </div>
 
   </div>
 </div>
-</body>
 
 
