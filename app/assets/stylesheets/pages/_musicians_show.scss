@@ -16,6 +16,21 @@
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
 }
 
+.card-contents {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-user {
+  background-size: auto;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  background-position: center;
+}
+
 .card-category {
   color: white;
   position: absolute;
@@ -28,6 +43,7 @@
 .profile-container {
   color: white;
   opacity: 0.7;
+  padding-right: 70px;
 }
 
 .profile-container h1 {
@@ -55,6 +71,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 100px;
+  margin-top: 50px;
 }
 
 .show-container {
@@ -68,12 +86,21 @@
 }
 .want-to {
   font-size: 15px;
+  line-height: 0.3em;
   color: #929aab;
 }
 
 .view {
   margin-top: 5px;
-  margin-right: 5px;
   font-size: 10px;
-  color: blue;
+  color: #393e46;
+}
+.view:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#connect {
+  display: flex;
+  justify-content: center;
 }
