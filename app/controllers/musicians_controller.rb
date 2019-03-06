@@ -3,15 +3,15 @@ class MusiciansController < ApplicationController
   # skip_after_action :verify_authorized, only: :show
 
   def index
-    @musicians = Musician.all
+    @musicians = User.all
   end
 
   def show
-    @musician = Musician.find(params[:id])
+    @musician = User.find(params[:id])
   end
 
   def edit
-    @musician = Musician.find(params[:id])
+    @musician = User.find(params[:id])
   end
 
   def update
