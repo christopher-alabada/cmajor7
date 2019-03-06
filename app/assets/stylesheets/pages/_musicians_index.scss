@@ -1,30 +1,74 @@
 .card-container {
-  padding-left: 50px;
-}
-.wrapper {
-  margin-left: 50px;
+  padding-left: 30px;
 }
 
 .musician-index {
   min-width: 300px;
   background-color: white;
-  min-height: 200px;
+  min-height: 350px;
   box-shadow: 1px 1px 0px 0px;
-}
-
-.musician-index {
+  margin: 20px;
   // position: relative;
 }
 
-.card-description {
-  // position: absolute;
-  bottom: 10px;
-  left: 10px;
+.musician-card {
+  min-height: 350px;
+  position: relative;
 }
+
+.musician-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.nickname {
+  padding-left: 20px;
+  padding-top: 8px;
+  color: black;
+  opacity: 0.8;
+  text-shadow: 0.5px 1px #aaaaaa;
+}
+.nickname a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+.tag-line {
+  padding-left: 20px;
+  padding-right: 15px;
+  color: black;
+  opacity: 0.6;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  position: absolute;
+  bottom: 20px;
+}
+.tag-line a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+.location {
+  padding-left: 20px;
+  color: black;
+  opacity: 0.8;
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  // padding-bottom: 10px;
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+}
+.location a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
 .search-field {
   width: 300px;
 }
 
+
 #explore {
-  color: #40514e;
+  padding-left: 20px;
+  color: white;
+  opacity: 0.7;
 }
