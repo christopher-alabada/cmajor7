@@ -1,4 +1,4 @@
-<div class="navbar-logo">
+<div class="navbar-logo" style="background-color: #121212;">
   <!-- Logo -->
 
   <div class="logo-h1">
@@ -9,7 +9,7 @@
     </div>
     <%= link_to root_path do %>
     <h1 class="logo-h1 h1" style="margin-bottom: 22px">
-      <%= image_tag 'cmaj7black.PNG', height: 50, width: 90 %>
+      <%= image_tag 'cmaj7.png', height: 50, width: 90 %>
     </h1>
     <% end %>
   </div>
@@ -17,16 +17,14 @@
   <div class="navbar-right">
     <ul style="list-style: none; display: flex;">
       <%= link_to musicians_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Musicians</li>
+      <li style="padding: 30px;margin-top: 20px; color: #fafafa;">Musicians</li>
       <% end %>
       <%= link_to new_musician_registration_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Join us</li>
+      <li style="padding: 30px;margin-top: 20px; color: #fafafa;">Join us</li>
       <% end %>
       <%= link_to new_musician_session_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Login</li>
+      <li style="padding: 30px;margin-top: 20px; color: #fafafa;">Login</li>
       <% end %>
     </ul>
   </div>
-</div>
-</div>
 </div>
