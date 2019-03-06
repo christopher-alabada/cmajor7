@@ -1,12 +1,83 @@
 // Specific CSS for your home-page
 
 body {
-  background-color: #FFFFFF;
+  background-color: white;
 }
 
 .header {
   font-family: 'montserrat';
-  color: #000000;
+  color: #121212;
   font-size: 35px;
   text-align: center;
+  margin: 0;
 }
+
+.landing-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 200px 0;
+  height: 82vh;
+  box-shadow: 0px 0.5px 3.5px 0px grey;
+  background: #FC466B;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lading-banner-container {
+  margin-top: 120px;
+}
+
+.lading-banner-word {
+  text-align: center;
+  color: white;
+}
+
+.landing-search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.down-arrow-icon {
+  display: flex;
+  justify-content: center;
+  background-color: #121212;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.fa-chevron-down {
+  color: white;
+}
+
+.landing-white-section {
+  color: black;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.landing-white-contents {
+  text-align: center;
+}
+
+.landing-cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.landing-musicians {
+  background-color: #F8F8F8;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.landing-footer {
+  background-color: #121212;
+  color: white;
+  height:60px;
+  padding: 20px;
+  height: 200px;
+}
+
