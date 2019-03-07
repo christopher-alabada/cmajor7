@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :bands, only: [:index, :show]
 
   post '/requests', to: 'requests#create'
+  patch '/requests/:id', to: 'requests#update_status', as: 'edit_status_requests'
 end

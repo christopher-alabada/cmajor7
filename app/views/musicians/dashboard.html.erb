@@ -49,31 +49,39 @@
             <% @from_requests.each do |r| %>
               <div class="r-card">
                 <p>Status : <%= r.status.capitalize %></p>
-                <p>Message : <%= r.message %></p>
                 <% @musicians.where(id: r.to_id).each do |m| %>
                   <p>Request to : <%= m.nickname.capitalize! %></p>
                   <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                <% end %>
+                <p>Message : <%= r.message %></p>
+                <% if button_text = status_button_text(r) %>
+                  <%= link_to button_text.capitalize, edit_status_requests_path(r), method: 'patch', class: "btn btn-primary" %>
+                <% end %>
+                <% unless r.status == 'confirmed' || r.status == 'rejected' %>
+                  <%= link_to 'Reject', edit_status_requests_path(r, reject: 1), method: 'patch', class: "btn btn-danger" %>
                 <% end %>
               </div>
             <% end %>
          </div>
 
-        <div class="to-requests">
-          <div class="r-t-container">
-            <% if @to_requests.exists? %>
-              <% @to_requests.each do |i| %>
-                <%= i.status %>
-                <%= i.message %>
+         <div class="to-request">
+            <% @to_requests.each do |r| %>
+              <div class="r-card">
+                <p>Status : <%= r.status.capitalize %></p>
                 <% @musicians.where(id: r.from_id).each do |m| %>
-                  <%= m.nickname.capitalize! %>
+                  <p>Request from : <%= m.nickname.capitalize! %></p>
                   <%= cl_image_tag(m.user_photo, class: 'r-img') %>
                 <% end %>
-              <% end %>
-            <% else %>
-              <%= 'No requests from other musicians yet...' %>
+                <p>Message : <%= r.message %></p>
+                <% if button_text = status_button_text(r) %>
+                  <%= link_to button_text.capitalize, edit_status_requests_path(r), method: 'patch', class: "btn btn-success" %>
+                <% end %>
+                <% unless r.status == 'confirmed' || r.status == 'rejected' %>
+                  <%= link_to 'Reject', edit_status_requests_path(r, reject: 1), method: 'patch', class: "btn btn-danger" %>
+                <% end %>
+              </div>
             <% end %>
-          </div>
-        </div>
+         </div>
 
     </div>
 

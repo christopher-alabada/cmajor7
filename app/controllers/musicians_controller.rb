@@ -42,6 +42,16 @@ class MusiciansController < ApplicationController
     # authorize @band
   end
 
+  def status_button_text(request)
+    if current_user == request.to && request.status == 'pending'
+      return 'accept'
+    end
+    if current_user == request.from && request.status == 'accepted'
+      return 'confirm'
+    end
+  end
+  helper_method :status_button_text
+
   private
 
   def musician_params
