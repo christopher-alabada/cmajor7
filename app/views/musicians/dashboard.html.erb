@@ -40,8 +40,7 @@
   </div>
 </div>
 <div class="requests">
-  <%= @from_requests.each  {|r| r.to } %>
+  <%= @from_requests.each {|r| r.status} %>
   <%= @to_requests.each  {|r| r.from } %>
-
 </div>
 </div>
