@@ -1,37 +1,80 @@
-<div class="banner-band" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/harrisongarovi/image/upload/v1551851442/adult-artist-artists-210887.jpg);">
-  <div class="container">
-    <div class="band-container" style="margin-bottom: 305px;">
-    <h1>Gorillaz</h1>
-    <h2>Unique band, unique sound</h2>
-    <p>Genre: Rock, Alternative</p>
-    </div>
+<div class="show-banner" style="box-shadow: 0px 0px 5px #000000; background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/harrisongarovi/image/upload/v1551851442/adult-artist-artists-210887.jpg);">
+  <div class="card-category">
+    <div class="container">
+      <h3>Gorillaz</h3>
+        <h4>Unique band, unique sound</h4>
+          <div class="banner-band-description">
+            <p>Genre: Rock, Alternative</p>
+          </div>
+      </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="about-container">
-    <div class="band-body" style="margin-bottom: 20px;">
-    <h1>About Us</h1>
-    <h2>We’re a band that’s everychanging when it comes to style. We’re open to changing up our sound to divesify our audience. Come join us!</h2>
-    <p>Location: Shibuya</p>
-    </div>
-  </div>
-</div>
+
 
 
 <div class="container">
-<div class="card-trip" style=" width: 250px;position: relative;left: 105px;top: 15px;">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg">
-  <div class="card-trip-infos">
-    <div>
-      <h2>Title here</h2>
-      <p>Short description here!</p>
+  <div class="show-container">
+    <div class="profile-container text-left">
+      <div><h1>About Us</h1></div>
+      <!-- <div><p></p></div> -->
+      <div><p>We’re a band that’s everychanging when it comes to style. We’re open to changing up our sound to divesify our audience. Come join us!</p></div>
+      <div><h5>Location: Shibuya</h5></div>
     </div>
-    <h2 class="card-trip-pricing">£99.99</h2>
-    <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+
+
+<div class="card-wrapper">
+      <div class="banner-content">
+        <h3 class="musician-name"></h3>
+        <div class="card-description">
+          <div class="card-contents-band">
+            <div>
+              <p class='nickname-band'>Members</p>
+              <img class="member-avatar" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551855364/ulyfklvmkld2z1ysgqgi.jpg">
+              <img class="member-avatar" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551855376/uoj0jllbvqokrcygybpd.jpg">
+              <img class="member-avatar" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551855354/mmvr5t3vzownxn7pxi5r.jpg">
+              <div class="name-member">
+                <p>Bobby Smith</p>
+                <p>Bobby Smith</p>
+                <p>Bobby Smith</p>
+              </div>
+             <!--  <input type="checkbox" style="display: none;" id="connect">
+                <div class="popup" style="display: none;">
+                  <div class="col-md-6">
+                      <p class='submit'></p>
+                  </div>
+                </div> -->
+                <a href="/bands/1">
+                <p class="view-members">View all members</p>
+</a>            </div>
+<script>
+              $(document).ready(function() {
+                $("#connect").change(function(){
+                  if(this.checked){
+                    $(".popup")[0].style.display = "block";
+                    $(".card-contents")[0].style.display = "none";
+                  } else {
+                    $(".popup")[0].style.display = "none";
+                  }
+                })
+              });
+            </script>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>
+
+
+
+
+
+
+
+
+
 
 
 

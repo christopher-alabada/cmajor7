@@ -1,9 +1,13 @@
-class UserPolicy < ApplicationPolicy
-  def index?
+class RequestPolicy < ApplicationPolicy
+  def create?
     true
   end
 
-  def dashboard?
+  def edit?
+    true
+  end
+
+  def update_status?
     true
   end
 

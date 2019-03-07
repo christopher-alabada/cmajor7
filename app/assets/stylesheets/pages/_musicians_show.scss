@@ -211,6 +211,11 @@
   height: 200px;
   object-fit: cover;
   background-position: center;
+  background-position: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 
@@ -241,7 +246,6 @@
 
 .show-card-contents {
   background-color: white;
-  box-shadow: 1px 2px #7d7d7d;
   min-width: 200px;
   min-height: 300px;
   display: flex;
