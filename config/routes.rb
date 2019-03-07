@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   resources :musicians, only: [:index, :show, :new, :create]
   resources :bands, only: [:index, :show]
+
+  post '/requests', to: 'requests#new'
 end
