@@ -29,22 +29,13 @@
               <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
               <h4 class='text-center'><%= @musician.nickname.capitalize %></h4>
               <p class='want-to text-center'>want to play with <%= @musician.nickname %>?</p>
-             <!--  <input type="checkbox" style="display: none;" id="connect">
-                <div class="popup" style="display: none;">
-                  <div class="col-md-6">
-                    <%#= simple_form_for [@musician], url: musician_path(@musician) do |f|  %>
-                    <%#= f.input :to_requests, as: :string %>
-                    <%#= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-                      <p class='submit'><%#= f.button :submit, "Connect", class: "button" %></p>
-                    <%# end %>
-                  </div>
-                </div> -->
                 <div id="connect">
                   <% if @requested %>
                     <%= link_to "Already Connected", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
                   <% else %>
                     <%= simple_form_for(@request) do |f| %>
                       <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
+                      <%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %>
                       <%= f.input :message, placeholder: 'Message' %>
                       <%= f.button :submit, 'Connect', class: "btn btn-primary connect align-center" %>
                     <% end %>

@@ -1,10 +1,7 @@
 class RequestsController < ApplicationController
-  respond_to :html, :js
-
-  def new
-    @request = Request.new
+  def create
+    @request = Request.new(request_params)
     @request.from = current_user
-    @request.to = User.find(params[:request][:to_id])
 
     if @request.save
       redirect_to musician_path(params[:request][:to_id])
@@ -21,5 +18,11 @@ class RequestsController < ApplicationController
     @request.status = params[:status]
 
     @request.save
+  end
+
+  private
+
+  def request_params
+    params.require(:request).permit(:band_id, :from_id, :to_id, :status, :message)
   end
 end
