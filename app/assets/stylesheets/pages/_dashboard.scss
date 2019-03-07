@@ -1,0 +1,49 @@
+.musician {
+  margin-left: 120px;
+  margin-top: 50px;
+  display: flex;
+  align-item: srart;
+}
+.musician-d-nickname {
+  margin-left: 20px;
+}
+
+.dashboard-profile {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  margin-top: 50px;
+}
+#d-profile {
+  color: black;
+  opacity: 0.6;
+}
+#d-profile:hover {
+  opacity: 1;
+}
+#d-request {
+  color: black;
+  opacity: 0.6;
+}
+#d-request:hover {
+  opacity: 1;
+}
+#d-bands {
+  color: black;
+  opacity: 0.6;
+}
+#d-bands:hover {
+  opacity: 1;
+}
+#d-message {
+  color: black;
+  opacity: 0.6;
+}
+#d-message:hover {
+  opacity: 1;
+}
+
+.dashboard_musician-image {
+  border-radius: 50%;
+  width: 100px;
+  }
