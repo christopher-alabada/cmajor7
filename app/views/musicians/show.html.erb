@@ -53,6 +53,22 @@
   </div>
 </div>
 
+<% if user_signed_in? && current_user != @musician %>
+<p class='want-to text-center'>want to play with <%= @musician.nickname %>?</p>
+  <div id="connect">
+    <% if @requested %>
+      <%= link_to "Already Connected", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
+    <% else %>
+      <%= simple_form_for(@request) do |f| %>
+        <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
+        <%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %>
+        <%= f.input :message, placeholder: 'Message' %>
+        <%= f.button :submit, 'Connect', class: "btn btn-primary connect align-center" %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
 
 <div class="instruments" style="background-color: #F2F2F2; padding: 20px;">
 <h3 style="text-align: center;">※THEIR MUSIC INSTRUMENTS HERE※</h3>
@@ -63,34 +79,6 @@
 <div style="text-align: center;">.</div>
 <p style="text-align: center;">.</p>
 </div>
-
-
-    <!-- <div class="card-wrapper">
-      <div class="show-banner-content">
-        <h3 class="show-musician-name"><%#= @musician.nickname %></h3>
-        <div class="show-card-description">
-          <div class="show-card-contents">
-            <div>
-              <%= cl_image_tag(@musician.user_photo, class: 'show-card-user') %>
-              <h4 class='text-center'><%= @musician.nickname.capitalize %></h4>
-              <p class='show-want-to text-center'>want to play with <%= @musician.nickname %>?</p> -->
-             <!--  <input type="checkbox" style="display: none;" id="connect">
-                <div class="popup" style="display: none;">
-                  <div class="col-md-6">
-                    <%#= simple_form_for [@musician], url: musician_path(@musician) do |f|  %>
-                    <%#= f.input :to_requests, as: :string %>
-                    <%#= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-                      <p class='submit'><%#= f.button :submit, "Connect", class: "button" %></p>
-                    <%# end %>
-                  </div>
-                </div> -->
-                <!-- <div id="show-connect">
-                  <p class="btn btn-primary connect align-center">Connect</p>
-                </div>
-                <%= link_to band_path(@musician) do %>
-                <p class="show-view text-center">View all the bands <%= @musician.nickname %> is in </p>
-                <% end %>
-            </div> -->
             <script>
               $(document).ready(function() {
                 $("#connect").change(function(){
