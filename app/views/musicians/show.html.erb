@@ -1,34 +1,44 @@
-<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@musician.banner_photo) %>');">
-  <div class="card-category">
-    <h3><%= @musician.nickname.capitalize %></h3>
-      <h4><%= @musician.tag_line %></h4>
-    <div class="banner-musician-description">
-      <% @musician.equipments.each do |e| %>
-        <p><%= e.equipment_type.capitalize %></p>
-      <% end %>
+<div class="show-banner-overlay">
+    <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@musician.banner_photo) %>');">
+      <div class="show-banner-content">
+        <div class="show-nickname">
+          <%= @musician.nickname.capitalize %>
+        </div>
+          <h4><%= @musician.tag_line %></h4>
+
+      </div>
     </div>
-  </div>
 </div>
 
 
 <div class="container">
   <div class="show-container">
-    <div class="profile-container text-left">
+    <!-- <div class="show-profile-container text-left">
       <div><h1>About Me</h1></div>
       <!-- <div><p><%#= @musician.tag_line %></p></div> -->
-      <div><p><%= @musician.description %></p></div>
+      <!-- <div><p><%= @musician.description %></p></div>
       <div><h5>Location: <%= @musician.location %></h5></div>
-    </div>
+      <div class="show-banner-musician-description">
+      <% @musician.equipments.each do |e| %>
+        <p><%= e.equipment_type.capitalize %></p>
+      <% end %> -->
 
-    <div class="card-wrapper">
-      <div class="banner-content">
-        <h3 class="musician-name"><%#= @musician.nickname %></h3>
-        <div class="card-description">
-          <div class="card-contents">
+    <div class="show-musician-photo">
+      <%= cl_image_tag(@musician.user_photo, class: 'show-card-user') %>
+    </div>
+  </div>
+</div>
+
+
+    <!-- <div class="card-wrapper">
+      <div class="show-banner-content">
+        <h3 class="show-musician-name"><%#= @musician.nickname %></h3>
+        <div class="show-card-description">
+          <div class="show-card-contents">
             <div>
-              <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
+              <%= cl_image_tag(@musician.user_photo, class: 'show-card-user') %>
               <h4 class='text-center'><%= @musician.nickname.capitalize %></h4>
-              <p class='want-to text-center'>want to play with <%= @musician.nickname %>?</p>
+              <p class='show-want-to text-center'>want to play with <%= @musician.nickname %>?</p> -->
              <!--  <input type="checkbox" style="display: none;" id="connect">
                 <div class="popup" style="display: none;">
                   <div class="col-md-6">
@@ -39,13 +49,13 @@
                     <%# end %>
                   </div>
                 </div> -->
-                <div id="connect">
+                <!-- <div id="show-connect">
                   <p class="btn btn-primary connect align-center">Connect</p>
                 </div>
                 <%= link_to band_path(@musician) do %>
-                <p class="view text-center">View all the bands <%= @musician.nickname %> is in </p>
+                <p class="show-view text-center">View all the bands <%= @musician.nickname %> is in </p>
                 <% end %>
-            </div>
+            </div> -->
             <script>
               $(document).ready(function() {
                 $("#connect").change(function(){
