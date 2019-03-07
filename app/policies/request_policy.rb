@@ -1,5 +1,5 @@
 class RequestPolicy < ApplicationPolicy
-  def new?
+  def create?
     true
   end
 

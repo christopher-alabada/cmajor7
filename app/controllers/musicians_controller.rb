@@ -18,6 +18,8 @@ class MusiciansController < ApplicationController
     @request = Request.new
 
     @requested = Request.find_by(from: current_user, to: @musician)
+    @musicians_bands = current_user.bands.map { |band| [band.id, band.band_name] }
+    @musicians_bands.unshift(['Form new band...', 0])
   end
 
   def edit
