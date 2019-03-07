@@ -38,32 +38,22 @@
   vertical-align: top;
 }
 
-#d-profile {
-  color: black;
-  opacity: 0.6;
-}
-#d-profile:hover {
-  opacity: 1;
-}
-#d-request {
-  color: black;
-  opacity: 0.6;
-}
-#d-request:hover {
-  opacity: 1;
-}
-#d-bands {
-  color: black;
-  opacity: 0.6;
-}
-#d-bands:hover {
-  opacity: 1;
-}
-#d-message {
-  color: black;
-  opacity: 0.6;
-}
-#d-message:hover {
-  opacity: 1;
+.requests {
+  padding-left: 120px;
 }
 
+.r-container {
+  display: flex;
+  justify-content: start;
+}
+
+.r-card {
+  width: 300px;
+  height: 100px;
+  box-shadow: 1px 1px #aaaaaa;
+  margin: 20px;
+}
+.r-img {
+  width: 50px;
+  border-radius: 50%;
+}

@@ -39,8 +39,33 @@
     </ul>
   </div>
 </div>
-<div class="requests">
-  <%= @from_requests.each {|r| r.status} %>
-  <%= @to_requests.each  {|r| r.from } %>
-</div>
+
+  <div class="requests">
+    <div class="r-container">
+      <div class="from-request">
+        <% @from_requests.each do |r| %>
+          <div class="r-card">
+            <p>Status : <%= r.status %></p>
+            <%#= r.message %>
+            <% @musicians.where(id: r.to_id).each do |m| %>
+              <p>Request to <%= m.nickname %></p>
+              <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="to-requests">
+        <% @to_requests.each do |i| %>
+          <%= i.status %>
+          <%#= i.message %>
+          <% @musicians.where(id: r.from_id).each do |m| %>
+            <%= m.nickname %>
+            <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
 </div>
