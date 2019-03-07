@@ -40,6 +40,11 @@
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65)));
 }
 
+.musician-show-banner-content {
+ color: white;
+ text-shadow: 0 2px 3px rgba(0,0,0,0.5);
+}
+
 .show-nickname {
   font-size: 50px;
   font-family: 'Montserrat', sans-serif;
@@ -181,6 +186,7 @@
 
 .show-banner-content {
   margin-top: 20px;
+
 }
 
 
