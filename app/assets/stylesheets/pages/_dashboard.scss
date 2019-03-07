@@ -38,32 +38,37 @@
   vertical-align: top;
 }
 
-#d-profile {
-  color: black;
-  opacity: 0.6;
-}
-#d-profile:hover {
-  opacity: 1;
-}
-#d-request {
-  color: black;
-  opacity: 0.6;
-}
-#d-request:hover {
-  opacity: 1;
-}
-#d-bands {
-  color: black;
-  opacity: 0.6;
-}
-#d-bands:hover {
-  opacity: 1;
-}
-#d-message {
-  color: black;
-  opacity: 0.6;
-}
-#d-message:hover {
-  opacity: 1;
+.requests h3 {
+  padding-left: 120px;
 }
 
+.to-requests {
+  display: flex;
+  align-items: center;
+}
+
+.r-container {
+  display: flex;
+  justify-content: space-around;
+}
+.r-t-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.r-card {
+  width: 500px;
+  height: 200px;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin: 20px;
+  position: relative;
+  padding: 20px;
+}
+.r-img {
+  width: 60px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

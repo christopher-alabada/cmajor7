@@ -32,6 +32,7 @@ class MusiciansController < ApplicationController
   end
 
   def dashboard
+    @musicians = User.all
     @musician = User.find(current_user.id)
     authorize @musician
 
