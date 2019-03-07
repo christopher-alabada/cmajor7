@@ -21,9 +21,8 @@
                 <p class="nickname"><%= musician.nickname.capitalize! %></p>
                 <div class="form-inline musician-equipment">
                   <%
-                    instruments = []
-                    musician.equipments.each do |e|
-                      instruments << e.equipment_type.capitalize
+                    instruments = musician.equipments.map do |e|
+                      e.equipment_type.capitalize
                     end
                   %>
                   <%= instruments.join(" | ") %>
