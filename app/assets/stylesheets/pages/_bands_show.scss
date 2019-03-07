@@ -7,7 +7,7 @@
   position: relative;
 }
 
-.banner-musician-description {
+.banner-band-description {
   color: white;
   opacity: 0.9;
   margin-top: 30px;
@@ -66,15 +66,15 @@
   background-position: center;
 }
 
-.card-contents {
+.card-contents-band {
   background-color: white;
-  min-width: 200px;
-  min-height: 300px;
+  min-width: 320px;
+  min-height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 100px;
-  margin-top: 50px;
+  margin-bottom: 220px;
+  margin-top: 75px;
 }
 
 .show-container {
@@ -92,13 +92,16 @@
   color: #929aab;
 }
 
-.view {
+.view-members {
   margin-top: 5px;
   font-size: 10px;
-  color: #393e46;
+  color: #000000;
+  margin-left: 190px;
+  font-weight: lighter;
 }
-.view:hover {
-  color: black;
+
+.view-members:hover {
+  color: #000000;
   text-decoration: underline;
 }
 
@@ -106,3 +109,30 @@
   display: flex;
   justify-content: center;
 }
+
+.nickname-band {
+  color: black;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  margin:0;
+  margin-right: 160px;
+  margin-bottom: 15px;
+}
+
+.member-avatar {
+  border-radius: 50%;
+  height: 75px;
+  width: 75px;
+  margin-left: 12px;
+}
+
+.name-member {
+  display: flex;
+  font-size: 10px;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
