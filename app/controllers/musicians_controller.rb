@@ -29,6 +29,9 @@ class MusiciansController < ApplicationController
   def dashboard
     @musician = User.find(current_user.id)
     authorize @musician
+
+    @from_requests = current_user.from_requests
+    @to_requests = current_user.to_requests
     # @band = Band.find(current_user.id)
     # authorize @band
   end

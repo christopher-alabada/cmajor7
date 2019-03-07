@@ -39,6 +39,9 @@
     </ul>
   </div>
 </div>
+<div class="requests">
+  <%= @from_requests.each  {|r| r.to } %>
+  <%= @to_requests.each  {|r| r.from } %>
 
-
+</div>
 </div>
