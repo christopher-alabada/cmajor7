@@ -58,6 +58,7 @@ body {
   font-family: 'source sans pro';
   font-size: 16px;
   color: #FFFFFF;
+}
 
 .down-arrow-icon {
   display: flex;
@@ -73,8 +74,9 @@ body {
 
 .landing-white-section {
   color: black;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: white;
 }
 
 .landing-white-contents {
@@ -86,8 +88,15 @@ body {
   justify-content: space-around;
 }
 
-.landing-musicians {
+.explore-musician-title {
   background-color: #F8F8F8;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-musicians {
   padding-top: 50px;
   padding-bottom: 50px;
 }
@@ -95,7 +104,7 @@ body {
 .landing-footer {
   background-color: #121212;
   color: white;
-  height:60px;
+  height: 60px;
   padding: 20px;
   height: 200px;
 }

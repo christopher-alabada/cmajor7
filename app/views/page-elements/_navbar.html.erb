@@ -2,32 +2,19 @@
   <!-- Logo -->
 
   <div class="logo-h1">
-    <div style="margin-left: 90px">
+    <div style="margin-left: 58px">
     <%= link_to root_path do %>
       <%= image_tag 'logo2.PNG', alt: "logo", height: 40, width: 60  %>
     <% end %>
     </div>
     <%= link_to root_path do %>
-    <h1 class="logo-h1 h1" style="margin-bottom: 22px">
-      <%= image_tag 'cmaj7.png', height: 50, width: 90 %>
+    <h1 class="logo-h1 h1" style="margin-bottom: 20px; color: white; font-family:'Josefin Sans', sans-serif; font-weight: 900; font-size: 25px">
+      Cmaj7
     </h1>
     <% end %>
   </div>
 
   <div class="navbar-right">
-<<<<<<< HEAD
-    <ul style="list-style: none; display: flex;">
-      <%= link_to musicians_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Musicians</li>
-      <% end %>
-      <%= link_to new_musician_registration_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Join us</li>
-      <% end %>
-      <%= link_to new_musician_session_path do %>
-      <li style="padding: 30px;margin-top: 20px;">Login</li>
-      <% end %>
-    </ul>
-=======
   <% if user_signed_in? %>
       <div style="color: white ">Hello, <%= current_user.email %> </div>
       <div class="navbar-wagon-item">
@@ -42,7 +29,6 @@
       <%= link_to "Sign up", new_user_registration_path, class: "navbar-item navbar-link" %>
     </div>
 <% end %>
->>>>>>> de09ca3246f3ee58e626f59ca65e4211488b636e
   </div>
 </div>
 </div>
