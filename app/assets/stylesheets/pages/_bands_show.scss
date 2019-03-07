@@ -92,13 +92,16 @@
   color: #929aab;
 }
 
-.view {
+.view-members {
   margin-top: 5px;
   font-size: 10px;
-  color: #393e46;
+  color: #000000;
+  margin-left: 190px;
+  font-weight: lighter;
 }
-.view:hover {
-  color: black;
+
+.view-members:hover {
+  color: #000000;
   text-decoration: underline;
 }
 
@@ -113,12 +116,23 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
   margin:0;
-  margin-right: 155px;
+  margin-right: 160px;
   margin-bottom: 15px;
 }
 
 .member-avatar {
   border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 75px;
+  width: 75px;
+  margin-left: 12px;
 }
+
+.name-member {
+  display: flex;
+  font-size: 10px;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 5px;
+}
+
