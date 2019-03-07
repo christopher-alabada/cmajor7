@@ -13,47 +13,43 @@
 
 <div class="container">
   <div class="show-container">
-    <!-- <div class="show-profile-container text-left">
-      <div><h1>About Me</h1></div>
-      <!-- <div><p><%#= @musician.tag_line %></p></div> -->
-      <!-- <div><p><%= @musician.description %></p></div>
-      <div><h5>Location: <%= @musician.location %></h5></div>
-      <div class="show-banner-musician-description">
-      <% @musician.equipments.each do |e| %>
-        <p><%= e.equipment_type.capitalize %></p>
-      <% end %> -->
-
+    <div class="show-musician-pic-wrapper">
       <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
+      <div class="gray-connect-btn">
+          <p>Jam session with <%= @musician.nickname.capitalize %>?</p>
+          <span class="btn btn-primary text-center col-xs-6 btn-sm">Connect</span>
+      </div>
+      <div class="s-musician-pic-overlay">
+      </div>
+    </div>
+
       <div class="gray-detail-container">
         <div class="gray-info-contents">
-        <div class="gray-name">
-          <%= @musician.fullname.capitalize %>
-        </div>
-        <div class="gray-bio">
-          <p ><%= @musician.description %></p>
-        </div>
-        <div class="gray-eq">
-          <%
-            instruments = @musician.equipments.map do |e|
-              e.equipment_type.capitalize
-            end
-          %>
-          <%= instruments.join(" | ") %>
-        </div>
-        <div class="gray-other-info">
-          <p>Genre:</p>
-          <p>Location: <%= @musician.location %></p>
-        </div>
-        <div class="gray-view-bands">
-          <p>Bands: list band.banner with circle</p>
-        </div>
-        <!-- <div class="gray-connect">
-          <p>Jam session with <%= @musician.nickname.capitalize %>? <span class="btn btn-primary">Connect</span></p>
-        </div> -->
+          <div class="gray-name">
+            <%= @musician.fullname.capitalize %>
+          </div>
+          <div class="gray-bio">
+            <p ><%= @musician.description %></p>
+          </div>
+          <div class="gray-eq">
+            <%
+              instruments = @musician.equipments.map do |e|
+                e.equipment_type.capitalize
+              end
+            %>
+            <%= instruments.join(" | ") %>
+          </div>
+          <div class="gray-other-info">
+            <p>Genre:</p>
+            <p>Location: <%= @musician.location %></p>
+          </div>
+          <div class="gray-view-bands">
+            <p>Bands: list band.banner with circle</p>
+          </div>
+
 
         </div>
       </div>
-
   </div>
 </div>
 

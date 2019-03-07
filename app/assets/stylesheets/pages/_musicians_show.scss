@@ -53,17 +53,71 @@
   justify-content: space-evenly;
 }
 
-.show-musician-photo {
+.show-musician-pic-wrapper {
+  width: 500px;
+  height: 400px;
   margin-top: 60px;
   margin-bottom: 60px;
   margin-left: 30px;
-  width: 600px;
+  position: relative;
+  &:hover .gray-connect-btn{
+    opacity: 1 !important;
+  }
+  &:hover .s-musician-pic-overlay {
+    opacity: 0.4;
+  }
+}
+
+.s-musician-pic-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .4s ease;
+  background-color: black;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 0px;
+}
+
+.gray-connect-btn {
+  position: absolute;
+  bottom:140px;
+  left: 150px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity ease 0.4s;
+}
+
+.gray-connect-btn p {
+  font-family: "Open Sans";
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.btn-sm {
+  margin-left: 50px;
+  font-family: "Open Sans";
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.show-musician-photo {
+  width: 500px;
   height: 400px;
   object-fit: cover;
   border-top-left-radius: 30px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 0px;
+
+  position: relative;
 }
 
 .gray-detail-container  {
@@ -117,13 +171,6 @@
   opacity: 0.5;
 }
 
-.gray-connect {
-  margin-top: 20px;
-}
-
-.gray-connect p {
-  opacity: 0.8;
-}
 
 .show-musician-nickname {
 
