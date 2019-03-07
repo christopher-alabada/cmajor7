@@ -49,7 +49,7 @@
             <% @from_requests.each do |r| %>
               <div class="r-card">
                 <p>Status : <%= r.status.capitalize %></p>
-                <%#= r.message %>
+                <p>Message : <%= r.message %></p>
                 <% @musicians.where(id: r.to_id).each do |m| %>
                   <p>Request to : <%= m.nickname.capitalize! %></p>
                   <%= cl_image_tag(m.user_photo, class: 'r-img') %>
@@ -63,7 +63,7 @@
             <% if @to_requests.exists? %>
               <% @to_requests.each do |i| %>
                 <%= i.status %>
-                <%#= i.message %>
+                <%= i.message %>
                 <% @musicians.where(id: r.from_id).each do |m| %>
                   <%= m.nickname.capitalize! %>
                   <%= cl_image_tag(m.user_photo, class: 'r-img') %>
