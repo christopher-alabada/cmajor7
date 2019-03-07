@@ -26,6 +26,13 @@ class MusiciansController < ApplicationController
     @musician.update(params[musician_params])
   end
 
+  def dashboard
+    @musician = User.find(current_user.id)
+    authorize @musician
+    # @band = Band.find(current_user.id)
+    # authorize @band
+  end
+
   private
 
   def musician_params
