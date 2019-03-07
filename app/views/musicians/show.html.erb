@@ -23,10 +23,49 @@
         <p><%= e.equipment_type.capitalize %></p>
       <% end %> -->
 
-    <div class="show-musician-photo">
-      <%= cl_image_tag(@musician.user_photo, class: 'show-card-user') %>
-    </div>
+      <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
+      <div class="gray-detail-container">
+        <div class="gray-info-contents">
+        <div class="gray-name">
+          <%= @musician.fullname.capitalize %>
+        </div>
+        <div class="gray-bio">
+          <p ><%= @musician.description %></p>
+        </div>
+        <div class="gray-eq">
+          <%
+            instruments = @musician.equipments.map do |e|
+              e.equipment_type.capitalize
+            end
+          %>
+          <%= instruments.join(" | ") %>
+        </div>
+        <div class="gray-other-info">
+          <p>Genre:</p>
+          <p>Location: <%= @musician.location %></p>
+        </div>
+        <div class="gray-view-bands">
+          <p>Bands: list band.banner with circle</p>
+        </div>
+        <!-- <div class="gray-connect">
+          <p>Jam session with <%= @musician.nickname.capitalize %>? <span class="btn btn-primary">Connect</span></p>
+        </div> -->
+
+        </div>
+      </div>
+
   </div>
+</div>
+
+
+<div class="instruments" style="background-color: #F2F2F2; padding: 20px;">
+<h3 style="text-align: center;">※THEIR MUSIC INSTRUMENTS HERE※</h3>
+<div style="text-align: center;">.</div>
+<div style="text-align: center;">.</div>
+<div style="text-align: center;">.</div>
+<div style="text-align: center;">.</div>
+<div style="text-align: center;">.</div>
+<p style="text-align: center;">.</p>
 </div>
 
 

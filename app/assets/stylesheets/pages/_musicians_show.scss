@@ -5,8 +5,7 @@
         height: auto;
         position: absolute;
         z-index: -1;
-    // Take note of this negative z-index and copare to each article's positive z-index. This helps your content to show up over the overlay.
-     top: 0;
+        top: 0;
         right: 0;
         left: 0;
         bottom: 0;
@@ -49,10 +48,89 @@
   letter-spacing: 4px;
 }
 
+.show-container {
+  display: flex;
+  justify-content: space-evenly;
+}
 
 .show-musician-photo {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 30px;
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 0px;
+}
+
+.gray-detail-container  {
+  background-color: white;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  margin-left: 30px;
+  padding: 20px;
+  width: 800px;
+  height: 400px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  color: black;
+
+  display: flex;
+  align-items: center;
+}
+
+.gray-name {
+  font-size: 30px;
+  border-bottom: 3px solid #E84369;
+}
+
+.gray-bio {
+  margin-top: 10px;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.gray-eq {
+  opacity: 0.7;
+}
+
+.gray-other-info {
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.gray-other-info p {
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.6;
+}
+
+.gray-view-bands p {
+  opacity: 0.5;
+}
+
+.gray-connect {
+  margin-top: 20px;
+}
+
+.gray-connect p {
+  opacity: 0.8;
+}
+
+.show-musician-nickname {
 
 }
+
+
+
 
 .show-banner-content {
   margin-top: 20px;
@@ -108,6 +186,7 @@
   // font-weight: lighter;
 }
 
+
 .show-banner {
   height: 400px;
   background-position: center;
@@ -125,10 +204,6 @@
   margin-top: 50px;
 }
 
-.show-container {
-  display: flex;
-  justify-content: space-between;
-}
 
 .show-connect {
   width: 180px;
