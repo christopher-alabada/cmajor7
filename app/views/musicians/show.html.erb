@@ -27,7 +27,7 @@
           <div class="card-contents">
             <div>
               <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
-              <h4 class='text-center'><%= @musician.nickname.capitalize %></h4>
+              <p class='nickname'><%= @musician.nickname.capitalize %></p>
               <p class='want-to text-center'>want to play with <%= @musician.nickname %>?</p>
              <!--  <input type="checkbox" style="display: none;" id="connect">
                 <div class="popup" style="display: none;">
