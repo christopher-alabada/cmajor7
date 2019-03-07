@@ -15,6 +15,11 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = User.find(params[:id])
+    @request = Request.new
+
+    @requested = Request.find_by(from: current_user, to: @musician)
+    @musicians_bands = current_user.bands.map { |band| [band.id, band.band_name] }
+    @musicians_bands.unshift(['Form new band...', 0])
   end
 
   def edit
@@ -24,6 +29,17 @@ class MusiciansController < ApplicationController
   def update
     @musician = Restaurant.find(params[:id])
     @musician.update(params[musician_params])
+  end
+
+  def dashboard
+    @musicians = User.all
+    @musician = User.find(current_user.id)
+    authorize @musician
+
+    @from_requests = current_user.from_requests
+    @to_requests = current_user.to_requests
+    # @band = Band.find(current_user.id)
+    # authorize @band
   end
 
   private

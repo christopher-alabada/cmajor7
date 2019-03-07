@@ -1,5 +1,9 @@
-class BandsPolicy < ApplicationPolicy
-  def show?
+class RequestPolicy < ApplicationPolicy
+  def create?
+    true
+  end
+
+  def edit?
     true
   end
 

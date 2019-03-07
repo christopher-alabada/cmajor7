@@ -1,0 +1,74 @@
+.musician {
+  margin-left: 120px;
+  margin-top: 50px;
+  display: flex;
+  align-item: srart;
+}
+.musician-d-nickname {
+  margin-left: 20px;
+}
+
+.dashboard-profile {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  margin-top: 50px;
+}
+
+.dashboard_musician-image {
+  border-radius: 50%;
+  width: 100px;
+}
+
+.d-musician-user-photo {
+  width: 100px;
+  border-radius: 50%;
+}
+.d-musician-banner-photo {
+  width: 200px;
+  border-radius: 5px;
+}
+
+.personal-information {
+  display: flex;
+  margin-left: 120px;
+}
+.edit {
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.requests h3 {
+  padding-left: 120px;
+}
+
+.to-requests {
+  display: flex;
+  align-items: center;
+}
+
+.r-container {
+  display: flex;
+  justify-content: space-around;
+}
+.r-t-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.r-card {
+  width: 500px;
+  height: 200px;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin: 20px;
+  position: relative;
+  padding: 20px;
+}
+.r-img {
+  width: 60px;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

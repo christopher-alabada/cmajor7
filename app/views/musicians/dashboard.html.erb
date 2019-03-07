@@ -1,0 +1,81 @@
+<div class="dashboard-wrapper">
+  <div class="musician">
+    <div class="musician-d-container">
+      <%= cl_image_tag(@musician.user_photo, class: 'dashboard_musician-image') %>
+    </div>
+    <div class="musician-d-nickname">
+      <h3><%= @musician.nickname %></h3>
+    </div>
+  </div>
+
+  <div class="dashboard-profile">
+    <%= link_to edit_user_registration_path do %>
+      <ul id="d-profile">Profile</i></ul>
+    <% end %>
+    <%#= link_to  %>
+    <ul id="d-request">Request</ul>
+    <ul id="d-bands">Bands</ul>
+    <ul id="d-message">Message</ul>
+  </div>
+
+  <div class="personal-information">
+    <div class="d-p-info">
+      <h3>Personal information
+        <%= link_to edit_user_registration_path do %><i class="fas fa-edit edit"></i><% end %></h3>
+      <ul>Nickname : <%= @musician.nickname %></ul>
+      <ul>Email adress : <%= @musician.email %></ul>
+      <ul>Full name : <%= @musician.fullname %></ul>
+      <ul>Date of Birth : <%= @musician.date_of_birth %></ul>
+      <ul>Location : <%= @musician.location %></ul>
+      <ul>Tag Line : <%= @musician.tag_line %></ul>
+      <ul>Your Photo : <%= cl_image_tag(@musician.user_photo, class: 'd-musician-user-photo') %></ul>
+      <ul>Banner Photo : <%= cl_image_tag(@musician.banner_photo, class: 'd-musician-banner-photo') %></ul>
+      <ul>Biography : <%= @musician.description %></ul>
+      <ul>Years experience : <%= @musician.years_experience %> <%= @musician.years_experience > 1 ? 'years' : 'year' %></ul>
+      <ul>
+        Music Instruments : <% @musician.equipments.each do |e| %>
+        <%= e.equipment_type %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="requests">
+    <h3>Your Requests</h3>
+
+      <div class="r-container">
+
+          <div class="from-request">
+            <% @from_requests.each do |r| %>
+              <div class="r-card">
+                <p>Status : <%= r.status.capitalize %></p>
+                <p>Message : <%= r.message %></p>
+                <% @musicians.where(id: r.to_id).each do |m| %>
+                  <p>Request to : <%= m.nickname.capitalize! %></p>
+                  <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                <% end %>
+              </div>
+            <% end %>
+         </div>
+
+        <div class="to-requests">
+          <div class="r-t-container">
+            <% if @to_requests.exists? %>
+              <% @to_requests.each do |i| %>
+                <%= i.status %>
+                <%= i.message %>
+                <% @musicians.where(id: r.from_id).each do |m| %>
+                  <%= m.nickname.capitalize! %>
+                  <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                <% end %>
+              <% end %>
+            <% else %>
+              <%= 'No requests from other musicians yet...' %>
+            <% end %>
+          </div>
+        </div>
+
+    </div>
+
+  </div>
+</div>
