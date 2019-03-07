@@ -89,11 +89,12 @@ body {
 }
 
 .explore-musician-title {
-  background-color: #F8F8F8;
+  background-color: #F2F2F2;
   height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .landing-musicians {
@@ -107,5 +108,26 @@ body {
   height: 60px;
   padding: 20px;
   height: 200px;
+}
+
+.g-exolore {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 450px;
+  border-bottom: 5px solid #3F5DFA;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: black;
+  font-size: 40px;
+}
+
+.more-explore {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  color: black;
+  font-size: 40px;
+  text-align:center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
