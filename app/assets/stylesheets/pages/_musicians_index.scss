@@ -1,3 +1,23 @@
+.ts-bar-wrapper {
+  background-color: #F8F8F8;
+  height: 200px;
+  margin-bottom: 40px;
+}
+
+.title-and-search-bar {
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 30px;
+  padding-left: 78px;
+  position: relative;
+}
+
+.musician-search-bar {
+  position: absolute;
+  top: 39px;
+  left: 860px;
+}
+
 .card-container {
   padding-right: 80px;
   padding-left: 80px;
@@ -15,6 +35,11 @@
 .musician-card {
   min-height: 360px;
   position: relative;
+  top: 0;
+  transition: top ease 0.3s;
+  &:hover {
+    top: -20px;
+  }
 }
 
 .musician-image {
@@ -23,8 +48,12 @@
   object-fit: cover;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.musician-description-shadow {
+  // box-shadow: 1px 1px #888888;
 }
 
 .musician-card-description {
