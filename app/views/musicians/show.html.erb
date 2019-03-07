@@ -28,19 +28,22 @@
             <div>
               <%= cl_image_tag(@musician.user_photo, class: 'card-user') %>
               <h4 class='text-center'><%= @musician.nickname.capitalize %></h4>
-              <p class='want-to text-center'>want to play with <%= @musician.nickname %>?</p>
-                <div id="connect">
-                  <% if @requested %>
-                    <%= link_to "Already Connected", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
-                  <% else %>
-                    <%= simple_form_for(@request) do |f| %>
-                      <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
-                      <%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %>
-                      <%= f.input :message, placeholder: 'Message' %>
-                      <%= f.button :submit, 'Connect', class: "btn btn-primary connect align-center" %>
+
+              <% unless current_user == @musician %>
+                <p class='want-to text-center'>want to play with <%= @musician.nickname %>?</p>
+                  <div id="connect">
+                    <% if @requested %>
+                      <%= link_to "Already Connected", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
+                    <% else %>
+                      <%= simple_form_for(@request) do |f| %>
+                        <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
+                        <%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %>
+                        <%= f.input :message, placeholder: 'Message' %>
+                        <%= f.button :submit, 'Connect', class: "btn btn-primary connect align-center" %>
+                      <% end %>
                     <% end %>
-                  <% end %>
-                </div>
+                  </div>
+                <% end %>
                 <%= link_to band_path(@musician) do %>
                 <p class="view text-center">View all the bands <%= @musician.nickname %> is in </p>
                 <% end %>
