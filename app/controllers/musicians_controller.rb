@@ -15,6 +15,9 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = User.find(params[:id])
+    @request = Request.new
+
+    @requested = Request.find_by(from: current_user, to: @musician)
   end
 
   def edit
