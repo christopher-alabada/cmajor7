@@ -40,8 +40,8 @@ class MusiciansController < ApplicationController
 
     @from_requests = current_user.from_requests
     @to_requests = current_user.to_requests
-    # @band = Band.find(current_user.id)
-    # authorize @band
+
+    @messages = Message.all.where('from_id = :user_id OR to_id = :user_id', { user_id: current_user.id })
   end
 
   def status_button_text(request)
