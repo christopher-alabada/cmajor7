@@ -1,13 +1,25 @@
-
-<div class="flex-grow-3 d-flex" style="display:flex; justify-content: left;">
+<div class="ts-bar-wrapper">
+<div class="title-and-search-bar">
+<h3 id="explore">
+    <div style="border-bottom: 5px solid #E84369; width: 1110px; text-align: left; position: absolute; top: 80px; left: 100px; padding-bottom: 1px;">
+    Find by your preference
+    </div>
+</h3>
+<div class="flex-grow-3 d-flex musician-search-bar" style="display:flex; justify-content: left;">
       <%= form_tag musicians_path, method: :get, class: "text-left", style: 'padding-left: 50px' do %>
         <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: "Music instrument or Location" %>
         <%= submit_tag "Search", class: "btn btn-danger", style: "margin: 43px;padding: 5px 25px 5px; margin-left: 10px;" %>
       <% end %>
 </div>
+</div>
+</div>
 
 <div class="card-container">
-  <h3 id="explore">Explore all musicians</h3>
+  <h3 id="explore">
+    <div style="border-bottom: 5px solid #3F5DFA; width: 367px; padding-bottom: 5px; text-align: left; margin-left: 20px;">
+    Explore all musicians
+    </div>
+</h3>
   <div class="musician-container">
     <div class="row">
       <% @musicians.each do |musician| %>
