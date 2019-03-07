@@ -18,7 +18,6 @@
   <% if user_signed_in? %>
       <div style="color: white ">Hello, <%= current_user.email %> </div>
       <div class="navbar-wagon-item">
-          <%= link_to "Band", bands_path %>
           <%= link_to "Musicians", musicians_path %>
           <%= link_to 'My Page', musicians_dashboard_path %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete %>
