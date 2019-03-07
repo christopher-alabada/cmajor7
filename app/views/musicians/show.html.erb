@@ -43,8 +43,9 @@
                   <% if @requested %>
                     <%= link_to "Already Connected", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
                   <% else %>
-                    <%= simple_form_for([@request]) do |f| %>
+                    <%= simple_form_for(@request) do |f| %>
                       <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
+                      <%= f.input :message, placeholder: 'Message' %>
                       <%= f.button :submit, 'Connect', class: "btn btn-primary connect align-center" %>
                     <% end %>
                   <% end %>
