@@ -38,22 +38,37 @@
   vertical-align: top;
 }
 
-.requests {
+.requests h3 {
   padding-left: 120px;
+}
+
+.to-requests {
+  display: flex;
+  align-items: center;
 }
 
 .r-container {
   display: flex;
+  justify-content: space-around;
+}
+.r-t-container {
+  display: flex;
   justify-content: start;
+  align-items: center;
 }
 
 .r-card {
-  width: 300px;
-  height: 100px;
-  box-shadow: 1px 1px #aaaaaa;
+  width: 500px;
+  height: 200px;
+  box-shadow: 1px 1px 1px #aaaaaa;
   margin: 20px;
+  position: relative;
+  padding: 20px;
 }
 .r-img {
-  width: 50px;
+  width: 60px;
   border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }
