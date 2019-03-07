@@ -1,0 +1,20 @@
+<div class="dashboard-wrapper">
+  <div class="musician">
+    <div class="musician-d-container">
+      <%= cl_image_tag(@musician.user_photo, class: 'dashboard_musician-image') %>
+    </div>
+    <div class="musician-d-nickname">
+      <h3><%= @musician.nickname %></h3>
+    </div>
+  </div>
+
+  <div class="dashboard-profile">
+    <%= link_to edit_user_registration_path do %>
+      <ul id="d-profile">Profile</ul>
+    <% end %>
+    <%#= link_to  %>
+    <ul id="d-request">Request</ul>
+    <ul id="d-bands">Bands</ul>
+    <ul id="d-message">Message</ul>
+  </div>
+</div>
