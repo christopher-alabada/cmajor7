@@ -14,4 +14,12 @@ class RequestsController < ApplicationController
 
     authorize @request
   end
+
+  def edit
+    authorize @request
+    @request = Request.find(params[:id])
+    @request.status = params[:status]
+
+    @request.save
+  end
 end
