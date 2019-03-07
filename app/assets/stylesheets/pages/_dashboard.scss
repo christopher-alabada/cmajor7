@@ -14,6 +14,30 @@
   font-size: 30px;
   margin-top: 50px;
 }
+
+.dashboard_musician-image {
+  border-radius: 50%;
+  width: 100px;
+}
+
+.d-musician-user-photo {
+  width: 100px;
+  border-radius: 50%;
+}
+.d-musician-banner-photo {
+  width: 200px;
+  border-radius: 5px;
+}
+
+.personal-information {
+  display: flex;
+  margin-left: 120px;
+}
+.edit {
+  font-size: 12px;
+  vertical-align: top;
+}
+
 #d-profile {
   color: black;
   opacity: 0.6;
@@ -43,7 +67,3 @@
   opacity: 1;
 }
 
-.dashboard_musician-image {
-  border-radius: 50%;
-  width: 100px;
-  }
