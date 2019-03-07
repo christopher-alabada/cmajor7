@@ -28,10 +28,19 @@ class RequestsController < ApplicationController
       @request.status = 'accepted'
     elsif @request.status == 'accepted'
       @request.status = 'confirmed'
-    end
+      @request.save
 
-    @request.save
-    redirect_to '/musicians/dashboard'
+      new_band = Band.new(band_name: "The #{@request.from.fullname} and #{@request.to.fullname} band")
+      new_band.save
+
+      bandmember = BandMember.new(user: @request.from, band: new_band)
+      bandmember.save
+      bandmember = BandMember.new(user: @request.to, band: new_band)
+      bandmember.save
+
+      redirect_to band_path(new_band)
+      return
+    end
 
     authorize @request
   end
