@@ -1,6 +1,6 @@
-class BandsPolicy < ApplicationPolicy
+class BandPolicy < ApplicationPolicy
   def show?
-    true
+    record.band_member_ids.include? user.id
   end
 
   class Scope < Scope

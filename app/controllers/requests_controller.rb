@@ -28,6 +28,22 @@ class RequestsController < ApplicationController
       @request.status = 'accepted'
     elsif @request.status == 'accepted'
       @request.status = 'confirmed'
+
+      if @request.band_id == 0
+        # create new band
+        band = Band.new(band_name: "The #{@request.from.fullname} and #{@request.to.fullname} band")
+        band.save
+
+        # add from band member first
+        bandmember = BandMember.new(user: @request.from, band: band)
+        bandmember.save
+      else
+        band = @request.band
+      end
+
+      # add to band member
+      bandmember = BandMember.new(user: @request.to, band: band)
+      bandmember.save
     end
 
     @request.save
