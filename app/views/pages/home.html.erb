@@ -85,6 +85,7 @@
       <div class="row">
         <% @musicians[0..5].each do |musician| %>
           <div class="col-xs-12 col-md-4">
+            <% p musician %>
             <div class="musician-index">
               <div class="musician-card">
                 <%= link_to musician_path(musician) do %>
@@ -92,7 +93,14 @@
 
                   <div class="musician-description-shadow">
                   <div class="musician-card-description">
-                  <p class="nickname"><%= musician.nickname.capitalize! %></p>
+                  <p class="nickname">
+                  <% unless musician.nickname.nil? %>
+                    <%= musician.nickname.capitalize! %>
+                  <% else %>
+                    <%= musician.fullname %>
+                  <% end %>
+                  </p>
+
                   <div class="form-inline musician-equipment">
                     <%
                       instruments = []

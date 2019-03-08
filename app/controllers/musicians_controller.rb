@@ -19,7 +19,7 @@ class MusiciansController < ApplicationController
 
     if user_signed_in?
       @requested = Request.find_by(from: current_user, to: @musician)
-      @musicians_bands = current_user.bands.map { |band| [band.id, band.band_name] }
+      @musicians_bands = current_user.bands.map { |band| [band.band_name, band.id] }
       @musicians_bands.unshift(['Form new band...', 0])
     end
   end
@@ -40,8 +40,11 @@ class MusiciansController < ApplicationController
 
     @from_requests = current_user.from_requests
     @to_requests = current_user.to_requests
-    # @band = Band.find(current_user.id)
-    # authorize @band
+
+    # @bands = current_user.bands.all
+    @bands = current_user.bands
+
+    @messages = Message.all.where('from_id = :user_id OR to_id = :user_id', { user_id: current_user.id })
   end
 
   def status_button_text(request)
