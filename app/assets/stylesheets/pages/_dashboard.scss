@@ -74,7 +74,16 @@
   padding: 20px;
   position: relative;
   border-radius: 5px;
+  color: black;
 }
+
+.r-card-nickname {
+  color: black;
+}
+.r-card-nickname:hover {
+  color: blue;
+}
+
 .r-f-card {
   width: 500px;
   border-radius: 5px;
