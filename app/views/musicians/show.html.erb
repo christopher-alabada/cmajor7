@@ -12,7 +12,7 @@
 
 
 <div class="container">
-  <div class="show-container">
+  <div class="musicians-show-container">
     <div class="show-musician-pic-wrapper">
       <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
       <!-- <div class="gray-connect-btn">
@@ -65,7 +65,7 @@
     <% if @requested %>
       <%= link_to "Already Connected", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
     <% else %>
-      <%= simple_form_for(@request) do |f| %>
+      <%= simple_form_for @request, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
         <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
         <%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %>
         <%= f.input :message, placeholder: 'Message' %>

@@ -53,9 +53,10 @@
   letter-spacing: 4px;
 }
 
-.show-container {
+.musicians-show-container {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 50px;
 }
 
 .show-musician-pic-wrapper {
@@ -294,4 +295,10 @@
 #show-connect {
   display: flex;
   justify-content: center;
+}
+
+
+
+#new_request span {
+  margin: 10px 10px;
 }
