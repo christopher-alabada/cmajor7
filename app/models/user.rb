@@ -13,6 +13,9 @@ class User < ApplicationRecord
   has_many :band_members
   has_many :bands, through: :band_members
 
+  has_many :musician_genres
+  has_many :genres, through: :musician_genres
+
   mount_uploader :user_photo, PhotoUploader
   mount_uploader :banner_photo, PhotoUploader
 
