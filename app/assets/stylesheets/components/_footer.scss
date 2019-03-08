@@ -4,18 +4,26 @@
   background-color: #121212;
   color: white;
   padding: 20px;
-  height: 200px;
+  height: 100px;
   position: relative;
+  align-items: center;
 }
 
+.fab {
+  color: white;
+  opacity: 0.5;
+  font-size: 20px;
+  vertical-align: middle;
+  align-items: center;
+}
 .footer-item {
-
+  vertical-align: middle;
 }
-
 .footer-links {
   position: absolute;
   color: #FFFFFF;
-  bottom: 20px;
+  // bottom: 10px;
+  right: 20px;
   //margin-top: 60px;
 }
 
