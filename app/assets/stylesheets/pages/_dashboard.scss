@@ -63,11 +63,22 @@
   display: flex;
   justify-content: space-around;
 }
+.r-img {
+  border-radius: 20px;
+  width: 100px;
+  padding-left: 10px;
+}
 
-
+.r-card {
+  width: 500px;
+  min-height: 200px;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin: 20px;
+  padding: 20px;
+}
 .r-f-card {
   width: 500px;
-  height: 200px;
+  min-height: 200px;
   box-shadow: 1px 1px 1px #aaaaaa;
   margin: 20px;
   padding: 20px;
@@ -80,16 +91,11 @@
   display: flex;
   justify-content: start;
   text-decoration: none;
-  color: grey;
+  color: #5d5d5a;
 }
-// .bands-feature {
-//   color: grey;
-// }
-// .bands-feature a:hover, a:visited, a:link, a:active {
-//   text-decoration: none;
-// }
 
 .b-card {
+  line-height: 30px;
   width: 250px;
   height: 250px;
   box-shadow: 1px 1px 1px #aaaaaa;
@@ -97,7 +103,10 @@
   margin-bottom: 50px;
   border-radius: 20%;
   padding: 20px;
-  color: grey;
+  color: #5d5d5a;
+}
+.b-card p {
+  margin-top: 20px
 }
 .b-card a:hover, a:visited, a:link, a:active {
   text-decoration: none;
@@ -105,7 +114,7 @@
 }
 .b-img {
   border-radius: 50%;
-  width: 30px;
+  width: 27px;
 }
 
 .profile:hover {
