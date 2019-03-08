@@ -31,7 +31,24 @@
 
 .personal-information {
   display: flex;
-  margin-left: 120px;
+  margin: 50px 120px 50px 120px;
+  box-shadow: 1px 1px 1px black;
+}
+.personal-information h3 {
+  padding-left: 20px;
+}
+.requests {
+  display: flex;
+  margin: 50px 120px 50px 120px;
+  box-shadow: 1px 1px 1px black;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.bands-feature {
+  padding-top: 10px;
+  display: flex;
+  margin: 50px 120px 50px 120px;
+  box-shadow: 1px 1px 1px black;
 }
 .edit {
   font-size: 12px;
@@ -39,7 +56,7 @@
 }
 
 .requests h3 {
-  padding-left: 120px;
+  padding-left: 20px;
 }
 
 .r-container {
@@ -53,32 +70,56 @@
   height: 200px;
   box-shadow: 1px 1px 1px #aaaaaa;
   margin: 20px;
-  position: relative;
   padding: 20px;
-}
-.r-img {
-  width: 60px;
-  border-radius: 50%;
-  position: absolute;
-  top: 20px;
-  right: 20px;
 }
 
 .bands-feature h3 {
-  padding-left: 120px;
+  padding-left: 20px;
 }
 .your-bands {
   display: flex;
   justify-content: start;
+  text-decoration: none;
+  color: grey;
 }
+// .bands-feature {
+//   color: grey;
+// }
+// .bands-feature a:hover, a:visited, a:link, a:active {
+//   text-decoration: none;
+// }
+
 .b-card {
-  width: 500px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   box-shadow: 1px 1px 1px #aaaaaa;
-  margin-left: 120px;
+  margin-left: 20px;
   margin-bottom: 50px;
+  border-radius: 20%;
+  padding: 20px;
+  color: grey;
+}
+.b-card a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: black
 }
 .b-img {
   border-radius: 50%;
   width: 30px;
+}
+
+.profile:hover {
+  font-size: 25px;
+  color: black;
+  text-decoration: underline;
+}
+.request:hover {
+  font-size: 25px;
+  color: black;
+  text-decoration: underline;
+}
+.band:hover {
+  font-size: 25px;
+  color: black;
+  text-decoration: underline;
 }
