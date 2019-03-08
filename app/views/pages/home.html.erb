@@ -12,11 +12,7 @@
 
     <div class="flex-grow-3 d-flex">
         <div>
-          <%= form_tag musicians_path, method: :get, class: "", style: '' do %>
-
-            <%= submit_tag "Explore", class: "btn btn-outline-success explore-button", style: "margin-top: 25px;padding: 15px 60px 15px;color: #ffffff;background-color: transparent;background-image: none;border-color: #ffffff;border-radius: 50px;font-family: 'Montserrat', sans-serif;" %>
-
-          <% end %>
+          <%= link_to "Explore", musicians_path, class: "btn btn-outline-success explore-button", style: "margin-top: 25px;padding: 15px 60px 15px;color: #ffffff;background-color: transparent;background-image: none;border-color: #ffffff;border-radius: 50px;font-family: 'Montserrat', sans-serif;" %>
         </div>
       </div>
 
