@@ -17,7 +17,7 @@ body {
   background-size: cover;
   background-position: center;
   padding: 200px 0;
-  height: 82vh;
+  height: calc(100vh - 140px);
   box-shadow: 0px 0.5px 3.5px 0px grey;
   // background: #FC466B;  /* fallback for old browsers */
   // background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
