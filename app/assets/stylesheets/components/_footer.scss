@@ -3,13 +3,19 @@
   color: white;
   height: 60px;
   padding: 20px;
-  height: 200px;
+  height: 100px;
   position: relative;
 }
 
 .footer-links {
   position: absolute;
   right: 50px;
+  color: white;
+}
+
+.fab {
+  opacity: 0.5;
+  color: white;
 }
 
 .fa-heart {
