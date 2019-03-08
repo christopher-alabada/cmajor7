@@ -18,7 +18,17 @@
   </div>
 </div>
 
-<div class="down-arrow-icon"><i class="fas fa-chevron-down fa-3x"></i></div>
+<div class="down-arrow-icon">
+  <input type="checkbox" style="display: none;" id="scroll">
+  <label for="scroll" class="scroll-down"><i class="fas fa-chevron-down fa-3x"></i></label>
+  <script>
+    $("#scroll").click(function() {
+      $([document.documentElement, document.body]).animate({
+          scrollTop: $(".header").offset().top
+      }, 2000);
+    });
+  </script>
+</div>
 
 <div class="landing-white-section">
   <h1 class="header" style="display: flex; justify-content: center;">
@@ -56,7 +66,9 @@
 
 <div class="explore-musician-title">
     <div class="g-exolore">
-     Explore musicians.
+    <%= link_to musicians_path do %>
+     <div class='explore-musician'>Explore musicians.</div>
+    <% end %>
     </div>
 </div>
 
