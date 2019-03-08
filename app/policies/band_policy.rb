@@ -1,6 +1,6 @@
 class BandPolicy < ApplicationPolicy
   def show?
-    record.band_member_ids.include? user.id
+    record.band_members.any? { |member| member.user == user }
   end
 
   class Scope < Scope
