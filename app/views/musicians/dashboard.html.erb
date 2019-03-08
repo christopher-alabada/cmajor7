@@ -122,8 +122,10 @@
                 <div class="r-card">
                   <p>Status : <%= r.status.capitalize %></p>
                   <% @musicians.where(id: r.from_id).each do |m| %>
-                    <p>Request from : <%= m.nickname.capitalize! %></p>
-                    <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                    <%= link_to musician_path(m.id) do %>
+                      <p class='r-card-nickname'>Request from : <%= m.nickname.capitalize! %></p>
+                      <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                    <% end %>
                   <% end %>
                   <p>Message : <%= r.message %></p>
                   <% if button_text = status_button_text(r) %>
