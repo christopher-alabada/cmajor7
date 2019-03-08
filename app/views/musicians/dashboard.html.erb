@@ -15,8 +15,8 @@
     <%#= link_to  %>
     <ul id="d-request">Request</ul>
     <ul id="d-bands">Bands</ul>
-    <ul id="d-message">Message</ul>
-  </div>
+<!--     <ul id="d-message">Message</ul>
+ -->  </div>
 
   <div class="personal-information">
     <div class="d-p-info">
@@ -47,15 +47,19 @@
         <div class="f-request">
           <h4>Requests you send</h4>
           <div class="from-request">
-            <% @from_requests.each do |r| %>
-              <div class="r-f-card">
-                <p>Status : <%= r.status.capitalize %></p>
-                <p>Message : <%= r.message %></p>
-                <% @musicians.where(id: r.to_id).each do |m| %>
-                  <p>Request to : <%= m.nickname.capitalize! %></p>
-                  <%= cl_image_tag(m.user_photo, class: 'r-img') %>
-                <% end %>
-              </div>
+            <% if @from_requests.exists? %>
+              <% @from_requests.each do |r| %>
+                <div class="r-f-card">
+                  <p>Status : <%= r.status.capitalize %></p>
+                  <p>Message : <%= r.message %></p>
+                  <% @musicians.where(id: r.to_id).each do |m| %>
+                    <p>Request to : <%= m.nickname.capitalize! %></p>
+                    <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+             <%= 'No requests you have send yet...' %>
             <% end %>
          </div>
        </div>
@@ -83,7 +87,24 @@
   </div>
 
   <div class="bands-feature">
-    <%= @bands %>
+    <h3>Your Bands</h3>
+    <div class="your-bands">
+      <%= link_to band_path(@band) do %>
+      <% @bands.each do |b| %>
+        <div class="b-card">
+          <h5>Band name : <%= b.band_name.capitalize %></h5>
+          <p>Members : </p>
+          <% b.band_members.each do |m| %>
+            <div class="b-members">
+              <% user = User.find(m.user_id) %>
+              - <%= user.nickname.capitalize %>
+              <%= cl_image_tag(user.user_photo, class: 'b-img') %>
+            </div>
+            <% end %>
+        </div>
+      <% end %>
+      <% end %>
+    </div>
   </div>
 
 

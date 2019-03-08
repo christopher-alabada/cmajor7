@@ -39,7 +39,8 @@ class MusiciansController < ApplicationController
     @from_requests = current_user.from_requests
     @to_requests = current_user.to_requests
 
-    @bands = User.find(current_user.id).bands.band_name
+    @bands = current_user.bands.all
+    @band = current_user.bands
   end
 
   private
