@@ -4,7 +4,7 @@
       <%= cl_image_tag(@musician.user_photo, class: 'dashboard_musician-image') %>
     </div>
     <div class="musician-d-nickname">
-      <h3><%= @musician.nickname %></h3>
+      <h3><%= @musician.nickname.capitalize %></h3>
     </div>
   </div>
 

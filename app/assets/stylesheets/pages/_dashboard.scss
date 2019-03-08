@@ -1,11 +1,21 @@
 .musician {
-  margin-left: 120px;
-  margin-top: 50px;
+  margin-top: 70px;
+  margin-right: 125px;
+  margin-bottom: 90px;
   display: flex;
-  align-item: srart;
+  justify-content: center;
 }
 .musician-d-nickname {
   margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.musician-d-nickname h3 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  color: black;
 }
 
 .dashboard-profile {
@@ -16,8 +26,11 @@
 }
 
 .dashboard_musician-image {
-  border-radius: 50%;
   width: 100px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
 }
 
 .d-musician-user-photo {
@@ -31,26 +44,35 @@
 
 .personal-information {
   display: flex;
-  margin: 50px 120px 50px 120px;
+  margin: 30px 120px 30px 120px;
   box-shadow: 1px 1px 1px black;
+  padding: 50px;
+  border-top: 3px solid #E84369;
 }
 .personal-information h3 {
   padding-left: 20px;
 }
 .requests {
   display: flex;
-  margin: 50px 120px 50px 120px;
+  margin: 30px 120px 30px 120px;
   box-shadow: 1px 1px 1px black;
-  padding-top: 10px;
-  padding-bottom: 20px;
+
+  padding: 50px;
+  border-top: 3px solid #9745AF;
+
 }
 .requests h3 {
   padding-left: 20px;
 }
 .request:hover {
-  font-size: 25px;
   color: black;
   text-decoration: underline;
+}
+
+.request {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  border-bottom: 3px solid #9745AF;
 }
 
 .r-container {
@@ -87,8 +109,10 @@
 .bands-feature {
   padding-top: 10px;
   display: flex;
-  margin: 50px 120px 50px 120px;
+  margin: 30px 120px 30px 120px;
   box-shadow: 1px 1px 1px black;
+  padding: 50px;
+  border-top: 3px solid #3F5DFA;
 }
 .edit {
   font-size: 12px;
@@ -129,14 +153,24 @@
   width: 27px;
 }
 
+.profile {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  border-bottom: 3px solid #E84369;
+}
+
 .profile:hover {
-  font-size: 25px;
   color: black;
   text-decoration: underline;
 }
 
+.band {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  border-bottom: 3px solid #3F5DFA;
+}
+
 .band:hover {
-  font-size: 25px;
   color: black;
   text-decoration: underline;
 }

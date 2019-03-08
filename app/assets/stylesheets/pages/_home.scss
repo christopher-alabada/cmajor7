@@ -132,8 +132,14 @@ body {
   margin-bottom: 20px;
 }
 
+.more-explore-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .more-explore:hover {
   color: #3F5DFA;
+  transition: .2s ease;
 }
 
 // .explore-button:hover {
