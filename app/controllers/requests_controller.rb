@@ -38,7 +38,7 @@ class RequestsController < ApplicationController
         bandmember = BandMember.new(user: @request.from, band: band)
         bandmember.save
       else
-        band = @request.band
+        band = Band.find(@request.band_id)
       end
 
       # add to band member
