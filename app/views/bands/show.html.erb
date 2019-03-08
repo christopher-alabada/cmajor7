@@ -25,28 +25,38 @@
       <div class="banner-content">
         <h3 class="musician-name"></h3>
         <div class="card-description">
+
           <div class="card-contents-band">
-            <div>
               <p class='nickname-band'>Members</p>
-              <img class="member-avatar" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551855364/ulyfklvmkld2z1ysgqgi.jpg">
-              <img class="member-avatar" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551855376/uoj0jllbvqokrcygybpd.jpg">
-              <img class="member-avatar" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551855354/mmvr5t3vzownxn7pxi5r.jpg">
-              <div class="name-member">
-                <p>Bobby Smith</p>
-                <p>Bobby Smith</p>
-                <p>Bobby Smith</p>
-              </div>
+            <div class="band-members-wrapper">
+              <% @band.band_member_ids.each do |member_id|%>
+                <%= link_to musician_path(member_id) do %>
+                  <div class="band-members">
+                    <p>
+                      <%= cl_image_tag(User.find(member_id).user_photo, class:'member-avatar')%>
+                    </p>
+                    <p>
+                      <%= User.find(member_id).nickname.capitalize %>
+                    </p>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
              <!--  <input type="checkbox" style="display: none;" id="connect">
                 <div class="popup" style="display: none;">
                   <div class="col-md-6">
                       <p class='submit'></p>
                   </div>
                 </div> -->
-                <a href="/bands/1">
-                <p class="view-members">View all members</p>
-</a>            </div>
+             <!--<a href="/bands/1">
+                  <p class="view-members">View all members</p>
+                </a> -->
+          </div>
 
-<% raise %>
+
+
+
+
 <script>
               $(document).ready(function() {
                 $("#connect").change(function(){
