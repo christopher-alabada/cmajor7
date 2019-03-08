@@ -12,12 +12,18 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="show-container">
+
     <div class="profile-container-band text-left">
-      <div><h1>About Us</h1></div>
+      <div><h1>We are...</h1></div>
       <div><p style="margin-bottom: 35px">We’re a band that’s everychanging when it comes to style. We’re open to changing up our sound to divesify our audience. Come join us!</p></div>
-      <div><h5>Location: Meguro</h5></div>
+      <div>
+        Location: <% @band.band_member_ids.each do |member_id|%>
+                    <%= User.find(member_id).location.capitalize %>
+                  <% end %>
+      </div>
     </div>
 
 
@@ -27,14 +33,14 @@
         <div class="card-description">
 
           <div class="card-contents-band">
-              <p class='nickname-band'>Members</p>
+              <p class='band-members-title'>Members</p>
             <div class="band-members-wrapper">
               <% @band.band_member_ids.each do |member_id|%>
                 <%= link_to musician_path(member_id) do %>
                   <div class="band-members">
-                    <p>
+                    <span>
                       <%= cl_image_tag(User.find(member_id).user_photo, class:'member-avatar')%>
-                    </p>
+                    </span>
                     <p>
                       <%= User.find(member_id).nickname.capitalize %>
                     </p>
@@ -53,11 +59,7 @@
                 </a> -->
           </div>
 
-
-
-
-
-<script>
+            <script>
               $(document).ready(function() {
                 $("#connect").change(function(){
                   if(this.checked){

@@ -56,13 +56,10 @@
 
 .profile-container-band {
   color: black;
-  padding-right: 70px;
 }
 
 .profile-container-band h1 {
   color: #000000;
-  margin-top: 100px;
-  margin-bottom: 35px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
 }
@@ -78,7 +75,7 @@
 }
 
 .card-contents-band {
-  background-color: gray;
+  box-shadow: 0 1px 3px gray;
   min-width: 320px;
   min-height: 100px;
   max-width: 250px;
@@ -90,11 +87,14 @@
   justify-content: flex-start;
 }
 
-.nickname-band {
+.band-members-title {
   color: black;
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #3F5DFA;
+  width: 47%;
 }
 
 .band-members {
@@ -111,6 +111,7 @@
   font-weight: bolder;
   font-size: 16px;
   color: black;
+  opacity: 0.8;
   &:hover {
     text-decoration: none;
   }
