@@ -41,8 +41,8 @@ class MusiciansController < ApplicationController
     @from_requests = current_user.from_requests
     @to_requests = current_user.to_requests
 
-    @bands = current_user.bands.all
-    @band = current_user.bands
+    # @bands = current_user.bands.all
+    @bands = current_user.bands
 
     @messages = Message.all.where('from_id = :user_id OR to_id = :user_id', { user_id: current_user.id })
   end
