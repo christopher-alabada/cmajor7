@@ -172,8 +172,17 @@
   opacity: 0.6;
 }
 
+.gray-view-bands li {
+  text-transform: capitalize;
+  opacity: 0.5;
+}
+
 .gray-view-bands p {
   opacity: 0.5;
+}
+
+.gray-view-bands ul {
+  list-style-type: none;
 }
 
 
