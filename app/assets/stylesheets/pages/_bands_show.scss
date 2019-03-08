@@ -19,7 +19,15 @@
 
 .band-contents-band {
   box-shadow: 0 1px 3px gray;
-  padding: 20px;
+  padding: 30px;
+}
+
+.band-contents-band h3 {
+  margin-top: 0;
+  border-bottom: 5px solid #E84369;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 .card-user {
@@ -137,6 +145,9 @@
 .show-container {
   display: flex;
   justify-content: space-between;
+
+  margin-top: 70px;
+  margin-bottom: 70px;
 }
 
 .connect {
