@@ -47,40 +47,55 @@
         <div class="f-request">
           <h4>Requests you send</h4>
           <div class="from-request">
-            <% if @from_requests.exists? %>
-              <% @from_requests.each do |r| %>
-                <div class="r-f-card">
+
+          <% if @from_requests.exists? %>
+            <% @from_requests.each do |r| %>
+              <div class="r-card">
+                <p>Status : <%= r.status.capitalize %></p>
+                <% @musicians.where(id: r.to_id).each do |m| %>
+                  <p>Request to : <%= m.nickname.capitalize! %></p>
+                  <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                <% end %>
+                <p>Message : <%= r.message %></p>
+                <% if button_text = status_button_text(r) %>
+                  <%= link_to button_text.capitalize, edit_status_requests_path(r), method: 'patch', class: "btn btn-primary" %>
+                <% end %>
+                <% unless r.status == 'confirmed' || r.status == 'rejected' %>
+                  <%= link_to 'Reject', edit_status_requests_path(r, reject: 1), method: 'patch', class: "btn btn-danger" %>
+                <% end %>
+              </div>
+            <% end %>
+          <% else %>
+             No requests you have send yet...
+          <% end %>
+
+         </div>
+       </div>
+
+         <div class="to-request">
+          <h4>Requests from other Musicians</h4>
+          <div class="r-t-container">
+            <% if @to_requests.exists? %>
+              <% @to_requests.each do |r| %>
+                <div class="r-card">
                   <p>Status : <%= r.status.capitalize %></p>
-                  <p>Message : <%= r.message %></p>
-                  <% @musicians.where(id: r.to_id).each do |m| %>
-                    <p>Request to : <%= m.nickname.capitalize! %></p>
+                  <% @musicians.where(id: r.from_id).each do |m| %>
+                    <p>Request from : <%= m.nickname.capitalize! %></p>
                     <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                  <% end %>
+                  <p>Message : <%= r.message %></p>
+                  <% if button_text = status_button_text(r) %>
+                    <%= link_to button_text.capitalize, edit_status_requests_path(r), method: 'patch', class: "btn btn-success" %>
+                  <% end %>
+                  <% unless r.status == 'confirmed' || r.status == 'rejected' %>
+                    <%= link_to 'Reject', edit_status_requests_path(r, reject: 1), method: 'patch', class: "btn btn-danger" %>
                   <% end %>
                 </div>
               <% end %>
             <% else %>
-             <%= 'No requests you have send yet...' %>
+               No requests yet...
             <% end %>
          </div>
-       </div>
-
-        <div class="to-requests">
-         <h4>Requests from other Musicians</h4>
-          <div class="r-t-container">
-            <% if @to_requests.exists? %>
-              <% @to_requests.each do |i| %>
-                <p>Status : <%= i.status %></p>
-                <p>Message : <%= i.message %></p>
-                <% @musicians.where(id: r.from_id).each do |m| %>
-                  <p>Request from : <%= m.nickname.capitalize! %></p>
-                  <%= cl_image_tag(m.user_photo, class: 'r-img') %>
-                <% end %>
-              <% end %>
-            <% else %>
-              <%= 'No requests from other musicians yet...' %>
-            <% end %>
-          </div>
-        </div>
 
     </div>
 
