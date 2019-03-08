@@ -1,20 +1,12 @@
-<div class="footer" style="display: flex; justify-content: space-between;">
-  <div class="footer-links">
+<div class="footer">
+  <div class="footer-item footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-facebook"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
-  <div class="footer-text" style="font-size: 20px; text-align: left;margin-top: 10px;font-family: 'Montserrat', sans-serif;">
+  <div class="footer-item footer-text" style="font-size: 20px; text-align: left;margin-top: 10px;font-family: 'Montserrat', sans-serif;">
     C Major 7 was made with <i class="fas fa-heart"></i> by Yuki, Harrison, Chris, and Kumi
   </div>
-   <div class="landing-search-bar">
-          <%= form_tag musicians_path, method: :get, class: "text-left", style: 'padding-left: 50px; position: relative; bottom: 20px;' do %>
-            <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field-footer", placeholder: "What are you looking for?" %>
-            <%= submit_tag "Search", class: "btn btn-primary", style: "margin: 43px;padding: 5px 25px 5px; margin-left: 10px; border-radius: 3px; margin-top: 40px;" %>
-          <% end %>
-        </div>
 </div>
-
-
