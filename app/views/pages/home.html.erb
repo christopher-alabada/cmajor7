@@ -1,22 +1,24 @@
 <div class="landing-page">
 
-<div class="landing-banner">
+<div class="landing-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/harrisongarovi/image/upload/v1552020765/audience-band-blur-1587927.jpg);">
 
   <div class="container">
     <div class="lading-banner-container">
 
+
       <div class="lading-banner-word">
         <h1 style="font-size: 200px; font-weight: bold;">Let's Play.</h1>
-      </div>
+        <h2 style="font-weight: bold;">Jam with the local community.</h2>
 
-      <div class="flex-grow-3 d-flex">
-        <div class="landing-search-bar">
-          <%= form_tag musicians_path, method: :get, class: "text-left", style: 'padding-left: 50px' do %>
-            <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: "Music instrument or Location" %>
-            <%= submit_tag "Search", class: "btn btn-danger", style: "margin: 43px;padding: 5px 25px 5px; margin-left: 10px;" %>
-          <% end %>
+    <div class="flex-grow-3 d-flex">
+        <div>
+          <%= link_to "Explore", musicians_path, class: "btn btn-outline-success explore-button", style: "margin-top: 25px;padding: 15px 60px 15px;color: #ffffff;background-color: transparent;background-image: none;border-color: #ffffff;border-radius: 50px;font-family: 'Montserrat', sans-serif;" %>
         </div>
       </div>
+
+
+      </div>
+
 
     </div>
   </div>
@@ -117,7 +119,7 @@
         <% end %>
       </div>
       <%= link_to musicians_path do %>
-        <div class="more-explore">And more....</div>
+        <div class="more-explore">View all musicians</div>
       <% end %>
     </div>
   </div>
