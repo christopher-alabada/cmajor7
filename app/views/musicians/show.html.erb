@@ -37,21 +37,34 @@
                 e.equipment_type.capitalize
               end
             %>
-            <%= instruments.join(" | ") %>
+            <%= instruments.join(" · ") %>
           </div>
           <div class="gray-other-info">
-            <p>Genre:</p>
+          <% unless @musician.genres.nil? %>
+            <p>Genre:
+              <%
+                genres = []
+                @musician.genres.each do |genre|
+                  genres << genre.name
+                end
+              %>
+              <%= genres.join(' · ') %>
+            </p>
+          <% end %>
             <p>Location: <%= @musician.location %></p>
           </div>
-          <div class="gray-view-bands">
-            <p>Bands:</p>
-            <ul>
-              <% @musician.bands.each do |band| %>
-                <li><%= band.band_name.capitalize %></li>
-              <% end %>
+
+          <% unless @musician.bands.nil? %>
+            <div class="gray-view-bands">
+              <p>Bands:</p>
+              <ul>
+                <% @musician.bands.each do |band| %>
+                  <li><%= band.band_name.capitalize %></li>
+                <% end %>
+                </ul>
               </ul>
-            </ul>
-          </div>
+            </div>
+          <% end %>
 
 
         </div>
