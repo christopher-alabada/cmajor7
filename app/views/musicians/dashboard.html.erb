@@ -148,20 +148,24 @@
   <div class="bands-feature" style="display: none">
     <h3>Your Bands</h3>
     <div class="your-bands">
-      <% @bands.each do |b| %>
-        <%= link_to band_path(b) do %>
-          <div class="b-card">
-            <h5>Band name : <%= b.band_name.capitalize %></h5>
-            <p>Members : </p>
-            <% b.band_members.each do |m| %>
-              <div class="b-members">
-                <% user = User.find(m.user_id) %>
-                - <%= user.nickname.capitalize %>
-                <%= cl_image_tag(user.user_photo, class: 'b-img') %>
-              </div>
-            <% end %>
-          </div>
+      <% if @bands.exists? %>
+        <% @bands.each do |b| %>
+          <%= link_to band_path(b) do %>
+            <div class="b-card">
+              <h5>Band name : <%= b.band_name.capitalize %></h5>
+              <p>Members : </p>
+              <% b.band_members.each do |m| %>
+                <div class="b-members">
+                  <% user = User.find(m.user_id) %>
+                  - <%= user.nickname.capitalize %>
+                  <%= cl_image_tag(user.user_photo, class: 'b-img') %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
+      <% else %>
+        <%= 'No Bands formed yet... ' %>
       <% end %>
     </div>
   </div>
