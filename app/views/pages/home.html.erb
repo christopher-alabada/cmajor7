@@ -11,10 +11,11 @@
       </div>
 
       <div class="flex-grow-3 d-flex">
-        <div class="landing-search-bar">
+        <div class="explore-button">
           <%= form_tag musicians_path, method: :get, class: "text-left", style: 'padding-left: 50px' do %>
-            <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: "Music instrument or Location" %>
-            <%= submit_tag "Search", class: "btn btn-danger", style: "margin: 43px;padding: 5px 25px 5px; margin-left: 10px;" %>
+
+            <%= submit_tag "Explore", class: "btn btn-outline-light", style: "margin: 43px;padding: 5px 25px 5px; margin-left: 10px;" %>
+
           <% end %>
         </div>
       </div>
