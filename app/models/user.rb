@@ -16,6 +16,10 @@ class User < ApplicationRecord
   mount_uploader :user_photo, PhotoUploader
   mount_uploader :banner_photo, PhotoUploader
 
+  validates :fullname, presence: true
+  validates :nickname, presence: true
+  validates :location, presence: true
+
   include PgSearch
   pg_search_scope :search_by_location_and_syllabus,
     against: [ :location, :syllabus ],
@@ -23,3 +27,4 @@ class User < ApplicationRecord
       tsearch: { prefix: true }
     }
 end
+
