@@ -104,8 +104,8 @@
   <div class="bands-feature">
     <h3>Your Bands</h3>
     <div class="your-bands">
-      <%= link_to band_path(@band) do %>
       <% @bands.each do |b| %>
+      <%= link_to band_path(b) do %>
         <div class="b-card">
           <h5>Band name : <%= b.band_name.capitalize %></h5>
           <p>Members : </p>
