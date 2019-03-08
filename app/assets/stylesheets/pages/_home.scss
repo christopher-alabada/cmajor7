@@ -32,7 +32,7 @@ body {
 }
 
 .lading-banner-word {
-  text-align: center;
+  text-align: left;
   color: white;
 }
 
@@ -124,10 +124,14 @@ body {
 .more-explore {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  color: black;
-  font-size: 40px;
-  text-align:center;
+  color: #000000;
+  font-size: 25px;
+  text-align: right;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.more-explore:hover {
+  color: #3F5DFA;
 }
 
