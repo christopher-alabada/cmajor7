@@ -73,9 +73,11 @@
   margin: 20px;
   padding: 20px;
   position: relative;
+  border-radius: 5px;
 }
 .r-f-card {
   width: 500px;
+  border-radius: 5px;
   min-height: 200px;
   box-shadow: 1px 1px 1px #aaaaaa;
   margin: 20px;
@@ -101,6 +103,8 @@
   justify-content: start;
   text-decoration: none;
   color: #5d5d5a;
+  margin-left: 20px;
+  padding-bottom: 30px;
 }
 
 .b-card {
