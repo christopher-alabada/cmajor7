@@ -56,13 +56,10 @@
 
 .profile-container-band {
   color: black;
-  padding-right: 70px;
 }
 
 .profile-container-band h1 {
   color: #000000;
-  margin-top: 100px;
-  margin-bottom: 35px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
 }
@@ -78,14 +75,58 @@
 }
 
 .card-contents-band {
-  background-color: white;
+  box-shadow: 0 1px 3px gray;
   min-width: 320px;
-  min-height: 250px;
+  min-height: 100px;
+  max-width: 250px;
+  padding: 20px;
+}
+
+.band-members-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 220px;
-  margin-top: 75px;
+  justify-content: flex-start;
+}
+
+.band-members-title {
+  color: black;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #3F5DFA;
+  width: 47%;
+}
+
+.band-members {
+  text-align: center;
+  margin-left: 10px;
+}
+
+.band-members p {
+  margin-left: 0;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  font-size: 16px;
+  color: black;
+  opacity: 0.8;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.member-avatar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.view-members {
+  font-size: 10px;
+  color: #000000;
+  font-weight: lighter;
 }
 
 .show-container {
@@ -103,14 +144,6 @@
   color: #929aab;
 }
 
-.view-members {
-  margin-top: 5px;
-  font-size: 10px;
-  color: #000000;
-  margin-left: 190px;
-  font-weight: lighter;
-}
-
 .view-members:hover {
   color: #000000;
   text-decoration: underline;
@@ -121,22 +154,7 @@
   justify-content: center;
 }
 
-.nickname-band {
-  color: black;
-  font-size: 25px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
-  margin:0;
-  margin-right: 160px;
-  margin-bottom: 15px;
-}
 
-.member-avatar {
-  border-radius: 50%;
-  height: 75px;
-  width: 75px;
-  margin-left: 12px;
-}
 
 .name-member {
   display: flex;
