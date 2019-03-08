@@ -31,7 +31,7 @@ class RequestsController < ApplicationController
 
       if @request.band_id == 0
         # create new band
-        band = Band.new(band_name: "The #{@request.from.fullname} and #{@request.to.fullname} band")
+        band = Band.new(band_name: "The #{@request.from.nickname} and #{@request.to.nickname} band")
         band.save
 
         # add from band member first
