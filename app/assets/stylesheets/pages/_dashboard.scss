@@ -69,9 +69,16 @@
   padding-left: 10px;
 }
 
+.r-card {
+  width: 500px;
+  min-height: 200px;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin: 20px;
+  padding: 20px;
+}
 .r-f-card {
   width: 500px;
-  height: 200px;
+  min-height: 200px;
   box-shadow: 1px 1px 1px #aaaaaa;
   margin: 20px;
   padding: 20px;
