@@ -42,22 +42,13 @@
   padding-left: 120px;
 }
 
-.to-requests {
-  display: flex;
-  align-items: center;
-}
-
 .r-container {
   display: flex;
   justify-content: space-around;
 }
-.r-t-container {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-}
 
-.r-card {
+
+.r-f-card {
   width: 500px;
   height: 200px;
   box-shadow: 1px 1px 1px #aaaaaa;
@@ -71,4 +62,23 @@
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+.bands-feature h3 {
+  padding-left: 120px;
+}
+.your-bands {
+  display: flex;
+  justify-content: start;
+}
+.b-card {
+  width: 500px;
+  height: 200px;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin-left: 120px;
+  margin-bottom: 50px;
+}
+.b-img {
+  border-radius: 50%;
+  width: 30px;
 }
