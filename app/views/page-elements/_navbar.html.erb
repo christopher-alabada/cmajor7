@@ -1,4 +1,4 @@
-<div class="navbar-logo">
+<div class="navbar-wagon navbar-logo">
   <!-- Logo -->
 
   <div class="logo-h1">
@@ -16,20 +16,29 @@
 
   <div class="navbar-right">
   <% if user_signed_in? %>
-      <div style="color: white ">Hello, <%= current_user.email %> </div>
-      <div class="navbar-wagon-item">
-          <%= link_to "Musicians", musicians_path %>
-          <%= link_to 'My Page', musicians_dashboard_path %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-      </div>
-    <% else %>
+    <div style="color: white ">Hello, <%= current_user.nickname %></div>
     <div class="navbar-wagon-item">
-      <%= link_to "Musicians", musicians_path %>
+      <div class="dropdown">
+        <% if current_user.user_photo.blank? %>
+          <%= image_tag "https://via.placeholder.com/50/", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: {toggle: "dropdown"} %>
+        <% else %>
+          <%= cl_image_tag(current_user.user_photo, width: 50, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", data: {toggle: "dropdown"}) %>
+        <% end %>
+
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><%= link_to "Musicians", musicians_path %></li>
+          <li><%= link_to "Dashboard", musicians_dashboard_path %></li>
+          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </div>
+    </div>
+  <% else %>
+    <div class="navbar-wagon-item">
+      <%= link_to "Musicians", musicians_path, class: "navbar-item navbar-link" %>
       <%= link_to "Log in", new_user_session_path, class: "navbar-item navbar-link" %>
       <%= link_to "Sign up", new_user_registration_path, class: "navbar-item navbar-link" %>
     </div>
-<% end %>
+  <% end %>
   </div>
-</div>
-</div>
+
 </div>
