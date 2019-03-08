@@ -9,9 +9,30 @@
 
 .footer-links {
   position: absolute;
-  right: 50px;
+  // right: 50px;
+  color: #FFFFFF;
+  margin-top: 60px;
+}
+
+.footer-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 40px;
+  padding: 0px 10px;
 }
 
 .fa-heart {
   color: red;
 }
+
+.search-field-footer {
+  width: 430px;
+  height: 35px;
+  background-color: #000000;
+  border-radius: 5px;
+  border-color: white;
+  border-width: 1px;
+  border-style: solid;
+}
+
+
