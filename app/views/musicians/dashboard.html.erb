@@ -10,7 +10,7 @@
 
   <div class="dashboard-profile">
     <input type="checkbox" style="display: none;" id="profile">
-    <label for="profile" class="btn d-bands">Profile</label>
+    <label for="profile" class="btn d-bands profile">Profile</label>
     <script>
       $(document).ready(function() {
         $("#profile").change(function(){
@@ -19,7 +19,7 @@
             $(".requests")[0].style.display = "none";
             $(".bands-feature")[0].style.display = "none";
           } else {
-            $(".personal-information")[0].style.display = "block";
+            $(".personal-information")[0].style.display = "none";
           }
         })
       });
@@ -27,7 +27,7 @@
 
 
     <input type="checkbox" style="display: none;" id="requests">
-    <label for="requests" class="btn d-bands">Request</label>
+    <label for="requests" class="btn d-bands request">Request</label>
     <script>
       $(document).ready(function() {
         $("#requests").change(function(){
@@ -43,7 +43,7 @@
     </script>
 
     <input type="checkbox" style="display: none;" id="bands">
-    <label for="bands" class="btn d-bands">Bands</label>
+    <label for="bands" class="btn d-bands band">Bands</label>
     <script>
       $(document).ready(function() {
         $("#bands").change(function(){
@@ -96,7 +96,7 @@
                 <p>Status : <%= r.status.capitalize %></p>
                 <% @musicians.where(id: r.to_id).each do |m| %>
                   <p>Request to : <%= m.nickname.capitalize! %></p>
-                  <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                  <%#= cl_image_tag(m.user_photo, class: 'r-img') %>
                 <% end %>
                 <p>Message : <%= r.message %></p>
                 <% if button_text = status_button_text(r) %>
@@ -123,7 +123,7 @@
                   <p>Status : <%= r.status.capitalize %></p>
                   <% @musicians.where(id: r.from_id).each do |m| %>
                     <p>Request from : <%= m.nickname.capitalize! %></p>
-                    <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                    <%#= cl_image_tag(m.user_photo, class: 'r-img') %>
                   <% end %>
                   <p>Message : <%= r.message %></p>
                   <% if button_text = status_button_text(r) %>
