@@ -16,20 +16,33 @@
 <div class="container">
   <div class="show-container">
 
-    <div class="profile-container-band text-left">
-      <div><h1>We are...</h1></div>
-      <div><p style="margin-bottom: 35px">We’re a band that’s everychanging when it comes to style. We’re open to changing up our sound to divesify our audience. Come join us!</p></div>
-      <div>
-        Location: <% @band.band_member_ids.each do |member_id|%>
-                    <%= User.find(member_id).location.capitalize %>
-                  <% end %>
+    <div class="card-wrapper">
+      <div class="banner-content">
+        <div class="card-description">
+         <div class="band-contents-band">
+            <div class="profile-container-band text-left">
+              <div><h3><%= @band.band_name  %>'s info</h3></div>
+              <div>
+                <% @band.band_members.all.each do |member|%>
+                  <p><%= member.user.nickname.capitalize %> plays
+                  <% Equipment.find(member.user.equipment_ids).each do |instrument|%>
+                    <%= instrument.equipment_type %>
+                  <% end %></p>
+                <% end %>
+              </div>
+              <div>
+                <% @band.band_members.all.each do |member|%>
+                  Location: <%= member.user.location.capitalize %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-
-<div class="card-wrapper">
+    <div class="card-wrapper">
       <div class="banner-content">
-        <h3 class="musician-name"></h3>
         <div class="card-description">
 
           <div class="card-contents-band">
@@ -59,25 +72,25 @@
                 </a> -->
           </div>
 
-            <script>
-              $(document).ready(function() {
-                $("#connect").change(function(){
-                  if(this.checked){
-                    $(".popup")[0].style.display = "block";
-                    $(".card-contents")[0].style.display = "none";
-                  } else {
-                    $(".popup")[0].style.display = "none";
-                  }
-                })
-              });
-            </script>
-          </div>
+          <script>
+            $(document).ready(function() {
+              $("#connect").change(function(){
+                if(this.checked){
+                  $(".popup")[0].style.display = "block";
+                  $(".card-contents")[0].style.display = "none";
+                } else {
+                  $(".popup")[0].style.display = "none";
+                }
+              })
+            });
+          </script>
+
         </div>
       </div>
     </div>
-
   </div>
 </div>
+
 
 
 
