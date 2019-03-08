@@ -17,6 +17,7 @@ class MusiciansController < ApplicationController
     @musician = User.find(params[:id])
     @request = Request.new
 
+    # for connect form
     if user_signed_in?
       @requested = Request.find_by(from: current_user, to: @musician)
       @musicians_bands = current_user.bands.map { |band| [band.band_name, band.id] }

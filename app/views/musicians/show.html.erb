@@ -12,13 +12,13 @@
 
 
 <div class="container">
-  <div class="show-container">
+  <div class="musicians-show-container">
     <div class="show-musician-pic-wrapper">
       <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
-      <div class="gray-connect-btn">
+      <!-- <div class="gray-connect-btn">
           <p>Jam session with <%= @musician.nickname.capitalize %>?</p>
           <span class="btn btn-primary text-center col-xs-6 btn-sm">Connect</span>
-      </div>
+      </div> -->
       <div class="s-musician-pic-overlay">
       </div>
     </div>
@@ -44,7 +44,13 @@
             <p>Location: <%= @musician.location %></p>
           </div>
           <div class="gray-view-bands">
-            <p>Bands: list band.banner with circle</p>
+            <p>Bands:</p>
+            <ul>
+              <% @musician.bands.each do |band| %>
+                <li><%= band.band_name.capitalize %></li>
+              <% end %>
+              </ul>
+            </ul>
           </div>
 
 
@@ -59,7 +65,7 @@
     <% if @requested %>
       <%= link_to "Already Connected", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
     <% else %>
-      <%= simple_form_for(@request) do |f| %>
+      <%= simple_form_for @request, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
         <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
         <%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %>
         <%= f.input :message, placeholder: 'Message' %>
@@ -70,7 +76,7 @@
 <% end %>
 
 
-<div class="instruments" style="background-color: #F2F2F2; padding: 20px;">
+<!-- <div class="instruments" style="background-color: #F2F2F2; padding: 20px;">
 <h3 style="text-align: center;">※THEIR MUSIC INSTRUMENTS HERE※</h3>
 <div style="text-align: center;">.</div>
 <div style="text-align: center;">.</div>
@@ -78,8 +84,8 @@
 <div style="text-align: center;">.</div>
 <div style="text-align: center;">.</div>
 <p style="text-align: center;">.</p>
-</div>
-            <script>
+</div> -->
+            <!-- <script>
               $(document).ready(function() {
                 $("#connect").change(function(){
                   if(this.checked){
@@ -90,7 +96,7 @@
                   }
                 })
               });
-            </script>
+            </script> -->
           </div>
         </div>
       </div>
