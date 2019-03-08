@@ -38,8 +38,8 @@ class MusiciansController < ApplicationController
 
     @from_requests = current_user.from_requests
     @to_requests = current_user.to_requests
-    # @band = Band.find(current_user.id)
-    # authorize @band
+
+    @bands = User.find(current_user.id).bands.band_name
   end
 
   private

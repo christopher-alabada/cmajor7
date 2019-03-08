@@ -44,10 +44,11 @@
     <h3>Your Requests</h3>
 
       <div class="r-container">
-
+        <div class="f-request">
+          <h4>Requests you send</h4>
           <div class="from-request">
             <% @from_requests.each do |r| %>
-              <div class="r-card">
+              <div class="r-f-card">
                 <p>Status : <%= r.status.capitalize %></p>
                 <p>Message : <%= r.message %></p>
                 <% @musicians.where(id: r.to_id).each do |m| %>
@@ -57,15 +58,17 @@
               </div>
             <% end %>
          </div>
+       </div>
 
         <div class="to-requests">
+         <h4>Requests from other Musicians</h4>
           <div class="r-t-container">
             <% if @to_requests.exists? %>
               <% @to_requests.each do |i| %>
-                <%= i.status %>
-                <%= i.message %>
+                <p>Status : <%= i.status %></p>
+                <p>Message : <%= i.message %></p>
                 <% @musicians.where(id: r.from_id).each do |m| %>
-                  <%= m.nickname.capitalize! %>
+                  <p>Request from : <%= m.nickname.capitalize! %></p>
                   <%= cl_image_tag(m.user_photo, class: 'r-img') %>
                 <% end %>
               <% end %>
@@ -78,4 +81,10 @@
     </div>
 
   </div>
+
+  <div class="bands-feature">
+    <%= @bands %>
+  </div>
+
+
 </div>
