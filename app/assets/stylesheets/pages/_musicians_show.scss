@@ -178,9 +178,11 @@
   opacity: 0.6;
 }
 
-.gray-view-bands li {
+.gray-view-bands {
   text-transform: capitalize;
   opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
 
 .gray-view-bands p {

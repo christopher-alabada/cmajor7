@@ -58,12 +58,11 @@
 
           <% unless @musician.bands.empty? %>
             <div class="gray-view-bands">
-              <p>Bands:</p>
+              <ps>Bands:</p>
               <ul>
                 <% @musician.bands.each do |band| %>
                   <li><%= band.band_name.capitalize %></li>
                 <% end %>
-                </ul>
               </ul>
             </div>
           <% end %>
