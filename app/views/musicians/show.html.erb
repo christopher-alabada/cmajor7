@@ -47,13 +47,13 @@
               <%
                 genres = []
                 @musician.genres.each do |genre|
-                  genres << genre.name
+                  genres << genre.name.capitalize
                 end
               %>
               <%= genres.join(' · ') %>
             </p>
           <% end %>
-            <p>Location: <%= @musician.location %></p>
+            <p>Location: <%= @musician.location.capitalize %></p>
           </div>
 
           <% unless @musician.bands.empty? %>

@@ -139,8 +139,6 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
   color: black;
 
   display: flex;
@@ -150,21 +148,28 @@
 .gray-name {
   font-size: 30px;
   border-bottom: 3px solid #E84369;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
 
 .gray-bio {
   margin-top: 10px;
   font-size: 20px;
-  opacity: 0.8;
+  opacity: 0.75;
+  font-family: 'Signika', sans-serif;
 }
 
 .gray-eq {
   opacity: 0.7;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
 
 .gray-other-info {
   margin-top: 6px;
   margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
 
 .gray-other-info p {
