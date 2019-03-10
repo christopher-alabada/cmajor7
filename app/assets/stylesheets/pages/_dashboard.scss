@@ -1,7 +1,7 @@
 .musician {
   margin-top: 70px;
   margin-right: 125px;
-  margin-bottom: 90px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: center;
 }
@@ -22,7 +22,6 @@
   display: flex;
   justify-content: space-around;
   font-size: 30px;
-  margin-top: 50px;
 }
 
 .dashboard_musician-image {
@@ -54,7 +53,9 @@
 .requests {
   display: flex;
   margin: 30px 120px 30px 120px;
-  box-shadow: 1px 1px 1px black;
+  -webkit-box-shadow: 0 3px 2px #777;
+  -moz-box-shadow: 0 3px 2px #777;
+  box-shadow: 0 3px 2px #777;
 
   padding: 50px;
   border-top: 3px solid #9745AF;
@@ -118,7 +119,9 @@
   padding-top: 10px;
   display: flex;
   margin: 30px 120px 30px 120px;
-  box-shadow: 1px 1px 1px black;
+  -webkit-box-shadow: 0 3px 2px #777;
+  -moz-box-shadow: 0 3px 2px #777;
+  box-shadow: 0 3px 2px #777;
   padding: 50px;
   border-top: 3px solid #3F5DFA;
 }
@@ -165,8 +168,7 @@
   box-shadow: 1px 1px 1px #aaaaaa;
   margin-left: 20px;
   margin-bottom: 50px;
-  border-radius: 20%;
-  padding: 20px;
+  border-radius: 10px;
   color: #5d5d5a;
 }
 .b-card p {
@@ -175,15 +177,47 @@
 .b-card a:hover, a:visited, a:link, a:active {
   text-decoration: none;
 }
+
+.dash-band-wrapper {
+  display: flex;
+  justify-content: center;
+
+}
+
+.dash-band-contents {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.dash-band-contents p {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.b-members-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.b-members {
+}
+
 .b-img {
   border-radius: 50%;
-  width: 27px;
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
 }
 
 .profile {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  border-bottom: 3px solid #E84369}
+  border-bottom: 3px solid #E84369
+}
 
 .profile:hover {
   color: black;

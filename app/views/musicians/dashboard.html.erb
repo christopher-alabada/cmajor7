@@ -218,15 +218,26 @@
         <% @bands.each do |b| %>
           <%= link_to band_path(b) do %>
             <div class="b-card">
-              <h5>Band name : <%= b.band_name.capitalize %></h5>
-              <p>Members : </p>
+
+              <div style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/harrisongarovi/image/upload/v1551851442/adult-artist-artists-210887.jpg); width:100%; height:50%; background-size: cover; ">
+                  <div class="dash-band-wrapper">
+                    <div class= "dash-band-contents">
+                      <p><%= b.band_name %></p>
+                      <p>Unique band, unique sound</p>
+                      <p>Genre: Rock, Alternative</p>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="b-members-wrapper">
               <% b.band_members.each do |m| %>
-                <div class="b-members">
                   <% user = User.find(m.user_id) %>
-                  - <%= user.nickname.capitalize %>
+                <div class="b-members">
                   <%= cl_image_tag(user.user_photo, class: 'b-img') %>
                 </div>
               <% end %>
+                </div>
+
             </div>
           <% end %>
         <% end %>
