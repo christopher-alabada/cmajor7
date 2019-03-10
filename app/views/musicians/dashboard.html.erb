@@ -62,23 +62,85 @@
 
   <div class="personal-information">
     <div class="d-p-info">
-      <h3>Personal information
-        <%= link_to edit_user_registration_path do %><i class="fas fa-edit edit"></i><% end %></h3>
-      <ul>Nickname : <%= @musician.nickname %></ul>
-      <ul>Email adress : <%= @musician.email %></ul>
-      <ul>Full name : <%= @musician.fullname %></ul>
-      <ul>Date of Birth : <%= @musician.date_of_birth %></ul>
-      <ul>Location : <%= @musician.location %></ul>
-      <ul>Tag Line : <%= @musician.tag_line %></ul>
-      <ul>Your Photo : <%= cl_image_tag(@musician.user_photo, class: 'd-musician-user-photo') %></ul>
-      <ul>Banner Photo : <%= cl_image_tag(@musician.banner_photo, class: 'd-musician-banner-photo') %></ul>
-      <ul>Biography : <%= @musician.description %></ul>
-      <ul>Years experience : <%= @musician.years_experience %> <%= @musician.years_experience > 1 ? 'years' : 'year' %></ul>
-      <ul>
-        Music Instruments : <% @musician.equipments.each do |e| %>
-        <%= e.equipment_type %>
-        <% end %>
-      </ul>
+
+      <div class="show-banner-overlay">
+        <div class="absolute-banner-to-edit">
+        <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@musician.banner_photo) %>');">
+          <div class="musician-show-banner-content">
+            <%= link_to edit_user_registration_path do %>
+              <i class="fas fa-edit edit-icon"><span>Poke me to edit</span></i>
+            <% end %>
+            <div class="show-nickname">
+              <%= @musician.nickname.capitalize %>
+            </div>
+              <h4><%= @musician.tag_line %></h4>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container">
+        <div class="musicians-show-container">
+          <div class="show-musician-pic-wrapper">
+            <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
+            <!-- <div class="gray-connect-btn">
+                <p>Jam session with <%= @musician.nickname.capitalize %>?</p>
+                <span class="btn btn-primary text-center col-xs-6 btn-sm">Connect</span>
+            </div> -->
+            <div class="s-musician-pic-overlay"></div>
+          </div>
+
+          <div class="gray-detail-container">
+            <div class="gray-info-contents">
+              <div class="gray-name">
+                <% @musician.fullname.split(' ').each do |m| %>
+                  <%= m.capitalize %>
+                <% end %>
+              </div>
+              <div class="gray-bio">
+                <p ><%= @musician.description %></p>
+              </div>
+              <div class="gray-eq">
+                <%
+                  instruments = @musician.equipments.map do |e|
+                    e.equipment_type.capitalize
+                  end
+                %>
+                <%= instruments.join(" · ") %>
+              </div>
+              <div class="gray-other-info">
+                <% unless @musician.genres.nil? %>
+                  <p>Genre:
+                    <%
+                      genres = []
+                      @musician.genres.each do |genre|
+                        genres << genre.name
+                      end
+                    %>
+                    <%= genres.join(' · ') %>
+                  </p>
+                <% end %>
+                <p>Location: <%= @musician.location %></p>
+              </div>
+
+              <% unless @musician.bands.empty? %>
+                <div class="gray-view-bands">
+                  <p>Bands:</p>
+                  <ul>
+                    <% @musician.bands.each do |band| %>
+                      <li><%= band.band_name.capitalize %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
