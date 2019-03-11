@@ -1,4 +1,18 @@
+<%
+  date = message.created_at.strftime("%A, %b %d %Y")
+  unless @days.include? date
+    @days << date
+%>
+  <div class="message-date-container">
+    <div class="message-line">
+      <div class="message-date">
+        <%= local_time(message.created_at, "%A, %b %d %Y") %>
+      </div>
+    </div>
+  </div>
+<% end %>
 <div class="message <%= user_is_messages_author ? "right" : "" %>">
-  <%= cl_image_tag message.user.user_photo, class: "avatar" %>
+  <%= cl_image_tag message.user.user_photo, class: "chat-avatar" %>
   <div class="message-content"><%= message.content %></div>
 </div>
+<div class="message-time <%= user_is_messages_author ? "right" : "" %>"><%= local_time(message.created_at, "%l:%M %p") %></div>

@@ -18,10 +18,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # def show
-  #   @band = Message.find(params[:id])
-  # end
-
   private
 
   def message_params

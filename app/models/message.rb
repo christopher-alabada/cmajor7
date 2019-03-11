@@ -4,8 +4,6 @@ class Message < ApplicationRecord
   belongs_to :chat_room
   belongs_to :band, optional: true
   belongs_to :user
-  # belongs_to :from, :class_name => 'User', :foreign_key => 'from_id'
-  # belongs_to :to, :class_name => 'User', :foreign_key => 'to_id'
 
   validates :content, presence: true, allow_blank: false
 

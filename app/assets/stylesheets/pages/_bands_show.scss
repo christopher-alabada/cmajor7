@@ -171,8 +171,6 @@
   margin-bottom: 50px;
 }
 
-
-
 .name-member {
   display: flex;
   font-size: 10px;
@@ -182,3 +180,130 @@
   margin-top: 5px;
 }
 
+
+
+// Chat Messages //
+.chat-container h3 {
+  color: black;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  margin-bottom: 0px;
+  border-bottom: 5px solid #3F5DFA;
+  width: 555px;
+  padding-bottom: 7px;
+}
+
+.messages {
+  font-size: 14px;
+  color: #868686;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ececec;
+  border-top: none;
+  border-bottom-width: 0;
+  // max-height: calc(100vh - 70px - 45px - 61px - 30px);
+  max-height: 420px;
+  overflow: scroll;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 0px;
+  &.right {
+    flex-direction: row-reverse;
+    .message-content {
+      background-color: #F2F9FC;
+    }
+  }
+}
+.message-content {
+  background-color: #F7F7F7;
+  border-radius: 3px;
+  margin: 0 10px;
+  padding: 11px 10px 8px 10px;
+}
+.chat-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#create-message {
+  padding: 10px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  border: 1px solid #ececec;
+}
+.message_content {
+  margin-bottom: 0;
+}
+input.form-control {
+  border: 1px solid #ECECEC;
+  box-shadow: none;
+  font-size: 14px;
+  color: #868686;
+  &:focus {
+    outline: none;
+    border: 1px solid blue;
+    box-shadow: none;
+  }
+}
+.chat-header {
+  background-color: #4F2F4C;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  h4 {
+    margin: 0;
+  }
+}
+
+#message_content {
+  width: 86%;
+}
+
+.message-time {
+  position: relative;
+  font-size: 10px;
+  margin-bottom: 10px;
+  // margin-left: 53px;
+  left: 53px;
+  width: 50px;
+  &.right {
+    left: 423px;
+    width: 50px;
+  }
+}
+
+.message-date-container {
+  font-size: 12px;
+  margin: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.message-line {
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.message-date-container:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: 1px solid #ececec;
+  background: black;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.message-date {
+  width: 200px;
+  height: 20px;
+  background: white;
+  margin: 0px auto;
+}

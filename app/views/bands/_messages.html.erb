@@ -1,23 +1,31 @@
-<div class="container">
+<div class="messages-container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <div class="chat-header"><h4>#<%= @chat_room.name %></h4></div>
+    <div class="col-sm-6">
       <div class="messages">
         <% @chat_room.messages.each do |message| %>
           <%= render 'messages/message', message: message, user_is_messages_author: message.user == current_user %>
         <% end %>
       </div>
       <div id="create-message">
-        <%= simple_form_for [ @chat_room, Message.new ], remote: true do |f| %>
+        <%= simple_form_for [ @chat_room, Message.new ], remote: true, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
           <%= f.input :content, label: false %>
-          <%= f.submit %>
+          <%= f.submit "Send", class: "btn btn-success" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
 <% content_for :after_js do %>
   <script>
+    function scrollLastMessageIntoView() {
+      const messages = document.querySelectorAll('.message');
+      const lastMessage = messages[messages.length - 1];
+
+      if (lastMessage !== undefined) {
+        lastMessage.scrollIntoView();
+      }
+    }
     scrollLastMessageIntoView();
     App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create(
       { channel: 'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %> },
