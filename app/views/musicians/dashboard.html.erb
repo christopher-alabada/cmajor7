@@ -86,6 +86,7 @@
     </script>
 
 
+
   </div>
 
   <div class="personal-information" style='display: none;'>
@@ -96,12 +97,14 @@
         <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@musician.banner_photo) %>');">
           <div class="musician-show-banner-content">
             <%= link_to edit_user_registration_path do %>
-              <i class="fas fa-edit edit-icon"><span>Poke me to edit</span></i>
+              <i class="fas fa-edit edit-icon"><span>Edit your Profile?</span></i>
             <% end %>
             <div class="show-nickname">
               <%= @musician.nickname.capitalize %>
             </div>
               <h4><%= @musician.tag_line %></h4>
+
+
             </div>
           </div>
         </div>
@@ -112,6 +115,10 @@
         <div class="musicians-show-container">
           <div class="show-musician-pic-wrapper">
             <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
+            <!-- <div class="gray-connect-btn">
+                <p>Jam session with <%= @musician.nickname.capitalize %>?</p>
+                <span class="btn btn-primary text-center col-xs-6 btn-sm">Connect</span>
+            </div> -->
             <div class="s-musician-pic-overlay"></div>
           </div>
 
@@ -172,8 +179,8 @@
       <div class="r-container">
         <div class="f-request">
           <h4>Requests you send</h4>
-<div class="col-xs-12 col-sm-4">
           <div class="from-request">
+
           <% if @from_requests.exists? %>
             <% @from_requests.each do |r| %>
               <div class="r-card">
@@ -198,12 +205,10 @@
           <% end %>
 
           </div>
-          </div>
         </div>
 
          <div class="to-request">
           <h4>Requests from other Musicians</h4>
-          <div class="col-xs-12 col-sm-4">
           <div class="r-t-container">
             <% if @to_requests.exists? %>
               <% @to_requests.each do |r| %>
@@ -228,7 +233,6 @@
                No requests yet...
             <% end %>
            </div>
-         </div>
          </div>
 
       </div>
