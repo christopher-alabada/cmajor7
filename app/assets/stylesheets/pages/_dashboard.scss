@@ -43,19 +43,32 @@
 }
 
 .personal-information {
-  margin: 30px 120px 30px 120px;
-  -webkit-box-shadow: 0 3px 2px #777;
-  -moz-box-shadow: 0 3px 2px #777;
-  box-shadow: 0 3px 2px #777;
+    display: block;
+    margin: 15px 120px 15px 120px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
 }
 .personal-information h3 {
   padding-left: 20px;
 }
 .requests {
-  margin: 30px 120px 30px 120px;
-  -webkit-box-shadow: 0 3px 2px #777;
-  -moz-box-shadow: 0 3px 2px #777;
-  box-shadow: 0 3px 2px #777;
+  display: flex;
+  margin: 15px 120px 15px 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+
+  // margin: 30px 120px 30px 120px;
+  // -webkit-box-shadow: 0 3px 2px #777;
+  // -moz-box-shadow: 0 3px 2px #777;
+  // box-shadow: 0 3px 2px #777;
 }
 .requests h3 {
   padding-left: 20px;
@@ -92,12 +105,18 @@
 .r-card {
   width: 300px;
   min-height: 200px;
-  box-shadow: 1px 1px 1px #aaaaaa;
-  margin: 20px;
+  /* box-shadow: 1px 1px 1px #aaaaaa; */
+  margin: 35px;
   padding: 20px;
   position: relative;
   border-radius: 5px;
   color: black;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border: 1px solid #dbdbdb;
+  margin-top: 5px;
 }
 
 .r-card-nickname {
@@ -118,11 +137,14 @@
 
 .bands-feature {
   padding-top: 10px;
-  display: flex;
-  margin: 30px 120px 30px 120px;
-  -webkit-box-shadow: 0 3px 2px #777;
-  -moz-box-shadow: 0 3px 2px #777;
-  box-shadow: 0 3px 2px #777;
+  display: block;
+  margin: 15px 120px 15px 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
 }
 
 .absolute-banner-to-edit {
@@ -159,16 +181,19 @@
   margin-left: 20px;
   padding-bottom: 30px;
 }
-
 .b-card {
-  line-height: 30px;
-  width: 250px;
-  height: 250px;
-  box-shadow: 1px 1px 1px #aaaaaa;
-  margin-left: 20px;
-  margin-bottom: 50px;
-  border-radius: 10px;
-  color: #5d5d5a;
+line-height: 30px;
+    width: 305px;
+    height: 330px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
 }
 .b-card p {
   margin-top: 20px
@@ -190,10 +215,10 @@
 }
 
 .dash-band-contents p {
-  margin-top: 0;
   margin-bottom: 0;
-  margin-right: 5px;
-  margin-left: 5px;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 5px;
 }
 
 .b-members-wrapper {
@@ -207,8 +232,8 @@
 
 .b-img {
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
 }
 
