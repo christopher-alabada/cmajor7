@@ -222,15 +222,16 @@
 
               <div style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/harrisongarovi/image/upload/v1551851442/adult-artist-artists-210887.jpg);     border-top-left-radius: 20px; width:100%; height:50%; background-size: cover; ">
                   <div class="dash-band-wrapper">
-                    <div class= "dash-band-contents">
-                      <p><%= b.band_name %></p>
-                      <p>Unique band, unique sound</p>
-                      <p>Genre: Rock, Alternative</p>
+                    <div class= "dash-band-contents" style="margin-right: 80px;">
+                      <p style="font-family: 'Montserrat', sans-serif; font-size: 13px;"><%= b.band_name %></p>
+                      <p style="font-family: 'Montserrat', sans-serif; font-size: 13px;"></p>
+                      <p style="font-family: 'Montserrat', sans-serif; font-size: 13px"></p>
+                      <p style="color: black;margin-top: 140px;font-family: 'Montserrat', sans-serif;font-weight: lighter;font-size: 18px;">Members</p>
                     </div>
                   </div>
               </div>
 
-              <div class="b-members-wrapper">
+              <div class="b-members-wrapper" style="margin-top: 35px;margin-left: 25px;">
               <% b.band_members.each do |m| %>
                   <% user = User.find(m.user_id) %>
                 <div class="b-members">
