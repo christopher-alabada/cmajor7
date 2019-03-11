@@ -11,4 +11,23 @@ class Musician < ApplicationRecord
 
   mount_uploader :user_photo, PhotoUploader
   mount_uploader :banner_photo, PhotoUploader
+
+  # include PgSearch
+  # pg_search_scope :search_by_location_and_syllabus,
+  #   against: [ :location, :syllabus ],
+  #   using: {
+  #     tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  #   }
+  # include PgSearch
+  # pg_search_scope :global_search,
+  #   against: [ :location, :syllabus ],
+  #   associated_against: {
+  #     equipment: [ :equipment_type ]
+  #   },
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
+
+  include PgSearch
+  multisearchable against: [ :location, :syllabus ]
 end

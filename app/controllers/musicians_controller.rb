@@ -61,6 +61,6 @@ class MusiciansController < ApplicationController
   private
 
   def musician_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :user_photo)
   end
 end

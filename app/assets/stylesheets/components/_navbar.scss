@@ -35,6 +35,7 @@
   padding: 0 20px;
 }
 
+
 /* Navbar link */
 .navbar-wagon-link {
   color: #616668;
@@ -43,6 +44,10 @@
 .navbar-wagon-link:hover {
   color: #da552f;
   text-decoration: none;
+}
+/* avatar */
+#navbar-wagon-menu {
+  object-fit: cover;
 }
 
 /* Dropdown menu */
