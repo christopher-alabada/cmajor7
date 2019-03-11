@@ -35,10 +35,27 @@
 .footer-item :hover{
   color: #3F5DFA;
   transition: .2s ease;
+  padding: 20px;
+  height: 100px;
+  position: relative;
+  align-items: center;
 }
 
+.fab {
+  color: white;
+  opacity: 0.5;
+  font-size: 20px;
+  vertical-align: middle;
+  align-items: center;
+}
+.footer-item {
+  vertical-align: middle;
+}
 .footer-links {
   color: #FFFFFF;
+  // bottom: 10px;
+  right: 20px;
+  //margin-top: 60px;
 }
 
 .footer-links a {

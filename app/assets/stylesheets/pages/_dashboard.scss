@@ -35,6 +35,7 @@
 
 .d-musician-user-photo {
   width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 .d-musician-banner-photo {
@@ -45,9 +46,9 @@
 .personal-information {
   display: flex;
   margin: 30px 120px 30px 120px;
-  box-shadow: 1px 1px 1px black;
+  // box-shadow: 1px 1px 1px black;
   padding: 50px;
-  border-top: 3px solid #E84369;
+  // border-top: 3px solid #E84369;
 }
 .personal-information h3 {
   padding-left: 20px;
@@ -55,10 +56,10 @@
 .requests {
   display: flex;
   margin: 30px 120px 30px 120px;
-  box-shadow: 1px 1px 1px black;
+  // box-shadow: 1px 1px 1px black;
 
   padding: 50px;
-  border-top: 3px solid #9745AF;
+  // border-top: 3px solid #9745AF;
 
 }
 .requests h3 {
@@ -66,13 +67,14 @@
 }
 .request:hover {
   color: black;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 .request {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  border-bottom: 3px solid #9745AF;
+  &:hover { border-bottom: 3px solid #9745AF;
+  }
 }
 
 .r-container {
@@ -119,9 +121,9 @@
   padding-top: 10px;
   display: flex;
   margin: 30px 120px 30px 120px;
-  box-shadow: 1px 1px 1px black;
+  // box-shadow: 1px 1px 1px black;
   padding: 50px;
-  border-top: 3px solid #3F5DFA;
+  // border-top: 3px solid #3F5DFA;
 }
 .edit {
   font-size: 12px;
@@ -165,21 +167,23 @@
 .profile {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  border-bottom: 3px solid #E84369;
+  &:hover { border-bottom: 3px solid #E84369;
+  }
 }
 
 .profile:hover {
   color: black;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 .band {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  border-bottom: 3px solid #3F5DFA;
+  &:hover { border-bottom: 3px solid #3F5DFA;
+  }
 }
 
 .band:hover {
   color: black;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
