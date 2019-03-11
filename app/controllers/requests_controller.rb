@@ -24,6 +24,7 @@ class RequestsController < ApplicationController
   def update_status
     if params[:reject] == '1'
       @request.status = 'rejected'
+      @request.destroy
     elsif @request.status == 'pending'
       @request.status = 'accepted'
     elsif @request.status == 'accepted'

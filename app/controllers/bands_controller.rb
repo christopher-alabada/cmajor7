@@ -1,10 +1,14 @@
 class BandsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
-  skip_after_action :verify_authorized, only: :show
-
   def show
     @band = Band.find(params[:id])
-    @chat_room = ChatRoom.includes(messages: :user).find(params[:id])
+    authorize @band
+
+    if ChatRoom.exists?(params[:id])
+      @chat_room = ChatRoom.includes(messages: :user).find(params[:id])
+    else
+      @chat_room = ChatRoom.new(id: params[:id])
+    end
+
     @days = []
     # authorize @chat_room
   end
