@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_071829) do
     t.integer "from_id"
     t.integer "to_id"
     t.string "message"
+    t.boolean "confirmed", default: false
     t.integer "band_id"
   end
 
