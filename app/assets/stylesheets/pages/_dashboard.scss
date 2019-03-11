@@ -52,7 +52,6 @@
   padding-left: 20px;
 }
 .requests {
-  display: flex;
   margin: 30px 120px 30px 120px;
   -webkit-box-shadow: 0 3px 2px #777;
   -moz-box-shadow: 0 3px 2px #777;
@@ -74,7 +73,11 @@
 
 .r-container {
   display: flex;
+  flex: 2 auto;
   justify-content: space-around;
+}
+.r-t-container {
+  min-width: 300px;
 }
 
 .r-img {
@@ -87,7 +90,7 @@
 }
 
 .r-card {
-  width: 500px;
+  width: 300px;
   min-height: 200px;
   box-shadow: 1px 1px 1px #aaaaaa;
   margin: 20px;
