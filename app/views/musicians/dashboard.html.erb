@@ -197,7 +197,7 @@
               </div>
             <% end %>
           <% else %>
-             <p style="padding: 35px;margin-left: 60px;">No requests you have send yet...</p>
+             <p style="padding: 35px;margin-left: 20px;">No requests you have send yet...</p>
           <% end %>
 
           </div>
@@ -226,7 +226,7 @@
                 </div>
               <% end %>
             <% else %>
-               <p style="padding: 35px;margin-left: 60px;">No requests yet...</p>
+               <p style="padding: 35px;margin-left: 20px;">No requests yet...</p>
             <% end %>
            </div>
          </div>
@@ -246,30 +246,29 @@
 
               <div style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/harrisongarovi/image/upload/v1551851442/adult-artist-artists-210887.jpg);     border-top-left-radius: 20px; width:100%; height:50%; background-size: cover; ">
                   <div class="dash-band-wrapper">
-                    <div class= "dash-band-contents" style="margin-right: 80px;">
-                      <p style="font-family: 'Montserrat', sans-serif; font-size: 13px;"><%= b.band_name %></p>
-                      <p style="font-family: 'Montserrat', sans-serif; font-size: 13px;"></p>
-                      <p style="font-family: 'Montserrat', sans-serif; font-size: 13px"></p>
-                      <p style="color: black;margin-top: 140px;font-family: 'Montserrat', sans-serif;font-weight: lighter;font-size: 18px;">Members</p>
+                    <div class= "dash-band-contents">
+                      <p class='band-name'><%= b.band_name.capitalize %></p>
+                      <p id='members'>Members</p>
                     </div>
                   </div>
               </div>
+          <% end %>
 
               <div class="b-members-wrapper" style="margin-top: 35px;margin-left: 20px;">
               <% b.band_members.each do |m| %>
                   <% user = User.find(m.user_id) %>
                 <div class="b-members">
-                  <%= link_to  %>
-                  <%= cl_image_tag(user.user_photo, class: 'b-img') %>
+                  <%= link_to musician_path(m.user_id) do %>
+                    <%= cl_image_tag(user.user_photo, class: 'b-img') %>
+                  <% end %>
                 </div>
               <% end %>
-                </div>
 
+              </div>
             </div>
           <% end %>
-        <% end %>
       <% else %>
-        <%= 'No Bands formed yet... ' %>
+        <p style='padding-left: 20px;'><%= 'No Bands formed yet... ' %></p>
       <% end %>
     </div>
   </div>

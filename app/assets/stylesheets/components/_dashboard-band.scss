@@ -1,0 +1,105 @@
+.bands-feature {
+  padding-top: 10px;
+  display: block;
+  margin: 15px 120px 15px 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+}
+.bands-feature h3 {
+  padding-left: 20px;
+}
+.your-bands {
+  display: flex;
+  justify-content: start;
+  text-decoration: none;
+  color: #5d5d5a;
+  margin-left: 20px;
+  padding-bottom: 30px;
+}
+.b-card {
+line-height: 30px;
+    width: 305px;
+    height: 330px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+}
+.b-card p {
+  margin-top: 20px
+}
+.b-card a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+}
+
+.dash-band-wrapper {
+  display: flex;
+  justify-content: start;
+  padding-left: 20px;
+
+}
+
+.dash-band-contents {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.dash-band-contents p {
+  margin-bottom: 0;
+  margin-right: 0px;
+  margin-left: 0px;
+  margin-top: 5px;
+}
+
+.b-members-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.b-members {
+}
+
+.b-img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+
+.band {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  &:hover { border-bottom: 3px solid #3F5DFA;
+  }
+}
+
+.band:hover {
+  color: black;
+  // text-decoration: underline;
+}
+
+.band-name {
+  font-family: 'Montserrat' sans-serif;
+  font-size: 20px;
+  padding-top: 10px;
+}
+#members {
+ color: black;
+ margin-top: 130px;
+ font-family: 'Montserrat' sans-serif;
+ font-size: 18px;
+ border-bottom: 3px solid #3F5DFA;
+}
