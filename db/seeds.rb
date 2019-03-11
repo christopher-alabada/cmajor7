@@ -1,10 +1,13 @@
-BandMember.destroy_all
-Equipment.destroy_all
-EquipmentCategory.destroy_all
-Song.destroy_all
-User.destroy_all
-MusicianGenre.destroy_all
-Genre.destroy_all
+# BandMember.destroy_all
+# EquipmentCategory.destroy_all
+# Equipment.destroy_all
+# EquipmentMusicianInventory.destroy_all
+# EquipmentVenueInventory.destroy_all
+# Song.destroy_all
+# User.destroy_all
+# Venue.destroy_all
+# MusicianGenre.destroy_all
+# Genre.destroy_all
 
 puts "Seeding database..."
 puts
@@ -244,7 +247,11 @@ puts "Added Mic equipment."
 banjo = Equipment.find_or_initialize_by(equipment_type: 'banjo')
 banjo.equipment_category = string
 banjo.save!
-puts "Added Mic equipment."
+puts "Added Banjo equipment."
+ukulele = Equipment.find_or_initialize_by(equipment_type: 'ukulele')
+ukulele.equipment_category = string
+ukulele.save!
+puts "Added Ukulele equipment."
 puts "Done seeding equipment"
 
 puts
@@ -551,11 +558,59 @@ band_member.save!
 andre = User.find_by(email: 'andre.white@example.com')
 band_member = BandMember.find_or_initialize_by(band: jazz_band, user: andre)
 band_member.save!
-timothy = User.find_by(email: 'timothy.marshall@example.com')
-band_member = BandMember.find_or_initialize_by(band: jazz_band, user: timothy)
+yuki = User.find_by(email: 'yuki.mori@example.com')
+band_member = BandMember.find_or_initialize_by(band: jazz_band, user: yuki)
 # FIXME: ActiveRecord::RecordInvalid: Validation failed: User must exist
 band_member.save!
 puts "Done seeding a band"
+
+venue = Venue.find_by(jp_website: 'http://i-musicbar.com/')
+if venue.nil?
+  venue = User.new(
+    en_name:'i Music Bar',
+    jp_name: 'アイミュージックバー',
+    address: '〒160-0021 東京都新宿区歌舞伎町2-28-15 サチビル2F',
+    latitude: '35.6963187',
+    longitude: '139.7013339',
+    phone_num: '03-6457-6416',
+    email: '',
+    closest_station: 'Shinjuku',
+    jp_website: 'http://i-musicbar.com/',
+    en_website: 'http://i-musicbar.com/index.php?English',
+    openmic_day: 'Every TUE',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '',
+    booking_system: 'http://i-musicbar.com/index.php?%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B',
+    charge: 1500,
+    additional_charge: 'drink included',
+    stage_rule: '1 stage 2 song',
+    capacity: 24,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_bass)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: cajon)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: ukulele)
+  inventory.save!
+
+  puts "Added venue: i Music Bar"
+else
+  puts "http://i-musicbar.com/ exists."
+end
 
 puts
 puts "Seeds complete!"
