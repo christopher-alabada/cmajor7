@@ -125,7 +125,8 @@ body {
   color: black;
 }
 .explore-musician:hover {
-  color: blue;
+  color: #3F5DFA;
+  transition: .2s ease;
 }
 .more-explore {
   font-family: 'Montserrat', sans-serif;
@@ -147,8 +148,28 @@ body {
   transition: .2s ease;
 }
 
-// .explore-button:hover {
-//   background-color: black;
-// }
+.expore-button-wrapper {
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 40px;
+}
+
+.explore-button-wrapper :hover{
+}
+
+.explore-button {
+  border-radius: 30px;
+  padding: 15px 50px 15px 50px;
+  border: 1px solid #F2F2F2;
+  color: white;
+}
+
+.explore-button:hover {
+  border-radius: 1px solid #E84369;
+  color: #E84369;
+  transition: .4s ease;
+}
+
+
 
 

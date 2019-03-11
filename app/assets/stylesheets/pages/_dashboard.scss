@@ -34,6 +34,7 @@
 
 .d-musician-user-photo {
   width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 .d-musician-banner-photo {
@@ -56,29 +57,26 @@
   -webkit-box-shadow: 0 3px 2px #777;
   -moz-box-shadow: 0 3px 2px #777;
   box-shadow: 0 3px 2px #777;
-
-  padding: 50px;
-  border-top: 3px solid #9745AF;
-
 }
 .requests h3 {
   padding-left: 20px;
 }
 .request:hover {
   color: black;
-  text-decoration: underline;
 }
 
 .request {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  border-bottom: 3px solid #9745AF;
+  &:hover { border-bottom: 3px solid #9745AF;
+  }
 }
 
 .r-container {
   display: flex;
   justify-content: space-around;
 }
+
 .r-img {
   border-radius: 20px;
   width: 100px;
@@ -122,8 +120,6 @@
   -webkit-box-shadow: 0 3px 2px #777;
   -moz-box-shadow: 0 3px 2px #777;
   box-shadow: 0 3px 2px #777;
-  padding: 50px;
-  border-top: 3px solid #3F5DFA;
 }
 
 .absolute-banner-to-edit {
@@ -216,21 +212,24 @@
 .profile {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  border-bottom: 3px solid #E84369
+  &:hover {
+    border-bottom: 3px solid #E84369;
+  }
 }
 
 .profile:hover {
   color: black;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 .band {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  border-bottom: 3px solid #3F5DFA;
+  &:hover { border-bottom: 3px solid #3F5DFA;
+  }
 }
 
 .band:hover {
   color: black;
-  text-decoration: underline;
+  // text-decoration: underline;
 }

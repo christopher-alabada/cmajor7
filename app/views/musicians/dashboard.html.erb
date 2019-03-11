@@ -9,22 +9,6 @@
   </div>
 
   <div class="dashboard-profile">
-    <input type="checkbox" style="display: none;" id="profile">
-    <label for="profile" class="btn d-bands profile">Profile</label>
-    <script>
-      $(document).ready(function() {
-        $("#profile").change(function(){
-          if(this.checked){
-            $(".personal-information")[0].style.display = "block";
-            $(".requests")[0].style.display = "none";
-            $(".bands-feature")[0].style.display = "none";
-          } else {
-            $(".personal-information")[0].style.display = "none";
-          }
-        })
-      });
-    </script>
-
 
     <input type="checkbox" style="display: none;" id="requests">
     <label for="requests" class="btn d-bands request">Request</label>
@@ -58,9 +42,26 @@
       });
     </script>
 
+    <input type="checkbox" style="display: none;" id="profile">
+    <label for="profile" class="btn d-bands profile">Profile</label>
+    <script>
+      $(document).ready(function() {
+        $("#profile").change(function(){
+          if(this.checked){
+            $(".personal-information")[0].style.display = "block";
+            $(".requests")[0].style.display = "none";
+            $(".bands-feature")[0].style.display = "none";
+          } else {
+            $(".personal-information")[0].style.display = "none";
+          }
+        })
+      });
+    </script>
+
+
   </div>
 
-  <div class="personal-information">
+  <div class="personal-information" style='display: none;'>
     <div class="d-p-info">
 
       <div class="show-banner-overlay">
@@ -144,7 +145,7 @@
     </div>
   </div>
 
-  <div class="requests" style="display: none">
+  <div class="requests" >
     <h3>Your Requests</h3>
 
       <div class="r-container">
