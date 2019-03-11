@@ -11,48 +11,79 @@
   <div class="dashboard-profile">
 
     <input type="checkbox" style="display: none;" id="requests">
-    <label for="requests" class="btn d-bands request">Request</label>
+    <label for="requests" class="btn d-bands request" id="request-label">Request</label>
     <script>
+      // request.addEventListener('click', (e) => {
+      //   if (e.click <= 2) {
+      //   request.style.borderBottom = "none";
+      // } else {
+      //   request.style.borderBottom = '5px solid #9745AF';
+      // }
+      // });
+
+
+
+      const request = document.getElementById('request-label')
       $(document).ready(function() {
         $("#requests").change(function(){
           if(this.checked){
             $(".requests")[0].style.display = "block";
+            request.style.borderBottom = '3px solid #9745AF';
+            profile.style.borderBottom = 'none';
+            band.style.borderBottom = 'none';
             $(".personal-information")[0].style.display = "none";
             $(".bands-feature")[0].style.display = "none";
           } else {
             $(".requests")[0].style.display = "block";
+            request.style.borderBottom = '3px solid #9745AF';
+            band.style.borderBottom = 'none';
+            profile.style.borderBottom = 'none';
           }
         })
       });
     </script>
 
     <input type="checkbox" style="display: none;" id="bands">
-    <label for="bands" class="btn d-bands band">Bands</label>
+    <label for="bands" class="btn d-bands band" id='band-label'>Bands</label>
     <script>
+      const band = document.getElementById('band-label')
       $(document).ready(function() {
         $("#bands").change(function(){
           if(this.checked){
             $(".bands-feature")[0].style.display = "block";
+            band.style.borderBottom = '3px solid #3F5DFA'
+            request.style.borderBottom = 'none';
+            profile.style.borderBottom = 'none'
             $(".personal-information")[0].style.display = "none";
             $(".requests")[0].style.display = "none";
           } else {
             $(".bands-feature")[0].style.display = "block";
+            request.style.borderBottom = 'none';
+            profile.style.borderBottom = 'none'
+            band.style.borderBottom = '3px solid #3F5DFA';
           }
         })
       });
     </script>
 
     <input type="checkbox" style="display: none;" id="profile">
-    <label for="profile" class="btn d-bands profile">Profile</label>
+    <label for="profile" class="btn d-bands profile" id='profile-label'>Profile</label>
     <script>
+      const profile = document.getElementById('profile-label')
       $(document).ready(function() {
         $("#profile").change(function(){
           if(this.checked){
             $(".personal-information")[0].style.display = "block";
             $(".requests")[0].style.display = "none";
+            profile.style.borderBottom = '3px solid #E84369'
+            request.style.borderBottom = 'none';
+            band.style.borderBottom = 'none';
             $(".bands-feature")[0].style.display = "none";
           } else {
             $(".personal-information")[0].style.display = "block";
+            profile.style.borderBottom = '3px solid #E84369';
+            request.style.borderBottom = 'none';
+            band.style.borderBottom = 'none';
           }
         })
       });
