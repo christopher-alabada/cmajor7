@@ -51,9 +51,7 @@
   min-width: 300px;
   background-color: white;
   min-height: 360px;
-  // box-shadow: 1px 1px 0px 0px;
   margin: 20px;
-  // position: relative;
 }
 
 .musician-card {
@@ -66,6 +64,11 @@
   }
 }
 
+.musician-card:hover {
+  .musician-equipment {
+      font-size: 30px;
+  }
+}
 .musician-image {
   width: 100%;
   height: 230px;
