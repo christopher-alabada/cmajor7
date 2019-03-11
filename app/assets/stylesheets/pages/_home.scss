@@ -17,28 +17,29 @@ body {
   background-size: cover;
   background-position: center;
   padding: 200px 0;
-  height: 82vh;
+  height: calc(100vh - 140px);
   box-shadow: 0px 0.5px 3.5px 0px grey;
-  background: #FC466B;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  // background: #FC466B;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right, #3F5EFB, #FC466B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .lading-banner-container {
-  margin-top: 120px;
+  margin-top: 60px;
 }
 
 .lading-banner-word {
-  text-align: center;
+  text-align: left;
   color: white;
 }
 
 .landing-search-bar {
   display: flex;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .band-body h1 {
@@ -120,14 +121,55 @@ body {
   color: black;
   font-size: 40px;
 }
-
+.explore-musician {
+  color: black;
+}
+.explore-musician:hover {
+  color: #3F5DFA;
+  transition: .2s ease;
+}
 .more-explore {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  color: black;
-  font-size: 40px;
-  text-align:center;
+  color: #000000;
+  font-size: 25px;
+  text-align: right;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+.more-explore-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.more-explore:hover {
+  color: #3F5DFA;
+  transition: .2s ease;
+}
+
+.expore-button-wrapper {
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 40px;
+}
+
+.explore-button-wrapper :hover{
+}
+
+.explore-button {
+  border-radius: 30px;
+  padding: 15px 50px 15px 50px;
+  border: 1px solid #F2F2F2;
+  color: white;
+}
+
+.explore-button:hover {
+  border-radius: 1px solid #E84369;
+  color: #E84369;
+  transition: .4s ease;
+}
+
+
+
 

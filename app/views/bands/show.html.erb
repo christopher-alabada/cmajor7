@@ -2,7 +2,7 @@
   <div class="card-category-band">
     <div class="container">
       <div style="margin-top: 95px;">
-        <h3>Gorillaz</h3>
+        <h3><%= @band.band_name %></h3>
           <h4>Unique band, unique sound</h4>
             <div class="banner-band-description">
               <p>Genre: Rock, Alternative</p>
@@ -12,58 +12,85 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="show-container">
-    <div class="profile-container-band text-left">
-      <div><h1>About Us</h1></div>
-      <div><p style="margin-bottom: 35px">We’re a band that’s everychanging when it comes to style. We’re open to changing up our sound to divesify our audience. Come join us!</p></div>
-      <div><h5>Location: Meguro</h5></div>
+
+    <div class="card-wrapper">
+      <div class="banner-content">
+        <div class="card-description">
+         <div class="band-contents-band">
+            <div class="profile-container-band text-left">
+              <div><h3><%= @band.band_name  %>'s info</h3></div>
+              <div>
+                <% @band.band_members.all.each do |member|%>
+                  <p><%= member.user.nickname.capitalize %> plays
+                  <% Equipment.find(member.user.equipment_ids).each do |instrument|%>
+                    <%= instrument.equipment_type %>
+                  <% end %></p>
+                <% end %>
+              </div>
+              <div>
+                <% @band.band_members.all.each do |member|%>
+                  Location: <%= member.user.location.capitalize %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-
-<div class="card-wrapper">
+    <div class="card-wrapper">
       <div class="banner-content">
-        <h3 class="musician-name"></h3>
         <div class="card-description">
+
           <div class="card-contents-band">
-            <div>
-              <p class='nickname-band'>Members</p>
-              <img class="member-avatar" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551855364/ulyfklvmkld2z1ysgqgi.jpg">
-              <img class="member-avatar" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551855376/uoj0jllbvqokrcygybpd.jpg">
-              <img class="member-avatar" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1551855354/mmvr5t3vzownxn7pxi5r.jpg">
-              <div class="name-member">
-                <p>Bobby Smith</p>
-                <p>Bobby Smith</p>
-                <p>Bobby Smith</p>
-              </div>
+              <p class='band-members-title'>Members</p>
+            <div class="band-members-wrapper">
+              <% @band.band_members.all.each do |member|%>
+                <%= link_to musician_path(member.user) do %>
+                  <div class="band-members">
+                    <span>
+                      <%= cl_image_tag(member.user.user_photo, class:'member-avatar')%>
+                    </span>
+                    <p>
+                      <%= member.user.nickname.capitalize %>
+                    </p>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
              <!--  <input type="checkbox" style="display: none;" id="connect">
                 <div class="popup" style="display: none;">
                   <div class="col-md-6">
                       <p class='submit'></p>
                   </div>
                 </div> -->
-                <a href="/bands/1">
-                <p class="view-members">View all members</p>
-</a>            </div>
-<script>
-              $(document).ready(function() {
-                $("#connect").change(function(){
-                  if(this.checked){
-                    $(".popup")[0].style.display = "block";
-                    $(".card-contents")[0].style.display = "none";
-                  } else {
-                    $(".popup")[0].style.display = "none";
-                  }
-                })
-              });
-            </script>
+             <!--<a href="/bands/1">
+                  <p class="view-members">View all members</p>
+                </a> -->
           </div>
+
+          <script>
+            $(document).ready(function() {
+              $("#connect").change(function(){
+                if(this.checked){
+                  $(".popup")[0].style.display = "block";
+                  $(".card-contents")[0].style.display = "none";
+                } else {
+                  $(".popup")[0].style.display = "none";
+                }
+              })
+            });
+          </script>
+
         </div>
       </div>
     </div>
-
   </div>
 </div>
+
 
 
 

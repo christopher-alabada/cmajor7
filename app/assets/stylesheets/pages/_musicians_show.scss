@@ -53,9 +53,10 @@
   letter-spacing: 4px;
 }
 
-.show-container {
+.musicians-show-container {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 50px;
 }
 
 .show-musician-pic-wrapper {
@@ -138,8 +139,6 @@
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
   color: black;
 
   display: flex;
@@ -149,21 +148,28 @@
 .gray-name {
   font-size: 30px;
   border-bottom: 3px solid #E84369;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
 
 .gray-bio {
   margin-top: 10px;
   font-size: 20px;
-  opacity: 0.8;
+  opacity: 0.75;
+  font-family: 'Signika', sans-serif;
 }
 
 .gray-eq {
   opacity: 0.7;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
 
 .gray-other-info {
   margin-top: 6px;
   margin-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
 
 .gray-other-info p {
@@ -172,8 +178,19 @@
   opacity: 0.6;
 }
 
+.gray-view-bands {
+  text-transform: capitalize;
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
 .gray-view-bands p {
   opacity: 0.5;
+}
+
+.gray-view-bands ul {
+  list-style-type: none;
 }
 
 
@@ -285,4 +302,10 @@
 #show-connect {
   display: flex;
   justify-content: center;
+}
+
+
+
+#new_request span {
+  margin: 10px 10px;
 }

@@ -1,17 +1,72 @@
 .footer {
   background-color: #121212;
   color: white;
-  height: 60px;
-  padding: 20px;
-  height: 200px;
-  position: relative;
+  padding: 50px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
+.footer-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.footer-logo-title {
+  color: white;
+  font-family:'Josefin Sans', sans-serif;
+  font-weight: 900;
+  font-size: 25px;
+  margin-top: 5px;
+}
+
+.footer-top-items :hover .footer-logo-title{
+    color: #E84369;
+    transition: .2s ease;
+}
+
+.footer-bottom-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-item :hover{
+  color: #3F5DFA;
+  transition: .2s ease;
+  padding: 20px;
+  height: 100px;
+  position: relative;
+  align-items: center;
+}
+
+.fab {
+  color: white;
+  opacity: 0.5;
+  font-size: 20px;
+  vertical-align: middle;
+  align-items: center;
+}
+.footer-item {
+  vertical-align: middle;
+}
 .footer-links {
-  position: absolute;
-  right: 50px;
+  color: #FFFFFF;
+  // bottom: 10px;
+  right: 20px;
+  //margin-top: 60px;
+}
+
+.footer-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 40px;
+  padding: 0px 10px;
 }
 
 .fa-heart {
   color: red;
 }
+
+

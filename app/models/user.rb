@@ -13,8 +13,15 @@ class User < ApplicationRecord
   has_many :band_members
   has_many :bands, through: :band_members
 
+  has_many :musician_genres
+  has_many :genres, through: :musician_genres
+
   mount_uploader :user_photo, PhotoUploader
   mount_uploader :banner_photo, PhotoUploader
+
+  validates :fullname, presence: true
+  validates :nickname, presence: true
+  validates :location, presence: true
 
   include PgSearch
   pg_search_scope :search_by_location_and_syllabus,
@@ -23,3 +30,4 @@ class User < ApplicationRecord
       tsearch: { prefix: true }
     }
 end
+

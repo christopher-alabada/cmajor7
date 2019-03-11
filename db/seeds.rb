@@ -398,13 +398,13 @@ else
   puts "clara.gibson@example.com exists."
 end
 
-musician = User.find_by(email: 'timothy.marshall@example.com')
+musician = User.find_by(email: 'yuki.mori@example.com')
 if musician.nil?
-  musician = User.new(location: 'harajuku', years_experience: 4, email: 'timothy.marshall@example.com', nickname: 'timothy', password: 'pass_timothy', date_of_birth: Date.new(1983,8,4), fullname: 'timothy marshall')
-  musician.remote_user_photo_url = 'https://www.designskilz.com/random-users/images/imageM14.jpg'
+  musician = User.new(location: 'harajuku', years_experience: 4, email: 'yuki.mori@example.com', nickname: 'yuki', password: 'pass_yuki', date_of_birth: Date.new(1983,8,4), fullname: 'yuki mori')
+  musician.remote_user_photo_url = 'https://res.cloudinary.com/ctopher02/image/upload/v1552030788/ykuki.jpg'
   musician.remote_banner_photo_url = 'https://res.cloudinary.com/ctopher02/image/upload/c_scale,w_1200/v1551792327/derek-truninger-41776-unsplash.jpg'
   musician.tag_line = "Bass! How low can you go?!"
-  musician.description = "I bring the grooves. Play mostly funk. Can also play some hip hop grooves."
+  musician.description = "I bring the grooves. Play mostly funk. Can also play some hip hop and jazz grooves."
   musician.save!
   inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
   inventory.save!
@@ -416,9 +416,9 @@ if musician.nil?
   music_genres.save!
   music_genres = MusicianGenre.new(user: musician, genre: rock)
   music_genres.save!
-  puts "Added musician: timothy, timothy.marshall@example.com, pass_timothy"
+  puts "Added musician: yuki, yuki.mori@example.com, pass_yuki"
 else
-  puts "timothy.marshall@example.com exists."
+  puts "yuki.mori@example.com exists."
 end
 
 musician = User.find_by(email: 'andre.white@example.com')

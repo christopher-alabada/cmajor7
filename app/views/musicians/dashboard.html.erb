@@ -4,21 +4,64 @@
       <%= cl_image_tag(@musician.user_photo, class: 'dashboard_musician-image') %>
     </div>
     <div class="musician-d-nickname">
-      <h3><%= @musician.nickname %></h3>
+      <h3><%= @musician.nickname.capitalize %></h3>
     </div>
   </div>
 
   <div class="dashboard-profile">
-    <%= link_to edit_user_registration_path do %>
-      <ul id="d-profile">Profile</i></ul>
-    <% end %>
-    <%#= link_to  %>
-    <ul id="d-request">Request</ul>
-    <ul id="d-bands">Bands</ul>
-    <ul id="d-message">Message</ul>
+
+    <input type="checkbox" style="display: none;" id="requests">
+    <label for="requests" class="btn d-bands request">Request</label>
+    <script>
+      $(document).ready(function() {
+        $("#requests").change(function(){
+          if(this.checked){
+            $(".requests")[0].style.display = "block";
+            $(".personal-information")[0].style.display = "none";
+            $(".bands-feature")[0].style.display = "none";
+          } else {
+            $(".requests")[0].style.display = "none";
+          }
+        })
+      });
+    </script>
+
+    <input type="checkbox" style="display: none;" id="bands">
+    <label for="bands" class="btn d-bands band">Bands</label>
+    <script>
+      $(document).ready(function() {
+        $("#bands").change(function(){
+          if(this.checked){
+            $(".bands-feature")[0].style.display = "block";
+            $(".personal-information")[0].style.display = "none";
+            $(".requests")[0].style.display = "none";
+          } else {
+            $(".bands-feature")[0].style.display = "none";
+          }
+        })
+      });
+    </script>
+
+    <input type="checkbox" style="display: none;" id="profile">
+    <label for="profile" class="btn d-bands profile">Profile</label>
+    <script>
+      $(document).ready(function() {
+        $("#profile").change(function(){
+          if(this.checked){
+            $(".personal-information")[0].style.display = "block";
+            $(".requests")[0].style.display = "none";
+            $(".bands-feature")[0].style.display = "none";
+          } else {
+            $(".personal-information")[0].style.display = "none";
+          }
+        })
+      });
+    </script>
+
+
   </div>
 
-  <div class="personal-information">
+  <div class="personal-information" style='display: none;'>
     <div class="d-p-info">
       <h3>Personal information
         <%= link_to edit_user_registration_path do %><i class="fas fa-edit edit"></i><% end %></h3>
@@ -40,50 +83,96 @@
     </div>
   </div>
 
-  <div class="requests">
+  <div class="requests" >
     <h3>Your Requests</h3>
 
       <div class="r-container">
-
+        <div class="f-request">
+          <h4>Requests you send</h4>
           <div class="from-request">
+
+          <% if @from_requests.exists? %>
             <% @from_requests.each do |r| %>
               <div class="r-card">
-                <p>Status : <%= r.status.capitalize %></p>
-                <% @musicians.where(id: r.to_id).each do |m| %>
-                  <p>Request to : <%= m.nickname.capitalize! %></p>
-                  <%= cl_image_tag(m.user_photo, class: 'r-img') %>
-                <% end %>
-                <p>Message : <%= r.message %></p>
-                <% if button_text = status_button_text(r) %>
-                  <%= link_to button_text.capitalize, edit_status_requests_path(r), method: 'patch', class: "btn btn-primary" %>
-                <% end %>
-                <% unless r.status == 'confirmed' || r.status == 'rejected' %>
-                  <%= link_to 'Reject', edit_status_requests_path(r, reject: 1), method: 'patch', class: "btn btn-danger" %>
-                <% end %>
+                  <p>Status : <%= r.status.capitalize %></p>
+                  <% @musicians.where(id: r.to_id).each do |m| %>
+                    <%= link_to musician_path(m.id) do %>
+                      <p class='r-card-nickname'>Request to : <%= m.nickname.capitalize! %></p>
+                      <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                    <% end %>
+                    <p>Message : <%= r.message %></p>
+                    <% if button_text = status_button_text(r) %>
+                      <%= link_to button_text.capitalize, edit_status_requests_path(r), method: 'patch', class: "btn btn-primary" %>
+                    <% end %>
+                    <% unless r.status == 'confirmed' || r.status == 'rejected' %>
+                      <%= link_to 'Reject', edit_status_requests_path(r, reject: 1), method: 'patch', class: "btn btn-danger" %>
+                    <% end %>
+                  <% end %>
               </div>
             <% end %>
-         </div>
+          <% else %>
+             No requests you have send yet...
+          <% end %>
+
+          </div>
+        </div>
 
          <div class="to-request">
-            <% @to_requests.each do |r| %>
-              <div class="r-card">
-                <p>Status : <%= r.status.capitalize %></p>
-                <% @musicians.where(id: r.from_id).each do |m| %>
-                  <p>Request from : <%= m.nickname.capitalize! %></p>
-                  <%= cl_image_tag(m.user_photo, class: 'r-img') %>
-                <% end %>
-                <p>Message : <%= r.message %></p>
-                <% if button_text = status_button_text(r) %>
-                  <%= link_to button_text.capitalize, edit_status_requests_path(r), method: 'patch', class: "btn btn-success" %>
-                <% end %>
-                <% unless r.status == 'confirmed' || r.status == 'rejected' %>
-                  <%= link_to 'Reject', edit_status_requests_path(r, reject: 1), method: 'patch', class: "btn btn-danger" %>
-                <% end %>
-              </div>
+          <h4>Requests from other Musicians</h4>
+          <div class="r-t-container">
+            <% if @to_requests.exists? %>
+              <% @to_requests.each do |r| %>
+                <div class="r-card">
+                  <p>Status : <%= r.status.capitalize %></p>
+                  <% @musicians.where(id: r.from_id).each do |m| %>
+                    <%= link_to musician_path(m.id) do %>
+                      <p class='r-card-nickname'>Request from : <%= m.nickname.capitalize! %></p>
+                      <%= cl_image_tag(m.user_photo, class: 'r-img') %>
+                    <% end %>
+                  <% end %>
+                  <p>Message : <%= r.message %></p>
+                  <% if button_text = status_button_text(r) %>
+                    <%= link_to button_text.capitalize, edit_status_requests_path(r), method: 'patch', class: "btn btn-success" %>
+                  <% end %>
+                  <% unless r.status == 'confirmed' || r.status == 'rejected' %>
+                    <%= link_to 'Reject', edit_status_requests_path(r, reject: 1), method: 'patch', class: "btn btn-danger" %>
+                  <% end %>
+                </div>
+              <% end %>
+            <% else %>
+               No requests yet...
             <% end %>
+           </div>
          </div>
 
-    </div>
+      </div>
 
   </div>
+
+
+  <div class="bands-feature" style="display: none">
+    <h3>Your Bands</h3>
+    <div class="your-bands">
+      <% if @bands.exists? %>
+        <% @bands.each do |b| %>
+          <%= link_to band_path(b) do %>
+            <div class="b-card">
+              <h5>Band name : <%= b.band_name.capitalize %></h5>
+              <p>Members : </p>
+              <% b.band_members.each do |m| %>
+                <div class="b-members">
+                  <% user = User.find(m.user_id) %>
+                  - <%= user.nickname.capitalize %>
+                  <%= cl_image_tag(user.user_photo, class: 'b-img') %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= 'No Bands formed yet... ' %>
+      <% end %>
+    </div>
+  </div>
+
 </div>
