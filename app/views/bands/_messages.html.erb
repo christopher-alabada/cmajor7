@@ -1,11 +1,15 @@
 <div class="messages-container">
   <div class="row">
     <div class="col-sm-6">
-      <div class="messages">
-        <% @chat_room.messages.each do |message| %>
-          <%= render 'messages/message', message: message, user_is_messages_author: message.user == current_user %>
-        <% end %>
-      </div>
+      <% if @chat_room.nil? %>
+        <div>No messages</div>
+      <% else %>
+        <div class="messages">
+          <% @chat_room.messages.each do |message| %>
+            <%= render 'messages/message', message: message, user_is_messages_author: message.user == current_user %>
+          <% end %>
+        </div>
+      <% end %>
       <div id="create-message">
         <%= simple_form_for [ @chat_room, Message.new ], remote: true, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
           <%= f.input :content, label: false %>
