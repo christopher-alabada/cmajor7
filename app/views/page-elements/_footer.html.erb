@@ -1,12 +1,28 @@
 <div class="footer">
-  <div class="footer-item footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+
+  <div class="footer-top-items">
+    <div class="footer-logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'whitelogo.PNG', alt: "logo", height: 40, width: 60  %>
+      <% end %>
+      <%= link_to root_path do %>
+        <div class="footer-logo-title">
+          Cmaj7
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="footer-item footer-text" style="font-size: 20px; text-align: left; font-family: 'Montserrat', sans-serif;">
-    C Major 7 was made with <i class="fas fa-heart"></i> by Yuki, Harrison, Chris, and Kumi
+
+  <div class="footer-bottom-items">
+    <div class="footer-item footer-links">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <div class="footer-item footer-text" style="font-size: 20px; text-align: left;margin-top: 10px;font-family: 'Montserrat', sans-serif;">
+      C Major 7 was made with <i class="fas fa-heart"></i> by Yuki, Harrison, Chris, and Kumi
+    </div>
   </div>
+
 </div>
