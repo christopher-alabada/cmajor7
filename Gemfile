@@ -23,6 +23,7 @@ gem 'pundit'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'aasm'
 gem 'pg_search'
+gem 'local_time'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

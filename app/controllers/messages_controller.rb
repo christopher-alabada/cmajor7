@@ -1,15 +1,5 @@
-class BandsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show]
-  skip_after_action :verify_authorized, only: :show
-
-  def show
-    @band = Band.find(params[:id])
-    @chat_room = ChatRoom.includes(messages: :user).find(params[:id])
-    @days = []
-    # authorize @chat_room
-  end
-
-  def create_message
+class MessagesController < ApplicationController
+  def create
     @message = Message.new(message_params)
     authorize @message
     @chat_room = ChatRoom.find(params[:chat_room_id])
@@ -26,5 +16,11 @@ class BandsController < ApplicationController
         format.js
       end
     end
+  end
+
+  private
+
+  def message_params
+    params.require(:message).permit(:content)
   end
 end

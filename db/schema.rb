@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(version: 2019_03_11_071829) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "equipment", force: :cascade do |t|
     t.string "model"
     t.string "brand"
@@ -65,13 +71,14 @@ ActiveRecord::Schema.define(version: 2019_03_11_071829) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.text "message"
-    t.integer "from_id"
-    t.integer "to_id"
     t.bigint "band_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "content"
+    t.integer "chat_room_id"
+    t.bigint "user_id"
     t.index ["band_id"], name: "index_messages_on_band_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "musician_genres", force: :cascade do |t|
@@ -139,6 +146,7 @@ ActiveRecord::Schema.define(version: 2019_03_11_071829) do
   add_foreign_key "equipment_inventories", "equipment"
   add_foreign_key "equipment_inventories", "users"
   add_foreign_key "messages", "bands"
+  add_foreign_key "messages", "users"
   add_foreign_key "musician_genres", "genres"
   add_foreign_key "musician_genres", "users"
   add_foreign_key "songs", "genres"

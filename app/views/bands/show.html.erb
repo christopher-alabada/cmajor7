@@ -3,12 +3,12 @@
     <div class="container">
       <div style="margin-top: 95px;">
         <h3><%= @band.band_name %></h3>
-          <h4>Unique band, unique sound</h4>
-            <div class="banner-band-description">
-              <p>Genre: Rock, Alternative</p>
-            </div>
-          </div>
+        <h4>Unique band, unique sound</h4>
+        <div class="banner-band-description">
+          <p>Genre: Rock, Alternative</p>
+        </div>
       </div>
+    </div>
   </div>
 </div>
 
@@ -19,16 +19,16 @@
     <div class="card-wrapper">
       <div class="banner-content">
         <div class="card-description">
-         <div class="band-contents-band">
+          <div class="band-contents-band">
             <div class="profile-container-band text-left">
               <div><h3><%= @band.band_name  %>'s info</h3></div>
               <div>
-                <% @band.band_members.all.each do |member|%>
-                  <p><%= member.user.nickname.capitalize %> plays
-                  <% Equipment.find(member.user.equipment_ids).each do |instrument|%>
-                    <%= instrument.equipment_type %>
-                  <% end %></p>
-                <% end %>
+              <% @band.band_members.all.each do |member|%>
+                <p><%= member.user.nickname.capitalize %> plays
+                <% Equipment.find(member.user.equipment_ids).each do |instrument|%>
+                  <%= instrument.equipment_type %>
+                <% end %></p>
+              <% end %>
               </div>
               <div>
                 <% @band.band_members.all.each do |member|%>
@@ -44,32 +44,18 @@
     <div class="card-wrapper">
       <div class="banner-content">
         <div class="card-description">
-
           <div class="card-contents-band">
-              <p class='band-members-title'>Members</p>
+            <p class='band-members-title'>Members</p>
             <div class="band-members-wrapper">
-              <% @band.band_members.all.each do |member|%>
-                <%= link_to musician_path(member.user) do %>
-                  <div class="band-members">
-                    <span>
-                      <%= cl_image_tag(member.user.user_photo, class:'member-avatar')%>
-                    </span>
-                    <p>
-                      <%= member.user.nickname.capitalize %>
-                    </p>
-                  </div>
-                <% end %>
+            <% @band.band_members.all.each do |member|%>
+              <%= link_to musician_path(member.user) do %>
+                <div class="band-members">
+                  <span><%= cl_image_tag(member.user.user_photo, class:'member-avatar')%></span>
+                  <p><%= member.user.nickname.capitalize %></p>
+                </div>
               <% end %>
+            <% end %>
             </div>
-             <!--  <input type="checkbox" style="display: none;" id="connect">
-                <div class="popup" style="display: none;">
-                  <div class="col-md-6">
-                      <p class='submit'></p>
-                  </div>
-                </div> -->
-             <!--<a href="/bands/1">
-                  <p class="view-members">View all members</p>
-                </a> -->
           </div>
 
           <script>
@@ -88,6 +74,12 @@
         </div>
       </div>
     </div>
+
+  </div>
+
+  <div class="chat-container">
+    <h3>Messages</h3>
+    <%= render 'messages' %>
   </div>
 </div>
 
