@@ -11,7 +11,6 @@
   <div class="dashboard-profile">
 
     <input type="checkbox" style="display: none;" id="requests">
-    <!-- label for="requests" class="btn d-bands request">Inbox</label -->
     <label for="requests" class="btn d-bands request" id="request-label">Request</label>
     <script>
       const request = document.getElementById('request-label')
@@ -116,10 +115,6 @@
         <div class="musicians-show-container">
           <div class="show-musician-pic-wrapper">
             <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
-            <!-- <div class="gray-connect-btn">
-                <p>Jam session with <%= @musician.nickname.capitalize %>?</p>
-                <span class="btn btn-primary text-center col-xs-6 btn-sm">Connect</span>
-            </div> -->
             <div class="s-musician-pic-overlay"></div>
           </div>
 
@@ -175,8 +170,8 @@
   </div>
 
   <div class="requests" style="margin-bottom: 15vh;" >
-    <!-- <h3>Your Requests</h3> -->
-
+<!--     <h3>Your Requests</h3>
+ -->
       <div class="r-container">
         <div class="f-request">
           <h4>Requests you send</h4>
