@@ -275,11 +275,11 @@ if musician.nil?
   musician.tag_line = "I've got the keys you were looking for."
   musician.description = "Hey there! Classical trained pianist, but I play mostly indie pop and indie rock. I know a lot of rock songs of the 90's so I'm down for that too."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_piano)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_piano)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: keys)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: keys)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: piano)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: piano)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: pop)
   music_genres.save!
@@ -300,11 +300,11 @@ if musician.nil?
   musician.tag_line = "Learned to play in the Appalachian Mountains"
   musician.description = "I lived in a cabin in the Appalachian Mountains and immersed myself with Carolina Bluegrass. Hopefully you can play some bluegrass, but if not, no worries. I'm pretty versatile."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: banjo)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: banjo)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: bluegrass)
   music_genres.save!
@@ -327,11 +327,11 @@ if musician.nil?
   musician.tag_line = "Need some bluesy or jazzy beats?"
   musician.description = "Been playing drums for 4 years and I love it. I play mostly blues and some jazz. Wanna jam?"
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: drums)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: drums)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: cajon)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: cajon)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: blues)
   music_genres.save!
@@ -352,11 +352,11 @@ if musician.nil?
   musician.tag_line = "Singer who just moved to Tokyo"
   musician.description = "I'm a jazz trained vocalist who loves Peggy Lee. I mostly sing pop/indie/rock songs though. I can also play the guitar. Thanks for visiting my profile."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: vocals)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: vocals)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: pop)
   music_genres.save!
@@ -379,11 +379,11 @@ if musician.nil?
   musician.tag_line = "Folksy Singer/Songwriter"
   musician.description = "Love me some folk music. Grew up in Vermont and been playing guitar since I was a kid. Some influences: Simon & Garfunkel, and The Avett Brothers."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: vocals)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: vocals)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: keys)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: keys)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: folk)
   music_genres.save!
@@ -406,9 +406,9 @@ if musician.nil?
   musician.tag_line = "Bass! How low can you go?!"
   musician.description = "I bring the grooves. Play mostly funk. Can also play some hip hop and jazz grooves."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_bass)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: upright)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: upright)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: funk)
   music_genres.save!
@@ -429,7 +429,7 @@ if musician.nil?
   musician.tag_line = "Jazz drummer here"
   musician.description = "I play mostly jazz and some blues. Let's jam."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: drums)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: drums)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: jazz)
   music_genres.save!
@@ -448,11 +448,11 @@ if musician.nil?
   musician.tag_line = "You tip it on the side, \"chello\", you've got a bass."
   musician.description = "I play the Chello and aspire to play for the Tokyo Symphony Orchestra. I also like indie pop and indie rock. So let's get together."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: cello)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: cello)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: upright)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: upright)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_bass)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: classical)
   music_genres.save!
@@ -471,11 +471,11 @@ if musician.nil?
   musician.tag_line = "Classic Rock vocalist and guitarist."
   musician.description = "Joan Jett and Stevie Nicks are my influences. I sing and play guitar. I can't wait to play."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: vocals)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: vocals)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: rock)
   music_genres.save!
@@ -494,9 +494,9 @@ if musician.nil?
   musician.tag_line = "Poppy electronic keyboardist."
   musician.description = "I like airy poppy electronic chill music. I've made a bunch of tracks and want to play with other people."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: keys)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: keys)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_bass)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: indie)
   music_genres.save!
@@ -515,11 +515,11 @@ if musician.nil?
   musician.tag_line = "I play drums, guitar, and bass."
   musician.description = "I can play drums, guitar, and bass. Play mostly classic rock and 90's rock. Let's rock together!"
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: drums)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: drums)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_bass)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: rock)
   music_genres.save!
