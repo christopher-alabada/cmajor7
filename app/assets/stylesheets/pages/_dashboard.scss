@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
 }
+
 .musician-d-nickname {
   margin-left: 20px;
   display: flex;
@@ -56,91 +57,7 @@
 .personal-information h3 {
   padding-left: 20px;
 }
-.requests {
-  display: flex;
-  margin: 15px 120px 15px 120px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 0px;
-  background-color: #ffffff;
-  border: 1px solid #dbdbdb;
-}
-.requests h3 {
-  padding-left: 20px;
-}
-.request:hover {
-  color: black;
-}
 
-.request {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
-  &:hover { border-bottom: 3px solid #9745AF;
-  }
-}
-
-.r-container {
-  display: flex;
-  flex: 2 auto;
-  justify-content: space-around;
-}
-.r-t-container {
-  min-width: 300px;
-}
-
-.r-img {
-  border-radius: 20px;
-  width: 100px;
-  padding-left: 10px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-}
-
-.r-card {
-  width: 30vw;
-  min-height: 200px;
-  margin: 35px;
-  padding: 20px;
-  position: relative;
-  border-radius: 5px;
-  color: black;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 0px;
-  border: 1px solid #dbdbdb;
-  margin-top: 5px;
-}
-
-.r-card-nickname {
-  color: black;
-}
-.r-card-nickname:hover {
-  color: blue;
-}
-
-.r-f-card {
-  width: 500px;
-  border-radius: 5px;
-  min-height: 200px;
-  box-shadow: 1px 1px 1px #aaaaaa;
-  margin: 20px;
-  padding: 20px;
-}
-
-.bands-feature {
-  padding-top: 10px;
-  display: block;
-  margin: 15px 120px 15px 120px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 0px;
-  background-color: #ffffff;
-  border: 1px solid #dbdbdb;
-}
 
 .absolute-banner-to-edit {
   position: relative;
@@ -165,94 +82,4 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-.bands-feature h3 {
-  padding-left: 20px;
-}
-.your-bands {
-  display: flex;
-  justify-content: start;
-  text-decoration: none;
-  color: #5d5d5a;
-  margin-left: 20px;
-  padding-bottom: 30px;
-}
-.b-card {
-line-height: 30px;
-    width: 305px;
-    height: 330px;
-    margin-left: 20px;
-    margin-bottom: 50px;
-    border-radius: 10px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 0px;
-    background-color: #ffffff;
-    border: 1px solid #dbdbdb;
-}
-.b-card p {
-  margin-top: 20px
-}
-.b-card a:hover, a:visited, a:link, a:active {
-  text-decoration: none;
-}
 
-.dash-band-wrapper {
-  display: flex;
-  justify-content: center;
-
-}
-
-.dash-band-contents {
-  font-size: 15px;
-  font-weight: bold;
-  color: white;
-}
-
-.dash-band-contents p {
-  margin-bottom: 0;
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-top: 5px;
-}
-
-.b-members-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  padding: 10px;
-}
-
-.b-members {
-}
-
-.b-img {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-
-.profile {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
-  &:hover {
-    border-bottom: 3px solid #E84369;
-  }
-}
-
-.profile:hover {
-  color: black;
-  // text-decoration: underline;
-}
-
-.band {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
-  &:hover { border-bottom: 3px solid #3F5DFA;
-  }
-}
-
-.band:hover {
-  color: black;
-  // text-decoration: underline;
-}

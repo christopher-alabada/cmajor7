@@ -23,9 +23,12 @@
                       hint: "we need your current password to confirm your changes",
                       required: true,
                       input_html: { autocomplete: "current-password" } %>
-          <%= f.input :user_photo %>
-          <%= f.input :user_photo_cache, as: :hidden %>
-          <%#= f.input :user_photo,
+          <%#= f.input :user_photo %>
+          <%#= f.input :user_photo_cache, as: :hidden %>
+          <%= f.input :user_photo,
+                      hint: 'Update your photo',
+                      required: false %>
+          <%= f.input :banner_photo,
                       hint: 'Update your photo',
                       required: false %>
         </div>

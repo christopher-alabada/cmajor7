@@ -1,0 +1,73 @@
+.requests {
+  display: flex;
+  margin: 15px 120px 15px 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
+}
+.requests h3 {
+  padding-left: 20px;
+}
+.request:hover {
+  color: black;
+}
+
+.request {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  &:hover { border-bottom: 3px solid #9745AF;
+  }
+}
+
+.r-container {
+  display: flex;
+  flex: 2 auto;
+  justify-content: space-around;
+}
+.r-t-container {
+  min-width: 300px;
+}
+
+.r-img {
+  border-radius: 20px;
+  width: 100px;
+  padding-left: 10px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.r-card {
+  width: 30vw;
+  min-height: 200px;
+  margin: 35px;
+  padding: 20px;
+  position: relative;
+  border-radius: 5px;
+  color: black;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border: 1px solid #dbdbdb;
+  margin-top: 5px;
+}
+
+.r-card-nickname {
+  color: black;
+}
+.r-card-nickname:hover {
+  color: blue;
+}
+
+.r-f-card {
+  width: 500px;
+  border-radius: 5px;
+  min-height: 200px;
+  box-shadow: 1px 1px 1px #aaaaaa;
+  margin: 20px;
+  padding: 20px;
+}

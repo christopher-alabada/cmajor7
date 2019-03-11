@@ -1,3 +1,16 @@
+.profile {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  &:hover {
+    border-bottom: 3px solid #E84369;
+  }
+}
+
+.profile:hover {
+  color: black;
+  // text-decoration: underline;
+}
+
 #d-profile {
   color: black;
   opacity: 0.6;
