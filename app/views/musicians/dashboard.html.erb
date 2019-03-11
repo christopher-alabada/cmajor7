@@ -11,7 +11,7 @@
   <div class="dashboard-profile">
 
     <input type="checkbox" style="display: none;" id="requests">
-    <label for="requests" class="btn d-bands request">Request</label>
+    <label for="requests" class="btn d-bands request">Inbox</label>
     <script>
       $(document).ready(function() {
         $("#requests").change(function(){
@@ -231,7 +231,7 @@
                   </div>
               </div>
 
-              <div class="b-members-wrapper" style="margin-top: 35px;margin-left: 25px;">
+              <div class="b-members-wrapper" style="margin-top: 35px;margin-left: 20px;">
               <% b.band_members.each do |m| %>
                   <% user = User.find(m.user_id) %>
                 <div class="b-members">
