@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-  # after_create :broadcast_message
+  after_create :broadcast_message
 
   belongs_to :chat_room
   belongs_to :band, optional: true
