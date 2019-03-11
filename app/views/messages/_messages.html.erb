@@ -6,22 +6,7 @@
       <% else %>
         <div class="messages">
           <% @chat_room.messages.each do |message| %>
-            <%
-              date = message.created_at.strftime("%A, %b %d %Y")
-              unless @days.nil?
-                unless @days.include? date
-                  @days << date
-            %>
-              <div class="message-date-container">
-                <div class="message-line">
-                  <div class="message-date">
-                    <%= local_time(message.created_at, "%A, %b %d %Y") %>
-                  </div>
-                </div>
-              </div>
-              <% end %>
-            <% end %>
-            <%= render 'messages/message', message: message, user_is_messages_author: message.user == current_user %>
+            <%= render 'message/message', message: message, user_is_messages_author: message.user == current_user %>
           <% end %>
         </div>
       <% end %>
