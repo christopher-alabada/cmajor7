@@ -64,6 +64,11 @@
   border-bottom-right-radius: 0px;
   background-color: #ffffff;
   border: 1px solid #dbdbdb;
+
+  // margin: 30px 120px 30px 120px;
+  // -webkit-box-shadow: 0 3px 2px #777;
+  // -moz-box-shadow: 0 3px 2px #777;
+  // box-shadow: 0 3px 2px #777;
 }
 .requests h3 {
   padding-left: 20px;
@@ -81,7 +86,11 @@
 
 .r-container {
   display: flex;
-  // justify-content: space-around;
+  flex: 2 auto;
+  justify-content: space-around;
+}
+.r-t-container {
+  min-width: 300px;
 }
 
 .r-img {
@@ -94,7 +103,7 @@
 }
 
 .r-card {
-  width: 500px;
+  width: 300px;
   min-height: 200px;
   /* box-shadow: 1px 1px 1px #aaaaaa; */
   margin: 35px;
