@@ -14,6 +14,7 @@
     <label for="requests" class="btn d-bands request" id="request-label">Request</label>
     <script>
       const request = document.getElementById('request-label')
+      request.style.borderBottom = '4px solid #9745AF'
       $(document).ready(function() {
         $("#requests").change(function(){
           if(this.checked){
@@ -84,7 +85,6 @@
         })
       });
     </script>
-
 
 
   </div>
@@ -197,7 +197,7 @@
               </div>
             <% end %>
           <% else %>
-             No requests you have send yet...
+             <p style="padding: 35px;margin-left: 60px;">No requests you have send yet...</p>
           <% end %>
 
           </div>
