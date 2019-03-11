@@ -1,11 +1,17 @@
 class Message < ApplicationRecord
-  after_create :broadcast_message
+  # after_create :broadcast_message
 
-  belongs_to :band
-  belongs_to :from, :class_name => 'User', :foreign_key => 'from_id'
-  belongs_to :to, :class_name => 'User', :foreign_key => 'to_id'
+  belongs_to :chat_room
+  belongs_to :band, optional: true
+  belongs_to :user
+  # belongs_to :from, :class_name => 'User', :foreign_key => 'from_id'
+  # belongs_to :to, :class_name => 'User', :foreign_key => 'to_id'
 
-  validates :message, presence: true
+  validates :content, presence: true, allow_blank: false
+
+  def from?(some_user)
+    user == some_user
+  end
 
   def broadcast_message
     ActionCable.server.broadcast("chat_room_#{chat_room.id}", {
