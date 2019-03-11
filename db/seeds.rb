@@ -1,3 +1,11 @@
+BandMember.destroy_all
+Equipment.destroy_all
+EquipmentCategory.destroy_all
+Song.destroy_all
+User.destroy_all
+MusicianGenre.destroy_all
+Genre.destroy_all
+
 puts "Seeding database..."
 puts
 
@@ -250,9 +258,9 @@ if musician.nil?
   musician.tag_line = "Are you a Deadhead?"
   musician.description = "Big fan of Grateful Dead and Pink Floyd. Also love bluegrass. Let's jam!"
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: classic_rock)
   music_genres.save!

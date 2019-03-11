@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :from_requests, :class_name => 'Request', :foreign_key => 'from_id'
   has_many :to_requests, :class_name => 'Request', :foreign_key => 'to_id'
 
-  has_many :equipment_inventory
-  has_many :equipments, through: :equipment_inventory
+  has_many :equipment_musician_inventory
+  has_many :equipments, through: :equipment_musician_inventory
 
   has_many :band_members
   has_many :bands, through: :band_members
