@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_124840) do
+ActiveRecord::Schema.define(version: 2019_03_11_071829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_124840) do
     t.datetime "updated_at", null: false
     t.bigint "equipment_category_id"
     t.string "equipment_type"
+    t.text "syllabus"
     t.index ["equipment_category_id"], name: "index_equipment_on_equipment_category_id"
   end
 
@@ -82,6 +83,15 @@ ActiveRecord::Schema.define(version: 2019_03_07_124840) do
     t.index ["user_id"], name: "index_musician_genres_on_user_id"
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
   create_table "requests", force: :cascade do |t|
     t.string "status", default: "pending"
     t.datetime "created_at", null: false
@@ -89,7 +99,6 @@ ActiveRecord::Schema.define(version: 2019_03_07_124840) do
     t.integer "from_id"
     t.integer "to_id"
     t.string "message"
-    t.boolean "confirmed", default: false
     t.integer "band_id"
   end
 
@@ -119,6 +128,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_124840) do
     t.text "description"
     t.integer "years_experience"
     t.string "nickname"
+    t.text "syllabus"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
