@@ -43,20 +43,27 @@
 }
 
 .personal-information {
-  margin: 30px 120px 30px 120px;
-  -webkit-box-shadow: 0 3px 2px #777;
-  -moz-box-shadow: 0 3px 2px #777;
-  box-shadow: 0 3px 2px #777;
+    display: block;
+    margin: 15px 120px 15px 120px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0px;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
 }
 .personal-information h3 {
   padding-left: 20px;
 }
 .requests {
   display: flex;
-  margin: 30px 120px 30px 120px;
-  -webkit-box-shadow: 0 3px 2px #777;
-  -moz-box-shadow: 0 3px 2px #777;
-  box-shadow: 0 3px 2px #777;
+  margin: 15px 120px 15px 120px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
 }
 .requests h3 {
   padding-left: 20px;
@@ -89,12 +96,18 @@
 .r-card {
   width: 500px;
   min-height: 200px;
-  box-shadow: 1px 1px 1px #aaaaaa;
-  margin: 20px;
+  /* box-shadow: 1px 1px 1px #aaaaaa; */
+  margin: 35px;
   padding: 20px;
   position: relative;
   border-radius: 5px;
   color: black;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border: 1px solid #dbdbdb;
+  margin-top: 5px;
 }
 
 .r-card-nickname {
@@ -115,11 +128,14 @@
 
 .bands-feature {
   padding-top: 10px;
-  display: flex;
+  display: block;
   margin: 30px 120px 30px 120px;
-  -webkit-box-shadow: 0 3px 2px #777;
-  -moz-box-shadow: 0 3px 2px #777;
-  box-shadow: 0 3px 2px #777;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
 }
 
 .absolute-banner-to-edit {
@@ -156,16 +172,19 @@
   margin-left: 20px;
   padding-bottom: 30px;
 }
-
 .b-card {
   line-height: 30px;
   width: 250px;
   height: 250px;
-  box-shadow: 1px 1px 1px #aaaaaa;
   margin-left: 20px;
   margin-bottom: 50px;
   border-radius: 10px;
-  color: #5d5d5a;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 0px;
+  background-color: #ffffff;
+  border: 1px solid #dbdbdb;
 }
 .b-card p {
   margin-top: 20px

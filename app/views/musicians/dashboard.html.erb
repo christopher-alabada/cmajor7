@@ -61,15 +61,15 @@
 
   </div>
 
-  <div class="personal-information" style='display: none;'>
+  <div class="personal-information" style='display: none; margin-bottom: 15vh;'>
     <div class="d-p-info">
 
-      <div class="show-banner-overlay">
+      <div class="show-banner-overlay" style="border-top-left-radius: 20px;">
         <div class="absolute-banner-to-edit">
-        <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@musician.banner_photo) %>');">
+        <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path(@musician.banner_photo) %>'); border-top-left-radius: 20px;">
           <div class="musician-show-banner-content">
             <%= link_to edit_user_registration_path do %>
-              <i class="fas fa-edit edit-icon"><span>Poke me to edit</span></i>
+              <i class="fas fa-edit edit-icon"><span>Edit Profile</span></i>
             <% end %>
             <div class="show-nickname">
               <%= @musician.nickname.capitalize %>
@@ -145,12 +145,12 @@
     </div>
   </div>
 
-  <div class="requests" >
-    <h3>Your Requests</h3>
+  <div class="requests" style="margin-bottom: 15vh;" >
+    <!-- <h3>Your Requests</h3> -->
 
       <div class="r-container">
         <div class="f-request">
-          <h4>Requests you send</h4>
+          <h4 style="padding: 35px;font-family: 'open sans';font-weight: lighter;font-size: 25px;margin-bottom: 1px;">Sent Requests</h4>
           <div class="from-request">
 
           <% if @from_requests.exists? %>
@@ -180,7 +180,7 @@
         </div>
 
          <div class="to-request">
-          <h4>Requests from other Musicians</h4>
+          <h4 style="padding: 35px;font-family: 'open sans';font-weight: lighter;font-size: 25px;margin-bottom: 1px;margin-left: 55px;">Received Requests</h4>
           <div class="r-t-container">
             <% if @to_requests.exists? %>
               <% @to_requests.each do |r| %>
@@ -202,7 +202,7 @@
                 </div>
               <% end %>
             <% else %>
-               No requests yet...
+               <p style="padding: 35px;margin-left: 60px;">No requests yet...</p>
             <% end %>
            </div>
          </div>
@@ -212,15 +212,15 @@
   </div>
 
 
-  <div class="bands-feature" style="display: none">
-    <h3>Your Bands</h3>
+  <div class="bands-feature" style="display: none; margin-bottom: 15vh;">
+    <h3 style="padding: 5px;font-family: 'open sans';font-weight: lighter;font-size: 25px;margin-bottom: 20px;margin-left: 35px;">Your Bands</h3>
     <div class="your-bands">
       <% if @bands.exists? %>
         <% @bands.each do |b| %>
           <%= link_to band_path(b) do %>
             <div class="b-card">
 
-              <div style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/harrisongarovi/image/upload/v1551851442/adult-artist-artists-210887.jpg); width:100%; height:50%; background-size: cover; ">
+              <div style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.2)), url(https://res.cloudinary.com/harrisongarovi/image/upload/v1551851442/adult-artist-artists-210887.jpg);     border-top-left-radius: 20px; width:100%; height:50%; background-size: cover; ">
                   <div class="dash-band-wrapper">
                     <div class= "dash-band-contents">
                       <p><%= b.band_name %></p>
