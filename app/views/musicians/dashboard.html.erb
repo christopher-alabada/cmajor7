@@ -259,8 +259,9 @@
               <% b.band_members.each do |m| %>
                   <% user = User.find(m.user_id) %>
                 <div class="b-members">
-                  <%= link_to  %>
-                  <%= cl_image_tag(user.user_photo, class: 'b-img') %>
+                  <%= link_to musician_path(m.user_id) do  %>
+                    <%= cl_image_tag(user.user_photo, class: 'b-img') %>
+                  <% end %>
                 </div>
               <% end %>
                 </div>
