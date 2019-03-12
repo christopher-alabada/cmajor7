@@ -24,8 +24,6 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'aasm'
 gem 'pg_search'
 gem 'local_time'
-
-gem 'bootstrap'
 gem 'jquery-rails'
 
 group :development do
