@@ -713,7 +713,7 @@ else
   puts "Smoking Buggy exists."
 end
 
-venue = Venue.find_by(jp_website: 'https://www.jpslowlife.com/http/www-jpslowlife-com/schedule/')
+venue = Venue.find_by(jp_website: 'https://www.jpslowlife.com/')
 if venue.nil?
   venue = Venue.new(
     en_name:'Live Cafe & Bar Slow Life',
@@ -784,6 +784,84 @@ if venue.nil?
   puts "Added venue: Live Cafe & Bar Slow Life"
 else
   puts "Live Cafe & Bar Slow Life exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://rubyroomtokyo.com/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Ruby Room',
+    jp_name: '',
+    address: '〒150-0043 東京都渋谷区道玄坂２丁目２５−１７　カスミビル',
+    latitude: '35.65957',
+    longitude: '139.697649',
+    phone_num: '03 3780 3022 (evenings) / 070 6969 4816 (daytime)',
+    email: 'event@rubyroomtokyo.com',
+    closest_station: 'Shibuya',
+    jp_website: 'http://rubyroomtokyo.com/',
+    en_website: '',
+    openmic_day: 'Every Tue',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '',
+    booking_system: 'Have to fill out form  http://rubyroomtokyo.com/?page_id=6781',
+    charge: 1500,
+    additional_charge: '2drink tickets included',
+    stage_rule: '15min 2songs *all songs must have lyrics, no instrumental',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301848/98518EB5-D6F6-454B-B165-773396C0EBDC.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301849/5A4CC89D-06E3-4C5A-976F-501F5AB368F7.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301852/9E4BC452-60E0-49D5-89D2-4B85707324E0.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301848/3A1483F2-350A-4DC5-A492-30996BB17DE2.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301848/C2CB9285-AD3F-4FD2-8F3F-F55A8C244131.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301848/FF58E761-B741-431E-91A9-66713CDCAC59.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301849/4001DBE7-01AC-454C-913A-18E6FCE78356.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301848/E5AE9012-2F85-4729-B9F0-D65B9EE9ABE6.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Ruby Room"
+else
+  puts "Ruby Room exists."
 end
 
 puts
