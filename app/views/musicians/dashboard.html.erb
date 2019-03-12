@@ -37,7 +37,7 @@
     </script>
 
     <input type="checkbox" style="display: none;" id="bands">
-    <label for="bands" class="btn d-bands band" id='band-label'>Bands</label>
+    <label for="bands" class="btn d-bands band" id='band-label'>Jams</label>
     <script>
       const band = document.getElementById('band-label')
       $(document).ready(function() {
@@ -237,7 +237,7 @@
 
 
   <div class="bands-feature" style="display: none; margin-bottom: 15vh;">
-    <h3 style="padding: 5px;font-family: 'open sans';font-weight: lighter;font-size: 25px;margin-bottom: 20px;margin-left: 35px;">Your Bands</h3>
+    <h3 style="padding: 5px;font-family: 'open sans';font-weight: lighter;font-size: 25px;margin-bottom: 20px;margin-left: 35px;">Your Jams</h3>
     <div class="your-bands">
       <% if @bands.exists? %>
         <% @bands.each do |b| %>
@@ -268,7 +268,7 @@
             </div>
           <% end %>
       <% else %>
-        <p style='padding-left: 20px;'><%= 'No Bands formed yet... ' %></p>
+        <p style='padding-left: 20px;'><%= 'No Jams formed yet... ' %></p>
       <% end %>
     </div>
   </div>
