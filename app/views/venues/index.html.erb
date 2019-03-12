@@ -1,12 +1,21 @@
-<h1>Venues</h1>
+<h1 class='i-venue-name'>Venues</h1>
 
-<% @venues.each do |venue| %>
-  <div>
-    <%= link_to venue_path(venue) do %>
-      <%= cl_image_tag venue.venue_photos.first.photo, width: 300 %>
+
+<div class="i-venue-container">
+  <div class="i-venue-row">
+    <div class="col-xs-12 col-sm-4">
+    <% @venues.each do |venue| %>
+    <div class='i-venue-card'>
+      <%= link_to venue_path(venue) do %>
+        <%= cl_image_tag venue.venue_photos.first.photo, class: 'i-venue-img' %>
+      <% end %>
+      <div class="i-venue-info">
+      <p>English Name:<%= venue.en_name %></p>
+      <p>Japanese Name:<%= venue.jp_name %></p>
+      <p>URL:<%= link_to venue.jp_website %></p>
+      </div>
+    </div>
     <% end %>
+    </div>
   </div>
-  <div><span>English Name</span><%= venue.en_name %></div>
-  <div><span>Japanese Name</span><%= venue.jp_name %></div>
-  <div><span>URL:</span><%= link_to venue.jp_website %></div>
-<% end %>
+</div>
