@@ -558,8 +558,8 @@ band_member.save!
 andre = User.find_by(email: 'andre.white@example.com')
 band_member = BandMember.find_or_initialize_by(band: jazz_band, user: andre)
 band_member.save!
-yuki = User.find_by(email: 'yuki.mori@example.com')
-band_member = BandMember.find_or_initialize_by(band: jazz_band, user: yuki)
+bruce = User.find_by(email: 'bruce.black@example.com')
+band_member = BandMember.find_or_initialize_by(band: jazz_band, user: bruce)
 # FIXME: ActiveRecord::RecordInvalid: Validation failed: User must exist
 band_member.save!
 puts "Done seeding a band"
