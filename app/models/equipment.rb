@@ -1,6 +1,6 @@
 class Equipment < ApplicationRecord
   belongs_to :equipment_category
-  has_many :musicians, through: :equipment_inventory
+  # has_many :musicians, through: :equipment_musician_inventory
 
 
   validates :equipment_type, presence: true

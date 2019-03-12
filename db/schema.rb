@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_11_071829) do
+ActiveRecord::Schema.define(version: 2019_03_12_013614) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,13 +55,22 @@ ActiveRecord::Schema.define(version: 2019_03_11_071829) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "equipment_inventories", force: :cascade do |t|
+  create_table "equipment_musician_inventories", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "equipment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["equipment_id"], name: "index_equipment_inventories_on_equipment_id"
-    t.index ["user_id"], name: "index_equipment_inventories_on_user_id"
+    t.index ["equipment_id"], name: "index_equipment_musician_inventories_on_equipment_id"
+    t.index ["user_id"], name: "index_equipment_musician_inventories_on_user_id"
+  end
+
+  create_table "equipment_venue_inventories", force: :cascade do |t|
+    t.bigint "venue_id"
+    t.bigint "equipment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["equipment_id"], name: "index_equipment_venue_inventories_on_equipment_id"
+    t.index ["venue_id"], name: "index_equipment_venue_inventories_on_venue_id"
   end
 
   create_table "genres", force: :cascade do |t|
@@ -141,14 +150,48 @@ ActiveRecord::Schema.define(version: 2019_03_11_071829) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "venue_photos", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "venue_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["venue_id"], name: "index_venue_photos_on_venue_id"
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string "en_name"
+    t.string "jp_name"
+    t.string "address"
+    t.string "latitude"
+    t.string "longitude"
+    t.string "phone_num"
+    t.string "email"
+    t.string "closest_station"
+    t.string "jp_website"
+    t.string "en_website"
+    t.string "openmic_day"
+    t.time "openmic_start_time"
+    t.time "openmic_ending_time"
+    t.string "booking_system"
+    t.integer "charge"
+    t.string "additional_charge"
+    t.string "stage_rule"
+    t.integer "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "band_members", "bands"
   add_foreign_key "band_members", "users"
   add_foreign_key "equipment", "equipment_categories"
-  add_foreign_key "equipment_inventories", "equipment"
-  add_foreign_key "equipment_inventories", "users"
+  add_foreign_key "equipment_musician_inventories", "equipment"
+  add_foreign_key "equipment_musician_inventories", "users"
+  add_foreign_key "equipment_venue_inventories", "equipment"
+  add_foreign_key "equipment_venue_inventories", "venues"
   add_foreign_key "messages", "bands"
   add_foreign_key "messages", "users"
   add_foreign_key "musician_genres", "genres"
   add_foreign_key "musician_genres", "users"
   add_foreign_key "songs", "genres"
+  add_foreign_key "venue_photos", "venues"
 end

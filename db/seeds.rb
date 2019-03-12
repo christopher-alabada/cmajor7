@@ -1,3 +1,14 @@
+# BandMember.destroy_all
+# EquipmentCategory.destroy_all
+# Equipment.destroy_all
+# EquipmentMusicianInventory.destroy_all
+# EquipmentVenueInventory.destroy_all
+# Song.destroy_all
+# User.destroy_all
+# Venue.destroy_all
+# MusicianGenre.destroy_all
+# Genre.destroy_all
+
 puts "Seeding database..."
 puts
 
@@ -236,7 +247,11 @@ puts "Added Mic equipment."
 banjo = Equipment.find_or_initialize_by(equipment_type: 'banjo')
 banjo.equipment_category = string
 banjo.save!
-puts "Added Mic equipment."
+puts "Added Banjo equipment."
+ukulele = Equipment.find_or_initialize_by(equipment_type: 'ukulele')
+ukulele.equipment_category = string
+ukulele.save!
+puts "Added Ukulele equipment."
 puts "Done seeding equipment"
 
 puts
@@ -250,9 +265,9 @@ if musician.nil?
   musician.tag_line = "Are you a Deadhead?"
   musician.description = "Big fan of Grateful Dead and Pink Floyd. Also love bluegrass. Let's jam!"
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: classic_rock)
   music_genres.save!
@@ -275,11 +290,11 @@ if musician.nil?
   musician.tag_line = "I've got the keys you were looking for."
   musician.description = "Hey there! Classical trained pianist, but I play mostly indie pop and indie rock. I know a lot of rock songs of the 90's so I'm down for that too."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_piano)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_piano)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: keys)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: keys)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: piano)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: piano)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: pop)
   music_genres.save!
@@ -300,11 +315,11 @@ if musician.nil?
   musician.tag_line = "Learned to play in the Appalachian Mountains"
   musician.description = "I lived in a cabin in the Appalachian Mountains and immersed myself with Carolina Bluegrass. Hopefully you can play some bluegrass, but if not, no worries. I'm pretty versatile."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: banjo)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: banjo)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: bluegrass)
   music_genres.save!
@@ -327,11 +342,11 @@ if musician.nil?
   musician.tag_line = "Need some bluesy or jazzy beats?"
   musician.description = "Been playing drums for 4 years and I love it. I play mostly blues and some jazz. Wanna jam?"
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: drums)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: drums)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: cajon)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: cajon)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: blues)
   music_genres.save!
@@ -352,11 +367,11 @@ if musician.nil?
   musician.tag_line = "Singer who just moved to Tokyo"
   musician.description = "I'm a jazz trained vocalist who loves Peggy Lee. I mostly sing pop/indie/rock songs though. I can also play the guitar. Thanks for visiting my profile."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: vocals)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: vocals)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: pop)
   music_genres.save!
@@ -379,11 +394,11 @@ if musician.nil?
   musician.tag_line = "Folksy Singer/Songwriter"
   musician.description = "Love me some folk music. Grew up in Vermont and been playing guitar since I was a kid. Some influences: Simon & Garfunkel, and The Avett Brothers."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: vocals)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: vocals)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: keys)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: keys)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: folk)
   music_genres.save!
@@ -406,9 +421,9 @@ if musician.nil?
   musician.tag_line = "Bass! How low can you go?!"
   musician.description = "I bring the grooves. Play mostly funk. Can also play some hip hop and jazz grooves."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_bass)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: upright)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: upright)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: funk)
   music_genres.save!
@@ -429,7 +444,7 @@ if musician.nil?
   musician.tag_line = "Jazz drummer here"
   musician.description = "I play mostly jazz and some blues. Let's jam."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: drums)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: drums)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: jazz)
   music_genres.save!
@@ -448,11 +463,11 @@ if musician.nil?
   musician.tag_line = "You tip it on the side, \"chello\", you've got a bass."
   musician.description = "I play the Chello and aspire to play for the Tokyo Symphony Orchestra. I also like indie pop and indie rock. So let's get together."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: cello)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: cello)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: upright)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: upright)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_bass)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: classical)
   music_genres.save!
@@ -471,11 +486,11 @@ if musician.nil?
   musician.tag_line = "Classic Rock vocalist and guitarist."
   musician.description = "Joan Jett and Stevie Nicks are my influences. I sing and play guitar. I can't wait to play."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: vocals)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: vocals)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: acoustic_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: acoustic_guitar)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: rock)
   music_genres.save!
@@ -494,9 +509,9 @@ if musician.nil?
   musician.tag_line = "Poppy electronic keyboardist."
   musician.description = "I like airy poppy electronic chill music. I've made a bunch of tracks and want to play with other people."
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: keys)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: keys)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_bass)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: indie)
   music_genres.save!
@@ -515,11 +530,11 @@ if musician.nil?
   musician.tag_line = "I play drums, guitar, and bass."
   musician.description = "I can play drums, guitar, and bass. Play mostly classic rock and 90's rock. Let's rock together!"
   musician.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: drums)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: drums)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_guitar)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_guitar)
   inventory.save!
-  inventory = EquipmentInventory.new(user: musician, equipment: electric_bass)
+  inventory = EquipmentMusicianInventory.new(user: musician, equipment: electric_bass)
   inventory.save!
   music_genres = MusicianGenre.new(user: musician, genre: rock)
   music_genres.save!
@@ -543,11 +558,233 @@ band_member.save!
 andre = User.find_by(email: 'andre.white@example.com')
 band_member = BandMember.find_or_initialize_by(band: jazz_band, user: andre)
 band_member.save!
-timothy = User.find_by(email: 'timothy.marshall@example.com')
-band_member = BandMember.find_or_initialize_by(band: jazz_band, user: timothy)
+yuki = User.find_by(email: 'yuki.mori@example.com')
+band_member = BandMember.find_or_initialize_by(band: jazz_band, user: yuki)
 # FIXME: ActiveRecord::RecordInvalid: Validation failed: User must exist
 band_member.save!
 puts "Done seeding a band"
+
+venue = Venue.find_by(jp_website: 'http://i-musicbar.com/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'i Music Bar',
+    jp_name: 'アイミュージックバー',
+    address: '〒160-0021 東京都新宿区歌舞伎町2-28-15 サチビル2F',
+    latitude: '35.6963187',
+    longitude: '139.7013339',
+    phone_num: '03-6457-6416',
+    email: '',
+    closest_station: 'Shinjuku',
+    jp_website: 'http://i-musicbar.com/',
+    en_website: 'http://i-musicbar.com/index.php?English',
+    openmic_day: 'Every TUE',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '',
+    booking_system: 'http://i-musicbar.com/index.php?%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B',
+    charge: 1500,
+    additional_charge: 'drink included',
+    stage_rule: '1 stage 2 song',
+    capacity: 24,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_bass)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: cajon)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: ukulele)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301555/DF4D5863-33C7-440E-855C-7ED3A16B1BB8.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301554/A3203589-D0ED-46A4-A2E0-3BCEEC30A28F.jpg'
+  photo.venue = venue
+  photo.save!
+
+   photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301554/4D3D6347-6F7C-4A78-A4D7-36B79A23B601.jpg'
+  photo.venue = venue
+  photo.save!
+
+   photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301555/D0C088C2-50B7-4EB8-8A0C-E098FAC57229.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301554/DC2ACE2F-41D8-43AE-A41E-5388907B3E19.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301553/C7B5808B-50EB-454A-9B75-196E89C934F3.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301555/BB9020B5-58CF-4DD8-A266-06260B6D4617.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: i Music Bar"
+else
+  puts "i Music Bar exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://id20.fm-p.jp/616/smokinboogie/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Smoking Buggy',
+    jp_name: 'スモーキン ブギ',
+    address: '〒160-0022 東京都新宿区新宿2丁目11−10 新宿二丁目センタービル B1F',
+    latitude: '35.690305',
+    longitude: '139.707482',
+    phone_num: '03-3353-8993',
+    email: 'smokinboogie_shinjyuku＠yahoo.co.jp',
+    closest_station: 'Shinjuku',
+    jp_website: 'http://id20.fm-p.jp/616/smokinboogie/',
+    en_website: '',
+    openmic_day: 'Every THU',
+    openmic_start_time: '20:00',
+    openmic_ending_time: '',
+    booking_system: 'No need',
+    charge: 1500,
+    additional_charge: 'drink included',
+    stage_rule: '2-3 songs',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/ED4AB1FC-40D6-48D5-A25B-0831FAFB9A11.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/B5E93FBD-2D29-4415-9AB7-69D5E885ECF6.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/31FA5231-F884-46F7-8708-39750872FEBA.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/C01F0113-B229-4B1D-BDEA-9C5FBAD0D8C5.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/8EE15394-6A0A-4D31-862C-C3032247C7BF.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/74F17E57-6A9F-4E23-99F0-556E80FC0888.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/209FFC5B-9649-463C-A623-C2130B0DDA37.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: "
+else
+  puts " exists."
+end
+
+venue = Venue.find_by(jp_website: 'https://www.jpslowlife.com/http/www-jpslowlife-com/schedule/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Live Cafe & Bar Slow Life',
+    jp_name: '',
+    address: '〒111-0051 東京都台東区蔵前4-3-3蔵前協同ビルB１',
+    latitude: '35.702037',
+    longitude: '139.788194',
+    phone_num: '03-5829-4332',
+    email: 'https://www.jpslowlife.com/http/www-jpslowlife-com/schedule/',
+    closest_station: 'Kuramae, Asakusa-Bashi,',
+    jp_website: 'https://www.jpslowlife.com/',
+    en_website: '',
+    openmic_day: 'Every FRI',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '23:00',
+    booking_system: 'No need',
+    charge: 1000,
+    additional_charge: 'one order',
+    stage_rule: '',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: upright)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_bass)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: cajon)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/8EE15394-6A0A-4D31-862C-C3032247C7BF.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/32593156-5449-497D-8AF3-042CBFBF1D2A.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/EEBCC620-5237-4A0F-A11C-A8B7422B11F4.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/6B17B880-0BDD-489F-8263-FBC737752EA3.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301818/9FFAD3F3-3D88-47B8-BA26-7B780ADCCDF5.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301818/2619C013-16B1-4200-8B44-010641094E65.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/89468467-6C9C-4782-9E41-3725C44FA6CB.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Live Cafe & Bar Slow Life"
+else
+  puts "Live Cafe & Bar Slow Life exists."
+end
 
 puts
 puts "Seeds complete!"
