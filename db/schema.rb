@@ -55,6 +55,15 @@ ActiveRecord::Schema.define(version: 2019_03_12_013614) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "equipment_inventories", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "equipment_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["equipment_id"], name: "index_equipment_inventories_on_equipment_id"
+    t.index ["user_id"], name: "index_equipment_inventories_on_user_id"
+  end
+
   create_table "equipment_musician_inventories", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "equipment_id"
@@ -115,7 +124,6 @@ ActiveRecord::Schema.define(version: 2019_03_12_013614) do
     t.integer "from_id"
     t.integer "to_id"
     t.string "message"
-    t.boolean "confirmed", default: false
     t.integer "band_id"
   end
 
@@ -184,6 +192,8 @@ ActiveRecord::Schema.define(version: 2019_03_12_013614) do
   add_foreign_key "band_members", "bands"
   add_foreign_key "band_members", "users"
   add_foreign_key "equipment", "equipment_categories"
+  add_foreign_key "equipment_inventories", "equipment"
+  add_foreign_key "equipment_inventories", "users"
   add_foreign_key "equipment_musician_inventories", "equipment"
   add_foreign_key "equipment_musician_inventories", "users"
   add_foreign_key "equipment_venue_inventories", "equipment"
