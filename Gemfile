@@ -25,6 +25,9 @@ gem 'aasm'
 gem 'pg_search'
 gem 'local_time'
 
+gem 'bootstrap'
+gem 'jquery-rails'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

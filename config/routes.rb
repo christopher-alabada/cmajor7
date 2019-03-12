@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'venues/index'
+  get 'venues/show'
   devise_for :users
   root to: 'pages#home'
 
@@ -6,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :musicians, only: [:index, :show, :new, :create]
   resources :bands, only: [:index, :show]
+  resources :venues, only: [:index, :show]
 
   post '/requests', to: 'requests#create'
   patch '/requests/:id', to: 'requests#update_status', as: 'edit_status_requests'
