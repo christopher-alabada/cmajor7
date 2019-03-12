@@ -864,5 +864,907 @@ else
   puts "Ruby Room exists."
 end
 
+venue = Venue.find_by(jp_website: 'http://www.akitainu-garage.com/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Live Garage Akitainu',
+    jp_name: 'Live Garage 秋田犬',
+    address: '〒101-0032 東京都千代田区岩本町3-7-11神田KSビル B1F',
+    latitude: '35.6960018',
+    longitude: '139.77567',
+    phone_num: '03-3863-8678',
+    email: 'info@akitainu-garage.com',
+    closest_station: 'Akihabara',
+    jp_website: 'http://www.akitainu-garage.com/',
+    en_website: '',
+    openmic_day: '1st FRI of the month',
+    openmic_start_time: '18:30',
+    openmic_ending_time: '',
+    booking_system: 'No need',
+    charge: 1500,
+    additional_charge: '',
+    stage_rule: '1 stage',
+    capacity: 45,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: cajon)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301878/5B257FF0-6FE7-49AF-8180-586AC37DD34F.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301879/0948DC61-BBB9-4503-9CC3-57704F9BDC44.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301879/DFBF3689-9FC6-4171-A7C6-63BF6E7E3B48.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301878/8239C860-EF60-4861-AAF8-BC56BEB4B10C.gif'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Akitainu"
+else
+  puts "Akitainu exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://www.c-artist.com/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Shimokitazawa Artist',
+    jp_name: '下北沢アーチスト',
+    address: '〒155-0031 東京都世田谷区北沢3-25-1 Shuttle hiei 2F',
+    latitude: '35.663554',
+    longitude: '139.6665043',
+    phone_num: '03-5478-9989',
+    email: 'foryou@c-artist.com',
+    closest_station: 'Shimokitazawa',
+    jp_website: 'http://www.c-artist.com/',
+    en_website: '',
+    openmic_day: 'Once a month',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '',
+    booking_system: 'Form in HP or email',
+    charge: 1000,
+    additional_charge: '',
+    stage_rule: '2-3 songs upto first 10 groups *Acoustic open style live',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386629/696E1515-9EA2-4217-9896-F444406EC5E6.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386629/4EEF5805-7039-4413-81A9-D1FCBBCD2FE2.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386629/C5BCF764-370A-418E-8110-F2496B1A7F12.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386629/0B96EB91-6856-4482-994D-CEFD1312B0E9.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386629/4E950A17-E9FF-41B5-BC34-8B4AF789DAD7.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386630/97A49815-7159-430B-95B7-BAE417AF3429.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386630/33F00AD4-F45E-4A9F-BBD3-B76A092C6A37.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386630/204E7E08-94A7-471F-B84F-0AF3E3022FA0.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386630/5CAA3DB7-FFC2-4EA2-96A2-6C62C480A1FF.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552386630/F51E69DF-A247-40A0-821A-A79D3594B78C.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Shimokitazawa Artist"
+else
+  puts "Shimokitazawa Artist exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://www.artica7.live/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Artica Seven',
+    jp_name: 'アルティカセブン',
+    address: '〒151-0053 東京都渋谷区代々木1-41-3 2F',
+    latitude: '35.6828663',
+    longitude: '139.6974365',
+    phone_num: '070-5360-3593',
+    email: 'a7@e-production.jp',
+    closest_station: 'Yoyogi, Minami-Shinjuku',
+    jp_website: 'http://www.artica7.live/',
+    en_website: '',
+    openmic_day: 'Usually THU or sometime TUE',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '',
+    booking_system: 'Email but not necessary',
+    charge: 1000,
+    additional_charge: '1 drink order',
+    stage_rule: '1 stage 2-3 songs',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_bass)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387253/5AAAE89F-77C7-4DE4-91B6-38EF15476A46.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387254/94245264-4A4D-487F-8C3F-814CF1D56CA4.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387254/624A7628-A494-465E-BC93-6237A0C6A785.png'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387253/4F97B0ED-AE3E-4BEB-9A93-9A98C37B16ED.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387254/37931C76-2B64-44D0-8466-FF57E13B5C79.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Artica Seven'"
+else
+  puts "Artica Seven' exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://www2u.biglobe.ne.jp/~m-satoh/asian%81@cafe.html')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Asian cafe',
+    jp_name: '',
+    address: '〒152-0004 東京都目黒区鷹番３丁目７−４レッドイン丸花2F',
+    latitude: '35.6295354',
+    longitude: '139.6825577',
+    phone_num: '03-3712-9993',
+    email: 'hair-do@shore.ocn.ne.jp',
+    closest_station: 'Gakugei-Daigakumae',
+    jp_website: 'http://www2u.biglobe.ne.jp/~m-satoh/asian%81@cafe.html',
+    en_website: '',
+    openmic_day: '1st SAT & 3rd WED',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '',
+    booking_system: 'Email',
+    charge: 2000,
+    additional_charge: '',
+    stage_rule: '',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_bass)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: keys)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387657/65BEB637-070D-4262-9273-D19A63B47A26.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387655/C1031652-C794-40EB-A01B-E6160257230D.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387655/60B0DC90-BE89-44F7-99C9-FD3225E12E6E.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387656/8D7A9031-A92B-4278-ADC1-1735354FD09B.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387656/B5EF4756-E1DE-447B-8601-CB42A595E3B5.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387656/00A454AE-0D86-4AE3-B609-2F83BEF55CB3.gif'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387657/F2BDC85E-7878-4939-A57C-61D57F2AFCF5.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387656/6091B10D-1E87-4385-BBD3-B82DD5268662.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552387657/F09E5615-9605-4483-AAC1-6663C09795EA.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Asian cafe"
+else
+  puts "Asian cafe exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://alcafe.deca.jp/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Alcafe',
+    jp_name: '',
+    address: '〒167-0051 東京都杉並区荻窪５丁目２１−１０',
+    latitude: '35.7030848',
+    longitude: '139.6185894',
+    phone_num: '03-3391-2046',
+    email: 'alcafe＠incoming.jp',
+    closest_station: 'Ogikubo',
+    jp_website: 'http://alcafe.deca.jp/',
+    en_website: '',
+    openmic_day: 'One to twice a week',
+    openmic_start_time: '19:30',
+    openmic_ending_time: '22:00',
+    booking_system: 'No need',
+    charge: 500,
+    additional_charge: '1 drink order',
+    stage_rule: '1 song and play again later',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_bass)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: ukulele)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: flute)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: upright)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388475/037134B6-41BA-41CB-AB22-DFEAAF1E5E02.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388475/514202C7-A108-408F-917E-A434949BD0E6.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388475/5B0E8FAF-B01D-4B59-B46A-CEDF9E21390B.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388476/A6BA69AD-5EC2-4B2F-9069-0E4460E82A9B.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388475/C75BC257-7DF3-43BF-A522-B97590F41CD8.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Alcafe"
+else
+  puts "Alcafe exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://www.under-dl.jp/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Under Deer Lounge',
+    jp_name: '',
+    address: '〒150-0041 東京都渋谷区神南１丁目３−４ 神南ビルB1',
+    latitude: '35.6647381',
+    longitude: '139.6990202',
+    phone_num: '03-5728-2655',
+    email: 'info@under-dl.jp',
+    closest_station: 'Shibuya',
+    jp_website: 'http://www.under-dl.jp/',
+    en_website: '',
+    openmic_day: 'Once a month',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '23:00',
+    booking_system: 'No need',
+    charge: 1000,
+    additional_charge: '1 drink or 1 sweet order',
+    stage_rule: '',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: keys)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388752/A049604B-CF3F-4EC8-8164-2486C39FE6A0.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388752/23463203-F43F-4C83-A7BB-AC09E246EC2A.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388753/A0AF8291-3A21-4069-B98D-2AA1CBC1ED11.png'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388753/D317B137-129D-4444-A67B-120E9BC3B205.png'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388753/DBF7DCA5-B105-4CCF-B3DB-66AF9C1E808A.png'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552388753/F0CFE216-0FD4-4C70-8149-1460D01B8E3D.png'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Under Deer Lounge"
+else
+  puts "Under Deer Lounge exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://www.yellowvision.jp/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Yellow Vision',
+    jp_name: '',
+    address: '〒166-0001 東京都杉並区阿佐ヶ谷北2-2-2 阿佐ヶ谷北2丁目ビルＢ1',
+    latitude: '35.7054292',
+    longitude: '139.633085',
+    phone_num: '03-6794-8814',
+    email: 'yellow_vision@lake.ocn.ne.jp',
+    closest_station: 'Asagaya',
+    jp_website: 'http://www.yellowvision.jp/',
+    en_website: '',
+    openmic_day: '3-4 times a month',
+    openmic_start_time: '19:30',
+    openmic_ending_time: '',
+    booking_system: 'Email',
+    charge: 1500,
+    additional_charge: '',
+    stage_rule: '',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: ukulele)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: keys)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389141/9DDCD104-AEDD-4C4B-B76C-9A2EC2743225.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389142/50C5CE45-FD5B-4973-A03A-65EA0BCCA9F1.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389142/D668E36C-9E4D-41FE-A889-2E7FCAE5880D.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389141/961F2E45-40E0-40FF-AFAC-EC17814777A0.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Yellow Vision"
+else
+  puts "Yellow Vision exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://www.welcomeback.jp/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Welcome Back',
+    jp_name: '',
+    address: '〒170-0005 東京都豊島区南大塚３－４４－１１ フサカビルＢ１',
+    latitude: '35.7297535',
+    longitude: '139.7267507',
+    phone_num: '03-5957-5141',
+    email: 'entry@welcomeback.jp',
+    closest_station: 'Otsuka',
+    jp_website: 'http://www.welcomeback.jp/',
+    en_website: '',
+    openmic_day: 'Once a month',
+    openmic_start_time: '18:30',
+    openmic_ending_time: '22:30',
+    booking_system: 'Email',
+    charge: 0,
+    additional_charge: 'No charge but one order',
+    stage_rule: '',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389451/8AB704D2-D29B-47ED-A1FA-36B3513C678F.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389453/FEC47315-EE1D-41C3-865A-A01180D01CA7.png'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389450/734AE71B-6DF5-4CA1-8ECE-C1408AF4AD5A.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389450/782E7E78-9C25-4AEA-951B-D966382A5B89.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389450/B306FE70-439D-46B3-8472-8E3E40931BE5.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389450/B00B2AA2-EDAF-4266-B6CF-7550B7092F88.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Welcome Back"
+else
+  puts "Welcome Back exists."
+end
+
+
+venue = Venue.find_by(jp_website: 'http://uzu69.com/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Music Cafe Uzu',
+    jp_name: '',
+    address: '〒197-0013 東京都福生市武蔵野台１丁目３−１２',
+    latitude: '35.7452388',
+    longitude: '139.3329428',
+    phone_num: '042-551-4477',
+    email: 'fussa.uzu@gmail.com',
+    closest_station: 'Fussa',
+    jp_website: 'http://uzu69.com/',
+    en_website: '',
+    openmic_day: 'Every WED - Blues Session. Every THU - Open Mic & Every FRI - Jazz session',
+    openmic_start_time: '19:30',
+    openmic_ending_time: '',
+    booking_system: 'Email',
+    charge: 1500,
+    additional_charge: '1 drink order',
+    stage_rule: '',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: nil)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389785/4A7889A2-06C0-4406-BA55-6E975D25DE47.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389785/EA313D5D-FC38-4CBF-B9EB-32913FEACF81.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389786/0486C6C0-A17A-4C02-B482-06577966F8DD.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389785/6BF028D4-AD27-4543-8642-2580F0F962BD.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389786/0F18D814-3F90-4981-8664-38075DDDC0B1.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389786/84ECD2E1-78AB-4596-91C8-572E7285E8C6.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552389785/CAEED798-1EF3-4902-9D72-C5448CABF444.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Music Cafe Uzu"
+else
+  puts "Music Cafe Uzu exists."
+end
+
+
+venue = Venue.find_by(jp_website: 'http://cafe-eclaircie.com/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Eclaircie',
+    jp_name: 'エクレルシ',
+    address: '〒157-0073 東京都世田谷区砧8-8-26大黒ビル2F',
+    latitude: '35.6414727',
+    longitude: '139.6060189',
+    phone_num: '',
+    email: 'cafe.eclaircie@gmail.com',
+    closest_station: 'Soshigaya-Okura',
+    jp_website: 'http://cafe-eclaircie.com/',
+    en_website: '',
+    openmic_day: '2nd FRI',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '21:00',
+    booking_system: 'No need',
+    charge: 1000,
+    additional_charge: '1 drink order',
+    stage_rule: '1 songs and loop later',
+    capacity: 50,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: upright)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: cajon)
+  inventory.save!
+
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552390318/626FBB28-3011-46BA-9E49-817D2033E121.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552390318/03B46F55-53ED-4BE2-92DE-F4FE3FA0EC22.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552390318/183872BE-0719-41DD-B1A4-F61A27918300.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552390319/45CE9EB4-C9B7-4DD3-A465-704601D54DB8.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552390318/840E7FCE-978A-4FE3-968C-F0EDC2DD0E0E.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Eclaircie"
+else
+  puts "Eclaircie exists."
+end
+
+
+venue = Venue.find_by(jp_website: 'http://www.ekodaclub.com/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Ekoda Club',
+    jp_name: '江古田倶楽部',
+    address: '〒176-0006 東京都練馬区栄町福一ビル2F',
+    latitude: '35.7374088',
+    longitude: '139.6698674',
+    phone_num: '03-3994-2005',
+    email: '',
+    closest_station: 'Machida',
+    jp_website: 'http://www.ekodaclub.com/',
+    en_website: '',
+    openmic_day: '1st Wednesdays',
+    openmic_start_time: '21:00',
+    openmic_ending_time: '',
+    booking_system: 'No book',
+    charge: 500,
+    additional_charge: '',
+    stage_rule: '15 minutes',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391012/FEDC4F21-D021-49D3-A610-61AA0A59DAF9.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391012/E49BA1C2-07BE-476F-9391-7137EC3A960A.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391012/C61A057E-BD0D-4F51-AB0D-8ED709658C14.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Ekoda Club"
+else
+  puts "Ekoda Club exists."
+end
+
+
+venue = Venue.find_by(jp_website: 'http://www.chicagoplanning.com/oilcity.html')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Oil City',
+    jp_name: '',
+    address: '〒166-0001 東京都杉並区阿佐谷北1-3-8 阿佐ケ谷ビル 2F',
+    latitude: '35.7052151',
+    longitude: '139.6357905',
+    phone_num: '03-3339-3739',
+    email: 'oilcity@ezweb.ne.jp',
+    closest_station: 'Asagaya',
+    jp_website: 'http://www.chicagoplanning.com/oilcity.html',
+    en_website: '',
+    openmic_day: 'Every TUE',
+    openmic_start_time: '18:30',
+    openmic_ending_time: '22:30',
+    booking_system: 'Call',
+    charge: 1500,
+    additional_charge: '2 drink and snack included',
+    stage_rule: 'Blues Session',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: nil)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391585/F6FEAA1C-B020-432D-AD95-9D04CF1BAAAB.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391584/7A0AE835-90B6-4768-93B9-AF07032A6DB8.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391584/58897FCB-0ACB-48E1-A5C4-1AD2ED529855.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391584/6756E420-F126-46A4-9B43-AA1572B9C824.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391585/485C2A2C-D337-4824-951D-744FE62BBF52.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Oil City"
+else
+  puts "Oil City exists."
+end
+
+
+venue = Venue.find_by(jp_website: 'http://www.altspeaker.com/index.html')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Higashi-Nakano ALT_SPEAKER',
+    jp_name: '東中野ALT_SPEAKER',
+    address: '〒164-0003 東京都中野区東中野１-２５-１０ 大和ビル第１-１F',
+    latitude: '35.703495',
+    longitude: '139.6833453',
+    phone_num: '03-6908-8806',
+    email: 'akai@altspeaker.com',
+    closest_station: 'Higashi-Nakano',
+    jp_website: 'http://www.altspeaker.com/index.html',
+    en_website: '',
+    openmic_day: 'Every TUE 11:00 - 16:00 & Some MON 17:00 - 26:00',
+    openmic_start_time: '',
+    openmic_ending_time: '',
+    booking_system: 'No Booking',
+    charge: 1100,
+    additional_charge: '1 drink order',
+    stage_rule: '3 songs and loop later',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_bass)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391900/832D078B-74AF-4347-8A84-5167A72AB295.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391901/B071BF0E-EBB7-4400-868F-77D73A66E9F2.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391900/A01A67C6-159B-412E-8CCC-E13DD473817A.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391900/A28533E7-8445-461B-BC7A-F81FEE40F2B7.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391901/BD09C736-9FC0-4BDC-89F3-F2E9E6AFF074.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552391899/721A9DBD-1077-4F78-9E0D-F899DFCEC92F.png'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Higashi-Nakano ALT_SPEAKER"
+else
+  puts "Higashi-Nakano ALT_SPEAKER exists."
+end
+
+
+venue = Venue.find_by(jp_website: '')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'',
+    jp_name: '',
+    address: '',
+    latitude: '',
+    longitude: '',
+    phone_num: '',
+    email: '',
+    closest_station: '',
+    jp_website: '',
+    en_website: '',
+    openmic_day: '',
+    openmic_start_time: '',
+    openmic_ending_time: '',
+    booking_system: '',
+    charge: ,
+    additional_charge: '',
+    stage_rule: '',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_bass)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: mic)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: keys)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = ''
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: "
+else
+  puts " exists."
+end
+
+
+
 puts
 puts "Seeds complete!"
