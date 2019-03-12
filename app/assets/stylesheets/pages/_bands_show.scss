@@ -115,7 +115,6 @@
 .band-members {
   box-shadow: 0 3px 2px #e3e7f1;
   margin-top: 15px;
-  margin-left: 10px;
   display: flex;
   justify-content: start;
 }
@@ -282,7 +281,11 @@ input.form-control {
 }
 
 #message_content {
-  width: 86%;
+  width: 85%;
+}
+
+.message-submit {
+  width: 80px;
 }
 
 .message-time {

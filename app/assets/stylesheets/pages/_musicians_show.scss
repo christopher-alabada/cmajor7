@@ -83,8 +83,6 @@
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: .4s ease;
-  background-color: black;
   border-top-left-radius: 30px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 30px;
@@ -312,17 +310,17 @@ input {
   justify-content: center;
 }
 #request_band_id {
-  width: 500px;
+  // width: 500px;
 }
+
 #new_request span {
-  margin: 10px 10px;
-  display: flex;
-  justify-content: center;
+  margin: 5px 10px;
 }
+
 #request_message {
   width: 40vw;
-  height: 200px;
 }
+
 input::placeholder {
   font-weight: lighter;
 }
