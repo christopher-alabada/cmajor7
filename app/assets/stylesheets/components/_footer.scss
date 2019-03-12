@@ -2,7 +2,7 @@
   background-color: #121212;
   color: white;
   padding: 50px;
-  height: 300px;
+  height: 200px;
   display: flex;
   flex-direction: column;
 }
@@ -11,7 +11,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .footer-logo-title {
@@ -32,6 +32,9 @@
   justify-content: space-between;
 }
 
+.footer-item {
+  margin-left: 10px;
+}
 .footer-item a{
   margin-right: 10px;
 }
