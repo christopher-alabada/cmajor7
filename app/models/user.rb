@@ -23,13 +23,6 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :location, presence: true
 
-  # include PgSearch
-  # pg_search_scope :search_by_location_and_syllabus,
-  #   against: [ :location, :syllabus ],
-  #   using: {
-  #     tsearch: { prefix: true }
-  #   }
-
   include PgSearch
   multisearchable against: [ :location, :syllabus ]
 end
