@@ -797,7 +797,7 @@ if venue.nil?
     phone_num: '03 3780 3022 (evenings) / 070 6969 4816 (daytime)',
     email: 'event@rubyroomtokyo.com',
     closest_station: 'Shibuya',
-    jp_website: '',
+    jp_website: 'http://rubyroomtokyo.com/',
     en_website: 'http://rubyroomtokyo.com/',
     openmic_day: 'Every Tue',
     openmic_start_time: '19:00',
