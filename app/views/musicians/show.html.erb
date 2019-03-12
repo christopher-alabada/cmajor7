@@ -15,10 +15,6 @@
   <div class="musicians-show-container">
     <div class="show-musician-pic-wrapper">
       <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
-      <!-- <div class="gray-connect-btn">
-          <p>Jam session with <%= @musician.nickname.capitalize %>?</p>
-          <span class="btn btn-primary text-center col-xs-6 btn-sm">Connect</span>
-      </div> -->
       <div class="s-musician-pic-overlay">
       </div>
     </div>
@@ -76,13 +72,13 @@
 <p class='want-to text-center'>want to play with <%= @musician.nickname %>?</p>
   <div id="connect">
     <% if @requested %>
-      <%= link_to "Already Connected", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
+      <%= link_to "You have sent a request.", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
     <% else %>
       <%= simple_form_for @request, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-        <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
-        <%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %>
-        <%= f.input :message, placeholder: 'Message' %>
-        <%= f.button :submit, 'Connect', class: "btn btn-primary connect align-center" %>
+        <p><%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %></p>
+        <p><%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %></p>
+        <p><%= f.input :message, placeholder: 'Message', id: 'r-message' %></p>
+        <p id='submit'><%= f.button :submit, 'Connect', class: "btn btn-primary connect " %></p>
       <% end %>
     <% end %>
   </div>

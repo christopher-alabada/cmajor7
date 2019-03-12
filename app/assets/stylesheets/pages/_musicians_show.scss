@@ -299,13 +299,29 @@
   text-decoration: underline;
 }
 
+input {
+  width: 50%;
+}
 #show-connect {
   display: flex;
   justify-content: center;
 }
-
-
-
+#submit {
+  display: flex;
+  justify-content: center;
+}
+#request_band_id {
+  width: 500px;
+}
 #new_request span {
   margin: 10px 10px;
+  display: flex;
+  justify-content: center;
+}
+#request_message {
+  width: 40vw;
+  height: 200px;
+}
+input::placeholder {
+  font-weight: lighter;
 }
