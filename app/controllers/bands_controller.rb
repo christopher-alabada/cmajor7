@@ -11,7 +11,6 @@ class BandsController < ApplicationController
     end
 
     @days = []
-
     # authorize @chat_room
   end
 
