@@ -1,15 +1,15 @@
 <div class="ts-bar-wrapper">
-<div class="title-and-search-bar">
+  <div class="title-and-search-bar">
     <div class="find-by-pref">
     Who are you looking for?
     </div>
-<div class="flex-grow-3 d-flex musician-search-bar" style="display:flex; justify-content: left;">
-      <%= form_tag musicians_path, method: :get, class: "text-left", style: 'padding-left: 50px' do %>
-        <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: " bassist" %>
-        <%= submit_tag "search", class: "btn btn-danger", style: "margin: 43px;padding: 5px 25px 5px; margin-left: 10px;" %>
+    <div class="flex-grow-3 d-flex musician-search-bar" >
+      <%= form_tag musicians_path, method: :get, class: 'search-form' do %>
+        <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: "  Search" %>
+        <%= submit_tag "Search", class: "btn btn-danger search-btn" %>
       <% end %>
-</div>
-</div>
+    </div>
+  </div>
 </div>
 
 <div class="card-container">
