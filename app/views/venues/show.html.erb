@@ -16,24 +16,24 @@
   <%# end %>
 </div> -->
 <div class="container">
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="venue-carousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
   <% (0...@venue.venue_photos.count).each do |index| %>
-    <li data-target="#carouselExampleIndicators" data-slide-to="<%= index %>"<%= " class=\"active\"" if index == 0 %>></li>
+    <li data-target="#venue-carousel" data-slide-to="<%= index %>" class="<%= 'active' if index == 0 %>"></li>
   <% end %>
   </ol>
   <div class="carousel-inner">
   <% @venue.venue_photos.each_with_index do |photo, index| %>
-    <div class="carousel-item<%= " active" if index == 0 %>">
+    <div class="item<%= " active" if index == 0 %>">
       <%= cl_image_tag photo.photo, class: "d-block w-100" %>
     </div>
   <% end %>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#venue-carousel" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#venue-carousel" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
