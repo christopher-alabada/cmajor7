@@ -1,0 +1,12 @@
+<h1>Venues</h1>
+
+<% @venues.each do |venue| %>
+  <div>
+    <%= link_to venue_path(venue) do %>
+      <%= cl_image_tag venue.venue_photos.first.photo, width: 300 %>
+    <% end %>
+  </div>
+  <div><span>English Name</span><%= venue.en_name %></div>
+  <div><span>Japanese Name</span><%= venue.jp_name %></div>
+  <div><span>URL:</span><%= link_to venue.jp_website %></div>
+<% end %>
