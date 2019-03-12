@@ -566,7 +566,7 @@ puts "Done seeding a band"
 
 venue = Venue.find_by(jp_website: 'http://i-musicbar.com/')
 if venue.nil?
-  venue = User.new(
+  venue = Venue.new(
     en_name:'i Music Bar',
     jp_name: 'アイミュージックバー',
     address: '〒160-0021 東京都新宿区歌舞伎町2-28-15 サチビル2F',
@@ -607,9 +607,183 @@ if venue.nil?
   inventory = EquipmentVenueInventory.new(venue: venue, equipment: ukulele)
   inventory.save!
 
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301555/DF4D5863-33C7-440E-855C-7ED3A16B1BB8.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301554/A3203589-D0ED-46A4-A2E0-3BCEEC30A28F.jpg'
+  photo.venue = venue
+  photo.save!
+
+   photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301554/4D3D6347-6F7C-4A78-A4D7-36B79A23B601.jpg'
+  photo.venue = venue
+  photo.save!
+
+   photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301555/D0C088C2-50B7-4EB8-8A0C-E098FAC57229.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301554/DC2ACE2F-41D8-43AE-A41E-5388907B3E19.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301553/C7B5808B-50EB-454A-9B75-196E89C934F3.jpg'
+  photo.venue = venue
+  photo.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301555/BB9020B5-58CF-4DD8-A266-06260B6D4617.jpg'
+  photo.venue = venue
+  photo.save!
+
   puts "Added venue: i Music Bar"
 else
-  puts "http://i-musicbar.com/ exists."
+  puts "i Music Bar exists."
+end
+
+venue = Venue.find_by(jp_website: 'http://id20.fm-p.jp/616/smokinboogie/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Smoking Buggy',
+    jp_name: 'スモーキン ブギ',
+    address: '〒160-0022 東京都新宿区新宿2丁目11−10 新宿二丁目センタービル B1F',
+    latitude: '35.690305',
+    longitude: '139.707482',
+    phone_num: '03-3353-8993',
+    email: 'smokinboogie_shinjyuku＠yahoo.co.jp',
+    closest_station: 'Shinjuku',
+    jp_website: 'http://id20.fm-p.jp/616/smokinboogie/',
+    en_website: '',
+    openmic_day: 'Every THU',
+    openmic_start_time: '20:00',
+    openmic_ending_time: '',
+    booking_system: 'No need',
+    charge: 1500,
+    additional_charge: 'drink included',
+    stage_rule: '2-3 songs',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: guitar_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: bass_amp)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/ED4AB1FC-40D6-48D5-A25B-0831FAFB9A11.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/B5E93FBD-2D29-4415-9AB7-69D5E885ECF6.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/31FA5231-F884-46F7-8708-39750872FEBA.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/C01F0113-B229-4B1D-BDEA-9C5FBAD0D8C5.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/8EE15394-6A0A-4D31-862C-C3032247C7BF.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/74F17E57-6A9F-4E23-99F0-556E80FC0888.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301816/209FFC5B-9649-463C-A623-C2130B0DDA37.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: "
+else
+  puts " exists."
+end
+
+venue = Venue.find_by(jp_website: 'https://www.jpslowlife.com/http/www-jpslowlife-com/schedule/')
+if venue.nil?
+  venue = Venue.new(
+    en_name:'Live Cafe & Bar Slow Life',
+    jp_name: '',
+    address: '〒111-0051 東京都台東区蔵前4-3-3蔵前協同ビルB１',
+    latitude: '35.702037',
+    longitude: '139.788194',
+    phone_num: '03-5829-4332',
+    email: 'https://www.jpslowlife.com/http/www-jpslowlife-com/schedule/',
+    closest_station: 'Kuramae, Asakusa-Bashi,',
+    jp_website: 'https://www.jpslowlife.com/',
+    en_website: '',
+    openmic_day: 'Every FRI',
+    openmic_start_time: '19:00',
+    openmic_ending_time: '23:00',
+    booking_system: 'No need',
+    charge: 1000,
+    additional_charge: 'one order',
+    stage_rule: '',
+    capacity: nil,
+    )
+  venue.save!
+
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: acoustic_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_guitar)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: piano)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: upright)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: electric_bass)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: drums)
+  inventory.save!
+  inventory = EquipmentVenueInventory.new(venue: venue, equipment: cajon)
+  inventory.save!
+
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/8EE15394-6A0A-4D31-862C-C3032247C7BF.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/32593156-5449-497D-8AF3-042CBFBF1D2A.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/EEBCC620-5237-4A0F-A11C-A8B7422B11F4.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/6B17B880-0BDD-489F-8263-FBC737752EA3.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301818/9FFAD3F3-3D88-47B8-BA26-7B780ADCCDF5.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301818/2619C013-16B1-4200-8B44-010641094E65.jpg'
+  photo.venue = venue
+  photo.save!
+  photo = VenuePhoto.new()
+  photo.remote_photo_url = 'https://res.cloudinary.com/kumasan12/image/upload/v1552301817/89468467-6C9C-4782-9E41-3725C44FA6CB.jpg'
+  photo.venue = venue
+  photo.save!
+
+  puts "Added venue: Live Cafe & Bar Slow Life"
+else
+  puts "Live Cafe & Bar Slow Life exists."
 end
 
 puts
