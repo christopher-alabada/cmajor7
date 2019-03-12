@@ -56,12 +56,12 @@
 .musicians-show-container {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .show-musician-pic-wrapper {
-  width: 500px;
-  height: 400px;
+  width: 300px;
+  height: 200px;
   margin-top: 60px;
   margin-bottom: 60px;
   margin-left: 30px;
@@ -113,8 +113,8 @@
 }
 
 .show-musician-photo {
-  width: 500px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border-top-left-radius: 30px;
   border-top-right-radius: 0px;
@@ -126,7 +126,7 @@
 
 .gray-detail-container  {
   background-color: white;
-  margin-top: 60px;
+  margin-top: 20px;
   margin-bottom: 60px;
   margin-left: 30px;
   padding: 20px;
@@ -262,7 +262,7 @@
 
 
 .show-banner {
-  height: 400px;
+  height: 300px;
   background-position: center;
 }
 
