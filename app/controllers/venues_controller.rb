@@ -4,6 +4,11 @@ class VenuesController < ApplicationController
 
   def index
     @venues = policy_scope(Venue)
+    @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil)
+
+    @markers = @mapped_venues.map do |venue|
+      { lng: venue.longitude, lat: venue.latitude }
+    end
   end
 
   def show

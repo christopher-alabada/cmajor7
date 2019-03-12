@@ -25,6 +25,7 @@ gem 'aasm'
 gem 'pg_search'
 gem 'local_time'
 gem 'jquery-rails'
+gem 'mapbox-sdk'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
