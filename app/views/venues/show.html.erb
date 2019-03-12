@@ -10,12 +10,12 @@
   }
 </style>
 
-<div class="venue-photos">
-  <% @venue.venue_photos.each_with_index do |photo| %>
-    <div class="venue-photo"><%= cl_image_tag photo.photo, width: 300 %></div>
-  <% end %>
-</div>
-<!-- <div class="container">
+<!-- <div class="venue-photos">
+  <%# @venue.venue_photos.each_with_index do |photo| %>
+    <div class="venue-photo"><%#= cl_image_tag photo.photo, width: 300 %></div>
+  <%# end %>
+</div> -->
+<div class="container">
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
   <% (0...@venue.venue_photos.count).each do |index| %>
@@ -38,7 +38,6 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-</div> -->
 
 <div><span>en_name: </span><%= @venue.en_name %></div>
 <div><span>jp_name: </span><%= @venue.jp_name %></div>
@@ -58,3 +57,6 @@
 <div><span>additional_charge: </span><%= @venue.additional_charge %></div>
 <div><span>stage_rule: </span><%= @venue.stage_rule %></div>
 <div><span>capacity: </span><%= @venue.capacity %></div>
+
+
+</div>
