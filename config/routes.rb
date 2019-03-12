@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   post '/chat_rooms/:chat_room_id/messages', to: 'messages#create', as: 'chat_room_messages'
   get '/chat_rooms/:id', to: 'chat_rooms#show', as: 'chat_room'
+
+  mount ActionCable.server => "/cable"
 end
