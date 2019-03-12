@@ -708,9 +708,9 @@ if venue.nil?
   photo.venue = venue
   photo.save!
 
-  puts "Added venue: "
+  puts "Added venue: Smoking Buggy"
 else
-  puts " exists."
+  puts "Smoking Buggy exists."
 end
 
 venue = Venue.find_by(jp_website: 'https://www.jpslowlife.com/http/www-jpslowlife-com/schedule/')
