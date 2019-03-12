@@ -16,47 +16,49 @@
 <div class="container">
   <div class="show-container">
 
-    <div class="card-wrapper">
+    <!-- <div class="card-wrapper">
       <div class="banner-content">
         <div class="card-description">
           <div class="band-contents-band">
             <div class="profile-container-band text-left">
               <div><h3><%= @band.band_name  %>'s info</h3></div>
               <div>
-              <% @band.band_members.all.each do |member|%>
-                <p><%= member.user.nickname.capitalize %> plays
-                <% Equipment.find(member.user.equipment_ids).each do |instrument|%>
-                  <%= instrument.equipment_type %>
-                <% end %></p>
-              <% end %>
+              <%# @band.band_members.all.each do |member|%>
+                <%# Equipment.find(member.user.equipment_ids).each do |instrument|%>
+                  <%#= instrument.equipment_type %>
+                <%# end %></p>
+              <%# end %>
               </div>
               <div>
-                <% @band.band_members.all.each do |member|%>
-                  Location: <%= member.user.location.capitalize %>
-                <% end %>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="card-wrapper">
-      <div class="banner-content">
-        <div class="card-description">
-          <div class="card-contents-band">
-            <p class='band-members-title'>Members</p>
-            <div class="band-members-wrapper">
-            <% @band.band_members.all.each do |member|%>
-              <%= link_to musician_path(member.user) do %>
-                <div class="band-members">
+      <div class="card-contents-band">
+        <p class='band-members-title'>Members</p>
+        <div class="band-members-wrapper">
+
+          <% @band.band_members.all.each do |member|%>
+              <div class="band-members">
+                <%= link_to musician_path(member.user) do %>
                   <span><%= cl_image_tag(member.user.user_photo, class:'member-avatar')%></span>
-                  <p><%= member.user.nickname.capitalize %></p>
+                <% end %>
+                <div class="member-description">
+                  <%= member.user.nickname.capitalize %> plays
+                    <% equipment = Equipment.find(member.user.equipment_ids).map do |instrument| %>
+                      <% instrument.equipment_type %>
+                    <% end %>
+                    <%= equipment.join(',') %>
+                  <p>Location: <%= member.user.location.capitalize %></p>
                 </div>
-              <% end %>
-            <% end %>
-            </div>
-          </div>
+              </div>
+          <% end %>
+        </div>
+      </div>
 
           <script>
             $(document).ready(function() {
@@ -71,15 +73,14 @@
             });
           </script>
 
-        </div>
-      </div>
-    </div>
 
-  </div>
+    </div>
 
   <div class="chat-container">
     <h3>Messages</h3>
     <%= render 'messages' %>
+  </div>
+
   </div>
 </div>
 

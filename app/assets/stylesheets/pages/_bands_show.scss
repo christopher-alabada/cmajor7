@@ -1,3 +1,8 @@
+.show-container {
+  display: flex;
+  justify-content: space-around;
+  // flex-basis: auto;
+}
 .show-banner {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -89,15 +94,12 @@
 
 .card-contents-band {
   box-shadow: 0 1px 3px gray;
-  min-width: 320px;
+  min-width: 30vw;
   min-height: 100px;
   max-width: 250px;
   padding: 20px;
-}
-
-.band-members-wrapper {
-  display: flex;
-  justify-content: flex-start;
+  margin: 10px;
+  flex: 1 1 30%;
 }
 
 .band-members-title {
@@ -107,12 +109,15 @@
   font-weight: bolder;
   margin-bottom: 20px;
   border-bottom: 5px solid #3F5DFA;
-  width: 47%;
+  width: 100%;
 }
 
 .band-members {
-  text-align: center;
+  box-shadow: 0 3px 2px #e3e7f1;
+  margin-top: 15px;
   margin-left: 10px;
+  display: flex;
+  justify-content: start;
 }
 
 .band-members p {
@@ -129,7 +134,17 @@
     text-decoration: none;
   }
 }
-
+.band-members a {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.member-description {
+  margin: 10px;
+}
+.member-description p {
+  margin-top: 10px;
+}
 .member-avatar {
   border-radius: 50%;
   height: 50px;
@@ -183,14 +198,20 @@
 
 
 // Chat Messages //
+.chat-container {
+  flex: 1 1 40%;
+  margin: 10px;
+  margin-left: 50px;
+}
 .chat-container h3 {
   color: black;
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
   margin-bottom: 0px;
-  border-bottom: 5px solid #3F5DFA;
-  width: 555px;
+  border-bottom: 5px solid #23a393;
+  // width: 555px;
+  width: auto;
   padding-bottom: 7px;
 }
 
