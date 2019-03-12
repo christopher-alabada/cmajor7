@@ -174,9 +174,9 @@
  -->
       <div class="r-container">
         <div class="f-request">
-          <h4>Requests you send</h4>
-          <div class="from-request">
-
+          <h4 class="request-header">Sent Requests</h4>
+          <div class="from-request"> <!-- adds bottom space
+ -->
           <% if @from_requests.exists? %>
             <% @from_requests.each do |r| %>
               <div class="r-card">
@@ -204,7 +204,7 @@
         </div>
 
          <div class="to-request">
-          <h4>Requests from other Musicians</h4>
+          <h4 class="request-header">Requests From Other Musicians</h4>
           <div class="r-t-container">
             <% if @to_requests.exists? %>
               <% @to_requests.each do |r| %>

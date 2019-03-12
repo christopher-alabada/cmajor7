@@ -154,6 +154,7 @@
 
 .gray-bio {
   margin-top: 10px;
+  margin-bottom: 15px;
   font-size: 20px;
   opacity: 0.75;
   font-family: 'Signika', sans-serif;
@@ -311,17 +312,17 @@ input {
   justify-content: center;
 }
 #request_band_id {
-  width: 500px;
+  // width: 500px;
 }
+
 #new_request span {
-  margin: 10px 10px;
-  display: flex;
-  justify-content: center;
+  margin: 5px 10px;
 }
+
 #request_message {
   width: 40vw;
-  height: 200px;
 }
+
 input::placeholder {
   font-weight: lighter;
 }

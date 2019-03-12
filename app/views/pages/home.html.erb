@@ -63,9 +63,7 @@
 
 <div class="explore-musician-title">
     <div class="g-exolore">
-    <%= link_to musicians_path do %>
-     <div class='explore-musician'>Explore musicians.</div>
-    <% end %>
+     <div class='explore-musician'>Featured Musicians</div>
     </div>
 </div>
 
@@ -75,7 +73,7 @@
 
     <div class="musician-container">
       <div class="row">
-        <% @musicians[0..5].each do |musician| %>
+        <% @musicians[0..2].each do |musician| %>
           <div class="col-xs-12 col-md-4">
             <% p musician %>
             <div class="musician-index">

@@ -69,43 +69,21 @@
 </div>
 
 <% if user_signed_in? && current_user != @musician %>
-<p class='want-to text-center'>want to play with <%= @musician.nickname %>?</p>
+<p class='want-to text-center'>Want to play with <%= @musician.nickname %>?</p>
   <div id="connect">
     <% if @requested %>
       <%= link_to "You have sent a request.", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
     <% else %>
       <%= simple_form_for @request, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-        <p><%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %></p>
-        <p><%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %></p>
-        <p><%= f.input :message, placeholder: 'Message', id: 'r-message' %></p>
-        <p id='submit'><%= f.button :submit, 'Connect', class: "btn btn-primary connect " %></p>
+        <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
+        <%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %>
+        <%= f.input :message, placeholder: 'Message' %>
+        <%= f.button :submit, 'Connect', class: "btn btn-primary connect" %>
       <% end %>
     <% end %>
   </div>
 <% end %>
 
-
-<!-- <div class="instruments" style="background-color: #F2F2F2; padding: 20px;">
-<h3 style="text-align: center;">※THEIR MUSIC INSTRUMENTS HERE※</h3>
-<div style="text-align: center;">.</div>
-<div style="text-align: center;">.</div>
-<div style="text-align: center;">.</div>
-<div style="text-align: center;">.</div>
-<div style="text-align: center;">.</div>
-<p style="text-align: center;">.</p>
-</div> -->
-            <!-- <script>
-              $(document).ready(function() {
-                $("#connect").change(function(){
-                  if(this.checked){
-                    $(".popup")[0].style.display = "block";
-                    $(".card-contents")[0].style.display = "none";
-                  } else {
-                    $(".popup")[0].style.display = "none";
-                  }
-                })
-              });
-            </script> -->
           </div>
         </div>
       </div>
