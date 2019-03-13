@@ -16,6 +16,9 @@ class User < ApplicationRecord
   has_many :musician_genres
   has_many :genres, through: :musician_genres
 
+  has_many :from_reviews, :class_name => 'Review', :foreign_key => 'from_id'
+  has_many :to_reviews, :class_name => 'Review', :foreign_key => 'to_id'
+
   mount_uploader :user_photo, PhotoUploader
   mount_uploader :banner_photo, PhotoUploader
 

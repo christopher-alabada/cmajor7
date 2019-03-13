@@ -15,6 +15,14 @@ ActiveRecord::Schema.define(version: 2019_03_13_022539) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "badges", force: :cascade do |t|
+    t.string "badges"
+    t.bigint "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_badges_on_review_id"
+  end
+
   create_table "band_members", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,6 +37,20 @@ ActiveRecord::Schema.define(version: 2019_03_13_022539) do
     t.string "banner_photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "users_id"
+    t.bigint "venue_id"
+    t.string "state"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "end_time"
+    t.datetime "start_time"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["venue_id"], name: "index_bookings_on_venue_id"
   end
 
   create_table "chat_rooms", force: :cascade do |t|
@@ -128,6 +150,16 @@ ActiveRecord::Schema.define(version: 2019_03_13_022539) do
     t.integer "band_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.integer "stars"
+    t.text "content"
+    t.integer "from_id"
+    t.integer "to_id"
+    t.integer "venue_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string "title"
     t.string "artist"
@@ -191,8 +223,11 @@ ActiveRecord::Schema.define(version: 2019_03_13_022539) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "badges", "reviews"
   add_foreign_key "band_members", "bands"
   add_foreign_key "band_members", "users"
+  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "bookings", "venues"
   add_foreign_key "equipment", "equipment_categories"
   add_foreign_key "equipment_inventories", "equipment"
   add_foreign_key "equipment_inventories", "users"
