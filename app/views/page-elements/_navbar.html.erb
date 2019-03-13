@@ -16,7 +16,9 @@
 
   <div class="navbar-right">
   <% if user_signed_in? %>
-    <div style="color: white ">Hello, <%= current_user.nickname.capitalize %></div>
+  <!--   <div class= "navbar-item navbar-link">Hello, <%= current_user.nickname.capitalize %></div> -->
+    <%= link_to "Musicians", musicians_path, class: "navbar-item musician-navbar-link"%>
+    <%= link_to "Venues", venues_path, class: "navbar-item venue-navbar-link" %>
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <% if current_user.user_photo.blank? %>
@@ -26,8 +28,6 @@
         <% end %>
 
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Musicians", musicians_path %></li>
-          <!-- <li><%#= link_to "Venues", venues_index_path %></li> -->
           <li><%= link_to "Dashboard", musicians_dashboard_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         </ul>
@@ -35,9 +35,10 @@
     </div>
   <% else %>
     <div class="navbar-wagon-item">
-      <%= link_to "Musicians", musicians_path, class: "navbar-item navbar-link" %>
-      <%= link_to "Log in", new_user_session_path, class: "navbar-item navbar-link" %>
-      <%= link_to "Sign up", new_user_registration_path, class: "navbar-item navbar-link" %>
+      <%= link_to "Musicians", musicians_path, class: "navbar-item musician-navbar-link" %>
+      <%= link_to "Venues", venues_path, class: "navbar-item venue-navbar-link" %>
+      <%= link_to "Log in", new_user_session_path, class: "navbar-item nav-sl-navbar-link" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "navbar-item nav-sl-navbar-link" %>
     </div>
   <% end %>
   </div>
