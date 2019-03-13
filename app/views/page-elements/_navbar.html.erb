@@ -17,6 +17,8 @@
   <div class="navbar-right">
   <% if user_signed_in? %>
     <div style="color: white ">Hello, <%= current_user.nickname.capitalize %></div>
+    <%= link_to "Musicians", musicians_path%>
+    <%= link_to "Venues", venues_index_path %>
     <div class="navbar-wagon-item">
       <div class="dropdown">
         <% if current_user.user_photo.blank? %>
