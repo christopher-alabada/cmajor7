@@ -119,25 +119,27 @@
               </ul>
             </div>
           <% end %>
-
         </div>
       </div>
   </div>
 </div>
 
 <% if user_signed_in? && current_user != @musician %>
-<p class='want-to text-center'>Want to play with <%= @musician.nickname %>?</p>
+<p class='want-to text-center'>Want to play with <%= @musician.nickname.capitalize %>?</p>
   <div id="connect">
     <% if @requested %>
       <%= link_to "You have sent a request.", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
     <% else %>
+
+    <div class="invite-form">
       <%= simple_form_for @request, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
         <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
-        <%= f.input :band_id, collection: @musicians_bands, class: 'form-control', selected: 0 %>
+        <%= f.input :band_id, collection: @musicians_bands, class: 'form-control select', selected: 0 %>
         <%= f.input :message, placeholder: 'Message' %>
-        <%= f.button :submit, 'Connect', class: "btn btn-primary connect" %>
-      <% end %>
-    <% end %>
+        <%= f.button :submit, 'Invite', class: "btn btn-primary connect"
+         %>
+      </div>
+     <% end %>
+   <% end %>
   </div>
 <% end %>
-

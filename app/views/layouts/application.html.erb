@@ -3,9 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= favicon_link_tag 'apple-touch-icon-57x57.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
+    <%= favicon_link_tag 'apple-touch-icon-114x114.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
+    <%= favicon_link_tag 'apple-touch-icon-72x72.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
+    <%= favicon_link_tag 'apple-touch-icon-144x144.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
+    <%= favicon_link_tag 'apple-touch-icon-60x60.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
+    <%= favicon_link_tag 'apple-touch-icon-120x120.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
+    <%= favicon_link_tag 'apple-touch-icon-76x76.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
+    <%= favicon_link_tag 'apple-touch-icon-152x152.png', rel: 'apple-touch-icon-precomposed', type: 'image/png' %>
+    <%= favicon_link_tag 'favicon-196x196.png', type: 'image/png', sizes: '196x196' %>
+    <%= favicon_link_tag 'favicon-96x96.png', type: 'image/png', sizes: '96x96' %>
+    <%= favicon_link_tag 'favicon-32x32.png', type: 'image/png', sizes: '32x32' %>
+    <%= favicon_link_tag 'favicon-16x16.png', type: 'image/png', sizes: '16x16' %>
+    <%= favicon_link_tag 'favicon-128.png', type: 'image/png', sizes: '128x128' %>
+
+    <title><%= yield(:title) %></title>
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <title>C Major 7</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>

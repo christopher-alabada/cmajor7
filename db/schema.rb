@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_020350) do
+ActiveRecord::Schema.define(version: 2019_03_13_022539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_020350) do
     t.integer "from_id"
     t.integer "to_id"
     t.string "message"
+    t.boolean "confirmed", default: false
     t.integer "band_id"
   end
 
@@ -202,6 +203,7 @@ ActiveRecord::Schema.define(version: 2019_03_13_020350) do
     t.string "en_name"
     t.string "jp_name"
     t.string "address"
+    t.string "en_address"
     t.string "latitude"
     t.string "longitude"
     t.string "phone_num"
