@@ -3,4 +3,7 @@ class Review < ApplicationRecord
   # has_many :badges
   belongs_to :from, :class_name => 'User', :foreign_key => 'from_id', optional: true
   belongs_to :to, :class_name => 'User', :foreign_key => 'to_id', optional: true
+
+  validates :content, presence: true
+  validates :stars, presence: true
 end

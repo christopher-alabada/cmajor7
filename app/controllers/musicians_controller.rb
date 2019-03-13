@@ -15,6 +15,7 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = User.find(params[:id])
+    @musicians = User.all
     @request = Request.new
 
 

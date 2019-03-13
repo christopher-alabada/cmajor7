@@ -13,6 +13,8 @@ class ReviewsController < ApplicationController
 
     if @review.save
       redirect_to musician_path(params[:id])
+    else
+      redirect_to musician_path(params[:id])
     end
   end
 
