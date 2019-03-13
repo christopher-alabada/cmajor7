@@ -5,7 +5,7 @@
     </div>
     <div class="flex-grow-3 d-flex musician-search-bar" >
       <%= form_tag musicians_path, method: :get, class: 'search-form' do %>
-        <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: "  Search" %>
+        <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: "  Instrument or Location" %>
         <%= submit_tag "Search", class: "btn btn-danger search-btn" %>
       <% end %>
     </div>
