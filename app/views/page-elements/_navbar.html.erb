@@ -17,6 +17,15 @@
   <div class="navbar-right">
   <% if user_signed_in? %>
   <!--   <div class= "navbar-item navbar-link">Hello, <%= current_user.nickname.capitalize %></div> -->
+    <div class="flex-grow-3 d-flex musician-search-bar" >
+      <%= form_tag musicians_path, method: :get, class: 'search-form' do %>
+        <!-- <div style="width: 20px; height: 35px; background-color: #E84369; border-top-left-radius: 15px; border-bottom-left-radius: 15px;"></div> -->
+        <%= button_tag(type: "submit", class: "btn search-btn") do %>
+           <i class="fas fa-search awesome-search-color"></i>
+        <% end %>
+        <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: " Search by instrument or location" %>
+      <% end %>
+    </div style="margin-left: 20px;">
     <%= link_to "Musicians", musicians_path, class: "navbar-item musician-navbar-link"%>
     <%= link_to "Venues", venues_path, class: "navbar-item venue-navbar-link" %>
     <div class="navbar-wagon-item">
