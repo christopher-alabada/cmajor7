@@ -22,3 +22,53 @@
 .i-venue-info {
   padding: 10px;
 }
+
+#map {
+  width: 100%;
+  height: 600px;
+}
+
+.venues {
+  // position: fixed;
+}
+
+.venue-info img {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border-top-left-radius: 10%;
+  border-bottom-left-radius: 10%;
+}
+
+.venue-info-right {
+  border-top: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  padding-left: 15px;
+  width: 375px;
+}
+
+.venue-item {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.venue-name {
+  display: flex;
+}
+
+.venue-title {
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.venue-data {
+  font-size: 13px;
+}
+
+.venue-openmic {
+  display: flex;
+  div {
+    margin-right: 5px;
+  }
+}
