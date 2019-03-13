@@ -333,3 +333,31 @@ input.form-control {
   background: white;
   margin: 0px auto;
 }
+
+.carousel-size {
+display: block;
+  max-width: 100%;
+  line-height: 1;
+}
+
+.carousel-banner {
+  width: 270vh;
+  height: 445px;
+}
+
+.venue-name-style {
+  font-size: 35px;
+  border-bottom: 3px solid #E84369;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  width: 630px;
+}
+
+.venue-bio {
+  margin-top: 20px;
+  /* margin-bottom: 10px; */
+  font-size: 22px;
+  /* opacity: 0.75; */
+  font-family: 'Signika', sans-serif;
+  font-weight: bold;
+}
