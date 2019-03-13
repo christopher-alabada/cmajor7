@@ -6,12 +6,13 @@
         </div>
           <h4><%= @musician.tag_line %></h4>
 
+
       </div>
     </div>
 </div>
 
 
-<div class="container">
+<div class="s-container">
   <div class="musicians-show-container">
     <div class="show-musician-pic-wrapper">
       <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
@@ -19,127 +20,160 @@
       </div>
     </div>
 
-      <div class="gray-detail-container">
-        <div class="gray-info-contents">
-          <div class="gray-name">
-            <% @musician.fullname.split(' ').each do |m| %>
-              <%= m.capitalize %>
+    <div class="gray-detail-container">
+      <div class="gray-info-contents">
+        <div class="gray-name">
+          <% @musician.fullname.split(' ').each do |m| %>
+            <%= m.capitalize %>
+          <% end %>
+          <input type="checkbox" style="display: none;" id="invite">
+          <label for="invite" class='btn btn-success invite-btn'>Invite</label>
+          <script>
+            $(document).ready(function() {
+              $("#invite").change(function(){
+                if(this.checked){
+                  $("#m-invite")[0].style.display = "block";
+                  $('.m-show-description')[0].style.display = 'none'
+                  $('.invite-btn')[0].style.display = 'none'
+                } else {
+                  $("#m-invite")[0].style.display = "none";
+                }
+              })
+            });
+          </script>
+
+        </div>
+          <div id="m-invite" style='display: none;'>
+            <% if user_signed_in? && current_user != @musician %>
+            <p class='want-to text-center'>Want to play with <%= @musician.nickname.capitalize %>?</p>
+              <div id="connect">
+                <% if @requested %>
+                  <%= link_to "You have sent a request.", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
+                <% else %>
+
+                <div class="invite-form">
+                  <%= simple_form_for @request, wrapper: :inline_form do |f| %>
+                    <p><%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
+                    <%= f.input :band_id, collection: @musicians_bands, class: 'form-control select', selected: 0 %></p>
+                    <p><%= f.input :message, placeholder: 'Message' %></p>
+                    <p class='i-submit'><%= f.button :submit, 'Invite', class: "btn btn-success connect"
+                     %></p>
+                  </div>
+                 <% end %>
+               <% end %>
+              </div>
             <% end %>
-          </div>
-          <div class="gray-bio">
-            <p ><%= @musician.description %></p>
-          </div>
-          <div class="gray-eq">
-            <%
-              instruments = @musician.equipments.map do |e|
-                e.equipment_type.capitalize
-              end
-            %>
-            <%= instruments.join(" · ") %>
-          </div>
-          <div class="gray-other-info">
-            <% unless @musician.genres.nil? %>
-              <p>Genre:
-                <%
-                  genres = []
-                  @musician.genres.each do |genre|
-                    genres << genre.name.capitalize
-                  end
-                %>
-                <%= genres.join(' · ') %>
-              </p>
-            <% end %>
-              <p>Location: <%= @musician.location.capitalize %></p>
           </div>
 
-            <input type="checkbox" style="display: none;" id="m-review">
-            <label for="m-review" class='btn btn-link m-review-b'>View all the reviews</label>
-            <script>
-              // const request = document.getElementById('request-label')
-              // request.style.borderBottom = '4px solid #9745AF'
-              $(document).ready(function() {
-                $("#m-review").change(function(){
-                  if(this.checked){
-                    $(".musician-review")[0].style.display = "block";
-                  } else {
-                    $(".musician-review")[0].style.display = "none";
-                  }
-                })
-              });
-            </script>
-            <div class="musician-review" style='display: none;'>
-              <% if @reviews.exists? %>
-                <% @reviews.each do |r| %>
-                  <%= r.content %>
-                  <%= r.stars %>
+      <div class="m-show-description">
+        <div class="gray-bio">
+          <p ><%= @musician.description %></p>
+        </div>
+        <div class="gray-eq">
+          <%
+            instruments = @musician.equipments.map do |e|
+              e.equipment_type.capitalize
+            end
+          %>
+          <%= instruments.join(" · ") %>
+        </div>
+        <div class="gray-other-info">
+          <% unless @musician.genres.nil? %>
+            <p>Genre:
+              <%
+                genres = []
+                @musician.genres.each do |genre|
+                  genres << genre.name.capitalize
+                end
+              %>
+              <%= genres.join(' · ') %>
+            </p>
+          <% end %>
+            <p>Location: <%= @musician.location.capitalize %></p>
+        </div>
+
+        <% unless @musician.bands.empty? %>
+        <div class="gray-view-bands">
+          <ps>Bands:
+            <% @musician.bands.each do |band| %>
+              <%= band.band_name.capitalize %>
+            <% end %></p>
+        </div>
+        <% end %>
+      </div>
+
+    <input type="checkbox" style="display: none;" id="m-review">
+    <label for="m-review" class='btn btn-link m-review-b'>View all the reviews</label>
+    <script>
+      $(document).ready(function() {
+        $("#m-review").change(function(){
+          if(this.checked){
+            $(".musician-review")[0].style.display = "block";
+            $(".m-show-description")[0].style.display = "none";
+            $(".gray-name")[0].style.display = "none";
+            $(".m-review-b")[0].style.display = "none";
+            $("#m-invite")[0].style.display = "none";
+          } else {
+            $(".musician-review")[0].style.display = "none";
+          }
+        })
+      });
+    </script>
+    <div class="musician-review" style='display: none;'>
+        <div class="review-content">
+          <p class='review-title'>Reviews</p>
+          <% if @reviews.exists? %>
+            <% @reviews.each do |r| %>
+              <% 5.times.each do |count| %>
+                <% if r.stars && r.stars > count %>
+                  <i class="fas fa-star star"></i>
+                <% else %>
+                  <i class="fas fa-star unstar"></i>
                 <% end %>
-                <div class="create-review-container">
-                  <input type="checkbox" style="display: none;" id="m-write-review">
-                  <label for="m-write-review" class='btn btn-primary'>Write review</label>
-                  <script>
-                    $(document).ready(function() {
-                      $("#m-write-review").change(function(){
-                        if(this.checked){
-                          $("#create-review")[0].style.display = "block";
-                        } else {
-                          $("#create-review")[0].style.display = "none";
-                        }
-                      })
-                    });
-                  </script>
-                </div>
-
-                <div id="create-review" style='display: none;'>
-                  <%= simple_form_for [@musician, @review] do |f| %>
-                    <%= f.input :content %>
-                    <%= f.input :stars  %>
-                    <%= f.submit "Send", class: "btn btn-success review-submit" %>
-                  <% end %>
-                </div>
-              <% else %>
-                <p><%= 'No reviews yet.' %></p>
-                <div id="create-message">
-                  <p class='btn btn-primary'><%= 'Write review' %></p>
-                  <%= simple_form_for [@musician, @review] do |f| %>
-                    <%= f.input :content %>
-                    <%= f.input :stars  %>
-                    <%= f.submit "Send", class: "btn btn-success message-submit" %>
-                  <% end %>
-                </div>
               <% end %>
-            </div>
+              <p><%= r.content %></p>
+              <p class='review-from'>Review from <%= @musicians.find(r.from_id).nickname.capitalize %></p>
+            <% end %>
+        </div>
+        <div class="create-review-container">
+          <input type="checkbox" style="display: none;" id="m-write-review">
+          <label for="m-write-review" class='btn btn-primary'>Write review</label>
+          <script>
+            $(document).ready(function() {
+              $("#m-write-review").change(function(){
+                if(this.checked){
+                  $("#create-review")[0].style.display = "block";
+                  $(".review-content")[0].style.display = "none";
+                  $("#m-invite")[0].style.display = "none";
+                } else {
+                  $("#create-review")[0].style.display = "none";
+                }
+              })
+            });
+          </script>
 
-          <% unless @musician.bands.empty? %>
-            <div class="gray-view-bands">
-              <ps>Bands:</p>
-              <ul>
-                <% @musician.bands.each do |band| %>
-                  <li><%= band.band_name.capitalize %></li>
-                <% end %>
-              </ul>
-            </div>
+
+        <div id="create-review" style='display: none;'>
+          <%= simple_form_for [@musician, @review] do |f| %>
+            <%= f.input :content %>
+            <%= f.input :stars  %>
+            <%= f.submit "Send", class: "btn btn-success review-submit" %>
           <% end %>
         </div>
+      <% elsif user_signed_in? && @reviews.nil?%>
+        <p><%= 'No reviews yet.' %></p>
+        <div id="create-message">
+          <p class='btn btn-primary'><%= 'Write review' %></p>
+          <%= simple_form_for [@musician, @review] do |f| %>
+            <%= f.input :content %>
+            <%= f.input :stars  %>
+            <%= f.submit "Send", class: "btn btn-success message-submit" %>
+          <% end %>
+          </div>
+      <% end %>
       </div>
+    </div>
+    </div>
   </div>
 </div>
 
-<% if user_signed_in? && current_user != @musician %>
-<p class='want-to text-center'>Want to play with <%= @musician.nickname.capitalize %>?</p>
-  <div id="connect">
-    <% if @requested %>
-      <%= link_to "You have sent a request.", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
-    <% else %>
-
-    <div class="invite-form">
-      <%= simple_form_for @request, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-        <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
-        <%= f.input :band_id, collection: @musicians_bands, class: 'form-control select', selected: 0 %>
-        <%= f.input :message, placeholder: 'Message' %>
-        <%= f.button :submit, 'Invite', class: "btn btn-primary connect"
-         %>
-      </div>
-     <% end %>
-   <% end %>
-  </div>
-<% end %>

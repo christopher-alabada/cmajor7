@@ -15,15 +15,18 @@ class MusiciansController < ApplicationController
 
   def show
     @musician = User.find(params[:id])
+    @musicians = User.all
     @request = Request.new
-    @reviews = Review.all.where('from_id = :user_id', { user_id: current_user.id })
-    @review = Review.new
+
+
 
     # for connect form
     if user_signed_in?
       @requested = Request.find_by(from: current_user, to: @musician)
       @musicians_bands = current_user.bands.map { |band| [band.band_name, band.id] }
       @musicians_bands.unshift(['Form new band...', 0])
+      @review = Review.new
+      @reviews = Review.all.where('from_id = :user_id', { user_id: current_user.id })
     end
   end
 

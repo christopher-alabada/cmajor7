@@ -4,12 +4,25 @@
 
 .carousel-photo {
   // margin: 10px;
-  height: 50%;
+  // height: 50%;
   // width: 80%;
 }
 .carousel-inner {
-  height: 500px;
+  // height: 500px;
 }
 .venue-info {
   margin: 20px;
+  margin-left: 80px;
+  margin-bottom: 180px;
+}
+
+
+.carousel {
+  background-color: black;
+
+  .item img {
+    width: auto;
+    height: 500px;
+    margin: 0 auto;
+  }
 }
