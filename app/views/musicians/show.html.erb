@@ -71,11 +71,35 @@
               <% if @reviews.exists? %>
                 <% @reviews.each do |r| %>
                   <%= r.content %>
+                  <%= r.stars %>
                 <% end %>
+                <div class="create-review-container">
+                  <input type="checkbox" style="display: none;" id="m-write-review">
+                  <label for="m-write-review" class='btn btn-primary'>Write review</label>
+                  <script>
+                    $(document).ready(function() {
+                      $("#m-write-review").change(function(){
+                        if(this.checked){
+                          $("#create-review")[0].style.display = "block";
+                        } else {
+                          $("#create-review")[0].style.display = "none";
+                        }
+                      })
+                    });
+                  </script>
+                </div>
+
+                <div id="create-review" style='display: none;'>
+                  <%= simple_form_for [@musician, @review] do |f| %>
+                    <%= f.input :content %>
+                    <%= f.input :stars  %>
+                    <%= f.submit "Send", class: "btn btn-success review-submit" %>
+                  <% end %>
+                </div>
               <% else %>
                 <p><%= 'No reviews yet.' %></p>
-                <p class='btn btn-primary'><%= 'Write review' %></p>
                 <div id="create-message">
+                  <p class='btn btn-primary'><%= 'Write review' %></p>
                   <%= simple_form_for [@musician, @review] do |f| %>
                     <%= f.input :content %>
                     <%= f.input :stars  %>
