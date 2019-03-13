@@ -7,7 +7,7 @@
     <% end %>
   </ol>
 
-  <div class="carousel-inner carousel-size">
+  <div class="carousel-inner carousel-size" style="margin-bottom: 50px;">
     <% @venue.venue_photos.each_with_index do |photo, i| %>
       <div class="item <%= 'active' if i == 0 %> ">
         <%= cl_image_tag photo.photo, class: 'carousel-photo' %>
@@ -24,22 +24,22 @@
 </div>
 
 <div class="venue-info">
-  <div><span>English name: </span><%= @venue.en_name %></div>
-  <div><span>Japanese name: </span><%= @venue.jp_name %></div>
-  <div><span>Address: </span><%= @venue.address %></div>
-  <div><span>Latitude: </span><%= @venue.latitude %></div>
-  <div><span>Longitude: </span><%= @venue.longitude %></div>
-  <div><span>Phone_num: </span><%= @venue.phone_num %></div>
-  <div><span>Email: </span><%= @venue.email %></div>
-  <div><span>Closest_station: </span><%= @venue.closest_station %></div>
-  <div><span>Jp website: </span><%= @venue.jp_website %></div>
-  <div><span>En website: </span><%= @venue.en_website %></div>
-  <div><span>Openmic_day: </span><%= @venue.openmic_day %></div>
-  <div><span>Openmic_start_time: </span><%= @venue.openmic_start_time %></div>
-  <div><span>Openmic_ending_time: </span><%= @venue.openmic_ending_time %></div>
-  <div><span>Booking_system: </span><%= @venue.booking_system %></div>
-  <div><span>Charge: </span><%= @venue.charge %></div>
-  <div><span>Additional_charge: </span><%= @venue.additional_charge %></div>
-  <div><span>Stage_rule: </span><%= @venue.stage_rule %></div>
-  <div><span>Capacity: </span><%= @venue.capacity %></div>
+  <div class="venue-name-style"><%= @venue.en_name %> <%= @venue.jp_name %></div>
+  <!-- <div><span>Japanese name: </span><%= @venue.jp_name %></div> -->
+  <div class="venue-bio"><span>Address: </span><%= @venue.address %></div>
+ <!--  <div><span>Latitude: </span><%= @venue.latitude %></div> -->
+  <!-- <div><span>Longitude: </span><%= @venue.longitude %></div> -->
+  <div class="venue-bio"><span>Phone Number: </span><%= @venue.phone_num %></div>
+  <!-- <div><span>Email: </span><%= @venue.email %></div> -->
+  <div class="venue-bio"><span>Nearest Station: </span><%= @venue.closest_station %></div>
+  <div class="venue-bio"><span>Website: </span><%= @venue.jp_website %></div>
+  <!-- <div><span>En website: </span><%= @venue.en_website %></div> -->
+  <div class="venue-bio"><span>Open Mic Availability: </span><%= @venue.openmic_day %></div>
+  <!-- <div class="venue-bio"><span>Openmic_start_time: </span><%= @venue.openmic_start_time %></div>
+  <div class="venue-bio"><span>Openmic_ending_time: </span><%= @venue.openmic_ending_time %></div> -->
+  <!-- <div><span>Booking_system: </span><%= @venue.booking_system %></div> -->
+ <!--  <div><span>Charge: </span><%= @venue.charge %></div>
+  <div><span>Additional_charge: </span><%= @venue.additional_charge %></div> -->
+<!--   <div><span>Stage_rule: </span><%= @venue.stage_rule %></div>
+  <div><span>Capacity: </span><%= @venue.capacity %></div> -->
 </div>
