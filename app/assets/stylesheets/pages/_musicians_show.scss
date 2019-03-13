@@ -1,3 +1,4 @@
+
 @mixin show-dark-overlay{
     &:after{
         content: "";
@@ -127,9 +128,9 @@
 .gray-detail-container  {
   background-color: white;
   margin-top: 20px;
-  margin-left: 40px;
+  margin-left: 80px;
   width: 600px;
-  height: 400px;
+  min-height: 400px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-left-radius: 5px;

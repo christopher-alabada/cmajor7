@@ -113,6 +113,7 @@
                     $(".m-show-description")[0].style.display = "none";
                     $(".gray-name")[0].style.display = "none";
                     $(".m-review-b")[0].style.display = "none";
+                    $("#m-invite")[0].style.display = "none";
                   } else {
                     $(".musician-review")[0].style.display = "none";
                   }
@@ -120,11 +121,21 @@
               });
             </script>
             <div class="musician-review" style='display: none;'>
-              <% if @reviews.exists? %>
-                <% @reviews.each do |r| %>
-                  <%= r.content %>
-                  <%= r.stars %>
-                <% end %>
+                <div class="review-content">
+                  <p class='review-title'>Reviews</p>
+                  <% if @reviews.exists? %>
+                    <% @reviews.each do |r| %>
+                      <% 5.times.each do |count| %>
+                        <% if r.stars && r.stars > count %>
+                          <i class="fas fa-star star"></i>
+                        <% else %>
+                          <i class="fas fa-star unstar"></i>
+                        <% end %>
+                      <% end %>
+                      <p><%= r.content %></p>
+                      <p class='review-from'>Review from <%= @musicians.find(r.from_id).nickname.capitalize %></p>
+                    <% end %>
+                </div>
                 <div class="create-review-container">
                   <input type="checkbox" style="display: none;" id="m-write-review">
                   <label for="m-write-review" class='btn btn-primary'>Write review</label>
@@ -133,6 +144,8 @@
                       $("#m-write-review").change(function(){
                         if(this.checked){
                           $("#create-review")[0].style.display = "block";
+                          $(".review-content")[0].style.display = "none";
+                          $("#m-invite")[0].style.display = "none";
                         } else {
                           $("#create-review")[0].style.display = "none";
                         }
