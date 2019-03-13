@@ -34,6 +34,7 @@
                   if(this.checked){
                     $("#m-invite")[0].style.display = "block";
                     $('.m-show-description')[0].style.display = 'none'
+                    $('.invite-btn')[0].style.display = 'none'
                   } else {
                     $("#m-invite")[0].style.display = "none";
                   }
@@ -51,12 +52,12 @@
                   <% else %>
 
                   <div class="invite-form">
-                    <%= simple_form_for @request, wrapper: :inline_form, html: { class: 'form-inline' } do |f| %>
-                      <%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
-                      <%= f.input :band_id, collection: @musicians_bands, class: 'form-control select', selected: 0 %>
-                      <%= f.input :message, placeholder: 'Message' %>
-                      <%= f.button :submit, 'Invite', class: "btn btn-primary connect"
-                       %>
+                    <%= simple_form_for @request, wrapper: :inline_form do |f| %>
+                      <p><%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
+                      <%= f.input :band_id, collection: @musicians_bands, class: 'form-control select', selected: 0 %></p>
+                      <p><%= f.input :message, placeholder: 'Message' %></p>
+                      <p class='i-submit'><%= f.button :submit, 'Invite', class: "btn btn-success connect"
+                       %></p>
                     </div>
                    <% end %>
                  <% end %>

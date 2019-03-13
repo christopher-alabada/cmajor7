@@ -290,9 +290,20 @@
   font-size: 10px;
   color: #393e46;
 }
+
+.invite-message {
+  margin-top: 65px;
+}
+
+.select {
+  width: 200px;
+}
 .show-view:hover {
   color: black;
   text-decoration: underline;
+}
+.connect {
+  margin-left: 10px;
 }
 
 input {
@@ -306,17 +317,7 @@ input {
   display: flex;
   justify-content: center;
 }
-#request_band_id {
-  // width: 500px;
-}
 
-#new_request span {
-  margin: 5px 10px;
-}
-
-#request_message {
-  width: 30vw;
-}
 
 input::placeholder {
   font-weight: lighter;
@@ -327,12 +328,15 @@ input::placeholder {
   top: 75px;
   left: 63px;
 }
-
-
-.invite-message {
-  margin-top: 65px;
+// #request_band_id {
+//   width: 500px;
+// }
+#new_request span {
+  margin: 10px 10px;
+  display: flex;
+  // justify-content: center;
 }
-
-.select {
-  width: 200px;
-}
+// #request_message {
+//   width: 40vw;
+//   height: 200px;
+// }
