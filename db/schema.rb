@@ -39,20 +39,6 @@ ActiveRecord::Schema.define(version: 2019_03_13_022539) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "venue_id"
-    t.string "state"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.datetime "end_time"
-    t.datetime "start_time"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-    t.index ["users_id"], name: "index_bookings_on_users_id"
-    t.index ["venue_id"], name: "index_bookings_on_venue_id"
-  end
-
   create_table "chat_rooms", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -203,7 +189,6 @@ ActiveRecord::Schema.define(version: 2019_03_13_022539) do
     t.string "en_name"
     t.string "jp_name"
     t.string "address"
-    t.string "en_address"
     t.string "latitude"
     t.string "longitude"
     t.string "phone_num"
@@ -221,13 +206,12 @@ ActiveRecord::Schema.define(version: 2019_03_13_022539) do
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "en_address"
   end
 
   add_foreign_key "badges", "reviews"
   add_foreign_key "band_members", "bands"
   add_foreign_key "band_members", "users"
-  add_foreign_key "bookings", "users", column: "users_id"
-  add_foreign_key "bookings", "venues"
   add_foreign_key "equipment", "equipment_categories"
   add_foreign_key "equipment_inventories", "equipment"
   add_foreign_key "equipment_inventories", "users"

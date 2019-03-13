@@ -1,6 +1,4 @@
-<h1 class='venue-name'><%= @venue.en_name %></h1>
-
-
+<!-- <h1 class='venue-name'><%= @venue.en_name %></h1> -->
 
 <div id="images-carousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -9,9 +7,9 @@
     <% end %>
   </ol>
 
-  <div class="carousel-inner">
+  <div class="carousel-inner carousel-size">
     <% @venue.venue_photos.each_with_index do |photo, i| %>
-      <div class="item <%= 'active' if i == 0 %>">
+      <div class="item <%= 'active' if i == 0 %> ">
         <%= cl_image_tag photo.photo, class: 'carousel-photo' %>
       </div>
     <% end %>
