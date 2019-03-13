@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/create'
   get 'venues/index'
   get 'venues/show'
   devise_for :users
