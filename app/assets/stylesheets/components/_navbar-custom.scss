@@ -32,20 +32,52 @@
 }
 /* Basic navbar item */
 .navbar-item {
-  cursor: pointer;
   padding: 0 20px;
 }
 
 /* Navbar link */
 .navbar-link {
+  cursor: pointer;
+  margin-top: 9px;
+  font-family:'Josefin Sans';
   color: #FFFFFF;
-  font-size: 14px;
+  font-size: 18px;
   // text-shadow: 0.5px 0.5px 0.5px #000000;
 }
 
-.navbar-link:hover {
-  color: #da552f;
-  text-decoration: none;
+.musician-navbar-link {
+  margin-top: 9px;
+  font-family:'Josefin Sans';
+  color: #FFFFFF;
+  font-size: 18px;
+  &:hover{
+  color: #E84369;
+  transition: .4s ease;
+  text-decoration: none
+  }
+}
+
+.nav-sl-navbar-link {
+  margin-top: 9px;
+  font-family:'Josefin Sans';
+  color: #FFFFFF;
+  font-size: 18px;
+  &:hover{
+  color: white;
+  text-decoration: none
+  }
+}
+
+.venue-navbar-link {
+  margin-top: 9px;
+  font-family:'Josefin Sans';
+  color: #FFFFFF;
+  font-size: 18px;
+  &:hover{
+  color: #3F5DFA;
+  transition: .4s ease;
+  text-decoration: none
+  }
 }
 
 .view-all-chefs {
