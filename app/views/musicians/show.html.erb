@@ -75,6 +75,13 @@
               <% else %>
                 <p><%= 'No reviews yet.' %></p>
                 <p class='btn btn-primary'><%= 'Write review' %></p>
+                <div id="create-message">
+                  <%= simple_form_for [@musician, @review] do |f| %>
+                    <%= f.input :content %>
+                    <%= f.input :stars  %>
+                    <%= f.submit "Send", class: "btn btn-success message-submit" %>
+                  <% end %>
+                </div>
               <% end %>
             </div>
 

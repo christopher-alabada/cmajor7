@@ -1,23 +1,22 @@
 class ReviewsController < ApplicationController
+  def show
+    @reviews = Review.all
+  end
+
   def create
-    @days = []
     @review = Review.new(review_params)
     authorize @review
-    @badges = Badge.all
-    @review.badges = @badges
-    @review.user = current_user
+    # @badges = Badge.all
+    # @review.badges = @badges
+    @review.from = current_user
+    @review.to_id = params[:id]
+
     if @review.save
-      redirect_to '/musicians/show'
-      # respond_to do |format|
-      #   format.html { redirect_to chat_room_path(@chat_room) }
-      #   format.js
-      end
-    else
-      render :new
-      # respond_to do |format|
-      #   format.html { render "chat_rooms/show" }
-      #   format.js
-      end
+      redirect_to musician_path(params[:id])
     end
+  end
+
+  def review_params
+    params.require(:review).permit(:content, :stars)
   end
 end

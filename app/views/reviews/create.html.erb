@@ -1,2 +1,6 @@
 <h1>Reviews#create</h1>
 <p>Find me in app/views/reviews/create.html.erb</p>
+<% @reviews.each do |r| %>
+  <%= r.content %>
+  <%= r.stars %>
+<% end %>
