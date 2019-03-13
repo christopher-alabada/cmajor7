@@ -15,7 +15,9 @@
 <div class="s-container">
   <div class="musicians-show-container">
     <div class="show-musician-pic-wrapper">
+      <%= link_to musician_path(@musician) do %>
       <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
+      <% end %>
       <div class="s-musician-pic-overlay">
       </div>
     </div>
@@ -57,7 +59,8 @@
                     <%= f.input :band_id, collection: @musicians_bands, class: 'form-control select', selected: 0 %></p>
                     <p><%= f.input :message, placeholder: 'Message' %></p>
                     <p class='i-submit'><%= f.button :submit, 'Invite', class: "btn btn-success connect"
-                     %></p>
+                     %>
+                     <%= link_to 'Back', musician_path(@musician), style: 'padding-left: 10px;' %></p>
                   </div>
                  <% end %>
                <% end %>
@@ -134,10 +137,15 @@
               <p><%= r.content %></p>
               <p class='review-from'>Review from <%= @musicians.find(r.from_id).nickname.capitalize %></p>
             <% end %>
+            <input type="checkbox" style="display: none;" id="m-write-review">
+            <label for="m-write-review" class='btn btn-primary'>Write review</label>
+          <% else %>
+            <p><%= 'No reviews yet.' %></p>
+            <input type="checkbox" style="display: none;" id="m-write-review">
+            <label for="m-write-review" class='btn btn-primary'>Be the first reviewer!</label>
+            <p><%= link_to 'Back', musician_path(@musician) %></p>
+          <% end %>
         </div>
-        <div class="create-review-container">
-          <input type="checkbox" style="display: none;" id="m-write-review">
-          <label for="m-write-review" class='btn btn-primary'>Write review</label>
           <script>
             $(document).ready(function() {
               $("#m-write-review").change(function(){
@@ -158,20 +166,11 @@
             <%= f.input :content %>
             <%= f.input :stars  %>
             <%= f.submit "Send", class: "btn btn-success review-submit" %>
+            <%= link_to 'Back', musician_path(@musician), style: 'padding-left: 10px' %>
+
           <% end %>
         </div>
-      <% elsif user_signed_in? && @reviews.nil?%>
-        <p><%= 'No reviews yet.' %></p>
-        <div id="create-message">
-          <p class='btn btn-primary'><%= 'Write review' %></p>
-          <%= simple_form_for [@musician, @review] do |f| %>
-            <%= f.input :content %>
-            <%= f.input :stars  %>
-            <%= f.submit "Send", class: "btn btn-success message-submit" %>
-          <% end %>
-          </div>
-      <% end %>
-      </div>
+
     </div>
     </div>
   </div>
