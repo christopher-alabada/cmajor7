@@ -4,16 +4,24 @@
 
 #map {
   width: 70%;
-  height: 600px;
+  height: 605px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
-.venues {
+.i-venues {
+  width: 435px;
+  height: 605px;
+}
+
+.i-venues-panel {
+  height: 530px;
+  width: 100%;
+  overflow: hidden;
   overflow-y: scroll;
-  width: 450px;
-  height: 600px;
 }
 
-.venue-info img {
+.i-venue-info img {
   object-fit: cover;
   width: 120px;
   height: 120px;
@@ -21,7 +29,7 @@
   border-bottom-left-radius: 5%;
 }
 
-.venue-info-right {
+.i-venue-info-right {
   border-top: 1px solid #dbdbdb;
   border-right: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
@@ -29,27 +37,27 @@
   width: 375px;
 }
 
-.venue-item {
+.i-venue-item {
   display: flex;
   position: relative;
   margin-bottom: 15px;
 }
 
-.venue-name {
+.i-venue-name {
   display: flex;
   padding-bottom: 3px;
 }
 
-.venue-title {
+.i-venue-title {
   font-weight: bold;
   margin-right: 16px;
 }
 
-.venue-data {
+.i-venue-data {
   font-size: 13px;
 }
 
-.venue-openmic {
+.i-venue-openmic {
   display: flex;
   position: absolute;
   bottom: 5px;
@@ -58,14 +66,59 @@
   }
 }
 
-.venue-address {
+.i-venue-address {
   font-size: 12px;
 }
+
+.i-venues-pagination {
+  text-align: center;
+  vertical-align: center;
+}
+
+.venue-popup-image img {
+  object-fit: cover;
+  width: 70px;
+  height: 70px;
+}
+
+.venue-popup-container {
+  display: flex;
+}
+
+.venue-popup-info {
+  padding-left: 10px;
+}
+
+.venue-popup-openmic {
+  display: flex;
+  // position: absolute;
+  // bottom: 5px;
+  div {
+    margin-right: 5px;
+  }
+}
+
+.venue-popup-info > div {
+  padding: 0px;
+}
+
+.venue-popup-name {
+  font-size: larger;
+}
+
+
+
+
+
+
+
+
+
 
 .mapboxgl-popup {
   // border: 1px solid #dbdbdb;
   // border-radius: 10px;
-  max-width: 200px;
+  max-width: 400px;
   // background-color: #fff;
 }
 

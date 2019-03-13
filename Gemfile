@@ -26,6 +26,7 @@ gem 'pg_search'
 gem 'local_time'
 gem 'jquery-rails'
 gem 'mapbox-sdk'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -1,57 +1,41 @@
+<% content_for :title, "Venues" %>
+
 <h1 class='i-venue-name'>Venues</h1>
 
 
 
 <div class="map-container">
   <div class="map-item" id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <div class="map-item venues">
+  <div class="map-item i-venues">
+    <div class="i-venues-panel">
+      <% @mapped_venues.each do |venue| %>
+        <div class="i-venue-item">
+          <div class="i-venue-info"><%= cl_image_tag venue.venue_photos.first.photo %></div>
+          <div class="i-venue-info i-venue-info-right">
+            <% if venue.en_name || venue.jp_name %>
+              <div class='i-venue-name'>
+                <%= "<div class='i-venue-title'>#{venue.en_name}</div>".html_safe if venue.en_name %>
+                <%= "<div class='i-venue-title'>#{venue.jp_name}</div>".html_safe if venue.jp_name %>
+              </div>
+            <% end %>
 
-    <% @venues.each do |venue| %>
-      <div class="venue-item">
-        <div class="venue-info"><%= cl_image_tag venue.venue_photos.first.photo %></div>
-        <div class="venue-info venue-info-right">
-          <% if venue.en_name || venue.jp_name %>
-            <div class='venue-name'>
-              <%= "<div class='venue-title'>#{venue.en_name}</div>".html_safe if venue.en_name %>
-              <%= "<div class='venue-title'>#{venue.jp_name}</div>".html_safe if venue.jp_name %>
-            </div>
-          <% end %>
+            <!-- <div class='venue-data'><%# = "#{venue.latitude}, #{venue.longitude}" %></div> -->
 
-          <%= "<div class='venue-data venue-address'><i class='fas fa-map-marker-alt'></i> #{venue.address}</div>".html_safe unless venue.address.blank? %>
-          <%= "<div class='venue-data'><i class='fas fa-phone'></i> #{venue.phone_num}</div>".html_safe unless venue.phone_num.blank? %>
+            <%= "<div class='i-venue-data i-venue-address'><i class='fas fa-map-marker-alt'></i> #{venue.address}</div>".html_safe unless venue.address.blank? %>
+            <%= "<div class='i-venue-data'><i class='fas fa-phone'></i> #{venue.phone_num}</div>".html_safe unless venue.phone_num.blank? %>
 
-          <% unless venue.openmic_day.blank? || venue.openmic_start_time.blank? %>
-            <% end_time = " - #{local_time(venue.openmic_ending_time, "%l:%M %p")}".html_safe unless venue.openmic_ending_time.blank? %>
-            <div class='venue-openmic'>
-              <div class='venue-data'><b>Open Mic:</b> </div>
-            <%= "<div class='venue-data'>#{venue.openmic_day}</div>".html_safe unless venue.openmic_day.blank? %>
-            <%= "<div class='venue-data'>#{local_time(venue.openmic_start_time, "%l:%M %p")}#{end_time}</div>".html_safe unless venue.openmic_start_time.blank? %>
-            </div>
-          <% end %>
+            <% unless venue.openmic_day.blank? || venue.openmic_start_time.blank? %>
+              <% end_time = " - #{local_time(venue.openmic_ending_time, "%l:%M %p")}".html_safe unless venue.openmic_ending_time.blank? %>
+              <div class='i-venue-openmic'>
+                <div class='i-venue-data'><b>Open Mic:</b> </div>
+              <%= "<div class='i-venue-data'>#{venue.openmic_day}</div>".html_safe unless venue.openmic_day.blank? %>
+              <%= "<div class='i-venue-data'>#{local_time(venue.openmic_start_time, "%l:%M %p")}#{end_time}</div>".html_safe unless venue.openmic_start_time.blank? %>
+              </div>
+            <% end %>
+          </div>
         </div>
-      </div>
-    <% end %>
-
+      <% end %>
+    </div>
+    <div class="i-venues-pagination"><%= will_paginate @mapped_venues %></div>
   </div>
 </div>
-
-<!-- venue.openmic_ending_time -->
-
-<!-- <div class="i-venue-container">
-  <div class="i-venue-row">
-    <div class="col-xs-12 col-sm-4">
-    <%# @venues.each do |venue| %>
-    <div class='i-venue-card'>
-      <%#= link_to venue_path(venue) do %>
-        <%#= cl_image_tag venue.venue_photos.first.photo, class: 'i-venue-img' %>
-      <%# end %>
-      <div class="i-venue-info">
-      <p>English Name:<%#= venue.en_name %></p>
-      <p>Japanese Name:<%#= venue.jp_name %></p>
-      <p>URL:<%#= link_to venue.jp_website %></p>
-      </div>
-    </div>
-    <%# end %>
-    </div>
-  </div>
-</div> -->
