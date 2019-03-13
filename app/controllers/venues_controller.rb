@@ -7,7 +7,11 @@ class VenuesController < ApplicationController
     @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil)
 
     @markers = @mapped_venues.map do |venue|
-      { lng: venue.longitude, lat: venue.latitude }
+      {
+        lng: venue.longitude,
+        lat: venue.latitude,
+        infoWindow: render_to_string(partial: "infowindow", locals: { venue: venue })
+      }
     end
   end
 

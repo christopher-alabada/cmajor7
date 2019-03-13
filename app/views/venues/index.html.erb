@@ -3,32 +3,35 @@
 
 
 <div class="map-container">
-  <!-- <div class="map-item" id="map" data-markers="<%#= @markers.to_json %>" data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>"></div> -->
+  <div class="map-item" id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
   <div class="map-item venues">
+
     <% @venues.each do |venue| %>
       <div class="venue-item">
         <div class="venue-info"><%= cl_image_tag venue.venue_photos.first.photo %></div>
         <div class="venue-info venue-info-right">
           <% if venue.en_name || venue.jp_name %>
             <div class='venue-name'>
-            <%= "<div class='venue-title'>#{venue.en_name}</div>".html_safe if venue.en_name %>
-            <%= "<div class='venue-title'>#{venue.jp_name}</div>".html_safe if venue.jp_name %>
+              <%= "<div class='venue-title'>#{venue.en_name}</div>".html_safe if venue.en_name %>
+              <%= "<div class='venue-title'>#{venue.jp_name}</div>".html_safe if venue.jp_name %>
             </div>
           <% end %>
-          <%= "<div class='venue-data'><i class='fas fa-map-marker-alt'></i> #{venue.address}</div>".html_safe unless venue.address.blank? %>
+
+          <%= "<div class='venue-data venue-address'><i class='fas fa-map-marker-alt'></i> #{venue.address}</div>".html_safe unless venue.address.blank? %>
           <%= "<div class='venue-data'><i class='fas fa-phone'></i> #{venue.phone_num}</div>".html_safe unless venue.phone_num.blank? %>
 
           <% unless venue.openmic_day.blank? || venue.openmic_start_time.blank? %>
+            <% end_time = " - #{local_time(venue.openmic_ending_time, "%l:%M %p")}".html_safe unless venue.openmic_ending_time.blank? %>
             <div class='venue-openmic'>
+              <div class='venue-data'><b>Open Mic:</b> </div>
             <%= "<div class='venue-data'>#{venue.openmic_day}</div>".html_safe unless venue.openmic_day.blank? %>
-            <%= "<div class='venue-data'>#{local_time(venue.openmic_start_time, "%l:%M %p")}</div>".html_safe unless venue.openmic_start_time.blank? %>
+            <%= "<div class='venue-data'>#{local_time(venue.openmic_start_time, "%l:%M %p")}#{end_time}</div>".html_safe unless venue.openmic_start_time.blank? %>
             </div>
           <% end %>
-          <%= "<div class='venue-data'>#{venue.email}</div>".html_safe unless venue.email.blank? %>
-          <div class='venue-data'><%= link_to venue.jp_website %></div>
         </div>
       </div>
     <% end %>
+
   </div>
 </div>
 
