@@ -16,6 +16,8 @@ class MusiciansController < ApplicationController
   def show
     @musician = User.find(params[:id])
     @request = Request.new
+    @reviews = Review.all.where('from_id = :user_id', { user_id: current_user.id })
+    @review = Review.new
 
     # for connect form
     if user_signed_in?

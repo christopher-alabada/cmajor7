@@ -19,7 +19,7 @@
   font-size: 15px;
   font-family: 'Montserrat', sans-serif;
   /* font-weight: bolder; */
-  color: #C3C3C3;
+  color: #FFFFFF;
 }
 
 .band-contents-band {
@@ -66,10 +66,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 23px;
   font-family: 'Montserrat', sans-serif;
-  color: #C3C3C3;
+  color: #ffffff;
   margin-bottom: 20px;
+  font-weight: lighter;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 .profile-container-band {
@@ -88,7 +90,7 @@
 }
 
 .show-banner {
-  height: 400px;
+  height: 300px;
   background-position: center;
 }
 
@@ -165,7 +167,7 @@
 }
 
 .connect {
-  width: 180px;
+  width: 160px;
   bottom: 10px;
 }
 .want-to {
@@ -182,7 +184,7 @@
 #connect {
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
+  margin-bottom: 180px;
 }
 
 .name-member {
