@@ -107,7 +107,14 @@
 }
 
 
-
+.marker {
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  background-image: image-url("marker.png");
+  background-color: rgba(0, 0, 0, 0);
+}
 
 
 

@@ -14,9 +14,12 @@ class VenuesController < ApplicationController
       }
     end
 
-    @geojson = []
+    @geojson = {
+      type: "FeatureCollection",
+      features: []
+    }
     @mapped_venues.each do |venue|
-      @geojson << {
+      @geojson[:features] << {
         type: 'Feature',
         geometry: {
           type: 'Point',
