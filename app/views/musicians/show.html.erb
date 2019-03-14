@@ -41,7 +41,7 @@
             <%= m.capitalize %>
           <% end %>
           <input type="checkbox" style="display: none;" id="invite">
-          <label for="invite" class='btn btn-success invite-btn'>Invite</label>
+          <label for="invite" class='btn btn-success invite-btn'>Jam with <%= @musician.nickname.capitalize %></label>
           <script>
             $(document).ready(function() {
               $("#invite").change(function(){
@@ -119,8 +119,23 @@
           <% end %>
         </div>
 
+        <p class='gig-title'>Previous Gigs<label for="m-review" class='btn m-review-b'>View all</label></p>
         <input type="checkbox" style="display: none;" id="m-review">
-        <label for="m-review" class='btn btn-link m-review-b'>View all the reviews</label>
+        <% if @reviews.exists? %>
+          <div class="last-review">
+            <% 5.times.each do |count| %>
+              <% if @reviews.last.stars && @reviews.last.stars > count %>
+                <i class="fas fa-star star"></i>
+              <% else %>
+                <i class="fas fa-star unstar"></i>
+              <% end %>
+            <% end %>
+            <p><%= @reviews.last.content %></p>
+            <p class='review-from'>Comments from <%= @musicians.find(@reviews.last.from_id).nickname.capitalize %></p>
+          <%# else %>
+            <%#= 'No comments yet.' %>
+          </div>
+        <% end %>
         <script>
           $(document).ready(function() {
             $("#m-review").change(function(){
@@ -130,6 +145,8 @@
                 $(".gray-name")[0].style.display = "none";
                 $(".m-review-b")[0].style.display = "none";
                 $("#m-invite")[0].style.display = "none";
+                $(".last-review")[0].style.display = "none";
+                $(".gig-title")[0].style.display = "none";
               } else {
                 $(".musician-review")[0].style.display = "none";
               }
@@ -139,26 +156,28 @@
 
         <div class="musician-review" style='display: none;'>
           <div class="review-content">
-            <p class='review-title'>Reviews</p>
+            <!-- <p class='review-title text-left'>Previous Gigs</p> -->
             <% if @reviews.exists? %>
               <% @reviews.each do |r| %>
-                <% 5.times.each do |count| %>
-                  <% if r.stars && r.stars > count %>
-                    <i class="fas fa-star star"></i>
-                  <% else %>
-                    <i class="fas fa-star unstar"></i>
+                <div class="r-content">
+                  <% 5.times.each do |count| %>
+                    <% if r.stars && r.stars > count %>
+                      <i class="fas fa-star star"></i>
+                    <% else %>
+                      <i class="fas fa-star unstar"></i>
+                    <% end %>
                   <% end %>
-                <% end %>
-                <p><%= r.content %></p>
-                <p class='review-from'>Review from <%= @musicians.find(r.from_id).nickname.capitalize %></p>
+                  <p><%= r.content %></p>
+                  <p class='review-from'>Comments from <%= @musicians.find(r.from_id).nickname.capitalize %></p>
+                </div>
               <% end %>
               <input type="checkbox" style="display: none;" id="m-write-review">
-              <label for="m-write-review" class='btn btn-primary'>Write reviews!</label>
+              <label for="m-write-review" class='btn btn-primary'>Write comments</label>
               <p><%= link_to 'Back', musician_path(@musician) %></p>
             <% else %>
-              <p><%= 'No reviews yet.' %></p>
+              <p><%= 'No comments yet.' %></p>
               <input type="checkbox" style="display: none;" id="m-write-review">
-              <label for="m-write-review" class='btn btn-primary'>Be the first reviewer!</label>
+              <label for="m-write-review" class='btn btn-primary'>Write the first comment!</label>
               <%= link_to 'Back', musician_path(@musician) %>
               <div id="create-review" style='display: none;'>
                 <%= simple_form_for [@musician, @review] do |f| %>
