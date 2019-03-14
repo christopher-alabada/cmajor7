@@ -169,6 +169,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_023402) do
     t.integer "venue_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "badges"
   end
 
   create_table "songs", force: :cascade do |t|
