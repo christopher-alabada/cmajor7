@@ -1,0 +1,54 @@
+
+.venue-name-style {
+  font-size: 35px;
+  border-bottom: 3px solid #E84369;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  width: 630px;
+}
+
+.venue-bio {
+  margin-top: 20px;
+  /* margin-bottom: 10px; */
+  font-size: 22px;
+  /* opacity: 0.75; */
+  font-family: 'Signika', sans-serif;
+  font-weight: bold;
+}
+
+.book-venues {
+  color: black;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #3F5DFA;
+  width: 100%;
+}
+
+.bookmarked-venues-container {
+  margin-bottom: 60px;
+}
+
+.bookmark-content {
+  box-shadow: 0 3px 2px #e3e7f1;
+  margin-top: 15px;
+  margin-right: 0px;
+  display: flex;
+  justify-content: start;
+  // padding: 10px 25px;
+}
+
+.bookmark-name {
+  font-size: 24px;
+  justify-content: space-evenly;
+  padding-left: 15px;
+}
+
+.venue-description {
+  margin-left: 2px;
+}
+.who-bookmarked {
+  padding-left: 15px;
+  font-size: 15px;
+}
