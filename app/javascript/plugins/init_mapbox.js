@@ -196,6 +196,20 @@ const initMapbox = () => {
         details.innerHTML = "<i class='fas fa-phone'></i> " + prop.phone_num;
       }
 
+      // if (prop.openmic_day || )
+
+
+      // openmic_day: venue.openmic_day,
+      //     openmic_start_time: venue.openmic_start_time,
+      //     openmic_ending_time: venue.openmic_ending_time,
+      // <% unless venue.openmic_day.blank? || venue.openmic_start_time.blank? %>
+      //   <% end_time = " - #{local_time(venue.openmic_ending_time, "%l:%M %p")}".html_safe unless venue.openmic_ending_time.blank? %>
+      //   <div class='i-venue-openmic'>
+      //     <div class='i-venue-data'><b>Open Mic:</b> </div>
+      //   <%= "<div class='i-venue-data'>#{venue.openmic_day}</div>".html_safe unless venue.openmic_day.blank? %>
+      //   <%= "<div class='i-venue-data'>#{local_time(venue.openmic_start_time, "%l:%M %p")}#{end_time}</div>".html_safe unless venue.openmic_start_time.blank? %>
+      //   </div>
+      // <% end %>
 
 
       link.addEventListener('click', function(e){
