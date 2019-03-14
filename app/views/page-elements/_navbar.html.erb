@@ -19,7 +19,7 @@
   <!--   <div class= "navbar-item navbar-link">Hello, <%= current_user.nickname.capitalize %></div> -->
     <input type="checkbox" style="display: none;" id="search">
     <label for="search" class='btn search-btn'>
-      <i class="fas fa-search awesome-search-color"></i>
+      <i class="fas fa-search awesome-search-color fa-lg"></i>
     </label>
 
     <script>
@@ -40,7 +40,7 @@
         <!-- <div style="width: 20px; height: 35px; background-color: #E84369; border-top-left-radius: 15px; border-bottom-left-radius: 15px;"></div> -->
         <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: " Search by instrument or location" %>
         <%= button_tag(type: "submit", class: "btn search-btn") do %>
-           <i class="fas fa-search awesome-search-color"></i>
+           <i class="fas fa-search awesome-search-color fa-lg"></i>
         <% end %>
       <% end %>
     </div>
