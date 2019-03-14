@@ -17,7 +17,7 @@ class BookmarkBoardsController < ApplicationController
       message.content = "** Added '#{Venue.find(@bookmark_board.venue_id).en_name}' to bookmarks. **"
       message.save
 
-      redirect_to musicians_path
+      redirect_to band_path(@bookmark_board.band_id)
     end
   end
 
