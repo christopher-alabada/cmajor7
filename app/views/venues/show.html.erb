@@ -26,12 +26,13 @@
 <div class="venue-info-wrapper">
 
 <div class="venue-info">
-  <div class="venue-name-style"><%= @venue.en_name %> <%= @venue.jp_name %>
+  <div class="venue-name-style">
+    <%= @venue.en_name %> <%= @venue.jp_name %>
 
 
 
     <input type="checkbox" style="display: none;" id="bookmark">
-    <label for="bookmark" class='btn'><i class="far fa-bookmark"></i></label>
+    <label for="bookmark" class='btn'><i class="fas fa-share-alt"></i></label>
     <script>
       $(document).ready(function() {
         $("#bookmark").change(function(){
@@ -52,42 +53,48 @@
   </div>
   <div class="venue-details">
       <!-- <div><span>Japanese name: </span><%= @venue.jp_name %></div> -->
-      <div class="venue-bio"><span>Address: </span><%= @venue.en_address %></div>
+      <div class="venue-bio"><span><i class="fas fa-map-marker-alt"></i>  </span><%= @venue.en_address %></div>
      <!--  <div><span>Latitude: </span><%= @venue.latitude %></div> -->
       <!-- <div><span>Longitude: </span><%= @venue.longitude %></div> -->
-      <div class="venue-bio"><span>Contacts: </span><%= @venue.phone_num %> /<span> </span><%= @venue.email %></div>
-      <div class="venue-bio"><span>Station: </span><%= @venue.closest_station %></div>
-      <div class="venue-bio"><span>Website: </span><a><%= @venue.jp_website %></a></div>
+      <div class="venue-bio"><span><i class="fas fa-mobile-alt"></i> </span><%= @venue.phone_num %> /<span> </span><%= @venue.email %></div>
+      <div class="venue-bio"><span><i class="fas fa-subway"></i> </span><%= @venue.closest_station %></div>
+      <div class="venue-bio"><span><i class="fas fa-home"></i> </span><a><%= @venue.jp_website %></a></div>
       <% unless @venue.en_website.empty?  %>
-        <div class="venue-bio"><span>English ver: </span><a><%= @venue.en_website %></a></div>
+        <div class="venue-bio"><span><i class="fas fa-globe-europe"></i> </span><a><%= @venue.en_website %></a></div>
       <% end %>
-      <div class="venue-bio"><span>Open Mic Availability: </span><%= @venue.openmic_day %></div>
-      <div class="venue-bio"><span>Openmic_starts_at: </span><%= @venue.openmic_start_time %></div>
+      <div class="venue-bio"><span><i class="far fa-calendar-alt"></i> </span>
+        <%= @venue.openmic_day %>
+      </div>
+      <div class="venue-bio"><span><i class="far fa-clock"></i>  </span>Starts at <%= @venue.openmic_start_time.to_s.split(" ")[1] %></div>
+
       <!-- <div><span>Booking_system: </span><%= @venue.booking_system %></div> -->
-     <div class="venue-bio"><span>Charge: </span><%= @venue.charge %> + <%= @venue.additional_charge %></div>
+     <div class="venue-bio"><span><i class="fas fa-yen-sign"></i>
+
+     </span><%= @venue.charge %>yen
+     + <%= @venue.additional_charge %></div>
       <% unless @venue.stage_rule.empty?  %>
-      <div class="venue-bio"><span>Stage rule: </span><%= @venue.stage_rule %></div>
+      <div class="venue-bio"><span><i class="fas fa-music"></i> </span><%= @venue.stage_rule %></div>
       <% end %>
       <% unless @venue.capacity.nil?  %>
-      <div class="venue-bio"><span>Capacity: </span><%= @venue.capacity %></div>
+      <div class="venue-bio"><span><i class="fas fa-person-booth"></i> </span><%= @venue.capacity %></div> is capacity
       <% end %>
   </div>
 
     <% options = [] %>
-    <% current_user.bands.each {|band| options << [band.id, band.band_name]} %>
+    <% current_user.bands.each {|band| options << [band.id, band.band_name.capitalize]} %>
 
     <div class="bookmark-which-band" style="display: none">
 
-    <h4>Bookmark <%= @venue.en_name %> to your member?</h4>
 
 
       <div class="simple-container">
 
       <%= simple_form_for @bookmark_board do |f| %>
        <div class="bookmark-card">
+        <h4 style="margin-bottom: 30px; font-family:'Josefin Sans';">Share <%= @venue.en_name %> to your jam member?</h4>
         <%= f.hidden_field :venue_id, value: @venue.id %>
         <%= f.collection_check_boxes :band_id, options, :first, :last %>
-        <p><%= f.submit "Share!", class: "btn btn-success message-submit" %></p>
+        <p style="margin-top: 20px;"><%= f.submit "Share!", class: "btn btn-success message-submit", style: "font-family:'Josefin Sans'" %></p>
       </div>
       <% end %>
 
