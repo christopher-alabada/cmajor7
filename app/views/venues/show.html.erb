@@ -52,7 +52,7 @@
   </div>
   <div class="venue-details">
       <!-- <div><span>Japanese name: </span><%= @venue.jp_name %></div> -->
-      <div class="venue-bio"><span>Address: </span><%= @venue.address %></div>
+      <div class="venue-bio"><span>Address: </span><%= @venue.en_address %></div>
      <!--  <div><span>Latitude: </span><%= @venue.latitude %></div> -->
       <!-- <div><span>Longitude: </span><%= @venue.longitude %></div> -->
       <div class="venue-bio"><span>Contacts: </span><%= @venue.phone_num %> /<span> </span><%= @venue.email %></div>
@@ -81,6 +81,8 @@
     <h4>Bookmark <%= @venue.en_name %> to your member?</h4>
 
 
+      <div class="simple-container">
+
       <%= simple_form_for @bookmark_board do |f| %>
        <div class="bookmark-card">
         <%= f.hidden_field :venue_id, value: @venue.id %>
@@ -89,6 +91,8 @@
       </div>
       <% end %>
 
+
+      </div>
 
     </div>
 </div>

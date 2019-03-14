@@ -1,6 +1,7 @@
 .venue-info-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .venue-name {
@@ -38,11 +39,16 @@
 }
 
 .new_bookmark_board {
-  height: 400px;
+  height: 300px;
 }
 
 .new_bookmark_board span{
   width: 20px;
+}
+
+.simple-container {
+  display: flex;
+  justify-content: center;
 }
 
 input {
