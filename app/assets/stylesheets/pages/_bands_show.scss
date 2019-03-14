@@ -163,7 +163,7 @@
   justify-content: space-between;
 
   margin-top: 70px;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
 }
 
 .connect {
@@ -360,4 +360,36 @@ display: block;
   /* opacity: 0.75; */
   font-family: 'Signika', sans-serif;
   font-weight: bold;
+}
+
+.book-venues {
+  color: black;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #3F5DFA;
+  width: 100%;
+}
+
+.bookmarked-venues-container {
+  margin-bottom: 60px;
+}
+
+.bookmark-content {
+  box-shadow: 0 3px 2px #e3e7f1;
+  margin-top: 15px;
+  margin-right: 0px;
+  display: flex;
+  justify-content: start;
+  padding: 15px 25px;
+}
+
+.bookmark-name {
+  font-size: 24px;
+  justify-content: space-evenly;
+}
+
+.venue-description {
+  margin-left: 2px;
 }
