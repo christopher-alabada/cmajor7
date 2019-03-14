@@ -1,5 +1,11 @@
+.venue-info-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 .venue-name {
-  margin-left: 50px;
+
 }
 
 .carousel-photo {
@@ -13,7 +19,6 @@
 .venue-info {
   margin: 20px;
   margin-left: 80px;
-  margin-bottom: 180px;
 }
 
 
@@ -25,4 +30,27 @@
     height: 500px;
     margin: 0 auto;
   }
+}
+
+.bookmark-which-band {
+  margin-top: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 30px;
+}
+
+.new_bookmark_board {
+  height: 300px;
+}
+
+.new_bookmark_board span{
+  width: 20px;
+}
+
+.simple-container {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  width: 30px;
 }
