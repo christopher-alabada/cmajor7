@@ -135,6 +135,7 @@
             })
           });
         </script>
+
         <div class="musician-review" style='display: none;'>
           <div class="review-content">
             <p class='review-title'>Reviews</p>
@@ -150,11 +151,27 @@
                 <p><%= r.content %></p>
                 <p class='review-from'>Review from <%= @musicians.find(r.from_id).nickname.capitalize %></p>
               <% end %>
+            <% else %>
+              <p><%= 'No reviews yet.' %></p>
+                <input type="checkbox" style="display: none;" id="m-write-review">
+                <label for="m-write-review" class='btn btn-primary'>Be the first reviewer!</label>
+                <%= link_to 'Back', musician_path(@musician) %>
+                <!-- <p class='btn btn-primary'><%#= 'Write review' %></p> -->
+              <div id="create-review" style='display: none;'>
+                <%= simple_form_for [@musician, @review] do |f| %>
+                  <%= f.input :content %>
+                  <%= f.input :stars  %>
+                  <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
+                  <%= f.submit "Send", class: "btn btn-success review-submit" %>
+                  <%= flash.now[:notice] = "Review has been saved successfully." %>
+                  <%# render :new %>
+                <% end %>
+              </div>
+            <% end %>
 
-          </div>
-          <div class="create-review-container">
-            <input type="checkbox" style="display: none;" id="m-write-review">
-            <label for="m-write-review" class='btn btn-primary'>Write review</label>
+          <!-- <div class="create-review-container"> -->
+            <!-- <input type="checkbox" style="display: none;" id="m-write-review">
+            <label for="m-write-review" class='btn btn-primary'>Write review</label> -->
             <script>
               $(document).ready(function() {
                 $("#m-write-review").change(function(){
@@ -168,29 +185,18 @@
                 })
               });
             </script>
+</div>
+        <!-- div id="create-review" style='display: none;'>
+          <%#= simple_form_for [@musician, @review] do |f| %>
+            <%#= f.input :content %>
+            <%#= f.input :stars  %>
+            <%#= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
+            <%#= f.submit "Send", class: "btn btn-success review-submit" %>
+          <%# end %>
+        </div> -->
 
-        <div id="create-review" style='display: none;'>
-          <%= simple_form_for [@musician, @review] do |f| %>
-            <%= f.input :content %>
-            <%= f.input :stars  %>
-            <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
-            <%= f.submit "Send", class: "btn btn-success review-submit" %>
-          <% end %>
-        </div>
-      <% elsif user_signed_in? && @reviews.nil?%>
-        <p><%= 'No reviews yet.' %></p>
-        <div id="create-message">
-          <p class='btn btn-primary'><%= 'Write review' %></p>
-          <%= simple_form_for [@musician, @review] do |f| %>
-            <%= f.input :content %>
-            <%= f.input :stars  %>
-            <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
-            <%= f.submit "Send", class: "btn btn-success message-submit" %>
-          <% end %>
-          </div>
-      <% end %>
 
-        </div>
+        <!-- </div> -->
       </div>
     </div>
   </div>
