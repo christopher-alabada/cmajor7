@@ -569,6 +569,7 @@ if venue.nil?
   venue = Venue.new(
     en_name:'i Music Bar',
     jp_name: 'アイミュージックバー',
+    en_address: '〒160-0021 Tōkyō-to, Shinjuku-ku, Kabukichō, 2 Chome−28',
     address: '〒160-0021 東京都新宿区歌舞伎町2-28-15 サチビル2F',
     latitude: '35.6963187',
     longitude: '139.7013339',

@@ -23,6 +23,8 @@
   </a>
 </div>
 
+<div class="venue-info-wrapper">
+
 <div class="venue-info">
   <div class="venue-name-style"><%= @venue.en_name %> <%= @venue.jp_name %>
 
@@ -35,43 +37,60 @@
         $("#bookmark").change(function(){
           if(this.checked){
             $(".bookmark-which-band")[0].style.display = "block";
-            $('.m-show-description')[0].style.display = 'none'
+            $('.venue-details')[0].style.display = 'none'
             $('.bookmark')[0].style.display = 'none'
           } else {
             $(".bookmark-which-band")[0].style.display = "none";
+            $(".venue-details")[0].style.display = "block";
           }
         })
       });
     </script>
 
+    <!-- simple form for @bookmark_board to fill up band -->
+
+  </div>
+  <div class="venue-details">
+      <!-- <div><span>Japanese name: </span><%= @venue.jp_name %></div> -->
+      <div class="venue-bio"><span>Address: </span><%= @venue.address %></div>
+     <!--  <div><span>Latitude: </span><%= @venue.latitude %></div> -->
+      <!-- <div><span>Longitude: </span><%= @venue.longitude %></div> -->
+      <div class="venue-bio"><span>Contacts: </span><%= @venue.phone_num %> /<span> </span><%= @venue.email %></div>
+      <div class="venue-bio"><span>Station: </span><%= @venue.closest_station %></div>
+      <div class="venue-bio"><span>Website: </span><a><%= @venue.jp_website %></a></div>
+      <% unless @venue.en_website.empty?  %>
+        <div class="venue-bio"><span>English ver: </span><a><%= @venue.en_website %></a></div>
+      <% end %>
+      <div class="venue-bio"><span>Open Mic Availability: </span><%= @venue.openmic_day %></div>
+      <div class="venue-bio"><span>Openmic_starts_at: </span><%= @venue.openmic_start_time %></div>
+      <!-- <div><span>Booking_system: </span><%= @venue.booking_system %></div> -->
+     <div class="venue-bio"><span>Charge: </span><%= @venue.charge %> + <%= @venue.additional_charge %></div>
+      <% unless @venue.stage_rule.empty?  %>
+      <div class="venue-bio"><span>Stage rule: </span><%= @venue.stage_rule %></div>
+      <% end %>
+      <% unless @venue.capacity.nil?  %>
+      <div class="venue-bio"><span>Capacity: </span><%= @venue.capacity %></div>
+      <% end %>
+  </div>
+
     <% options = [] %>
     <% current_user.bands.each {|band| options << [band.id, band.band_name]} %>
 
     <div class="bookmark-which-band" style="display: none">
+
+    <h4>Bookmark <%= @venue.en_name %> to your member?</h4>
+
+
       <%= simple_form_for @bookmark_board do |f| %>
+       <div class="bookmark-card">
         <%= f.hidden_field :venue_id, value: @venue.id %>
         <%= f.collection_check_boxes :band_id, options, :first, :last %>
-        <%= f.submit "Share", class: "btn btn-success message-submit" %>
+        <p><%= f.submit "Share!", class: "btn btn-success message-submit" %></p>
+      </div>
       <% end %>
-    </div>
-    <!-- simple form for @bookmark_board to fill up band -->
 
-  </div>
-  <!-- <div><span>Japanese name: </span><%= @venue.jp_name %></div> -->
-  <div class="venue-bio"><span>Address: </span><%= @venue.address %></div>
- <!--  <div><span>Latitude: </span><%= @venue.latitude %></div> -->
-  <!-- <div><span>Longitude: </span><%= @venue.longitude %></div> -->
-  <div class="venue-bio"><span>Phone Number: </span><%= @venue.phone_num %></div>
-  <!-- <div><span>Email: </span><%= @venue.email %></div> -->
-  <div class="venue-bio"><span>Nearest Station: </span><%= @venue.closest_station %></div>
-  <div class="venue-bio"><span>Website: </span><a><%= @venue.jp_website %></a></div>
-  <!-- <div><span>En website: </span><%= @venue.en_website %></div> -->
-  <div class="venue-bio"><span>Open Mic Availability: </span><%= @venue.openmic_day %></div>
-  <!-- <div class="venue-bio"><span>Openmic_start_time: </span><%= @venue.openmic_start_time %></div>
-  <div class="venue-bio"><span>Openmic_ending_time: </span><%= @venue.openmic_ending_time %></div> -->
-  <!-- <div><span>Booking_system: </span><%= @venue.booking_system %></div> -->
- <!--  <div><span>Charge: </span><%= @venue.charge %></div>
-  <div><span>Additional_charge: </span><%= @venue.additional_charge %></div> -->
-<!--   <div><span>Stage_rule: </span><%= @venue.stage_rule %></div>
-  <div><span>Capacity: </span><%= @venue.capacity %></div> -->
+
+    </div>
+</div>
+
 </div>
