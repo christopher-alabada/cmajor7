@@ -45,6 +45,9 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @bands = Band.all
     @venue = Venue.find(params[:id])
+    @bookmark_board = @venue.bookmark_boards.new
+    @bookmark_board.user = current_user
   end
 end

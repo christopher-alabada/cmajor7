@@ -26,7 +26,9 @@ class MusiciansController < ApplicationController
       @musicians_bands = current_user.bands.map { |band| [band.band_name, band.id] }
       @musicians_bands.unshift(['Form new band...', 0])
       @review = Review.new
-      @reviews = Review.all.where('from_id = :user_id', { user_id: current_user.id })
+      @reviews = Review.all.where('to_id = :user_id', { user_id: @musician.id })
+      @badge = Badge.new
+      @badges = Badge.all.where('to_id = :user_id', { user_id: @musician.id })
     end
   end
 

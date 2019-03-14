@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :musicians, only: [:index, :show, :new, :create]
   resources :bands, only: [:index, :show]
   resources :venues, only: [:index, :show]
+  resources :bookmark_boards, only: [:create]
   # resources :reviews, only: :create
 
   post '/musicians/:id/reviews', to: 'reviews#create', as: 'user_reviews'
