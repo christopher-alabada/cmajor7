@@ -4,7 +4,7 @@ class VenuesController < ApplicationController
 
   def index
     # @venues = policy_scope(Venue) Post.paginate(:page => params[:page])
-    @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil, en_name: 'Live&Rest Bar Cub').paginate(:page => params[:page], :per_page => 10)
+    @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil, en_name: 'Live&Rest Bar Cub').paginate(:page => params[:page], :per_page => 1)
 
     @markers = @mapped_venues.map do |venue|
       {
@@ -26,21 +26,20 @@ class VenuesController < ApplicationController
           coordinates: [venue.longitude, venue.latitude]
         },
         properties: {
-          name: venue.en_name,
+          en_name: venue.en_name,
+          jp_name: venue.jp_name,
           address: venue.address,
-          :'marker-color' => '#00607d',
-          :'marker-symbol' => 'circle',
-          :'marker-size' => 'medium'
+          en_address: venue.en_address,
+          phone_num: venue.phone_num,
+          closest_station: venue.closest_station,
+          jp_website: venue.jp_website,
+          en_website: venue.en_website,
+          openmic_day: venue.openmic_day,
+          openmic_start_time: venue.openmic_start_time,
+          openmic_ending_time: venue.openmic_ending_time
         }
       }
     end
-
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render json: @geojson }
-    # end
-
-
   end
 
   def show

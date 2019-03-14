@@ -94,11 +94,26 @@ const initMapbox = () => {
     var popUps = document.getElementsByClassName('mapboxgl-popup');
     if (popUps[0]) popUps[0].remove();
 
+    const data = currentFeature.properties;
+
+
+    console.log(Date.parse(data.openmic_start_time));
+
+    var startTime = (Date.parse(data.openmic_start_time)).toISOString().substr(11, 8);
+    var endTime = '';
+    if (data.openmic_ending_time) {
+      endTime = '' + (Date.parse(data.openmic_ending_time)).toISOString().substr(11, 8);
+    }
 
     var popup = new mapboxgl.Popup({closeOnClick: false, anchor: 'bottom-left', offset: [10, -25]})
           .setLngLat(currentFeature.geometry.coordinates)
-          .setHTML('<h3>Sweetgreen</h3>' +
-            '<h4>' + currentFeature.geometry.coordinates[0] + ', ' + currentFeature.geometry.coordinates[1] + '</h4>')
+          .setHTML('<h5>' + data.en_name + ' ' + data.jp_name + '</h5>' +
+            '<div>' + data.en_address + '</div>' +
+            '<div>' + data.jp_address + '</div>' +
+            '<div><i class="fas fa-phone"></i> ' + data.phone_num + '</div>' +
+            '<div><i class="fas fa-subway"></i> ' + data.closest_station + '</div>' +
+            '<div>' + data.openmic_day + ' ' + startTime + endTime + '</div>'
+            )
           .addTo(map);
   }
 
