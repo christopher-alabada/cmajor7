@@ -2,7 +2,7 @@
   background-color: #121212;
   color: white;
   padding: 50px;
-  height: 170px;
+  height: 150px;
   display: flex;
   flex-direction: column;
 }
@@ -23,7 +23,7 @@
 }
 .footer-top-items {
   // margin-bottom: 20px;
-  padding: 20px 0;
+  // padding: 20px 0;
 }
 .footer-top-items :hover .footer-logo-title{
     color: #E84369;
@@ -40,7 +40,7 @@
   margin-left: 10px;
   position: absolute;
   right :20px;
-  bottom: 25px;
+  bottom: 10px;
 }
 .footer-item a{
   margin-right: 10px;
