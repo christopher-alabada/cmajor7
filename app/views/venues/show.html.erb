@@ -24,7 +24,39 @@
 </div>
 
 <div class="venue-info">
-  <div class="venue-name-style"><%= @venue.en_name %> <%= @venue.jp_name %></div>
+  <div class="venue-name-style"><%= @venue.en_name %> <%= @venue.jp_name %>
+
+
+
+    <input type="checkbox" style="display: none;" id="bookmark">
+    <label for="bookmark" class='btn'><i class="far fa-bookmark"></i></label>
+    <script>
+      $(document).ready(function() {
+        $("#bookmark").change(function(){
+          if(this.checked){
+            $(".bookmark-which-band")[0].style.display = "block";
+            $('.m-show-description')[0].style.display = 'none'
+            $('.bookmark')[0].style.display = 'none'
+          } else {
+            $(".bookmark-which-band")[0].style.display = "none";
+          }
+        })
+      });
+    </script>
+
+    <% options = [] %>
+    <% current_user.bands.each {|band| options << [band.id, band.band_name]} %>
+
+    <div class="bookmark-which-band" style="display: none">
+      <%= simple_form_for @bookmark_board do |f| %>
+        <%= f.hidden_field :venue_id, value: @venue.id %>
+        <%= f.collection_check_boxes :band_id, options, :first, :last %>
+        <%= f.submit "Share", class: "btn btn-success message-submit" %>
+      <% end %>
+    </div>
+    <!-- simple form for @bookmark_board to fill up band -->
+
+  </div>
   <!-- <div><span>Japanese name: </span><%= @venue.jp_name %></div> -->
   <div class="venue-bio"><span>Address: </span><%= @venue.address %></div>
  <!--  <div><span>Latitude: </span><%= @venue.latitude %></div> -->

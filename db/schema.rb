@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_14_022121) do
+ActiveRecord::Schema.define(version: 2019_03_14_023402) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,31 @@ ActiveRecord::Schema.define(version: 2019_03_14_022121) do
     t.string "banner_photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.bigint "users_id"
+    t.bigint "venue_id"
+    t.string "state"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "end_time"
+    t.datetime "start_time"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+    t.index ["users_id"], name: "index_bookings_on_users_id"
+    t.index ["venue_id"], name: "index_bookings_on_venue_id"
+  end
+
+  create_table "bookmark_boards", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "venue_id"
+    t.bigint "band_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_bookmark_boards_on_band_id"
+    t.index ["user_id"], name: "index_bookmark_boards_on_user_id"
+    t.index ["venue_id"], name: "index_bookmark_boards_on_venue_id"
   end
 
   create_table "chat_rooms", force: :cascade do |t|
@@ -132,6 +157,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_022121) do
     t.integer "from_id"
     t.integer "to_id"
     t.string "message"
+    t.boolean "confirmed", default: false
     t.integer "band_id"
   end
 
@@ -189,6 +215,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_022121) do
     t.string "en_name"
     t.string "jp_name"
     t.string "address"
+    t.string "en_address"
     t.string "latitude"
     t.string "longitude"
     t.string "phone_num"
@@ -206,12 +233,16 @@ ActiveRecord::Schema.define(version: 2019_03_14_022121) do
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "en_address"
   end
 
   add_foreign_key "badges", "reviews"
   add_foreign_key "band_members", "bands"
   add_foreign_key "band_members", "users"
+  add_foreign_key "bookings", "users", column: "users_id"
+  add_foreign_key "bookings", "venues"
+  add_foreign_key "bookmark_boards", "bands"
+  add_foreign_key "bookmark_boards", "users"
+  add_foreign_key "bookmark_boards", "venues"
   add_foreign_key "equipment", "equipment_categories"
   add_foreign_key "equipment_inventories", "equipment"
   add_foreign_key "equipment_inventories", "users"
