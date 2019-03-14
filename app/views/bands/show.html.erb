@@ -65,19 +65,22 @@
   <div class="bookmarked-venues-container">
     <div class="card-wrapper">
       <div class="card-contents-band">
-        <p class="book-venues">Venues List</p>
+        <p class="book-venues">Venues List
+        <%= link_to venues_path, class: 'venues_path' do %>
+          <i class="fas fa-plus"></i>
+        <% end %></p>
       <div class="venue-description">
-    <% @band.bookmark_boards.each do |bookmark| %>
-      <div class="bookmark-content">
-        <div class="bookmark-text">
-          <%= link_to url_for bookmark.venue.en_website do %>
+        <% @band.bookmark_boards.each do |bookmark| %>
+        <div class="bookmark-content">
+          <div class="bookmark-text">
             <p class="venue-name">Venue name</p>
-            <h4 class="bookmark-name"><%= bookmark.venue.en_name %> </h4>
-          <% end %>
-          <p class='who-bookmarked'><%= bookmark.user.nickname.capitalize %> bookmarked</p>
-        </div>
+            <%= link_to venue_path(bookmark.id) do %>
+              <h4 class="bookmark-name"><%= bookmark.venue.en_name %> </h4>
+            <% end %>
+            <p class='who-bookmarked'><%= bookmark.user.nickname.capitalize %> bookmarked</p>
+          </div>
 
-      </div>
+        </div>
 
     <% end %>
 
