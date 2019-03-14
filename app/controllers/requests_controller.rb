@@ -45,6 +45,14 @@ class RequestsController < ApplicationController
       # add to band member
       bandmember = BandMember.new(user: @request.to, band: band)
       bandmember.save
+
+      # send automated message
+      message = Message.new()
+      message.user = @request.from
+      message.band = band
+      message.chat_room_id = band.id
+      message.content = "** Added '#{@request.to.nickname}' to the band. **"
+      message.save
     end
 
     @request.save

@@ -4,7 +4,7 @@
   // flex-basis: auto;
 }
 .show-banner {
-  height: 175px;
+  // height: 100px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -90,7 +90,7 @@
 }
 
 .show-banner {
-  height: 300px;
+  height: 220px;
   background-position: center;
 }
 
@@ -161,8 +161,7 @@
 .show-container {
   display: flex;
   justify-content: space-between;
-
-  margin-top: 70px;
+  margin-top: 20px;
   margin-bottom: 40px;
 }
 
