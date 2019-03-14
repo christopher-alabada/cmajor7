@@ -11,12 +11,7 @@
             <div class="musician-card">
               <%= link_to musician_path(musician) do %>
                 <%= cl_image_tag(musician.user_photo, class: 'musician-image') %>
-                <div>
-                  <img class="instrument-icon" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1552555252/guitar-64.png">
-                  <img class="instrument-icon2" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1552555509/side-drum-64.png">
-                  <img class ="instrument-icon3" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1552556196/piano.png">
-                  <img class="instrument-icons4" src="https://res.cloudinary.com/harrisongarovi/image/upload/v1552556495/microphone-9-64.png">
-                </div>
+
                 <div class="musician-description-shadow">
                   <div class="musician-card-description">
                     <p class="nickname"><%= musician.nickname.capitalize! %></p>
