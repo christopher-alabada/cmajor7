@@ -32,7 +32,7 @@
     <label for="bookmark" class='btn'><i class="far fa-bookmark"></i></label>
     <script>
       $(document).ready(function() {
-        $("#invite").change(function(){
+        $("#bookmark").change(function(){
           if(this.checked){
             $(".bookmark-which-band")[0].style.display = "block";
             $('.m-show-description')[0].style.display = 'none'
@@ -44,13 +44,17 @@
       });
     </script>
 
-    <div class="bookmark-which-band">
-      <%= simple_form_for [ @chat_room, Message.new ] do |f| %>
-            <% @bands.find(current_user.band_ids)[0].band_name %>
-            <%= f.input :content, label: false %>
-            <%= f.submit "Send", class: "btn btn-success message-submit" %>
+    <% options = [] %>
+    <% current_user.bands.each {|band| options << [band.id, band.band_name]} %>
+
+    <div class="bookmark-which-band" style="display: none">
+      <%= simple_form_for @bookmark_board do |f| %>
+        <%= f.hidden_field :venue_id, value: @venue.id %>
+        <%= f.collection_check_boxes :band_id, options, :first, :last %>
+        <%= f.submit "Share", class: "btn btn-success message-submit" %>
       <% end %>
     </div>
+    <!-- simple form for @bookmark_board to fill up band -->
 
   </div>
   <!-- <div><span>Japanese name: </span><%= @venue.jp_name %></div> -->
