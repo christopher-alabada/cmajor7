@@ -65,7 +65,7 @@
   <div class="bookmarked-venues-container">
     <div class="card-wrapper">
       <div class="card-contents-band">
-        <p class="book-venues">Booked Venues</p>
+        <p class="book-venues">Venues List</p>
       <div class="venue-description">
     <% @band.bookmark_boards.each do |bookmark| %>
       <div class="bookmark-content">
@@ -74,6 +74,7 @@
         </div>
 
       </div>
+        <%= bookmark.user.nickname %> bookmarked
     <% end %>
   </div>
   </div>
