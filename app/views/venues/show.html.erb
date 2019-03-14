@@ -94,7 +94,7 @@
         <h4 style="margin-bottom: 30px; font-family:'Josefin Sans';">Share <%= @venue.en_name %> to your jam member?</h4>
         <%= f.hidden_field :venue_id, value: @venue.id %>
         <%= f.collection_check_boxes :band_id, options, :first, :last %>
-        <p style="margin-top: 20px;"><%= f.submit "Share!", class: "btn btn-success message-submit", style: "font-family:'Josefin Sans'" %></p>
+        <p style="margin-top: 20px;"><%= f.submit "Share!", class: "btn message-submit", style: "font-family:'Josefin Sans" %></p>
       </div>
       <% end %>
 

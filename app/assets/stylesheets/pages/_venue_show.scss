@@ -4,8 +4,14 @@
   margin-bottom: 30px;
 }
 
-.venue-name {
-
+.venue-details {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-right: 30px;
+  padding-left: 30px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 .carousel-photo {
@@ -17,7 +23,7 @@
   // height: 500px;
 }
 .venue-info {
-  width: 650px;
+  width: 630px;
 }
 
 
@@ -33,7 +39,8 @@
 }
 
 .bookmark-which-band {
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 30px;
   display: flex;
