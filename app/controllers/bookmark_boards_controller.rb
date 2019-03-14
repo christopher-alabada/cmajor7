@@ -8,7 +8,7 @@ class BookmarkBoardsController < ApplicationController
 
     if @bookmark_board.save
       authorize @bookmark_board
-      redirect_to musicians_path
+      redirect_to band_path(@bookmark_board.band_id)
     end
   end
 
