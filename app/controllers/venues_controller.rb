@@ -4,7 +4,7 @@ class VenuesController < ApplicationController
 
   def index
     # @venues = policy_scope(Venue) Post.paginate(:page => params[:page])
-    @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil, en_name: 'Live&Rest Bar Cub').paginate(:page => params[:page], :per_page => 1)
+    @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil, en_name: 'Live&Rest Bar Cub').paginate(:page => params[:page], :per_page => 10)
 
     @markers = @mapped_venues.map do |venue|
       {
@@ -36,7 +36,9 @@ class VenuesController < ApplicationController
           en_website: venue.en_website,
           openmic_day: venue.openmic_day,
           openmic_start_time: venue.openmic_start_time,
-          openmic_ending_time: venue.openmic_ending_time
+          openmic_ending_time: venue.openmic_ending_time,
+          image: Cloudinary::Utils.cloudinary_url(venue.venue_photos.first.photo, {width: 100, height: 100, crop: :fill}),
+          details_url: url_for(venue)
         }
       }
     end

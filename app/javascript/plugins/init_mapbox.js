@@ -96,23 +96,64 @@ const initMapbox = () => {
 
     const data = currentFeature.properties;
 
+    var enAddress = '';
+    if (data.en_address) {
+      enAddress = '<div>' + data.en_address + '</div>'
+    }
 
-    console.log(Date.parse(data.openmic_start_time));
+    var jpAddress = '';
+    if (data.address) {
+      jpAddress = '<div>' + data.address + '</div>'
+    }
 
-    var startTime = (Date.parse(data.openmic_start_time)).toISOString().substr(11, 8);
+    var tel = '';
+    if (data.phone_num) {
+      tel = '<div><i class="fas fa-phone"></i> ' + data.phone_num + '</div>'
+    }
+
+    var closetStation = '';
+    if (data.closest_station) {
+      closetStation = '<div><i class="fas fa-subway"></i> ' + data.closest_station + '</div>'
+    }
+
+    var image = '';
+    if (data.image) {
+      image = '<div><img src="' + data.image + '" width="100px" height="100px"></div>'
+    }
+
+    var seconds = Date.parse(data.openmic_start_time);
+    var date = new Date(null);
+    date.setSeconds(seconds);
+    const startTime = date.toISOString().substr(14, 5);
+
     var endTime = '';
     if (data.openmic_ending_time) {
-      endTime = '' + (Date.parse(data.openmic_ending_time)).toISOString().substr(11, 8);
+      var seconds = Date.parse(data.openmic_ending_time);
+      var date = new Date(null);
+      date.setSeconds(seconds);
+      endTime = ' ' + date.toISOString().substr(14, 5);
+    }
+
+    var openMic = '';
+    if (data.openmic_day) {
+      openMic = '<div><i class="fas fa-microphone"></i> ' + data.openmic_day + ' ' + startTime + endTime + '</div>'
     }
 
     var popup = new mapboxgl.Popup({closeOnClick: false, anchor: 'bottom-left', offset: [10, -25]})
           .setLngLat(currentFeature.geometry.coordinates)
-          .setHTML('<h5>' + data.en_name + ' ' + data.jp_name + '</h5>' +
-            '<div>' + data.en_address + '</div>' +
-            '<div>' + data.jp_address + '</div>' +
-            '<div><i class="fas fa-phone"></i> ' + data.phone_num + '</div>' +
-            '<div><i class="fas fa-subway"></i> ' + data.closest_station + '</div>' +
-            '<div>' + data.openmic_day + ' ' + startTime + endTime + '</div>'
+          .setHTML('<div class="ivenues-popup-container"><div class="ivenues-popup-image">' +
+            image +
+            '</div><div class="ivenues-popup-info"><h5><a href="' +
+            data.jp_website + '">' +
+            data.en_name + ' ' + data.jp_name +
+            '</a></h5>' +
+            enAddress +
+            jpAddress +
+            tel +
+            closetStation +
+            openMic +
+            '<a href="' + data.details_url + '">details</a>' +
+            '</div></div>'
             )
           .addTo(map);
   }
@@ -132,7 +173,7 @@ const initMapbox = () => {
       link.href = '#';
       link.className = 'title';
       link.dataPosition = i;
-      link.innerHTML = prop.name;
+      link.innerHTML = prop.en_name;
 
       var details = listing.appendChild(document.createElement('div'));
       details.innerHTML = prop.address;
