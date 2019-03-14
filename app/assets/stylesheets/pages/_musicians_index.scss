@@ -8,15 +8,9 @@
   width: 50px;
   height: 35px;
   background-color: #E84369;
-  // border-top-right-radius: 18px;
-  // border-bottom-right-radius:18px;
   border-radius: 50px;
   margin-right: 12px;
   margin-left: 15px;
-  // &:hover .awesome-search-color{
-  //   transition: 0.8s ease;
-  //   top: -2px;
-  // }
 }
 
 .awesome-search-color {
@@ -28,8 +22,6 @@
 .title-and-search-bar {
   display: flex;
   justify-content: flex-start;
-  // padding-top: 30px;
-  // padding-left: 78px;
   position: relative;
 }
 
@@ -39,7 +31,6 @@
 
 .search-form {
   display: flex;
-
 }
 
 .find-by-pref {
@@ -93,7 +84,9 @@
   transition: top ease 0.3s;
   &:hover {
     top: -20px;
+    box-shadow: 2px 3px #fdfdf6;
   }
+  margin-bottom: 0px;
 }
 
 .musician-image {
@@ -106,10 +99,6 @@
   border-bottom-right-radius: 3px;
 }
 
-.musician-description-shadow {
-  // box-shadow: 1px 1px #888888;
-}
-
 .musician-card-description {
   padding-top: 15px;
   min-height: 120px;
@@ -120,7 +109,7 @@
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  margin:0;
+  margin-bottom: 5px;
 }
 
 .nickname a:hover, a:visited, a:link, a:active {
@@ -141,15 +130,9 @@
 }
 
 .location {
-  // text-shadow: 0.2px 0.2px #7d7d7d;
   color: black;
   opacity: 0.4;
   font-size: 12px;
-  // letter-spacing: 0.2px;
-  // padding-bottom: 10px;
-  // position: absolute;
-  // bottom: 0px;
-  // right: 5px;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
@@ -162,12 +145,11 @@
 }
 
 .musician-equipment {
-  font-size: 14px;
-  // position: absolute;
-  // bottom: 0px;
+  font-size: 16px;
   color: black;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
+  // font-weight: bolder;
+  line-height: 0.7;
   opacity: 0.8;
 }
 
