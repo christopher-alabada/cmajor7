@@ -152,11 +152,14 @@
                 <p><%= r.content %></p>
                 <p class='review-from'>Review from <%= @musicians.find(r.from_id).nickname.capitalize %></p>
               <% end %>
+              <input type="checkbox" style="display: none;" id="m-write-review">
+              <label for="m-write-review" class='btn btn-primary'>Write reviews!</label>
+              <p><%= link_to 'Back', musician_path(@musician) %></p>
             <% else %>
               <p><%= 'No reviews yet.' %></p>
-                <input type="checkbox" style="display: none;" id="m-write-review">
-                <label for="m-write-review" class='btn btn-primary'>Be the first reviewer!</label>
-                <%= link_to 'Back', musician_path(@musician) %>
+              <input type="checkbox" style="display: none;" id="m-write-review">
+              <label for="m-write-review" class='btn btn-primary'>Be the first reviewer!</label>
+              <%= link_to 'Back', musician_path(@musician) %>
               <div id="create-review" style='display: none;'>
                 <%= simple_form_for [@musician, @review] do |f| %>
                   <%= f.input :content %>
