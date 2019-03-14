@@ -1,21 +1,13 @@
+<% content_for :title, "Venues" %>
+
+<script>
+  const venues = <%= raw json_escape(@geojson.to_json) %>;
+  const mapkey = "<%= ENV['MAPBOX_API_KEY'] %>"
+</script>
+
 <h1 class='i-venue-name'>Venues</h1>
 
-
-<div class="i-venue-container">
-  <div class="i-venue-row">
-    <div class="col-xs-12 col-sm-4">
-    <% @venues.each do |venue| %>
-    <div class='i-venue-card'>
-      <%= link_to venue_path(venue) do %>
-        <%= cl_image_tag venue.venue_photos.first.photo, class: 'i-venue-img' %>
-      <% end %>
-      <div class="i-venue-info">
-      <p>English Name:<%= venue.en_name %></p>
-      <p>Japanese Name:<%= venue.jp_name %></p>
-      <p>URL:<%= link_to venue.jp_website %></p>
-      </div>
-    </div>
-    <% end %>
-    </div>
-  </div>
+<div class="map-container">
+  <div class="map-item" id="map"></div>
+  <div id='listings' class='listings'></div>
 </div>
