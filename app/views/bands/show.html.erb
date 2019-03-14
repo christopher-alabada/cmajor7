@@ -4,9 +4,7 @@
       <div class="show-nickname" style="text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);">
         <%= @band.band_name %>
       </div>
-        <h4>Unique band, unique sound</h4>
         <div class="banner-band-description">
-          <p>Genre: Rock, Alternative</p>
         </div>
       </div>
     </div>
@@ -40,57 +38,51 @@
         </div>
       </div>
 
-          <script>
-            $(document).ready(function() {
-              $("#connect").change(function(){
-                if(this.checked){
-                  $(".popup")[0].style.display = "block";
-                  $(".card-contents")[0].style.display = "none";
-                } else {
-                  $(".popup")[0].style.display = "none";
-                }
-              })
-            });
-          </script>
+      <script>
+        $(document).ready(function() {
+          $("#connect").change(function(){
+            if(this.checked){
+              $(".popup")[0].style.display = "block";
+              $(".card-contents")[0].style.display = "none";
+            } else {
+              $(".popup")[0].style.display = "none";
+            }
+          })
+        });
+      </script>
 
 
-    </div>
+
+</div>
 
   <div class="chat-container">
     <h3>Messages</h3>
     <%= render 'messages' %>
   </div>
-</div>
 
   <div class="bookmarked-venues-container">
     <div class="card-wrapper">
       <div class="card-contents-band">
-        <p class="book-venues">Booked Venues</p>
+        <p class="book-venues">Venues List</p>
       <div class="venue-description">
     <% @band.bookmark_boards.each do |bookmark| %>
       <div class="bookmark-content">
         <div class="bookmark-text">
-          <h4 class="bookmark-name"> <%= bookmark.venue.en_name %> </h4>
+
+          <%= link_to venue_path(bookmark.venue) do %>
+            <h4 class="bookmark-name"><%= bookmark.venue.en_name %> </h4>
+          <% end %>
+          <p class='who-bookmarked'><%= bookmark.user.nickname.capitalize %> bookmarked</p>
+          
         </div>
 
       </div>
+
     <% end %>
+
+  </div>
   </div>
   </div>
   </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

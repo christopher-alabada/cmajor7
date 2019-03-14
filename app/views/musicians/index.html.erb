@@ -25,17 +25,14 @@
                 <div class="musician-card-description">
                   <div style="display: flex">
                 <p class="nickname"><%= musician.nickname.capitalize! %></p>
-              </div>
-                <div class="form-inline musician-equipment">
-                  <%
-                    instruments = musician.equipments.map do |e|
-                      e.equipment_type.capitalize
-                    end
-                  %>
-                  <%= instruments.join(" | ") %>
+
+                <div class="musician-equipment">
+                   <% instruments = musician.equipments.map do |e| %>
+                      <p><%= e.equipment_type.capitalize  %></p>
+                    <% end %>
                 </div>
                 <p class="tag-line"><%= musician.tag_line %></p>
-                <p class="location">Location :  <%= musician.location.capitalize! %></p>
+                <p class="location"><i class="fas fa-map-marked-alt"></i> <%= musician.location.capitalize! %></p>
 
               </div>
               </div>
