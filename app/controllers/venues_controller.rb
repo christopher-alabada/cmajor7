@@ -7,6 +7,7 @@ class VenuesController < ApplicationController
   end
 
   def show
+    @bands = Band.all
     @venue = Venue.find(params[:id])
   end
 end
