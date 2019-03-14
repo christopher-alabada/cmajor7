@@ -4,7 +4,7 @@ class VenuesController < ApplicationController
 
   def index
     # @venues = policy_scope(Venue) Post.paginate(:page => params[:page])
-    @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil, en_name: 'Live&Rest Bar Cub').paginate(:page => params[:page], :per_page => 10)
+    @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil, en_name: 'Live&Rest Bar Cub').paginate(:page => params[:page], :per_page => 3)
 
     @markers = @mapped_venues.map do |venue|
       {
