@@ -61,6 +61,12 @@
     <%= render 'messages' %>
   </div>
 
+  <div class="bookmarked-venues-container">
+    <% @band.bookmark_boards.each do |bookmark| %>
+        <h4><%= bookmark.venue.en_name %></h4>
+        <p><%= bookmark.user.nickname %> booked </p>
+    <% end %>
+  </div>
   </div>
 </div>
 

@@ -1,5 +1,6 @@
 class BandsController < ApplicationController
   def show
+    @bookmark_boards = BookmarkBoard.first
     @band = Band.find(params[:id])
     authorize @band
 
