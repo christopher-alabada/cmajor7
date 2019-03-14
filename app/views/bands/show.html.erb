@@ -40,27 +40,27 @@
         </div>
       </div>
 
-          <script>
-            $(document).ready(function() {
-              $("#connect").change(function(){
-                if(this.checked){
-                  $(".popup")[0].style.display = "block";
-                  $(".card-contents")[0].style.display = "none";
-                } else {
-                  $(".popup")[0].style.display = "none";
-                }
-              })
-            });
-          </script>
+      <script>
+        $(document).ready(function() {
+          $("#connect").change(function(){
+            if(this.checked){
+              $(".popup")[0].style.display = "block";
+              $(".card-contents")[0].style.display = "none";
+            } else {
+              $(".popup")[0].style.display = "none";
+            }
+          })
+        });
+      </script>
 
 
-    </div>
+
+</div>
 
   <div class="chat-container">
     <h3>Messages</h3>
     <%= render 'messages' %>
   </div>
-</div>
 
   <div class="bookmarked-venues-container">
     <div class="card-wrapper">
@@ -70,12 +70,18 @@
     <% @band.bookmark_boards.each do |bookmark| %>
       <div class="bookmark-content">
         <div class="bookmark-text">
-          <h4 class="bookmark-name"><%= bookmark.venue.en_name %> </h4>
+          <%= link_to url_for bookmark.venue.en_website do %>
+            <p class="venue-name">Venue name</p>
+            <h4 class="bookmark-name"><%= bookmark.venue.en_name %> </h4>
+          <% end %>
+          <p class='who-bookmarked'><%= bookmark.user.nickname.capitalize %> bookmarked</p>
         </div>
 
       </div>
-        <%= bookmark.user.nickname %> bookmarked
+
     <% end %>
+
+  </div>
   </div>
   </div>
   </div>
