@@ -3,8 +3,11 @@
   color: black;
   opacity: 0.5;
 }
-.review-title {
-  border-bottom: 1px solid black;
+.m-review-b {
+  opacity: 0.7;
+  font-size: 15px;
+  color: black;
+  opacity: 0.8;
 }
 
 .star {
@@ -13,4 +16,19 @@
 .unstar {
   color: black;
   opacity: 0.2;
+}
+.last-review {
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  padding: 5px 10px;
+}
+
+.gig-title {
+  color: #E84369;
+  margin-top: 20px;
+}
+
+.r-content {
+  box-shadow: 0 0 3px rgba(0,0,0,0.2);
+  padding: 5px 10px;
+  margin-bottom: 5px;
 }
