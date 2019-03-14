@@ -4,9 +4,7 @@
       <div class="show-nickname" style="text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);">
         <%= @band.band_name %>
       </div>
-        <h4>Unique band, unique sound</h4>
         <div class="banner-band-description">
-          <p>Genre: Rock, Alternative</p>
         </div>
       </div>
     </div>
@@ -70,11 +68,12 @@
     <% @band.bookmark_boards.each do |bookmark| %>
       <div class="bookmark-content">
         <div class="bookmark-text">
-          <%= link_to url_for bookmark.venue.en_website do %>
-            <p class="venue-name">Venue name</p>
+
+          <%= link_to venue_path(bookmark.venue) do %>
             <h4 class="bookmark-name"><%= bookmark.venue.en_name %> </h4>
           <% end %>
           <p class='who-bookmarked'><%= bookmark.user.nickname.capitalize %> bookmarked</p>
+          
         </div>
 
       </div>
@@ -87,17 +86,3 @@
   </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

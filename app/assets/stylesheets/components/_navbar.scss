@@ -29,6 +29,7 @@
   justify-content: space-between;
 }
 
+
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
@@ -79,4 +80,7 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+.search-field {
+  border-radius: 20px;
 }
