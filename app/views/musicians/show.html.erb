@@ -157,6 +157,7 @@
           <%= simple_form_for [@musician, @review] do |f| %>
             <%= f.input :content %>
             <%= f.input :stars  %>
+            <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
             <%= f.submit "Send", class: "btn btn-success review-submit" %>
           <% end %>
         </div>
@@ -164,9 +165,10 @@
         <p><%= 'No reviews yet.' %></p>
         <div id="create-message">
           <p class='btn btn-primary'><%= 'Write review' %></p>
-          <%= simple_form_for [@musician, @review] do |f| %>
+          <%= simple_form_for [@musician, @review, @badge] do |f| %>
             <%= f.input :content %>
             <%= f.input :stars  %>
+            <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
             <%= f.submit "Send", class: "btn btn-success message-submit" %>
           <% end %>
           </div>
