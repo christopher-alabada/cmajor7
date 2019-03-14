@@ -15,7 +15,9 @@
 <div class="s-container">
   <div class="musicians-show-container">
     <div class="show-musician-pic-wrapper">
+      <%= link_to musician_path(@musician) do %>
       <%= cl_image_tag(@musician.user_photo, class:"show-musician-photo") %>
+      <% end %>
       <div class="s-musician-pic-overlay">
       </div>
     </div>
@@ -51,18 +53,20 @@
                 <%= link_to "You have sent a request.", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
               <% else %>
 
-              <div class="invite-form">
-                <%= simple_form_for @request, wrapper: :inline_form do |f| %>
-                  <p><%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
-                  <%= f.input :band_id, collection: @musicians_bands, class: 'form-control select', selected: 0 %></p>
-                  <p><%= f.input :message, placeholder: 'Message' %></p>
-                  <p class='i-submit'><%= f.button :submit, 'Invite', class: "btn btn-success connect"
-                   %></p>
-                </div>
-               <% end %>
+
+                <div class="invite-form">
+                  <%= simple_form_for @request, wrapper: :inline_form do |f| %>
+                    <p><%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
+                    <%= f.input :band_id, collection: @musicians_bands, class: 'form-control select', selected: 0 %></p>
+                    <p><%= f.input :message, placeholder: 'Message' %></p>
+                    <p class='i-submit'><%= f.button :submit, 'Invite', class: "btn btn-success connect"
+                     %>
+                     <%= link_to 'Back', musician_path(@musician), style: 'padding-left: 10px;' %></p>
+                  </div>
+                 <% end %>
+           <% end %>
              <% end %>
             </div>
-          <% end %>
         </div>
 
         <div class="m-show-description">
@@ -134,6 +138,7 @@
                 <p><%= r.content %></p>
                 <p class='review-from'>Review from <%= @musicians.find(r.from_id).nickname.capitalize %></p>
               <% end %>
+
           </div>
           <div class="create-review-container">
             <input type="checkbox" style="display: none;" id="m-write-review">

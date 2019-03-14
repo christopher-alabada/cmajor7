@@ -1,16 +1,11 @@
 <div class="card-container">
+
   <div class="explore-search-wrapper">
+
     <div class="index-explore">Musicians</div>
 
-    <div class="flex-grow-3 d-flex musician-search-bar" >
-      <%= form_tag musicians_path, method: :get, class: 'search-form' do %>
-        <%= text_field_tag :query, params[:query], class: "form-home mr-sm-6 search-field", placeholder: " Search by instrument or location" %>
-        <%= button_tag(type: "submit", class: "btn search-btn") do %>
-           <i class="fas fa-search awesome-search-color"></i>
-        <% end %>
-      <% end %>
-    </div>
   </div>
+
 
   <div class="musician-container">
     <div class="row">
