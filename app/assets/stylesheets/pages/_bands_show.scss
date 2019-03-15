@@ -1,6 +1,7 @@
 .show-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin: 50px;
   // flex-basis: auto;
 }
 .show-banner {
@@ -22,9 +23,13 @@
   color: #FFFFFF;
 }
 
+.card-wrapper {
+  margin-top: 10px;
+  margin-right: 30px;
+}
+
 .band-contents-band {
   box-shadow: 0 1px 3px gray;
-  padding: 30px;
 }
 
 .band-contents-band h3 {
@@ -96,12 +101,10 @@
 
 .card-contents-band {
   // box-shadow: 0 1px 3px gray;
-  min-width: 30vw;
+  width: 500px;
   min-height: 100px;
-  max-width: 250px;
-  padding: 20px;
-  margin: 10px;
-  flex: 1 1 30%;
+  // max-width: 250px;
+  margin-bottom: 20px;
 }
 
 .band-members-title {
@@ -109,9 +112,8 @@
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
-  margin-bottom: 20px;
-  border-bottom: 5px solid #3F5DFA;
-  width: 100%;
+  border-bottom: 5px solid #E84369;
+  width: 500px;
 }
 
 .band-members {
@@ -119,6 +121,7 @@
   margin-top: 15px;
   display: flex;
   justify-content: start;
+  width: 500px;
 }
 
 .band-members p {
@@ -131,6 +134,7 @@
   font-size: 16px;
   color: black;
   opacity: 0.8;
+
   &:hover {
     text-decoration: none;
   }
@@ -146,6 +150,16 @@
 .member-description p {
   margin-top: 10px;
 }
+
+.member-avatar-banner {
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
 .member-avatar {
   border-radius: 50%;
   height: 50px;
@@ -156,13 +170,6 @@
   font-size: 10px;
   color: #000000;
   font-weight: lighter;
-}
-
-.show-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 40px;
 }
 
 .connect {
@@ -189,7 +196,7 @@
 .name-member {
   display: flex;
   font-size: 10px;
-  justify-content: space-between;
+  justify-content: space-betwee;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 5px;
@@ -199,9 +206,10 @@
 
 // Chat Messages //
 .chat-container {
-  flex: 1 1 40%;
+  // flex: 1 1 30%;
   margin: 10px;
-  margin-left: 50px;
+  height: 2000px;
+
 }
 .chat-container h3 {
   color: black;
@@ -287,7 +295,11 @@ input.form-control {
 
 .message-submit {
   width: 80px;
-  background-color: #E84369;
+  border-radius: 50px;
+}
+
+.message-submit2 {
+  width: 80px;
   border-radius: 50px;
 }
 
@@ -370,17 +382,24 @@ display: block;
   font-weight: bolder;
   margin-bottom: 20px;
   border-bottom: 5px solid #3F5DFA;
-  width: 100%;
+  width: 500px;
 }
 
 .bookmarked-venues-container {
   margin-bottom: 60px;
+  width: 500px;
 }
 
 
 .bookmark-name {
   font-size: 24px;
   justify-content: space-evenly;
+  color: black;
+  font-family:'Josefin Sans';
+}
+
+.who-bookmarked {
+  font-family:'Josefin Sans';
 }
 
 .venue-description {

@@ -17,11 +17,13 @@
                     <p class="nickname"><%= musician.nickname.capitalize! %></p>
                     <div class="musician-equipment">
                       <% instruments = musician.equipments.map do |e| %>
-                        <p><%= e.equipment_type.capitalize  %></p>
+                        #<%= e.equipment_type.capitalize  %>
                       <% end %>
                     </div>
+                    <div class="detail-absolute">
                     <p class="tag-line"><%= musician.tag_line %></p>
                     <p class="location"><i class="fas fa-map-marked-alt"></i> <%= musician.location.capitalize! %></p>
+                  </div>
                   </div>
                 </div>
 
