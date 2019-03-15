@@ -125,23 +125,6 @@
 
         <label for="m-review" class='btn m-review-b'>View Gig History</label>
         <input type="checkbox" style="display: none;" id="m-review">
-        <% if @reviews.exists? %>
-          <div class="last-review">
-            <% 5.times.each do |count| %>
-              <% if @reviews.last.stars && @reviews.last.stars > count %>
-                <i class="fas fa-star star"></i>
-              <% else %>
-                <i class="fas fa-star unstar"></i>
-              <% end %>
-            <% end %>
-            <p><%= @reviews.last.content %></p>
-            <p class='review-from'>Comments from <%= @musicians.find(@reviews.last.from_id).nickname.capitalize %></p>
-          <%# else %>
-            <%#= 'No comments yet.' %>
-          </div>
-        <% end %>
-        <label for="m-review" class='btn m-review-b'>View all</label>
-        <input type="checkbox" style="display: none;" id="m-review">
         <script>
           $(document).ready(function() {
             $("#m-review").change(function(){
@@ -151,8 +134,8 @@
                 $(".gray-name")[0].style.display = "none";
                 $(".m-review-b")[0].style.display = "none";
                 $("#m-invite")[0].style.display = "none";
-                if ($(".last-review")[0]) {
-                  $(".last-review")[0].style.display = "none";
+                if ($(".r-last-review")[0]) {
+                  $(".r-last-review")[0].style.display = "none";
                 }
                 $(".gig-title")[0].style.display = "none";
               } else {
@@ -161,6 +144,23 @@
             })
           });
         </script>
+        <div class="r-last-review">
+          <% if @reviews.exists? %>
+            <div class="last-review">
+              <% 5.times.each do |count| %>
+                <% if @reviews.last.stars && @reviews.last.stars > count %>
+                  <i class="fas fa-star star"></i>
+                <% else %>
+                  <i class="fas fa-star unstar"></i>
+                <% end %>
+              <% end %>
+              <p><%= @reviews.last.content %></p>
+              <p class='review-from'>Comments from <%= @musicians.find(@reviews.last.from_id).nickname.capitalize %></p>
+            <%# else %>
+              <%#= 'No comments yet.' %>
+            </div>
+          <% end %>
+        </div>
 
         <div class="musician-review" style='display: none;'>
           <div class="review-content">
@@ -191,7 +191,8 @@
                   console.log(document.querySelector('.write-btn').style.display);
                   document.querySelector('.r-content').style.display = "none";
                   document.querySelector('.back-btn').style.display = "none";
-                  // document.querySelector('.no-comment').style.display = "none";
+                  document.querySelector('.r-last-review').style.display = "none";
+                  console.log(document.querySelector('.r-content').style.display)
                 })
               </script>
               <div id="create-review" style="display: none">
