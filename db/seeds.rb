@@ -3501,19 +3501,33 @@ else
 end
 
   review = Review.new(stars: 3, content: "They're a really cool person. Play with them.", from_id: 2, to_id: 4, badges: "Awesome guitarist")
+  review.save!
   review = Review.new(stars: 4, content: "They're a really awesome person. Really talented.", from_id: 5, to_id: 1, badges: "Great musician")
+  review.save!
   review = Review.new(stars: 5, content: "They really know how to jam!", from_id: 1, to_id: 3, badges: "Super funkadelic!!")
+  review.save!
   review = Review.new(stars: 5, content: "Total inspiration. I look up to this person for their musical genius.", from_id: 3, to_id: 6, badges: "Very unique and original")
+  review.save!
   review = Review.new(stars: 4, content: "Very talented. They know how to play a wide variety of grooves.", from_id: 7, to_id: 8, badges: "Groooovy!")
+  review.save!
   review = Review.new(stars: 5, content: "Play with this person, you won't be disappointed", from_id: 9, to_id: 12, badges: "They're legit!")
+  review.save!
   review = Review.new(stars: 4, content: "They really know how to follow an intense tempo!", from_id: 13, to_id: 10, badges: "They're so funky!")
+  review.save!
   review = Review.new(stars: 5, content: "Legendary on stage. The most fun I've ever had live.", from_id: 8, to_id: 9, badges: "So much fun to play with!")
+  review.save!
   review = Review.new(stars: 4, content: "So so dope to play with!", from_id: 1, to_id: 2, badges: "They know how to bring the grooves!")
+  review.save!
   review = Review.new(stars: 3, content: "Amazing musician.", from_id: 9, to_id: 13, badges: "Rock on!")
+  review.save!
   review = Review.new(stars: 5, content: "Super talented and original.", from_id: 10, to_id: 15, badges: "Legend")
+  review.save!
   review = Review.new(stars: 4, content: "They're a really cool person.", from_id: 8, to_id: 12, badges: "Total G")
+  review.save!
   review = Review.new(stars: 3, content: "Incredible on stage", from_id: 11, to_id: 16, badges: "Live music is their passion")
+  review.save!
   review = Review.new(stars: 5, content: "Incredibly talented.", from_id: 8, to_id: 7, badges: "Dope!")
+  review.save!
 
 
 puts
