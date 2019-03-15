@@ -3529,6 +3529,13 @@ end
   review = Review.new(stars: 5, content: "Incredibly talented.", from_id: 8, to_id: 7, badges: "Dope!")
   review.save!
 
+  review = Review.new(stars: 5, content: "Great voice! Would play with her again.", from_id: 6, to_id: 5, badges: "Dope!")
+  review.save!
+  review = Review.new(stars: 5, content: "Incredible voice!", from_id: 10, to_id: 5, badges: "Dope!")
+  review.save!
+  review = Review.new(stars: 5, content: "Can sing and play the guitar like a boss!", from_id: 3, to_id: 5, badges: "Dope!")
+  review.save!
+
 
 puts
 puts "Seeds complete!"
