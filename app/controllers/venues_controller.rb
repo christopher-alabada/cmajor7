@@ -19,6 +19,10 @@ class VenuesController < ApplicationController
       features: []
     }
     @mapped_venues.each do |venue|
+      if venue.en_name == "Ruby Room"
+        venue.phone_num = '03 3780 3022';
+      end
+
       @geojson[:features] << {
         type: 'Feature',
         geometry: {
