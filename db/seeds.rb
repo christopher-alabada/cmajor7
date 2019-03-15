@@ -3506,7 +3506,7 @@ end
   review.save!
   review = Review.new(stars: 5, content: "Great musician. Incredible on stage!", from_id: 1, to_id: 5, badges: "Great musician")
   review.save!
-  review = Review.new(stars: 5, content: "They really know how to jam!", from_id: 1, to_id: 3, badges: "Super funkadelic!!")
+  review = Review.new(stars: 5, content: "He really knows how to jam!", from_id: 1, to_id: 8, badges: "Super funkadelic!!")
   review.save!
   review = Review.new(stars: 5, content: "Total inspiration. I look up to this person for their musical genius.", from_id: 3, to_id: 6, badges: "Very unique and original")
   review.save!
@@ -3530,9 +3530,13 @@ end
   review.save!
   review = Review.new(stars: 5, content: "Incredibly talented.", from_id: 8, to_id: 7, badges: "Dope!")
   review.save!
-
+  review = Review.new(stars: 5, content: "Great voice! Would play with her again.", from_id: 6, to_id: 5, badges: "Dope!")
+  review.save!
+  review = Review.new(stars: 5, content: "Incredible voice!", from_id: 10, to_id: 5, badges: "Dope!")
+  review.save!
+  review = Review.new(stars: 5, content: "Can sing and play the guitar like a boss!", from_id: 3, to_id: 5, badges: "Dope!")
+  review.save!
   puts 'Added reviews.'
-
 
 puts
 puts "Seeds complete!"

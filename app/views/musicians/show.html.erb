@@ -64,7 +64,7 @@
         </div>
         <div id="m-invite" style='display: none;'>
           <% if user_signed_in? && current_user != @musician %>
-          <p class='want-to text-center'>Want to play with <%= @musician.nickname.capitalize %>?</p>
+
             <div id="connect">
               <% if @requested %>
                 <div class="sent-r"><p><%= link_to "You have sent a request.", musicians_path, class: "text-center btn btn-secondary disabled align-center", :disabled => true %></p></div>
@@ -121,7 +121,10 @@
           <% end %>
         </div>
 
-        <p class='gig-title'>Previous Gigs</p>
+
+
+        <label for="m-review" class='btn m-review-b'>View Gig History</label>
+        <input type="checkbox" style="display: none;" id="m-review">
         <% if @reviews.exists? %>
           <div class="last-review">
             <% 5.times.each do |count| %>
