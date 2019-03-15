@@ -28,7 +28,7 @@
       <div id="create-message">
         <%= simple_form_for [ @chat_room, Message.new ], remote: true, wrapper: :inline_form, html: { class: 'form-inline', autocomplete: 'off' } do |f| %>
           <%= f.input :content, label: false %>
-          <%= f.submit "Send", class: "btn btn-success message-submit" %>
+          <%= f.submit "Send", class: "btn btn-success message-submit2" %>
         <% end %>
       </div>
     </div>

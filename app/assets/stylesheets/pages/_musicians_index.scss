@@ -69,12 +69,13 @@
   margin-top: 50px;
   padding-right: 80px;
   padding-left: 80px;
+  margin-bottom: 50px;
 }
 
 .musician-index {
   min-width: 300px;
   background-color: white;
-  min-height: 360px;
+  height: 320px;
   margin: 20px;
   margin-bottom: 30px;
 }
@@ -103,7 +104,7 @@
 
 .musician-card-description {
   padding-top: 15px;
-  min-height: 172px;
+  min-height: 160px;
 }
 
 .nickname {
@@ -149,15 +150,19 @@
 .musician-equipment {
   font-size: 16px;
   color: black;
-  font-family: 'Montserrat', sans-serif;
+  font-family:'Josefin Sans';
   // font-weight: bolder;
-  line-height: 0.7;
-  opacity: 0.8;
+  line-height: 0.5;
+  opacity: 0.9;
 }
 
 .search-field {
   width: 350px;
   height: 35px;
+}
+
+.detail-absolute {
+  margin-top: 20px;
 }
 
 

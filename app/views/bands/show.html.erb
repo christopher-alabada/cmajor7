@@ -2,8 +2,15 @@
   <div class="card-category-band">
     <div class="container">
       <div class="show-nickname" style="text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);">
-        <%= @band.band_name %>
+        <%= @band.band_name.capitalize %>
       </div>
+        <div style="display: flex; justify-content: center;">
+        <% @band.band_members.all.each do |member|%>
+         <%= link_to musician_path(member.user) do %>
+        <span><%= cl_image_tag(member.user.user_photo, class:'member-avatar-banner')%></span>
+        <% end %>
+        <% end %>
+        </div>
         <div class="banner-band-description">
         </div>
       </div>
@@ -12,12 +19,12 @@
 </div>
 
 
-<div class="container">
+<!-- <div class="container"> -->
   <div class="show-container">
 
     <div class="card-wrapper">
       <div class="card-contents-band">
-        <p class='band-members-title'>Members</p>
+        <p class='band-members-title' style="margin:0;">Members</p>
         <div class="band-members-wrapper">
 
           <% @band.band_members.all.each do |member|%>
@@ -26,39 +33,20 @@
                   <span><%= cl_image_tag(member.user.user_photo, class:'member-avatar')%></span>
                 <% end %>
                 <div class="member-description">
-                  <%= member.user.nickname.capitalize %> plays
+                  <strong><%= member.user.nickname.capitalize %></strong> plays
                     <% equipment = Equipment.find(member.user.equipment_ids).map do |instrument| %>
-                      <% instrument.equipment_type %>
+                      <% instrument.equipment_type.capitalize %>
                     <% end %>
                     <%= equipment.join(',') %>
-                  <p>Location: <%= member.user.location.capitalize %></p>
+                  <p style="color: black; opacity: 0.6">Location: <%= member.user.location.capitalize %></p>
                 </div>
               </div>
           <% end %>
         </div>
       </div>
 
-      <script>
-        $(document).ready(function() {
-          $("#connect").change(function(){
-            if(this.checked){
-              $(".popup")[0].style.display = "block";
-              $(".card-contents")[0].style.display = "none";
-            } else {
-              $(".popup")[0].style.display = "none";
-            }
-          })
-        });
-      </script>
-
-
-
-    </div>
-
-
-
     <div class="bookmarked-venues-container">
-      <div class="card-wrapper">
+      <!-- <div class="card-wrapper"> -->
         <div class="card-contents-band">
           <p class="book-venues">Venues List
           <%= link_to venues_path, class: 'venues_path' do %>
@@ -78,27 +66,33 @@
               </div>
           <% end %>
 
-
           </div>
-
-
-        </div>
-
-
+        <!-- </div> -->
       </div>
+    </div>
+      <script>
+        $(document).ready(function() {
+          $("#connect").change(function(){
+            if(this.checked){
+              $(".popup")[0].style.display = "block";
+              $(".card-contents")[0].style.display = "none";
+            } else {
+              $(".popup")[0].style.display = "none";
+            }
+          })
+        });
+      </script>
+
+
 
     </div>
 
-
-
-  </div>
-
- <div class="chat-container">
-      <h3>Messages</h3>
+    <div class="chat-container">
+      <h3 style="margin-top: 0;">Messages</h3>
       <%= render 'messages' %>
     </div>
 
-</div>
 
-
+  </div>
+<!-- </div> -->
 
