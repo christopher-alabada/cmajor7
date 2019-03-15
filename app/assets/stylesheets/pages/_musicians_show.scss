@@ -58,6 +58,7 @@
   display: flex;
   justify-content: space-evenly;
   padding: 40px;
+  background-color: #fafafa;
 }
 
 .show-musician-pic-wrapper {
@@ -127,7 +128,7 @@
 
 .gray-detail-container  {
   background-color: white;
-  margin-top: 77px;
+  margin-top: 52px;
   // margin-left: 20px;
   width: 600px;
   min-height: 400px;
@@ -327,6 +328,10 @@ input::placeholder {
   position: relative;
   top: 75px;
   left: 63px;
+}
+.gig-title {
+  text-decoration: underline;
+   // 1px solid grey;
 }
 // #request_band_id {
 //   width: 500px;
