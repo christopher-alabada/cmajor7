@@ -42,7 +42,7 @@
           <% end %>
           <% if @musician != current_user %>
             <input type="checkbox" style="display: none;" id="invite">
-            <label for="invite" class='btn btn-success invite-btn'>Jam with <%= @musician.nickname.capitalize %></label>
+            <label for="invite" class='btn btn-primary invite-btn'>Jam with <%= @musician.nickname.capitalize %></label>
           <% end %>
           <script>
             $(document).ready(function() {
@@ -67,7 +67,8 @@
           <p class='want-to text-center'>Want to play with <%= @musician.nickname.capitalize %>?</p>
             <div id="connect">
               <% if @requested %>
-                <%= link_to "You have sent a request.", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
+                <div class="sent-r"><p><%= link_to "You have sent a request.", musicians_path, class: "text-center btn btn-secondary disabled align-center", :disabled => true %></p></div>
+                <div><p><%= link_to 'Back', musician_path(@musician) %></p></div>
               <% else %>
                 <div class="invite-form">
                   <%= simple_form_for @request, wrapper: :inline_form do |f| %>
@@ -120,8 +121,8 @@
           <% end %>
         </div>
 
-        <p class='gig-title'>Previous Gigs
-        <label for="m-review" class='btn m-review-b'>View all</label></p>
+        <p class='gig-title'>Previous Gigs</p>
+        <label for="m-review" class='btn m-review-b'>View all</label>
         <input type="checkbox" style="display: none;" id="m-review">
         <% if @reviews.exists? %>
           <div class="last-review">
@@ -201,7 +202,7 @@
               <p class='no-comment'><%= 'No comments yet.' %></p>
               <input type="checkbox" style="display: none;" id="m-write-review">
               <label for="m-write-review" class='btn btn-primary write-btn'>Write the first comment!</label>
-              <p><%#= link_to 'Back', musician_path(@musician) %></p>
+              <p><%= link_to 'Back', musician_path(@musician) %></p>
               <script>
                 document.querySelector("#m-write-review").addEventListener("click", function() {
                   console.log("clicked");
