@@ -122,8 +122,6 @@
         </div>
 
         <p class='gig-title'>Previous Gigs</p>
-        <label for="m-review" class='btn m-review-b'>View all</label>
-        <input type="checkbox" style="display: none;" id="m-review">
         <% if @reviews.exists? %>
           <div class="last-review">
             <% 5.times.each do |count| %>
@@ -139,6 +137,8 @@
             <%#= 'No comments yet.' %>
           </div>
         <% end %>
+        <label for="m-review" class='btn m-review-b'>View all</label>
+        <input type="checkbox" style="display: none;" id="m-review">
         <script>
           $(document).ready(function() {
             $("#m-review").change(function(){
@@ -178,13 +178,16 @@
               <% if @musician != current_user %>
                 <input type="checkbox" style="display: none;" id="m-write-review">
                 <label for="m-write-review" class='btn btn-primary write-btn'>Write comments</label>
+                <div class='back-btn'><%= link_to 'Back', musician_path(@musician) %></div>
               <% end %>
               <script>
                 document.querySelector("#m-write-review").addEventListener("click", function() {
                   console.log("clicked");
                   document.querySelector('#create-review').style.display = "block";
                   document.querySelector('.write-btn').style.display = "none";
+                  console.log(document.querySelector('.write-btn').style.display);
                   document.querySelector('.r-content').style.display = "none";
+                  document.querySelector('.back-btn').style.display = "none";
                   // document.querySelector('.no-comment').style.display = "none";
                 })
               </script>
@@ -195,14 +198,14 @@
                   <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
                   <%= f.submit "Send", class: "btn btn-success review-submit" %>
                   <%#= flash.now[:notice] = "Review has been saved successfully." %>
+                  <p class='write-btn'><%= link_to 'Back', musician_path(@musician) %></p>
                 <% end %>
-                <p><%= link_to 'Back', musician_path(@musician) %></p>
               </div>
             <% else %>
               <p class='no-comment'><%= 'No comments yet.' %></p>
               <input type="checkbox" style="display: none;" id="m-write-review">
               <label for="m-write-review" class='btn btn-primary write-btn'>Write the first comment!</label>
-              <p><%= link_to 'Back', musician_path(@musician) %></p>
+              <p class='back-btn'><%= link_to 'Back', musician_path(@musician) %></p>
               <script>
                 document.querySelector("#m-write-review").addEventListener("click", function() {
                   console.log("clicked");
@@ -210,6 +213,7 @@
                   document.querySelector('.write-btn').style.display = "none";
                   document.querySelector('#m-invite').style.display = "none";
                   document.querySelector('.no-comment').style.display = "none";
+                  document.querySelector('.back-btn').style.display = "none";
                 })
               </script>
               <div id="create-review" style="display: none">
@@ -219,8 +223,8 @@
                   <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
                   <%= f.submit "Send", class: "btn btn-success review-submit" %>
                   <%#= flash.now[:notice] = "Review has been saved successfully." %>
-                <% end %>
                 <p><%= link_to 'Back', musician_path(@musician) %></p>
+                <% end %>
               </div>
             <% end %>
 
