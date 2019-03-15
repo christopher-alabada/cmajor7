@@ -154,7 +154,7 @@ const initMapbox = () => {
             tel +
             closetStation +
             openMic +
-            '<a href="' + data.details_url + '">details</a>' +
+            '<a class= "ivenues-popup-details" href="' + data.details_url + '">details</a>' +
             '</div></div>'
             )
           .addTo(map);
