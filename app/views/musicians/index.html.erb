@@ -6,6 +6,13 @@
   <div class="musician-container">
     <div class="row">
       <% @musicians.each do |musician| %>
+        <%
+          unless musician.to_reviews.count == 0
+            stars = musician.to_reviews.map { |mr| mr.stars }
+            num = stars.inject{ |sum, el| sum + el }.to_f
+            ave_stars = (num / stars.size).round if num > 0
+          end
+        %>
         <div class="col-xs-12 col-md-4">
           <div class="musician-index">
             <div class="musician-card">
@@ -14,7 +21,18 @@
 
                 <div class="musician-description-shadow">
                   <div class="musician-card-description">
-                    <p class="nickname"><%= musician.nickname.capitalize! %></p>
+                    <p class="nickname"><%= musician.nickname.capitalize! %>
+                        <div style="float: right; position: absolute; top: 210px; right: 0px;">
+                          <% 5.times.each do |count| %>
+                            <% if ave_stars && ave_stars > count %>
+                              <i class="fas fa-star star"></i>
+                            <% else %>
+                              <i class="fas fa-star unstar"></i>
+                            <% end %>
+                          <% end %>
+                        </div>
+
+                    </p>
                     <div class="musician-equipment">
                       <% instruments = musician.equipments.map do |e| %>
                         #<%= e.equipment_type.capitalize  %>
