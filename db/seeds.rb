@@ -3504,7 +3504,7 @@ end
   review.save!
   review = Review.new(stars: 4, content: "They're a really awesome person. Really talented.", from_id: 5, to_id: 1, badges: "Great musician")
   review.save!
-  review = Review.new(stars: 5, content: "They really know how to jam!", from_id: 1, to_id: 3, badges: "Super funkadelic!!")
+  review = Review.new(stars: 5, content: "He really knows how to jam!", from_id: 1, to_id: 8, badges: "Super funkadelic!!")
   review.save!
   review = Review.new(stars: 5, content: "Total inspiration. I look up to this person for their musical genius.", from_id: 3, to_id: 6, badges: "Very unique and original")
   review.save!
