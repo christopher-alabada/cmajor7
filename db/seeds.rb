@@ -1610,7 +1610,7 @@ end
   review.save!
   review = Review.new(stars: 5, content: "Total inspiration. I look up to this person for their musical genius.", from_id: 3, to_id: 6, badges: "Very unique and original")
   review.save!
-  review = Review.new(stars: 5, content: "Very talented. They know how to play a wide variety of grooves.", from_id: 7, to_id: 8, badges: "Groooovy!")
+  review = Review.new(stars: 5, content: "Very talented. They know how to play a wide variety of grooves.", from_id: 12, to_id: 8, badges: "Groooovy!")
   review.save!
   review = Review.new(stars: 5, content: "Play with this person, you won't be disappointed", from_id: 9, to_id: 12, badges: "They're legit!")
   review.save!
