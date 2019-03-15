@@ -64,7 +64,7 @@
         </div>
         <div id="m-invite" style='display: none;'>
           <% if user_signed_in? && current_user != @musician %>
-          <p class='want-to text-center'>Want to play with <%= @musician.nickname.capitalize %>?</p>
+
             <div id="connect">
               <% if @requested %>
                 <div class="sent-r"><p><%= link_to "You have sent a request.", musicians_path, class: "text-center btn btn-secondary disabled align-center", :disabled => true %></p></div>
