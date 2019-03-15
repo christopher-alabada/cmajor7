@@ -4,7 +4,7 @@ class VenuesController < ApplicationController
 
   def index
     # @venues = policy_scope(Venue) Post.paginate(:page => params[:page])
-    @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil, en_name: 'Live&Rest Bar Cub').paginate(:page => params[:page], :per_page => 3)
+    @mapped_venues = policy_scope(Venue).where.not(latitude: nil, longitude: nil, en_name: 'Live&Rest Bar Cub').paginate(:page => params[:page], :per_page => 10)
 
     @markers = @mapped_venues.map do |venue|
       {
@@ -19,6 +19,10 @@ class VenuesController < ApplicationController
       features: []
     }
     @mapped_venues.each do |venue|
+      if venue.en_name == "Ruby Room"
+        venue.phone_num = '03 3780 3022';
+      end
+
       @geojson[:features] << {
         type: 'Feature',
         geometry: {

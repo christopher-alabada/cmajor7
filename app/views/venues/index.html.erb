@@ -2,12 +2,56 @@
 
 <script>
   const venues = <%= raw json_escape(@geojson.to_json) %>;
-  const mapkey = "<%= ENV['MAPBOX_API_KEY'] %>"
+  const mapkey = "<%= ENV['MAPBOX_API_KEY'] %>";
 </script>
 
 <div class='ivenues-title'>Venues</div>
 
 <div class="map-container">
   <div class="map-item" id="map"></div>
-  <div id='listings' class='listings'></div>
+  <div class='listings'>
+    <div id='listings' class="ivenues-panel">
+
+      <div id="venues-placeholder">
+        <div class="ivenues-item">
+          <div class="ivenues-leftside"></div>
+          <div class="ivenues-rightside">
+            <div class="ivenues-venue-title">&nbsp;</div>
+            <div class="ivenues-text ivenues-address"></div>
+            <div class="ivenues-text"></div>
+            <div class="ivenues-text ivenues-openmic"></div>
+          </div>
+        </div>
+        <div class="ivenues-item">
+          <div class="ivenues-leftside"></div>
+          <div class="ivenues-rightside">
+            <a href="#" class="ivenues-venue-title"></a>
+            <div class="ivenues-text ivenues-address"></div>
+            <div class="ivenues-text"></div>
+            <div class="ivenues-text ivenues-openmic"></div>
+          </div>
+        </div>
+        <div class="ivenues-item">
+          <div class="ivenues-leftside"></div>
+          <div class="ivenues-rightside">
+            <a href="#" class="ivenues-venue-title"></a>
+            <div class="ivenues-text ivenues-address"></div>
+            <div class="ivenues-text"></div>
+            <div class="ivenues-text ivenues-openmic"></div>
+          </div>
+        </div>
+        <div class="ivenues-item">
+          <div class="ivenues-leftside"></div>
+          <div class="ivenues-rightside">
+            <a href="#" class="ivenues-venue-title"></a>
+            <div class="ivenues-text ivenues-address"></div>
+            <div class="ivenues-text"></div>
+            <div class="ivenues-text ivenues-openmic"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="ivenues-pagination"><%= will_paginate @mapped_venues %></div>
+  </div>
 </div>

@@ -1,5 +1,7 @@
 .map-container {
   display: flex;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 #map {
@@ -9,8 +11,16 @@
   margin-right: 15px;
 }
 
-#listings {
+.listings {
   width: 33.33%;
+  height: 605px;
+}
+
+.ivenues-panel {
+  width: 100%;
+  height: 530px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .ivenues-popup-container {
@@ -58,6 +68,7 @@
   display: flex;
   position: relative;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .ivenues-venue-title {
@@ -71,43 +82,58 @@
 }
 
 .ivenues-text {
-  font-size: 12px;
+  font-size: 14px;
 }
 
+.ivenues-openmic {
+  // display: flex;
+  position: absolute;
+  bottom: 5px;
+}
 
+.ivenues-h5 {
+  margin-bottom: 5px;
+}
 
+.ivenues-pagination {
+  text-align: center;
+  vertical-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
 
-
-
+.ivenues-pagination a {
+  color: #E84369;
+}
 
 .marker {
   border: none;
   cursor: pointer;
   height: 25px;
   width: 25px;
-  background-image: image-url("marker.png");
+  background-image: image-url("marker-p.png");
   background-color: rgba(0, 0, 0, 0);
 }
 
 
+// placeholder
+#venues-placeholder .ivenues-rightside {
+  border-top: 1px solid #efefef;
+  border-right: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  padding-left: 15px;
+  width: 100%;
+  margin-right: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#venues-placeholder .ivenues-leftside {
+  width: 210px;
+  height: 120px;
+  border: 1px solid #efefef;
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+  background-color: #efefef;
+}
 
 // .i-venues {
 //   width: 435px;

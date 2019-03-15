@@ -91,6 +91,13 @@ const initMapbox = () => {
       });
   }
 
+  function formatTime(rails_time) {
+    var seconds = Date.parse(rails_time);
+    var date = new Date(null);
+    date.setSeconds(seconds);
+    return date.toISOString().substr(14, 5);
+  }
+
   function createPopUp(currentFeature) {
     var popUps = document.getElementsByClassName('mapboxgl-popup');
     if (popUps[0]) popUps[0].remove();
@@ -122,17 +129,11 @@ const initMapbox = () => {
       image = '<div><img src="' + data.image + '" width="100px" height="100px"></div>'
     }
 
-    var seconds = Date.parse(data.openmic_start_time);
-    var date = new Date(null);
-    date.setSeconds(seconds);
-    const startTime = date.toISOString().substr(14, 5);
+    const startTime = formatTime(data.openmic_start_time);
 
     var endTime = '';
     if (data.openmic_ending_time) {
-      var seconds = Date.parse(data.openmic_ending_time);
-      var date = new Date(null);
-      date.setSeconds(seconds);
-      endTime = ' ' + date.toISOString().substr(14, 5);
+      endTime = ' ' + formatTime(data.openmic_ending_time);
     }
 
     var openMic = '';
@@ -144,7 +145,7 @@ const initMapbox = () => {
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML('<div class="ivenues-popup-container"><div class="ivenues-popup-image">' +
             image +
-            '</div><div class="ivenues-popup-info"><h5><a href="' +
+            '</div><div class="ivenues-popup-info"><h5 class="ivenues-venue-title ivenues-h5"><a href="' +
             data.jp_website + '">' +
             data.en_name + ' ' + data.jp_name +
             '</a></h5>' +
@@ -166,6 +167,8 @@ const initMapbox = () => {
       var prop = currentFeature.properties;
 
       var listings = document.querySelector('#listings');
+      document.querySelector('#venues-placeholder').style.display = 'none';
+
       var listing = listings.appendChild(document.createElement('div'));
       listing.className = 'ivenues-item';
       listing.id = "listing-" + i;
@@ -188,6 +191,10 @@ const initMapbox = () => {
         var details = rightSide.appendChild(document.createElement('div'));
         details.className = 'ivenues-text ivenues-address';
         details.innerHTML = prop.en_address;
+      } else if (prop.jp_address) {
+        var details = rightSide.appendChild(document.createElement('div'));
+        details.className = 'ivenues-text ivenues-address';
+        details.innerHTML = prop.jp_address;
       }
 
       if (prop.phone_num) {
@@ -196,21 +203,21 @@ const initMapbox = () => {
         details.innerHTML = "<i class='fas fa-phone'></i> " + prop.phone_num;
       }
 
-      // if (prop.openmic_day || )
+      if (prop.openmic_day) {
+        var openmicDay = rightSide.appendChild(document.createElement('div'));
+        openmicDay.className = 'ivenues-text ivenues-openmic';
+        var opemMicHTML = "<i class='fas fa-microphone'></i> " + prop.openmic_day;
 
+        if (prop.openmic_start_time) {
+          opemMicHTML += " " + formatTime(prop.openmic_start_time);
+        }
 
-      // openmic_day: venue.openmic_day,
-      //     openmic_start_time: venue.openmic_start_time,
-      //     openmic_ending_time: venue.openmic_ending_time,
-      // <% unless venue.openmic_day.blank? || venue.openmic_start_time.blank? %>
-      //   <% end_time = " - #{local_time(venue.openmic_ending_time, "%l:%M %p")}".html_safe unless venue.openmic_ending_time.blank? %>
-      //   <div class='i-venue-openmic'>
-      //     <div class='i-venue-data'><b>Open Mic:</b> </div>
-      //   <%= "<div class='i-venue-data'>#{venue.openmic_day}</div>".html_safe unless venue.openmic_day.blank? %>
-      //   <%= "<div class='i-venue-data'>#{local_time(venue.openmic_start_time, "%l:%M %p")}#{end_time}</div>".html_safe unless venue.openmic_start_time.blank? %>
-      //   </div>
-      // <% end %>
+        if (prop.openmic_ending_time) {
+          opemMicHTML += " - " + formatTime(prop.openmic_ending_time);
+        }
 
+        openmicDay.innerHTML = opemMicHTML
+      }
 
       link.addEventListener('click', function(e){
         // Update the currentFeature to the store associated with the clicked link
@@ -239,7 +246,3 @@ const initMapbox = () => {
 
 export { initMapbox };
 
-// <div class="item" id="listing-0">
-//   <a href="#" class="title">i Music Bar</a>
-//   <div>〒160-0021 東京都新宿区歌舞伎町2-28-15 サチビル2F</div>
-// </div>
