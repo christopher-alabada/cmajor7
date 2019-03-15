@@ -53,36 +53,38 @@
 
 
 
-</div>
+    </div>
 
-  <div class="chat-container">
-    <h3>Messages</h3>
-    <%= render 'messages' %>
-  </div>
+    <div class="chat-container">
+      <h3>Messages</h3>
+      <%= render 'messages' %>
+    </div>
 
-  <div class="bookmarked-venues-container">
-    <div class="card-wrapper">
-      <div class="card-contents-band">
-        <p class="book-venues">Venues List</p>
-      <div class="venue-description">
-    <% @band.bookmark_boards.each do |bookmark| %>
-      <div class="bookmark-content">
-        <div class="bookmark-text">
-
-          <%= link_to venue_path(bookmark.venue) do %>
-            <h4 class="bookmark-name"><%= bookmark.venue.en_name %> </h4>
+    <div class="bookmarked-venues-container">
+      <div class="card-wrapper">
+        <div class="card-contents-band">
+          <p class="book-venues">Venues List
+          <%= link_to venues_path, class: 'venues_path' do %>
+            <i class="fas fa-plus"></i>
+          <% end %></p>
+          <div class="venue-description">
+            <% @band.bookmark_boards.each do |bookmark| %>
+              <div class="bookmark-content">
+                <div><%= cl_image_tag(bookmark.venue.venue_photos.first.photo, class: 'bookmark-venue-photo') %></div>
+                <div class="bookmark-text">
+                  <!-- <p class="venue-name">Venue name</p> -->
+                  <%= link_to venue_path(bookmark.id) do %>
+                    <h4 class="bookmark-name"><%= bookmark.venue.en_name %> </h4>
+                  <% end %>
+                  <p class='who-bookmarked'><%= bookmark.user.nickname.capitalize %> bookmarked</p>
+                </div>
+              </div>
           <% end %>
-          <p class='who-bookmarked'><%= bookmark.user.nickname.capitalize %> bookmarked</p>
-          
+
+          </div>
         </div>
-
       </div>
-
-    <% end %>
-
-  </div>
-  </div>
-  </div>
+    </div>
   </div>
 </div>
-</div>
+

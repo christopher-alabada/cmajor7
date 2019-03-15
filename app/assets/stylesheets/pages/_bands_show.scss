@@ -377,14 +377,6 @@ display: block;
   margin-bottom: 60px;
 }
 
-.bookmark-content {
-  box-shadow: 0 3px 2px #e3e7f1;
-  margin-top: 15px;
-  margin-right: 0px;
-  display: flex;
-  justify-content: start;
-  padding: 15px 25px;
-}
 
 .bookmark-name {
   font-size: 24px;
@@ -393,4 +385,11 @@ display: block;
 
 .venue-description {
   margin-left: 2px;
+}
+.venues_path {
+  padding-left: 10px;
+}
+
+#b-venue-photo {
+  margin-left: 10px;
 }

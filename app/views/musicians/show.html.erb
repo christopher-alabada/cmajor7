@@ -40,16 +40,20 @@
           <% @musician.fullname.split(' ').each do |m| %>
             <%= m.capitalize %>
           <% end %>
-          <input type="checkbox" style="display: none;" id="invite">
-          <label for="invite" class='btn btn-success invite-btn'>Jam with <%= @musician.nickname.capitalize %></label>
+          <% if @musician != current_user %>
+            <input type="checkbox" style="display: none;" id="invite">
+            <label for="invite" class='btn btn-success invite-btn'>Jam with <%= @musician.nickname.capitalize %></label>
+          <% end %>
           <script>
             $(document).ready(function() {
               $("#invite").change(function(){
                 if(this.checked){
                   $("#m-invite")[0].style.display = "block";
-                  $('.m-show-description')[0].style.display = 'none'
-                  $('.invite-btn')[0].style.display = 'none'
-                  $('.m-review-b')[0].style.display = 'none'
+                  $('.m-show-description')[0].style.display = 'none';
+                  $('.invite-btn')[0].style.display = 'none';
+                  $('.m-review-b')[0].style.display = 'none';
+                  $('.gig-title')[0].style.display = 'none';
+                  $('.last-review')[0].style.display = 'none';
                 } else {
                   $("#m-invite")[0].style.display = "none";
                 }
@@ -65,21 +69,18 @@
               <% if @requested %>
                 <%= link_to "You have sent a request.", musicians_path, class: "btn btn-secondary disabled align-center", :disabled => true %>
               <% else %>
-
-
                 <div class="invite-form">
                   <%= simple_form_for @request, wrapper: :inline_form do |f| %>
                     <p><%= f.input :to_id, :as => :hidden, :input_html => { :value => @musician.id } %>
                     <%= f.input :band_id, collection: @musicians_bands, class: 'form-control select', selected: 0 %></p>
                     <p><%= f.input :message, placeholder: 'Message' %></p>
-                    <p class='i-submit'><%= f.button :submit, 'Invite', class: "btn btn-success connect"
-                     %>
-                     <%= link_to 'Back', musician_path(@musician), style: 'padding-left: 10px;' %></p>
-                  </div>
-                 <% end %>
-           <% end %>
-             <% end %>
+                    <p class='i-submit'><%= f.button :submit, 'Invite', class: "btn btn-success connect" %>
+                    <%= link_to 'Back', musician_path(@musician), style: 'padding-left: 10px;' %></p>
+                    <% end %>
+                </div>
+              <% end %>
             </div>
+          <% end %>
         </div>
 
         <div class="m-show-description">
@@ -119,7 +120,8 @@
           <% end %>
         </div>
 
-        <p class='gig-title'>Previous Gigs<label for="m-review" class='btn m-review-b'>View all</label></p>
+        <p class='gig-title'>Previous Gigs
+        <label for="m-review" class='btn m-review-b'>View all</label></p>
         <input type="checkbox" style="display: none;" id="m-review">
         <% if @reviews.exists? %>
           <div class="last-review">
@@ -145,7 +147,9 @@
                 $(".gray-name")[0].style.display = "none";
                 $(".m-review-b")[0].style.display = "none";
                 $("#m-invite")[0].style.display = "none";
-                $(".last-review")[0].style.display = "none";
+                if ($(".last-review")[0]) {
+                  $(".last-review")[0].style.display = "none";
+                }
                 $(".gig-title")[0].style.display = "none";
               } else {
                 $(".musician-review")[0].style.display = "none";
@@ -156,7 +160,6 @@
 
         <div class="musician-review" style='display: none;'>
           <div class="review-content">
-            <!-- <p class='review-title text-left'>Previous Gigs</p> -->
             <% if @reviews.exists? %>
               <% @reviews.each do |r| %>
                 <div class="r-content">
@@ -171,38 +174,55 @@
                   <p class='review-from'>Comments from <%= @musicians.find(r.from_id).nickname.capitalize %></p>
                 </div>
               <% end %>
-              <input type="checkbox" style="display: none;" id="m-write-review">
-              <label for="m-write-review" class='btn btn-primary'>Write comments</label>
-              <p><%= link_to 'Back', musician_path(@musician) %></p>
-            <% else %>
-              <p><%= 'No comments yet.' %></p>
-              <input type="checkbox" style="display: none;" id="m-write-review">
-              <label for="m-write-review" class='btn btn-primary'>Write the first comment!</label>
-              <%= link_to 'Back', musician_path(@musician) %>
-              <div id="create-review" style='display: none;'>
+              <% if @musician != current_user %>
+                <input type="checkbox" style="display: none;" id="m-write-review">
+                <label for="m-write-review" class='btn btn-primary write-btn'>Write comments</label>
+              <% end %>
+              <script>
+                document.querySelector("#m-write-review").addEventListener("click", function() {
+                  console.log("clicked");
+                  document.querySelector('#create-review').style.display = "block";
+                  document.querySelector('.write-btn').style.display = "none";
+                  document.querySelector('.r-content').style.display = "none";
+                  // document.querySelector('.no-comment').style.display = "none";
+                })
+              </script>
+              <div id="create-review" style="display: none">
                 <%= simple_form_for [@musician, @review] do |f| %>
                   <%= f.input :content %>
                   <%= f.input :stars  %>
                   <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
                   <%= f.submit "Send", class: "btn btn-success review-submit" %>
-                  <%= flash.now[:notice] = "Review has been saved successfully." %>
+                  <%#= flash.now[:notice] = "Review has been saved successfully." %>
                 <% end %>
+                <p><%= link_to 'Back', musician_path(@musician) %></p>
+              </div>
+            <% else %>
+              <p class='no-comment'><%= 'No comments yet.' %></p>
+              <input type="checkbox" style="display: none;" id="m-write-review">
+              <label for="m-write-review" class='btn btn-primary write-btn'>Write the first comment!</label>
+              <p><%#= link_to 'Back', musician_path(@musician) %></p>
+              <script>
+                document.querySelector("#m-write-review").addEventListener("click", function() {
+                  console.log("clicked");
+                  document.querySelector('#create-review').style.display = "block";
+                  document.querySelector('.write-btn').style.display = "none";
+                  document.querySelector('#m-invite').style.display = "none";
+                  document.querySelector('.no-comment').style.display = "none";
+                })
+              </script>
+              <div id="create-review" style="display: none">
+                <%= simple_form_for [@musician, @review] do |f| %>
+                  <%= f.input :content %>
+                  <%= f.input :stars  %>
+                  <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
+                  <%= f.submit "Send", class: "btn btn-success review-submit" %>
+                  <%#= flash.now[:notice] = "Review has been saved successfully." %>
+                <% end %>
+                <p><%= link_to 'Back', musician_path(@musician) %></p>
               </div>
             <% end %>
 
-            <script>
-              $(document).ready(function() {
-                $("#m-write-review").change(function(){
-                  if(this.checked){
-                    $("#create-review")[0].style.display = "block";
-                    $(".review-content")[0].style.display = "none";
-                    $("#m-invite")[0].style.display = "none";
-                  } else {
-                    $("#create-review")[0].style.display = "none";
-                  }
-                })
-              });
-            </script>
         </div>
       </div>
     </div>
