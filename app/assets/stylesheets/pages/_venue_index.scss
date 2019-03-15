@@ -81,6 +81,18 @@
   color: #000;
 }
 
+.ivenues-venue-title a {
+  color: #000;
+}
+
+.ivenues-venue-title a:hover {
+  color: #000;
+}
+
+.ivenues-popup-details {
+  color: #E84369;
+}
+
 .ivenues-text {
   font-size: 14px;
 }
@@ -134,129 +146,3 @@
   border-bottom-left-radius: 5%;
   background-color: #efefef;
 }
-
-// .i-venues {
-//   width: 435px;
-//   height: 605px;
-// }
-
-// .i-venues-panel {
-//   height: 530px;
-//   width: 100%;
-//   overflow: hidden;
-//   overflow-y: scroll;
-// }
-
-// .i-venue-info img {
-//   object-fit: cover;
-//   width: 120px;
-//   height: 120px;
-//   border-top-left-radius: 5%;
-//   border-bottom-left-radius: 5%;
-// }
-
-// .i-venue-info-right {
-//   border-top: 1px solid #dbdbdb;
-//   border-right: 1px solid #dbdbdb;
-//   border-bottom: 1px solid #dbdbdb;
-//   padding-left: 15px;
-//   width: 375px;
-// }
-
-// .i-venue-item {
-//   display: flex;
-//   position: relative;
-//   margin-bottom: 15px;
-// }
-
-// .i-venue-title {
-//   font-weight: bold;
-//   margin-right: 16px;
-// }
-
-// .i-venue-data {
-//   font-size: 13px;
-// }
-
-// .i-venue-openmic {
-//   display: flex;
-//   position: absolute;
-//   bottom: 5px;
-//   div {
-//     margin-right: 5px;
-//   }
-// }
-
-// .i-venue-address {
-//   font-size: 12px;
-// }
-
-// .i-venues-pagination {
-//   text-align: center;
-//   vertical-align: center;
-// }
-
-// .venue-popup-image img {
-//   object-fit: cover;
-//   width: 70px;
-//   height: 70px;
-// }
-
-// .venue-popup-info {
-//   padding-left: 10px;
-// }
-
-// .venue-popup-openmic {
-//   display: flex;
-//   // position: absolute;
-//   // bottom: 5px;
-//   div {
-//     margin-right: 5px;
-//   }
-// }
-
-// .venue-popup-info > div {
-//   padding: 0px;
-// }
-
-// .venue-popup-name {
-//   font-size: larger;
-// }
-
-
-
-
-
-
-
-// .mapboxgl-popup {
-//   // border: 1px solid #dbdbdb;
-//   // border-radius: 10px;
-//   max-width: 400px;
-//   // background-color: #fff;
-// }
-
-// // .i-venue-container {
-// //   display: flex;
-// // }
-
-// // .i-venue-name {
-// //   margin-left: 30px;
-// // }
-// // .i-venue-card {
-// //   box-shadow: 0px 1px 1px black;
-// //   height: 250px;
-// //   background-size: cover !important;
-// //   background-position: center;
-// //   margin: 20px;
-// //   font-size: 12px;
-// // }
-
-// // .i-venue-img {
-// //   width: 100%;
-// //   height: 60%;
-// //   object-fit: cover;
-// // }
-// // .i-venue-info {
-// //   padding: 10px;
-// // }
