@@ -52,8 +52,7 @@
                   $('.m-show-description')[0].style.display = 'none';
                   $('.invite-btn')[0].style.display = 'none';
                   $('.m-review-b')[0].style.display = 'none';
-                  $('.gig-title')[0].style.display = 'none';
-                  $('.last-review')[0].style.display = 'none';
+                  document.querySelector('#last_review').style.display = 'none';
                 } else {
                   $("#m-invite")[0].style.display = "none";
                 }
@@ -134,17 +133,14 @@
                 $(".gray-name")[0].style.display = "none";
                 $(".m-review-b")[0].style.display = "none";
                 $("#m-invite")[0].style.display = "none";
-                if ($(".r-last-review")[0]) {
-                  $(".r-last-review")[0].style.display = "none";
-                }
-                $(".gig-title")[0].style.display = "none";
+                document.querySelector('#last_review').style.display = 'none';
               } else {
                 $(".musician-review")[0].style.display = "none";
               }
             })
           });
         </script>
-        <div class="r-last-review">
+        <div class="r-last-review" id='last_review'>
           <% if @reviews.exists? %>
             <div class="last-review">
               <% 5.times.each do |count| %>
@@ -183,18 +179,6 @@
                 <label for="m-write-review" class='btn btn-primary write-btn'>Write comments</label>
                 <div class='back-btn'><%= link_to 'Back', musician_path(@musician) %></div>
               <% end %>
-              <script>
-                document.querySelector("#m-write-review").addEventListener("click", function() {
-                  console.log("clicked");
-                  document.querySelector('#create-review').style.display = "block";
-                  document.querySelector('.write-btn').style.display = "none";
-                  console.log(document.querySelector('.write-btn').style.display);
-                  document.querySelector('.r-content').style.display = "none";
-                  document.querySelector('.back-btn').style.display = "none";
-                  document.querySelector('.r-last-review').style.display = "none";
-                  console.log(document.querySelector('.r-content').style.display)
-                })
-              </script>
               <div id="create-review" style="display: none">
                 <%= simple_form_for [@musician, @review] do |f| %>
                   <%= f.input :content %>
@@ -238,3 +222,13 @@
   </div>
 </div>
 
+              <script>
+                document.querySelector("#m-write-review").addEventListener("click", function() {
+                  document.querySelector('#create-review').style.display = "block";
+                  document.querySelector('.write-btn').style.display = "none";
+                  console.log(document.querySelector('.write-btn').style.display);
+                  document.querySelector('.r-content').style.display = "none";
+                  document.querySelector('.back-btn').style.display = "none";
+                  document.querySelector('#last_review').style.display = 'none';
+                })
+              </script>
