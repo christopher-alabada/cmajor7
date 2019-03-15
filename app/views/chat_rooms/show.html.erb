@@ -9,7 +9,7 @@
       </div>
       <div id="create-message">
         <%= simple_form_for [ @chat_room, Message.new ], remote: true do |f| %>
-          <%= f.input :content, label: false %>
+          <%= f.input :content, label: false, autofocus: true %>
           <%= f.submit %>
         <% end %>
       </div>
