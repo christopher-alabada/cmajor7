@@ -6,7 +6,7 @@
         </div>
           <h4><%= @musician.tag_line %></h4>
           <div class="badges">
-            <% if @reviews.exists? %>
+            <% if @reviews %>
               <% badges = @reviews.map do |r| %>
                 <% r.badges %>
               <% end %>
@@ -141,7 +141,7 @@
           });
         </script>
         <div class="r-last-review" id='last_review'>
-          <% if @reviews.exists? %>
+          <% if @reviews %>
             <div class="last-review">
               <% 5.times.each do |count| %>
                 <% if @reviews.last.stars && @reviews.last.stars > count %>
@@ -160,7 +160,7 @@
 
         <div class="musician-review" style='display: none;'>
           <div class="review-content">
-            <% if @reviews.exists? %>
+            <% if @reviews %>
               <% @reviews.each do |r| %>
                 <div class="r-content">
                   <% 5.times.each do |count| %>
@@ -204,16 +204,18 @@
                   document.querySelector('.back-btn').style.display = "none";
                 })
               </script>
-              <div id="create-review" style="display: none">
-                <%= simple_form_for [@musician, @review] do |f| %>
-                  <%= f.input :content %>
-                  <%= f.input :stars  %>
-                  <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
-                  <%= f.submit "Send", class: "btn btn-success review-submit" %>
-                  <%#= flash.now[:notice] = "Review has been saved successfully." %>
-                <p><%= link_to 'Back', musician_path(@musician) %></p>
-                <% end %>
-              </div>
+              <% if user_signed_in? %>
+                <div id="create-review" style="display: none">
+                  <%= simple_form_for [@musician, @review] do |f| %>
+                    <%= f.input :content %>
+                    <%= f.input :stars  %>
+                    <%= f.input :badges, as: :select, collection: [ 'Awesome guitarist!', 'Great musician', 'Funky'] %>
+                    <%= f.submit "Send", class: "btn btn-success review-submit" %>
+                    <%#= flash.now[:notice] = "Review has been saved successfully." %>
+                  <p><%= link_to 'Back', musician_path(@musician) %></p>
+                  <% end %>
+                </div>
+              <% end %>
             <% end %>
 
         </div>
