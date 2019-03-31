@@ -5,7 +5,25 @@
   const mapkey = "<%= ENV['pk.eyJ1Ijoia3VtYXNhbjM2OCIsImEiOiJjanRxd2xvMTgwMnRzNGFwMmZlcG1pb3p4In0.F_-z1_nW2O3CYYNOH6rC1A'] %>";
 </script>
 
-<div class='ivenues-title'>Venues</div>
+<div class="container">
+
+    <div>
+      <h1>HERE IS NEW VENUES MAP  </h1>
+    </div>
+
+    <div class="row">
+      <% @mapped_venues.each do |venue| %>
+        <ul>
+          <li>
+          <p><strong><%= venue.en_name %></strong> is located in <%= venue.address %> </p>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+
+</div>
+
+<!-- <div class='ivenues-title'>Venues</div>
 
 <div class="map-container">
   <div class="map-item" id="map"></div>
@@ -55,3 +73,4 @@
     <div class="ivenues-pagination"><%= will_paginate @mapped_venues %></div>
   </div>
 </div>
+ -->
