@@ -6,20 +6,38 @@
 </script>
 
 <div class="container">
+  <div class="map-page-container">
 
-    <div>
-      <h1>HERE IS NEW VENUES MAP  </h1>
+    <div id="map" style="height: 700px; width: 100%"></div>
+      <script>
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: 35.627521, lng: 139.714326},
+            zoom: 15
+          });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCq0Eo-JCFvc__H4b0EK0eTgoWesULdXQ&callback=initMap"
+      async defer></script>
+
+    <div class="venue-list">
+      <div>
+        <h1 style="margin:0">HERE IS NEW VENUES MAP  </h1>
+      </div>
+
+      <div class="row">
+        <% @mapped_venues.each do |venue| %>
+          <ul>
+            <li>
+            <p><strong><%= venue.en_name %></strong> is located in <%= venue.address %> </p>
+            </li>
+          </ul>
+        <% end %>
+      </div>
     </div>
 
-    <div class="row">
-      <% @mapped_venues.each do |venue| %>
-        <ul>
-          <li>
-          <p><strong><%= venue.en_name %></strong> is located in <%= venue.address %> </p>
-          </li>
-        </ul>
-      <% end %>
-    </div>
+  </div>
 
 </div>
 
