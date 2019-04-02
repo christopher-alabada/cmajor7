@@ -1,8 +1,11 @@
 <% content_for :title, "Venues" %>
+<!-- <script type='text/javascript' src='../../../config.js'></script> -->
 
 <script>
   const venues = <%= raw json_escape(@geojson.to_json) %>;
+  // var google_map_key = config.GOOGLE_MAP;
 </script>
+
 
 <div class="container">
   <div class="map-page-container">
@@ -125,6 +128,10 @@
 
       <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
       </script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYTzkGur8WAsaK6R31ALUWzcA0alYJva8&callback=initMap"
+      async defer></script>
+
 
     <div class="venue-list">
       <div>
