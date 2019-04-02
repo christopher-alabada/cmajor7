@@ -6,20 +6,147 @@
 </script>
 
 <div class="container">
+  <div class="map-page-container">
 
-    <div>
-      <h1>HERE IS NEW VENUES MAP  </h1>
+    <div id="map" style="height: 700px; width: 100%"></div>
+
+      <script>
+        var map, infoWindow;
+        function initMap() {
+        // The location of Slope
+          var slope = {lat: 35.627521, lng: 139.714326};
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: slope
+          });
+          infoWindow = new google.maps.InfoWindow;
+
+
+          // Create an array of alphabetical characters used to label the markers.
+          var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+          // Add some markers to the map.
+          // Note: The code uses the JavaScript Array.prototype.map() method to
+          // create an array of markers based on a given "locations" array.
+          // The map() method here has nothing to do with the Google Maps API.
+          var markers = locations.map(function(location, i) {
+            return new google.maps.Marker({
+              position: location,
+              label: labels[i % labels.length]
+            });
+          });
+
+          // Add a marker clusterer to manage the markers.
+          var markerCluster = new MarkerClusterer(map, markers,
+              {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+         if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('You are here');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
+        }
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+          infoWindow.setPosition(pos);
+          infoWindow.setContent(browserHasGeolocation ?
+                                'Error: The Geolocation service failed.' :
+                                'Error: Your browser doesn\'t support geolocation.');
+          infoWindow.open(map);
+        }
+
+        var locations = new Array();
+        <% @mapped_venues.each do |venue| %>
+          locations.push({ lat: <%= venue.latitude.to_f %>, lng: <%= venue.longitude.to_f %> })
+        <% end %>
+
+      //   var locations = [
+      //   // i Music Bar
+      //   {lat: 35.6963187, lng: 139.7013339},
+      //   // スモーキン
+      //   {lat: 35.690305, lng: 139.707482},
+      //   // Live Cafe & Bar Slow Life
+      //   {lat: 35.702037, lng: 139.788194},
+      //   // Ruby Room
+      //   {lat: 35.65957, lng: 139.697649},
+      //   // 秋田犬
+      //   {lat: 35.6960018, lng: 139.77567},
+      //   // 下北沢アーチスト
+      //   {lat: 35.663554, lng: 139.6665043},
+      //   // アルティカセブン
+      //   {lat: 35.6828663, lng: 139.6974365},
+      //   // Asian
+      //   {lat: 35.6295354, lng: 139.6825577},
+      //   // Alcafe
+      //   {lat: 35.7030848, lng: 139.6185894},
+      //   // Under
+      //   {lat: 35.6647381, lng: 139.6990202},
+      //   // Yellow
+      //   {lat: 35.7054292, lng: 139.633085},
+      //   // Welcome back
+      //   {lat: 35.7297535, lng: 139.7267507},
+      //   // Uzu
+      //   {lat: 35.7452388, lng: 139.3329428},
+      //   // Eclaircie
+      //   {lat: 35.6414727, lng: 139.6060189},
+      //   // 江古田倶楽部
+      //   {lat: 35.7374088, lng: 139.6698674},
+      //   // oil
+      //   {lat: 35.7052151, lng: 139.6357905},
+      //   // ALT_SPEAKER
+      //   {lat: 35.703495, lng: 139.6833453},
+      //   // Canopus
+      //   {lat: 35.7324583, lng: 139.7052641},
+      //   // Gabigabi
+      //   {lat: 35.6574984, lng: 139.6964174},
+      //   // Cub
+      //   {lat: 35.44574, lng: 139.48087},
+      //   // green
+      //   {lat: 35.633272, lng: 139.516765},
+      //   // grain
+      //   {lat: 35.705712, lng: 139.648783},
+      //   // com.cafe
+      //   {lat: 35.662433, lng: 139.666852}
+      // ]
+
+      </script>
+
+      <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+      </script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCq0Eo-JCFvc__H4b0EK0eTgoWesULdXQ&callback=initMap"
+      async defer></script>
+
+    <div class="venue-list">
+      <div>
+        <h1 style="margin:0">HERE IS NEW VENUES MAP  </h1>
+      </div>
+
+      <div class="row">
+        <% @mapped_venues.each do |venue| %>
+          <ul>
+            <li>
+            <p><strong><%= venue.en_name %></strong> is located in <%= venue.address %> </p>
+            </li>
+          </ul>
+        <% end %>
+      </div>
     </div>
 
-    <div class="row">
-      <% @mapped_venues.each do |venue| %>
-        <ul>
-          <li>
-          <p><strong><%= venue.en_name %></strong> is located in <%= venue.address %> </p>
-          </li>
-        </ul>
-      <% end %>
-    </div>
+  </div>
 
 </div>
 
