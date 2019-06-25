@@ -40,7 +40,7 @@
           <% @musician.fullname.split(' ').each do |m| %>
             <%= m.capitalize %>
           <% end %>
-          <% if @musician != current_user %>
+          <% if user_signed_in? && @musician != current_user %>
             <input type="checkbox" style="display: none;" id="invite">
             <label for="invite" class='btn btn-primary invite-btn'>Jam with <%= @musician.nickname.capitalize %></label>
           <% end %>
