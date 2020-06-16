@@ -1,11 +1,113 @@
 <% content_for :title, "Venues" %>
+<!-- <script type='text/javascript' src='../../../config.js'></script> -->
 
 <script>
   const venues = <%= raw json_escape(@geojson.to_json) %>;
-  const mapkey = "<%= ENV['MAPBOX_API_KEY'] %>";
+  // var google_map_key = config.GOOGLE_MAP;
+  // const google_map_key = "<%= ENV['GOOGLE_MAP'] %>";
 </script>
 
-<div class='ivenues-title'>Venues</div>
+
+<div class="container">
+  <div class="map-page-container">
+
+    <div id="map" style="height: 700px; width: 100%"></div>
+
+      <script>
+        var map, infoWindow;
+        function initMap() {
+        // The location of Slope
+          var slope = {lat: 35.627521, lng: 139.714326};
+
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: slope
+          });
+          infoWindow = new google.maps.InfoWindow;
+
+
+          // Create an array of alphabetical characters used to label the markers.
+          // var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+
+          // Add some markers to the map.
+          // Note: The code uses the JavaScript Array.prototype.map() method to
+          // create an array of markers based on a given "locations" array.
+          // The map() method here has nothing to do with the Google Maps API.
+          var markers = locations.map(function(location, i) {
+            return new google.maps.Marker({
+              position: location,
+              // label: labels[i % labels.length]
+            });
+          });
+
+          // Add a marker clusterer to manage the markers.
+          var markerCluster = new MarkerClusterer(map, markers,
+              {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+         if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('You are here');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
+        }
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+          infoWindow.setPosition(pos);
+          infoWindow.setContent(browserHasGeolocation ?
+                                'Error: The Geolocation service failed.' :
+                                'Error: Your browser doesn\'t support geolocation.');
+          infoWindow.open(map);
+        }
+
+        var locations = new Array();
+        <% @mapped_venues.each do |venue| %>
+          locations.push({ lat: <%= venue.latitude.to_f %>, lng: <%= venue.longitude.to_f %> })
+        <% end %>
+
+      </script>
+
+      <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+      </script>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=secret=initMap"
+      async defer></script>
+
+
+    <div class="venue-list">
+      <div>
+        <h1 style="margin:0">HERE IS NEW VENUES MAP  </h1>
+      </div>
+
+      <div class="row">
+        <% @mapped_venues.each do |venue| %>
+        <%= link_to venue_path(venue) do %>
+          <ul>
+            <li>
+            <p><strong><%= venue.en_name %></strong> is located in <%= venue.address %> </p>
+            </li>
+          </ul>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- <div class='ivenues-title'>Venues</div>
 
 <div class="map-container">
   <div class="map-item" id="map"></div>
@@ -55,3 +157,4 @@
     <div class="ivenues-pagination"><%= will_paginate @mapped_venues %></div>
   </div>
 </div>
+ -->

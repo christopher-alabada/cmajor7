@@ -81,8 +81,12 @@
       <% end %>
   </div>
 
-    <% options = [] %>
-    <% current_user.bands.each {|band| options << [band.id, band.band_name.capitalize]} %>
+    <% if current_user == nil %>
+      <% options = ["Lets create band"] %>
+    <% else %>
+      <% options = [] %>
+      <% current_user.bands.each {|band| options << [band.id, band.band_name.capitalize]} %>
+    <% end %>
 
     <div class="bookmark-which-band" style="display: none">
 
